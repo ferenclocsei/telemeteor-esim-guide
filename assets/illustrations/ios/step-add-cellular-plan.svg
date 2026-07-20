@@ -1,0 +1,10 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#ffffff"/>
+  <text data-key="screen.add-cellular-plan.title" x="24" y="46" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">Cellular</text>
+  <rect x="20" y="80" width="260" height="56" rx="14" fill="#f4f6fa"/>
+  <rect x="40" y="98" width="140" height="10" rx="5" fill="#5b6b8c"/>
+  <rect x="20" y="146" width="260" height="80" rx="14" fill="#f4f6fa"/>
+  <text data-key="screen.add-cellular-plan.section" x="40" y="192" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#5b6b8c">SIM CARDS</text>
+  <rect x="30" y="404" width="240" height="50" rx="25" fill="#ff6600"/>
+  <text data-key="screen.add-cellular-plan.button" x="150" y="436" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#ffffff">Add Cellular Plan</text>
+</svg>

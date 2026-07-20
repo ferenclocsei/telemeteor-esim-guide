@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "osVariant": "android-samsung",
+  "osVersionRange": "One UI 3–7 (Android 11–15)",
+  "lastVerifiedDate": "2026-07-17",
+  "sources": [
+    "https://www.samsung.com/uk/support/mobile-devices/how-to-use-an-esim-with-your-galaxy-phone/",
+    "https://source.android.com/docs/core/connect/esim-overview",
+    "https://www.samsung.com/ca/support/mobile-devices/galaxy-esim-and-supported-network-carriers/"
+  ],
+  "status": "ready",
+  "steps": [
+    {
+      "id": "before-you-start",
+      "appliesTo": ["all"],
+      "illustration": "android-samsung/step-before-you-start.svg",
+      "tapPoints": [
+        { "x": 50, "y": 34, "shape": "rect", "radius": 8, "labelKey": "samsung.before-you-start.tap.row" }
+      ],
+      "titleKey": "samsung.before-you-start.title",
+      "bodyKey": "samsung.before-you-start.body",
+      "warningKey": "samsung.before-you-start.warning"
+    },
+    {
+      "id": "open-link",
+      "appliesTo": ["link"],
+      "illustration": "android-samsung/step-open-link.svg",
+      "tapPoints": [
+        { "x": 50, "y": 62, "shape": "rect", "radius": 8, "labelKey": "samsung.open-link.tap.link" }
+      ],
+      "titleKey": "samsung.open-link.title",
+      "bodyKey": "samsung.open-link.body",
+      "warningKey": null
+    },
+    {
+      "id": "add-esim-prefilled",
+      "appliesTo": ["link"],
+      "illustration": "android-samsung/step-add-esim-prefilled.svg",
+      "tapPoints": [
+        { "x": 50, "y": 68, "shape": "rect", "radius": 8, "labelKey": "samsung.add-esim-prefilled.tap.button" }
+      ],
+      "titleKey": "samsung.add-esim-prefilled.title",
+      "bodyKey": "samsung.add-esim-prefilled.body",
+      "warningKey": null
+    },
+    {
+      "id": "open-settings",
+      "appliesTo": ["qr", "manual"],
+      "illustration": "android-samsung/step-open-settings.svg",
+      "tapPoints": [
+        { "x": 82, "y": 10, "shape": "circle", "radius": 7, "labelKey": "samsung.open-settings.tap.icon" }
+      ],
+      "titleKey": "samsung.open-settings.title",
+      "bodyKey": "samsung.open-settings.body",
+      "warningKey": null
+    },
+    {
+      "id": "open-connections",
+      "appliesTo": ["qr", "manual"],
+      "illustration": "android-samsung/step-open-connections.svg",
+      "tapPoints": [
+        { "x": 50, "y": 28, "shape": "rect", "radius": 8, "labelKey": "samsung.open-connections.tap.row" }
+      ],
+      "titleKey": "samsung.open-connections.title",
+      "bodyKey": "samsung.open-connections.body",
+      "warningKey": null
+    },
+    {
+      "id": "open-sim-manager",
+      "appliesTo": ["qr", "manual"],
+      "illustration": "android-samsung/step-open-sim-manager.svg",
+      "tapPoints": [
+        { "x": 50, "y": 55, "shape": "rect", "radius": 8, "labelKey": "samsung.open-sim-manager.tap.row" }
+      ],
+      "titleKey": "samsung.open-sim-manager.title",
+      "bodyKey": "samsung.open-sim-manager.body",
+      "warningKey": null
+    },
+    {
+      "id": "add-mobile-plan",
+      "appliesTo": ["qr", "manual"],
+      "illustration": "android-samsung/step-add-mobile-plan.svg",
+      "tapPoints": [
+        { "x": 50, "y": 68, "shape": "rect", "radius": 8, "labelKey": "samsung.add-mobile-plan.tap.button" }
+      ],
+      "titleKey": "samsung.add-mobile-plan.title",
+      "bodyKey": "samsung.add-mobile-plan.body",
+      "warningKey": null
+    },
+    {
+      "id": "add-using-qr",
+      "appliesTo": ["qr"],
+      "illustration": "android-samsung/step-add-using-qr.svg",
+      "tapPoints": [
+        { "x": 50, "y": 44, "shape": "rect", "radius": 10, "labelKey": "samsung.add-using-qr.tap.frame" }
+      ],
+      "titleKey": "samsung.add-using-qr.title",
+      "bodyKey": "samsung.add-using-qr.body",
+      "warningKey": null
+    },
+    {
+      "id": "add-using-code",
+      "appliesTo": ["manual"],
+      "illustration": "android-samsung/step-add-using-code.svg",
+      "tapPoints": [
+        { "x": 50, "y": 36, "shape": "rect", "radius": 8, "labelKey": "samsung.add-using-code.tap.address" },
+        { "x": 50, "y": 50, "shape": "rect", "radius": 8, "labelKey": "samsung.add-using-code.tap.code" }
+      ],
+      "titleKey": "samsung.add-using-code.title",
+      "bodyKey": "samsung.add-using-code.body",
+      "warningKey": "samsung.add-using-code.warning"
+    },
+    {
+      "id": "downloading",
+      "appliesTo": ["all"],
+      "illustration": "android-samsung/step-downloading.svg",
+      "tapPoints": [],
+      "titleKey": "samsung.downloading.title",
+      "bodyKey": "samsung.downloading.body",
+      "warningKey": null
+    },
+    {
+      "id": "enable-data-roaming",
+      "appliesTo": ["all"],
+      "illustration": "android-samsung/step-enable-roaming.svg",
+      "tapPoints": [
+        { "x": 88, "y": 38, "shape": "circle", "radius": 10, "labelKey": "samsung.enable-data-roaming.tap.toggle" }
+      ],
+      "titleKey": "samsung.enable-data-roaming.title",
+      "bodyKey": "samsung.enable-data-roaming.body",
+      "warningKey": "samsung.enable-data-roaming.warning"
+    },
+    {
+      "id": "select-data-line-on-arrival",
+      "appliesTo": ["all"],
+      "illustration": "android-samsung/step-select-data-line.svg",
+      "tapPoints": [
+        { "x": 50, "y": 33, "shape": "rect", "radius": 8, "labelKey": "samsung.select-data-line.tap.row" }
+      ],
+      "titleKey": "samsung.select-data-line.title",
+      "bodyKey": "samsung.select-data-line.body",
+      "warningKey": "samsung.select-data-line.warning"
+    },
+    {
+      "id": "done",
+      "appliesTo": ["all"],
+      "illustration": "android-samsung/step-done.svg",
+      "tapPoints": [],
+      "titleKey": "samsung.done.title",
+      "bodyKey": "samsung.done.body",
+      "warningKey": "samsung.done.warning"
+    }
+  ]
+}

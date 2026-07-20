@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="ui.app.title">eSIM Setup Guide</title>
+  <link rel="stylesheet" href="css/tokens.css?v=16" />
+  <link rel="stylesheet" href="css/main.css?v=16" />
+  <link rel="stylesheet" href="css/phone-frame.css?v=16" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="https://telemeteor.com" class="site-header__brand" aria-label="TeleMeteor">
+        <svg width="140" height="17" viewBox="0 0 232 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M24.3886 0H0V7.1164H7.8274V27.0111H16.5612V7.1164H24.3886V0Z" fill="currentColor"/>
+          <path d="M34.34 6.36244C30.7823 6.36244 27.9708 7.33007 25.9021 9.2684C23.8335 11.2067 22.8008 13.8494 22.8008 17.1993C22.8008 20.5493 23.812 22.9715 25.8374 24.873C27.8629 26.7746 30.5974 27.7239 34.044 27.7239C37.1207 27.7239 39.5993 27.1635 41.4737 26.0458C43.3512 24.9282 44.5658 23.2807 45.1207 21.1035H37.4783C37.2933 21.6425 36.9419 22.0528 36.4271 22.3407C35.9091 22.6285 35.2648 22.7724 34.4879 22.7724C33.3442 22.7724 32.4502 22.4264 31.812 21.7374C31.1708 21.0454 30.8347 20.0655 30.7977 18.7947L45.7712 18.7763V18.2986C45.7712 14.5567 44.7601 11.6324 42.7346 9.52256C40.7092 7.41275 37.913 6.35938 34.343 6.35938L34.34 6.36244ZM30.7947 14.7986C30.844 13.6381 31.1739 12.7286 31.7812 12.0764C32.3916 11.4211 33.2178 11.0965 34.2629 11.0965C35.3943 11.0965 36.2637 11.4058 36.8648 12.0213C37.4691 12.6398 37.8113 13.5646 37.8976 14.7986H30.7885H30.7947Z" fill="currentColor"/>
+          <path d="M57.2877 0H49.2383V27.0111H57.2877V0Z" fill="currentColor"/>
+          <path d="M83.7271 18.3025C83.7271 14.5606 82.716 11.6363 80.6905 9.52647C78.6651 7.41666 75.8689 6.36328 72.2989 6.36328C68.729 6.36328 65.9297 7.33092 63.8611 9.26925C61.7925 11.2076 60.7598 13.8502 60.7598 17.2002C60.7598 20.5501 61.7709 22.9723 63.7964 24.8739C65.8218 26.7755 68.5563 27.7247 72.003 27.7247C75.0797 27.7247 77.5583 27.1644 79.4327 26.0467C81.3102 24.929 82.5248 23.2816 83.0797 21.1044H75.4373C75.2523 21.6433 74.9009 22.0537 74.386 22.3415C73.8681 22.6293 73.2238 22.7733 72.4469 22.7733C71.3032 22.7733 70.4091 22.4272 69.771 21.7383C69.1298 21.0462 68.7937 20.0663 68.7567 18.7955L83.7302 18.7772V18.2995L83.7271 18.3025ZM68.7537 14.7995C68.803 13.6389 69.1328 12.7295 69.7402 12.0772C70.3506 11.4219 71.1768 11.0973 72.225 11.0973C73.3564 11.0973 74.2257 11.4066 74.8269 12.0221C75.4311 12.6407 75.7733 13.5654 75.8597 14.7995H68.7506H68.7537Z" fill="currentColor"/>
+          <path d="M202.553 17.457H199.078V20.9081H202.553V17.457ZM201.692 20.0537H199.938V18.3114H201.692V20.0537Z" fill="currentColor"/>
+          <path d="M209.669 5.46484H197.374C196.043 5.46484 194.763 5.98847 193.817 6.92242L190.108 10.5847C189.152 11.5279 188.619 12.8078 188.619 14.1399V22.08C188.619 24.8053 190.842 27.0131 193.583 27.0131H209.669C212.413 27.0131 214.635 24.8053 214.635 22.08V10.3979C214.635 7.67264 212.413 5.46484 209.669 5.46484ZM211.207 21.0695C211.207 22.475 210.057 23.6172 208.642 23.6172H198.916C197.501 23.6172 196.351 22.475 196.351 21.0695V11.4084C196.351 10.0029 197.501 8.86075 198.916 8.86075H208.642C210.057 8.86075 211.207 10.0029 211.207 11.4084V21.0695Z" fill="currentColor"/>
+          <path d="M208.643 9.64453H198.916C197.939 9.64453 197.141 10.4376 197.141 11.4083V21.0694C197.141 22.0401 197.939 22.8331 198.916 22.8331H208.643C209.62 22.8331 210.419 22.0401 210.419 21.0694V11.4083C210.419 10.4376 209.62 9.64453 208.643 9.64453ZM204.24 16.6966H206.713V17.4591H205.008V19.1678H204.24V16.6966ZM200.831 10.8051H203.319V13.2609H202.551V11.5676H200.831V10.8051ZM201.783 15.0186V14.253H202.551V15.0186H203.319V15.781H202.551V15.0186H201.783ZM198.309 13.2364H199.077V11.5676H198.309V10.8051H199.844V12.4709H201.783V13.2364H199.077V15.0186H200.063V14.253H200.831V15.781H198.309V13.2364ZM203.322 21.6726H198.309V16.6936H203.322V21.6726ZM209.25 21.6726H206.685V20.9101H205.008V21.6726H204.24V20.1477H205.918V18.2216H206.685V20.9101H208.482V19.9302H207.712V19.1678H209.25V21.6726ZM209.25 17.4591H208.482V18.2216H207.712V17.4591H208.482V16.6966H209.25V17.4591ZM209.25 15.781H204.24V10.8051H209.25V15.781Z" fill="currentColor"/>
+          <path d="M208.482 11.5664H205.008V15.0174H208.482V11.5664ZM207.622 14.1631H205.868V12.4207H207.622V14.1631Z" fill="currentColor"/>
+          <path d="M103.61 13.5355C103.499 13.8784 103.369 14.3868 103.221 15.0665C103.073 15.7463 102.913 16.5364 102.74 17.4428C102.469 16.2945 102.259 15.3911 102.111 14.7389C101.963 14.0836 101.865 13.6671 101.815 13.4834L98.048 0.00390625H87.4121V27.015H95.3135V13.9764C95.3135 13.4742 95.3043 12.8098 95.2858 11.9769C95.2673 11.147 95.2395 10.1488 95.2025 8.98821C95.4615 10.2835 95.6711 11.3124 95.8314 12.0687C95.9917 12.8281 96.152 13.4987 96.3124 14.0867L99.7097 27.015H105.801L109.162 13.7927L109.217 13.5538C109.637 11.9034 109.994 10.3815 110.287 8.98821C110.275 9.80886 110.265 10.5989 110.259 11.3644C110.253 12.13 110.25 12.9139 110.25 13.7223L110.176 27.0181H118.077V0.00696904H107.463L103.603 13.5416L103.61 13.5355Z" fill="currentColor"/>
+          <path d="M133.279 6.36244C129.722 6.36244 126.91 7.33007 124.842 9.2684C122.773 11.2067 121.74 13.8494 121.74 17.1993C121.74 20.5493 122.751 22.9715 124.777 24.873C126.802 26.7746 129.537 27.7239 132.983 27.7239C136.06 27.7239 138.539 27.1635 140.413 26.0458C142.291 24.9282 143.505 23.2807 144.06 21.1035H136.418C136.233 21.6425 135.881 22.0528 135.367 22.3407C134.849 22.6285 134.204 22.7724 133.427 22.7724C132.284 22.7724 131.39 22.4264 130.751 21.7374C130.11 21.0454 129.774 20.0655 129.737 18.7947L144.711 18.7763V18.2986C144.711 14.5567 143.7 11.6324 141.674 9.52256C139.649 7.41275 136.852 6.35938 133.282 6.35938L133.279 6.36244ZM129.734 14.7986C129.783 13.6381 130.113 12.7286 130.721 12.0764C131.331 11.4211 132.157 11.0965 133.205 11.0965C134.337 11.0965 135.206 11.4058 135.807 12.0213C136.412 12.6398 136.754 13.5646 136.84 14.7986H129.731H129.734Z" fill="currentColor"/>
+          <path d="M159.903 21.4596C158.895 21.4596 158.192 21.3218 157.798 21.0462C157.403 20.7706 157.206 20.296 157.206 19.6254V11.6485H160.954V7.08289H157.206V0.921875H149.267V7.08289H146.443V11.6485H149.267V21.6433C149.267 23.7593 149.77 25.2383 150.772 26.0804C151.774 26.9255 153.543 27.345 156.08 27.345C156.783 27.345 157.536 27.3297 158.343 27.2991C159.148 27.2685 160.045 27.2225 161.028 27.1613V21.4229C160.88 21.4351 160.729 21.4443 160.575 21.4504C160.421 21.4565 160.196 21.4596 159.9 21.4596H159.903Z" fill="currentColor"/>
+          <path d="M174.692 6.36244C171.134 6.36244 168.322 7.33007 166.254 9.2684C164.185 11.2067 163.152 13.8494 163.152 17.1993C163.152 20.5493 164.164 22.9715 166.189 24.873C168.214 26.7746 170.949 27.7239 174.396 27.7239C177.472 27.7239 179.951 27.1635 181.825 26.0458C183.703 24.9282 184.917 23.2807 185.472 21.1035H177.83C177.645 21.6425 177.293 22.0528 176.779 22.3407C176.261 22.6285 175.616 22.7724 174.84 22.7724C173.696 22.7724 172.802 22.4264 172.164 21.7374C171.522 21.0454 171.186 20.0655 171.149 18.7947L186.123 18.7763V18.2986C186.123 14.5567 185.112 11.6324 183.086 9.52256C181.061 7.41275 178.265 6.35938 174.695 6.35938L174.692 6.36244ZM171.146 14.7986C171.196 13.6381 171.525 12.7286 172.133 12.0764C172.743 11.4211 173.569 11.0965 174.614 11.0965C175.746 11.0965 176.615 11.4058 177.216 12.0213C177.821 12.6398 178.163 13.5646 178.249 14.7986H171.14H171.146Z" fill="currentColor"/>
+          <path d="M230.935 6.54688C229.286 6.54688 227.966 6.88065 226.974 7.54513C225.984 8.21268 225.223 9.26605 224.692 10.7083V7.07663H217.324V27.0111H225.337V18.8322C225.337 17.2919 225.716 16.162 226.471 15.4393C227.229 14.7166 228.413 14.3584 230.026 14.3584C230.272 14.3584 230.531 14.3676 230.803 14.3859C231.074 14.4043 231.357 14.4257 231.65 14.4502V6.54688H230.929H230.935Z" fill="currentColor"/>
+        </svg>
+      </a>
+      <div class="lang-switcher">
+        <label class="visually-hidden" for="lang-select" data-i18n="ui.lang.label">Language</label>
+        <select id="lang-select">
+          <option value="hu">Magyar</option>
+          <option value="en">English</option>
+          <option value="sr">Srpski</option>
+          <option value="hr">Hrvatski</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <nav class="wizard-progress" id="wizard-progress" aria-label="Progress">
+      <button type="button" class="wizard-progress__step" data-wizard-progress="device">
+        <span class="wizard-progress__num">1</span>
+        <span data-i18n="ui.wizard.step-device">Device</span>
+      </button>
+      <button type="button" class="wizard-progress__step" data-wizard-progress="iosversion">
+        <span class="wizard-progress__num">2</span>
+        <span data-i18n="ui.wizard.step-iosversion">iOS</span>
+      </button>
+      <button type="button" class="wizard-progress__step" data-wizard-progress="delivery">
+        <span class="wizard-progress__num">3</span>
+        <span data-i18n="ui.wizard.step-delivery">Method</span>
+      </button>
+      <button type="button" class="wizard-progress__step" data-wizard-progress="guide">
+        <span class="wizard-progress__num">4</span>
+        <span data-i18n="ui.wizard.step-guide">Guide</span>
+      </button>
+    </nav>
+
+    <section class="wizard-panel" id="panel-device" data-wizard-panel="device">
+      <div class="page-intro">
+        <h1 data-i18n="ui.app.title">eSIM Setup Guide</h1>
+        <p data-i18n="ui.app.subtitle">Pick your device and how you'd like to install — we'll show you the rest.</p>
+      </div>
+
+      <section class="hero-reassurance">
+        <p class="hero-reassurance__eyebrow" data-i18n="ui.hero.eyebrow">Don't worry, we've got you</p>
+        <h2 class="hero-reassurance__title" data-i18n="ui.hero.title">This is easier than it looks</h2>
+        <p class="hero-reassurance__body" data-i18n="ui.hero.body"></p>
+        <ul class="hero-reassurance__chips">
+          <li data-i18n="ui.hero.chip1"></li>
+          <li data-i18n="ui.hero.chip2"></li>
+          <li data-i18n="ui.hero.chip3"></li>
+        </ul>
+      </section>
+
+      <section class="picker-group picker-group--standalone" id="device-picker" aria-labelledby="device-picker-title">
+        <h2 id="device-picker-title" data-i18n="ui.os.title">Choose your device</h2>
+        <div class="option-grid" id="os-options" role="group" aria-labelledby="device-picker-title"></div>
+
+        <div class="model-search">
+          <label class="visually-hidden" for="model-search-input" data-i18n="ui.os.search.placeholder">Search your exact model…</label>
+          <input type="text" id="model-search-input" data-i18n-placeholder="ui.os.search.placeholder" placeholder="Search your exact model…" autocomplete="off" />
+          <ul class="model-results" id="model-results"></ul>
+          <p class="model-search__empty" id="model-search-empty" hidden data-i18n="ui.os.search.no-results">No matching model found.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="wizard-panel" id="panel-iosversion" data-wizard-panel="iosversion" hidden>
+      <button type="button" class="wizard-back" data-back="device">
+        <span aria-hidden="true">←</span> <span data-i18n="ui.nav.prev">Back</span>
+      </button>
+
+      <section class="picker-group picker-group--standalone" id="ios-version-picker" aria-labelledby="ios-version-picker-title">
+        <h2 id="ios-version-picker-title" data-i18n="ui.iosversion.title">Which iOS version do you have?</h2>
+        <p class="picker-group__hint" data-i18n="ui.iosversion.hint">Not sure? Check under Settings → General → About → Software Version.</p>
+        <div class="option-grid option-grid--compact" id="ios-version-options" role="group" aria-labelledby="ios-version-picker-title"></div>
+      </section>
+    </section>
+
+    <section class="wizard-panel" id="panel-delivery" data-wizard-panel="delivery" hidden>
+      <button type="button" class="wizard-back" id="delivery-back">
+        <span aria-hidden="true">←</span> <span data-i18n="ui.nav.prev">Back</span>
+      </button>
+
+      <section class="picker-group picker-group--standalone" id="delivery-picker" aria-labelledby="delivery-picker-title">
+        <h2 id="delivery-picker-title" data-i18n="ui.delivery.title">How would you like to install it?</h2>
+        <p class="picker-group__hint" data-i18n="ui.delivery.hint">You'll find all three in the email we sent you — pick whichever feels easiest.</p>
+        <div class="option-grid" id="delivery-options" role="group" aria-labelledby="delivery-picker-title"></div>
+      </section>
+    </section>
+
+    <section class="wizard-panel" id="panel-guide" data-wizard-panel="guide" hidden>
+      <section class="guide-panel" id="guide-panel" aria-live="polite">
+        <p class="guide-panel__fallback-notice" id="fallback-notice" hidden data-i18n="ui.notice.fallback-en"></p>
+
+        <div class="phone-frame-shell">
+          <div class="phone-frame" id="phone-frame">
+            <div class="phone-frame__notch"></div>
+            <div class="phone-frame__screen" id="phone-screen">
+              <div class="phone-frame__illustration-wrap" id="illustration-wrap"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-text" id="step-text">
+          <p class="step-text__eyebrow" id="step-eyebrow"></p>
+          <h2 id="step-title"></h2>
+          <p id="step-body"></p>
+          <span class="step-text__warning" id="step-warning" hidden></span>
+        </div>
+
+        <div class="step-progress" id="step-progress" aria-hidden="true"></div>
+        <p class="step-progress__label" id="step-progress-label"></p>
+
+        <nav class="step-nav" aria-label="Step navigation">
+          <button type="button" class="step-nav__prev" id="step-prev" data-i18n="ui.nav.prev">Back</button>
+          <button type="button" class="step-nav__next" id="step-next" data-i18n="ui.nav.next">Next</button>
+        </nav>
+      </section>
+      <p class="guide-verified" id="guide-verified" hidden></p>
+    </section>
+  </main>
+
+  <script src="js/i18n.js?v=16"></script>
+  <script src="js/model-catalog.js?v=16"></script>
+  <script src="js/content-loader.js?v=16"></script>
+  <script src="js/phone-renderer.js?v=16"></script>
+  <script src="js/step-controller.js?v=16"></script>
+  <script src="js/delivery-picker.js?v=16"></script>
+  <script src="js/device-picker.js?v=16"></script>
+  <script src="js/ios-version-picker.js?v=16"></script>
+  <script src="js/app.js?v=16"></script>
+</body>
+</html>

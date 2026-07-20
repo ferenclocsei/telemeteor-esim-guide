@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "osVariant": "android-pixel",
+  "osVersionRange": "Pixel 4 and later (Android 10+)",
+  "lastVerifiedDate": "2026-07-17",
+  "sources": [
+    "https://support.google.com/pixelphone/answer/16115470",
+    "https://support.google.com/pixelphone/answer/7086887",
+    "https://source.android.com/docs/core/connect/esim-overview"
+  ],
+  "status": "ready",
+  "steps": [
+    {
+      "id": "before-you-start",
+      "appliesTo": ["all"],
+      "illustration": "android-pixel/step-before-you-start.svg",
+      "tapPoints": [
+        { "x": 50, "y": 34, "shape": "rect", "radius": 8, "labelKey": "pixel.before-you-start.tap.row" }
+      ],
+      "titleKey": "pixel.before-you-start.title",
+      "bodyKey": "pixel.before-you-start.body",
+      "warningKey": "pixel.before-you-start.warning"
+    },
+    {
+      "id": "open-link",
+      "appliesTo": ["link"],
+      "illustration": "android-pixel/step-open-link.svg",
+      "tapPoints": [
+        { "x": 50, "y": 62, "shape": "rect", "radius": 8, "labelKey": "pixel.open-link.tap.link" }
+      ],
+      "titleKey": "pixel.open-link.title",
+      "bodyKey": "pixel.open-link.body",
+      "warningKey": null
+    },
+    {
+      "id": "add-esim-prefilled",
+      "appliesTo": ["link"],
+      "illustration": "android-pixel/step-add-esim-prefilled.svg",
+      "tapPoints": [
+        { "x": 50, "y": 68, "shape": "rect", "radius": 8, "labelKey": "pixel.add-esim-prefilled.tap.button" }
+      ],
+      "titleKey": "pixel.add-esim-prefilled.title",
+      "bodyKey": "pixel.add-esim-prefilled.body",
+      "warningKey": null
+    },
+    {
+      "id": "open-settings",
+      "appliesTo": ["qr", "manual"],
+      "illustration": "android-pixel/step-open-settings.svg",
+      "tapPoints": [
+        { "x": 82, "y": 10, "shape": "circle", "radius": 7, "labelKey": "pixel.open-settings.tap.icon" }
+      ],
+      "titleKey": "pixel.open-settings.title",
+      "bodyKey": "pixel.open-settings.body",
+      "warningKey": null
+    },
+    {
+      "id": "open-network-internet",
+      "appliesTo": ["qr", "manual"],
+      "illustration": "android-pixel/step-open-network-internet.svg",
+      "tapPoints": [
+        { "x": 50, "y": 28, "shape": "rect", "radius": 8, "labelKey": "pixel.open-network-internet.tap.row" }
+      ],
+      "titleKey": "pixel.open-network-internet.title",
+      "bodyKey": "pixel.open-network-internet.body",
+      "warningKey": null
+    },
+    {
+      "id": "open-sims",
+      "appliesTo": ["qr", "manual"],
+      "illustration": "android-pixel/step-open-sims.svg",
+      "tapPoints": [
+        { "x": 50, "y": 30, "shape": "rect", "radius": 8, "labelKey": "pixel.open-sims.tap.row" }
+      ],
+      "titleKey": "pixel.open-sims.title",
+      "bodyKey": "pixel.open-sims.body",
+      "warningKey": null
+    },
+    {
+      "id": "add-sim",
+      "appliesTo": ["qr", "manual"],
+      "illustration": "android-pixel/step-add-sim.svg",
+      "tapPoints": [
+        { "x": 50, "y": 60, "shape": "rect", "radius": 8, "labelKey": "pixel.add-sim.tap.button" }
+      ],
+      "titleKey": "pixel.add-sim.title",
+      "bodyKey": "pixel.add-sim.body",
+      "warningKey": null
+    },
+    {
+      "id": "scan-qr",
+      "appliesTo": ["qr"],
+      "illustration": "android-pixel/step-scan-qr.svg",
+      "tapPoints": [
+        { "x": 50, "y": 44, "shape": "rect", "radius": 10, "labelKey": "pixel.scan-qr.tap.frame" }
+      ],
+      "titleKey": "pixel.scan-qr.title",
+      "bodyKey": "pixel.scan-qr.body",
+      "warningKey": null
+    },
+    {
+      "id": "enter-manually",
+      "appliesTo": ["manual"],
+      "illustration": "android-pixel/step-enter-manually.svg",
+      "tapPoints": [
+        { "x": 50, "y": 36, "shape": "rect", "radius": 8, "labelKey": "pixel.enter-manually.tap.address" },
+        { "x": 50, "y": 50, "shape": "rect", "radius": 8, "labelKey": "pixel.enter-manually.tap.code" }
+      ],
+      "titleKey": "pixel.enter-manually.title",
+      "bodyKey": "pixel.enter-manually.body",
+      "warningKey": "pixel.enter-manually.warning"
+    },
+    {
+      "id": "downloading",
+      "appliesTo": ["all"],
+      "illustration": "android-pixel/step-downloading.svg",
+      "tapPoints": [],
+      "titleKey": "pixel.downloading.title",
+      "bodyKey": "pixel.downloading.body",
+      "warningKey": null
+    },
+    {
+      "id": "enable-data-roaming",
+      "appliesTo": ["all"],
+      "illustration": "android-pixel/step-enable-roaming.svg",
+      "tapPoints": [
+        { "x": 88, "y": 38, "shape": "circle", "radius": 10, "labelKey": "pixel.enable-data-roaming.tap.toggle" }
+      ],
+      "titleKey": "pixel.enable-data-roaming.title",
+      "bodyKey": "pixel.enable-data-roaming.body",
+      "warningKey": "pixel.enable-data-roaming.warning"
+    },
+    {
+      "id": "select-data-line-on-arrival",
+      "appliesTo": ["all"],
+      "illustration": "android-pixel/step-select-data-line.svg",
+      "tapPoints": [
+        { "x": 50, "y": 33, "shape": "rect", "radius": 8, "labelKey": "pixel.select-data-line.tap.row" }
+      ],
+      "titleKey": "pixel.select-data-line.title",
+      "bodyKey": "pixel.select-data-line.body",
+      "warningKey": "pixel.select-data-line.warning"
+    },
+    {
+      "id": "done",
+      "appliesTo": ["all"],
+      "illustration": "android-pixel/step-done.svg",
+      "tapPoints": [],
+      "titleKey": "pixel.done.title",
+      "bodyKey": "pixel.done.body",
+      "warningKey": "pixel.done.warning"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#f2f2f7"/>
+  <rect width="300" height="44" fill="#f2f2f7"/>
+  <text x="24" y="30" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="600" fill="#000000">9:41</text>
+  <g fill="#000000">
+    <rect x="228" y="18" width="16" height="10" rx="2" fill="none" stroke="#000" stroke-width="1.2"/>
+    <rect x="230" y="20" width="10" height="6" fill="#000"/>
+    <rect x="246" y="16" width="3" height="12" rx="1"/>
+    <circle cx="210" cy="22" r="2"/>
+    <circle cx="216" cy="20" r="3"/>
+    <circle cx="222" cy="18" r="4"/>
+  </g>
+  <g fill="#007aff">
+    <path d="M22 66 l-8 8 l8 8" stroke="#007aff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text data-key="screen.before-you-start.back" x="28" y="78" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15">General</text>
+  </g>
+  <text data-key="screen.before-you-start.title" x="150" y="78" text-anchor="middle" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="17" font-weight="700" fill="#000000">About</text>
+
+  <rect x="16" y="110" width="268" height="238" rx="14" fill="#ffffff"/>
+  <g font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">
+    <text data-key="screen.before-you-start.name-label" x="32" y="138">Name</text>
+    <text x="268" y="138" text-anchor="end" fill="#8e8e93">iPhone</text>
+    <line x1="32" y1="150" x2="284" y2="150" stroke="#e5e5ea" stroke-width="1"/>
+
+    <text data-key="screen.before-you-start.model-label" x="32" y="178">Model Name</text>
+    <text x="268" y="178" text-anchor="end" fill="#8e8e93">iPhone 14</text>
+    <line x1="32" y1="190" x2="284" y2="190" stroke="#e5e5ea" stroke-width="1"/>
+
+    <text data-key="screen.before-you-start.carrier-label" x="32" y="218">Carrier</text>
+    <text x="268" y="218" text-anchor="end" fill="#8e8e93">Telemeteor</text>
+    <line x1="32" y1="230" x2="284" y2="230" stroke="#e5e5ea" stroke-width="1"/>
+  </g>
+
+  <rect x="16" y="360" width="268" height="58" rx="14" fill="#ffffff" stroke="#ff6600" stroke-width="3"/>
+  <text data-key="screen.before-you-start.lock-label" x="32" y="384" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="600" fill="#000000">Carrier Lock</text>
+  <text data-key="screen.before-you-start.lock-value" x="32" y="402" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="12" fill="#34c759">No SIM restrictions</text>
+</svg>

@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "osVariant": "android-generic",
+  "osVersionRange": "Android 10+",
+  "lastVerifiedDate": "2026-07-17",
+  "sources": [
+    "https://source.android.com/docs/core/connect/esim-overview"
+  ],
+  "status": "ready",
+  "steps": [
+    {
+      "id": "before-you-start",
+      "appliesTo": ["all"],
+      "illustration": "android-generic/step-before-you-start.svg",
+      "tapPoints": [
+        { "x": 50, "y": 34, "shape": "rect", "radius": 8, "labelKey": "generic.before-you-start.tap.row" }
+      ],
+      "titleKey": "generic.before-you-start.title",
+      "bodyKey": "generic.before-you-start.body",
+      "warningKey": "generic.before-you-start.warning"
+    },
+    {
+      "id": "open-link",
+      "appliesTo": ["link"],
+      "illustration": "android-generic/step-open-link.svg",
+      "tapPoints": [
+        { "x": 50, "y": 62, "shape": "rect", "radius": 8, "labelKey": "generic.open-link.tap.link" }
+      ],
+      "titleKey": "generic.open-link.title",
+      "bodyKey": "generic.open-link.body",
+      "warningKey": "generic.open-link.warning"
+    },
+    {
+      "id": "open-settings",
+      "appliesTo": ["qr", "manual"],
+      "illustration": "android-generic/step-open-settings.svg",
+      "tapPoints": [
+        { "x": 82, "y": 10, "shape": "circle", "radius": 7, "labelKey": "generic.open-settings.tap.icon" }
+      ],
+      "titleKey": "generic.open-settings.title",
+      "bodyKey": "generic.open-settings.body",
+      "warningKey": null
+    },
+    {
+      "id": "find-sim-settings",
+      "appliesTo": ["qr", "manual"],
+      "illustration": "android-generic/step-find-sim-settings.svg",
+      "tapPoints": [
+        { "x": 50, "y": 14.8, "shape": "rect", "radius": 8, "labelKey": "generic.find-sim-settings.tap.search" }
+      ],
+      "titleKey": "generic.find-sim-settings.title",
+      "bodyKey": "generic.find-sim-settings.body",
+      "warningKey": "generic.find-sim-settings.warning"
+    },
+    {
+      "id": "add-esim-qr",
+      "appliesTo": ["qr"],
+      "illustration": "android-generic/step-add-esim-qr.svg",
+      "tapPoints": [
+        { "x": 50, "y": 47.6, "shape": "rect", "radius": 10, "labelKey": "generic.add-esim-qr.tap.frame" }
+      ],
+      "titleKey": "generic.add-esim-qr.title",
+      "bodyKey": "generic.add-esim-qr.body",
+      "warningKey": null
+    },
+    {
+      "id": "add-esim-manual",
+      "appliesTo": ["manual"],
+      "illustration": "android-generic/step-add-esim-manual.svg",
+      "tapPoints": [
+        { "x": 50, "y": 36.5, "shape": "rect", "radius": 8, "labelKey": "generic.add-esim-manual.tap.address" },
+        { "x": 50, "y": 49.8, "shape": "rect", "radius": 8, "labelKey": "generic.add-esim-manual.tap.code" }
+      ],
+      "titleKey": "generic.add-esim-manual.title",
+      "bodyKey": "generic.add-esim-manual.body",
+      "warningKey": "generic.add-esim-manual.warning"
+    },
+    {
+      "id": "downloading",
+      "appliesTo": ["all"],
+      "illustration": "android-generic/step-downloading.svg",
+      "tapPoints": [],
+      "titleKey": "generic.downloading.title",
+      "bodyKey": "generic.downloading.body",
+      "warningKey": null
+    },
+    {
+      "id": "enable-data-roaming",
+      "appliesTo": ["all"],
+      "illustration": "android-generic/step-enable-roaming.svg",
+      "tapPoints": [
+        { "x": 88, "y": 38, "shape": "circle", "radius": 10, "labelKey": "generic.enable-data-roaming.tap.toggle" }
+      ],
+      "titleKey": "generic.enable-data-roaming.title",
+      "bodyKey": "generic.enable-data-roaming.body",
+      "warningKey": "generic.enable-data-roaming.warning"
+    },
+    {
+      "id": "select-data-line-on-arrival",
+      "appliesTo": ["all"],
+      "illustration": "android-generic/step-select-data-line.svg",
+      "tapPoints": [
+        { "x": 50, "y": 33.2, "shape": "rect", "radius": 8, "labelKey": "generic.select-data-line.tap.row" }
+      ],
+      "titleKey": "generic.select-data-line.title",
+      "bodyKey": "generic.select-data-line.body",
+      "warningKey": "generic.select-data-line.warning"
+    },
+    {
+      "id": "done",
+      "appliesTo": ["all"],
+      "illustration": "android-generic/step-done.svg",
+      "tapPoints": [],
+      "titleKey": "generic.done.title",
+      "bodyKey": "generic.done.body",
+      "warningKey": "generic.done.warning"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "variants": [
+    {
+      "id": "ios",
+      "labelKey": "ui.os.ios.name",
+      "icon": "apple",
+      "status": "ready"
+    },
+    {
+      "id": "android-samsung",
+      "labelKey": "ui.os.android-samsung.name",
+      "icon": "samsung",
+      "status": "ready"
+    },
+    {
+      "id": "android-pixel",
+      "labelKey": "ui.os.android-pixel.name",
+      "icon": "pixel",
+      "status": "ready"
+    },
+    {
+      "id": "android-generic",
+      "labelKey": "ui.os.android-generic.name",
+      "icon": "android",
+      "status": "ready"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#ffffff"/>
+  <g>
+    <rect x="24" y="30" width="60" height="60" rx="18" fill="#e6eaf0"/>
+    <rect x="120" y="30" width="60" height="60" rx="18" fill="#e6eaf0"/>
+    <rect x="216" y="30" width="60" height="60" rx="18" fill="#dfe4ea" stroke="#5b6b8c" stroke-width="4"/>
+    <circle cx="246" cy="60" r="14" fill="#5b6b8c"/>
+    <rect x="24" y="120" width="60" height="60" rx="18" fill="#e6eaf0"/>
+    <rect x="120" y="120" width="60" height="60" rx="18" fill="#e6eaf0"/>
+    <rect x="216" y="120" width="60" height="60" rx="18" fill="#e6eaf0"/>
+  </g>
+  <text data-key="screen.g-open-settings.label" x="246" y="106" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#182746">Settings</text>
+</svg>

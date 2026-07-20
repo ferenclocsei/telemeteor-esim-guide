@@ -1,0 +1,14 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#ffffff"/>
+  <rect x="0" y="0" width="300" height="64" fill="#f5f5f7"/>
+  <text x="24" y="40" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">Gmail</text>
+  <rect x="20" y="90" width="260" height="90" rx="14" fill="#f5f5f7"/>
+  <circle cx="46" cy="118" r="14" fill="#baddff"/>
+  <rect x="70" y="110" width="150" height="10" rx="5" fill="#182746"/>
+  <rect x="70" y="128" width="110" height="8" rx="4" fill="#5b6b8c"/>
+  <rect x="20" y="200" width="260" height="8" rx="4" fill="#e6eaf0"/>
+  <rect x="20" y="220" width="220" height="8" rx="4" fill="#e6eaf0"/>
+  <rect x="20" y="240" width="240" height="8" rx="4" fill="#e6eaf0"/>
+  <rect x="30" y="370" width="240" height="56" rx="10" fill="#1447e6"/>
+  <text data-key="screen.s-open-link.button" x="150" y="404" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="17" font-weight="700" fill="#ffffff">Android Quick Link</text>
+</svg>

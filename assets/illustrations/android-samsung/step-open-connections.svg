@@ -1,0 +1,11 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#ffffff"/>
+  <text data-key="screen.s-open-connections.title" x="24" y="46" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">Settings</text>
+  <rect x="20" y="80" width="260" height="56" rx="16" fill="#f5f5f7"/>
+  <rect x="40" y="98" width="140" height="10" rx="5" fill="#5b6b8c"/>
+  <rect x="20" y="146" width="260" height="56" rx="16" fill="#baddff" stroke="#1447e6" stroke-width="3"/>
+  <circle cx="46" cy="174" r="12" fill="#1447e6"/>
+  <text data-key="screen.s-open-connections.row" x="70" y="179" font-family="ui-sans-serif,system-ui,sans-serif" font-size="15" fill="#182746">Connections</text>
+  <rect x="20" y="212" width="260" height="56" rx="16" fill="#f5f5f7"/>
+  <rect x="40" y="230" width="120" height="10" rx="5" fill="#5b6b8c"/>
+</svg>

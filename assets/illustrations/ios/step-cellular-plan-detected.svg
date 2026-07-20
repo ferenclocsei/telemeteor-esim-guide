@@ -1,0 +1,14 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#0f1c33"/>
+  <g opacity="0.5">
+    <rect x="24" y="60" width="60" height="60" rx="16" fill="#26365c"/>
+    <rect x="120" y="60" width="60" height="60" rx="16" fill="#26365c"/>
+    <rect x="216" y="60" width="60" height="60" rx="16" fill="#26365c"/>
+  </g>
+
+  <rect x="16" y="360" width="268" height="80" rx="20" fill="#ffffff" stroke="#ff6600" stroke-width="3"/>
+  <circle cx="46" cy="392" r="14" fill="#baddff"/>
+  <path d="M40 392 l4 4 l8 -9" stroke="#182746" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text data-key="screen.cellular-plan-detected.title" x="68" y="388" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="14" font-weight="700" fill="#000000">Cellular Plan Detected</text>
+  <text data-key="screen.cellular-plan-detected.subtitle" x="68" y="406" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="11" fill="#5b6b8c">Tap to continue setup</text>
+</svg>

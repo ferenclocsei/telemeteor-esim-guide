@@ -1,0 +1,14 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#ffffff"/>
+  <text x="24" y="46" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">Settings</text>
+
+  <rect x="20" y="70" width="260" height="46" rx="14" fill="#f5f5f7" stroke="#5b6b8c" stroke-width="3"/>
+  <circle cx="42" cy="93" r="8" fill="none" stroke="#5b6b8c" stroke-width="2.4"/>
+  <text data-key="screen.g-find-sim-settings.search-placeholder" x="60" y="98" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" fill="#5b6b8c">Search "eSIM"</text>
+
+  <rect x="20" y="140" width="260" height="56" rx="16" fill="#dfe4ea"/>
+  <circle cx="46" cy="168" r="12" fill="#5b6b8c"/>
+  <text x="70" y="173" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#182746">Add eSIM</text>
+
+  <text data-key="screen.g-find-sim-settings.hint" x="24" y="228" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#5b6b8c">Network &amp; internet / Connections / SIM cards</text>
+</svg>

@@ -1,0 +1,500 @@
+{
+  "lang": "hu",
+  "reviewMeta": { "machineDraft": false, "reviewedBy": null, "reviewedDate": null },
+  "ui": {
+    "app.title": "eSIM beállítási kalauz",
+    "app.subtitle": "Válaszd ki a készülékedet és a telepítés módját — a többit lépésről lépésre megmutatjuk.",
+    "wizard.step-delivery": "Telepítés módja",
+    "wizard.step-device": "Készülék",
+    "wizard.step-iosversion": "iOS verzió",
+    "wizard.step-guide": "Kalauz",
+    "hero.eyebrow": "Ne aggódj, veled vagyunk",
+    "hero.title": "Ez tényleg egyszerűbb, mint gondolnád",
+    "hero.body": "Tudjuk, hogy elsőre ijesztő lehet egy új eSIM telepítése — de ígérjük, nem az! Lépésről lépésre, pontosan megmutatjuk, mit fogsz látni a saját telefonod képernyőjén. Csak kövesd a jelölt gombokat, és nem tudsz hibázni.",
+    "hero.chip1": "Kb. 2 perc az egész",
+    "hero.chip2": "Nem kell technikai tudás",
+    "hero.chip3": "Minden lépésnél megmutatjuk, hova koppints",
+    "nav.next": "Következő",
+    "nav.prev": "Vissza",
+    "nav.step-of": "{current}. / {total} lépés",
+    "nav.restart": "Kezdés elölről",
+    "lang.label": "Nyelv",
+    "delivery.title": "Hogyan szeretnéd telepíteni?",
+    "delivery.hint": "Az emailünkben mindhárom módhoz megtalálsz mindent — válaszd azt, amelyik a legkényelmesebb. A legtöbbeknek a Quick Link a legegyszerűbb.",
+    "delivery.link.name": "Gyorslink",
+    "delivery.link.name-ios": "Apple Quick Link",
+    "delivery.link.name-android": "Android Quick Link",
+    "delivery.link.desc": "Egyetlen koppintás az emailben lévő linkre.",
+    "delivery.link.desc-ios": "Egyetlen koppintás az emailben lévő linkre (iOS 17.4-től működik).",
+    "delivery.link.desc-android": "Egyetlen koppintás az emailben lévő linkre (Android 10-től működik).",
+    "delivery.qr.name": "QR kód",
+    "delivery.qr.desc": "Beolvasod az emailben lévő QR kódot.",
+    "delivery.manual.name": "Manuális adatok",
+    "delivery.manual.desc": "Beírod az emailben lévő SM-DP+ címet és aktiválási kódot.",
+    "os.title": "Válaszd ki a készülékedet",
+    "os.ios.name": "iPhone (iOS)",
+    "os.android-samsung.name": "Samsung Galaxy",
+    "os.android-pixel.name": "Google Pixel",
+    "os.android-generic.name": "Egyéb Android",
+    "os.search.placeholder": "Keresd meg a pontos modelledet…",
+    "os.search.no-results": "Nincs találat — próbáld a fenti gombok egyikét.",
+    "iosversion.title": "Melyik iOS verzió fut a telefonodon?",
+    "iosversion.hint": "Nem tudod? Nézd meg: Beállítások → Általános → Infó → Szoftververzió.",
+    "iosversion.modern.name": "iOS 17.4 vagy újabb",
+    "iosversion.modern.desc": "A legtöbb, az utóbbi pár évben frissített iPhone ilyen.",
+    "iosversion.legacy.name": "iOS 17.3 vagy régebbi",
+    "iosversion.legacy.desc": "Ekkor a Gyorslink helyett a Kamera appot fogjuk használni.",
+    "iosversion.legacy.badge": "iOS 17.4+ szükséges",
+    "os.status.stub": "Tartalom hamarosan",
+    "os.status.needs-review": "Frissítés alatt egy nemrégi OS-változás miatt",
+    "notice.fallback-en": "Néhány tartalom még nincs lefordítva, ezért angolul jelenik meg.",
+    "guide.verified": "A lépések hivatalos gyártói források alapján ellenőrizve: {date}",
+    "stub.coming-soon.title": "A kalauz hamarosan érkezik",
+    "stub.coming-soon.body": "Ehhez a készülékhez még dolgozunk a lépésről lépésre kalauzon. Addig is nézd meg az iPhone (iOS) példát, vagy a gyártód hivatalos eSIM-útmutatóját."
+  },
+  "screen": {
+    "open-link.app-name": "Mail",
+    "open-link.button": "Apple Quick Link",
+
+    "allow-notification.title": "Új eSIM aktiválása",
+    "allow-notification.subtitle": "Készen áll egy új előfizetés aktiválására",
+    "allow-notification.close": "Bezárás",
+    "allow-notification.allow": "Engedélyezés",
+
+    "confirm-install.title": "Telepíted a mobil-előfizetést?",
+    "confirm-install.subtitle": "Új előfizetés kerül hozzáadásra",
+    "confirm-install.cancel": "Mégse",
+    "confirm-install.install": "Folytatás",
+
+    "open-settings.label": "Beállítások",
+
+    "open-cellular.title": "Beállítások",
+    "open-cellular.row": "Mobilhálózat",
+
+    "add-cellular-plan.title": "Mobilhálózat",
+    "add-cellular-plan.section": "SIM-KÁRTYÁK",
+    "add-cellular-plan.button": "Mobil-előfizetés hozzáadása",
+
+    "add-esim-prompt.title": "eSIM hozzáadása?",
+    "add-esim-prompt.subtitle": "Mobil-előfizetés található",
+    "add-esim-prompt.cancel": "Mégse",
+    "add-esim-prompt.add": "eSIM hozzáadása",
+
+    "open-camera-qr.title": "QR-kód beolvasása",
+    "open-camera-qr.hint": "Illeszd a QR-kódot a keretbe",
+
+    "cellular-plan-detected.title": "Mobil-előfizetés észlelve",
+    "cellular-plan-detected.subtitle": "Koppints a folytatáshoz",
+
+    "enter-manually.title": "Adatok megadása",
+    "enter-manually.address-label": "SM-DP+ CÍM",
+    "enter-manually.code-label": "AKTIVÁLÁSI KÓD",
+    "enter-manually.apn-label": "APN (ACCESS POINT NAME)",
+    "enter-manually.next": "Tovább",
+
+    "confirm-plan.title": "Mobil-előfizetés",
+    "confirm-plan.data-label": "Adat",
+    "confirm-plan.data-value": "Korlátlan",
+    "confirm-plan.valid": "15 napig érvényes",
+    "confirm-plan.continue": "Folytatás",
+
+    "label-plan.title": "Mobilelőfizetés-címke",
+    "label-plan.section": "CSOMAG NEVE",
+    "label-plan.option-travel": "Utazás eSIM",
+    "label-plan.option-personal": "Személyes",
+    "label-plan.continue": "Folytatás",
+
+    "line-preferences.title": "Alapértelmezett szám",
+    "line-preferences.section": "HÍVÁSHOZ ÉS SMS-HEZ",
+    "line-preferences.original": "Eredeti SIM",
+    "line-preferences.esim": "Telemeteor eSIM",
+
+    "before-you-start.back": "Általános",
+    "before-you-start.title": "Infó",
+    "before-you-start.name-label": "Név",
+    "before-you-start.model-label": "Modell neve",
+    "before-you-start.carrier-label": "Szolgáltató",
+    "before-you-start.lock-label": "Szolgáltatói zár",
+    "before-you-start.lock-value": "Nincs SIM-korlátozás",
+
+    "enable-roaming.back": "Mobilhálózat",
+    "enable-roaming.turn-on": "Vonal bekapcsolása",
+    "enable-roaming.voice-data": "Hang és adat",
+    "enable-roaming.voice-data-value": "5G automatikus",
+    "enable-roaming.roaming": "Adatroaming",
+    "enable-roaming.data-mode": "Adatmód",
+    "enable-roaming.data-mode-value": "Normál",
+
+    "select-data-line.back": "Mobilhálózat",
+    "select-data-line.title": "Mobil adatforgalom",
+    "select-data-line.section": "MOBIL ADATFORGALOM",
+    "select-data-line.original": "Eredeti SIM",
+    "select-data-line.footnote": "Az adat a kiválasztott vonalról megy.",
+
+    "done.title": "Kész!",
+    "done.subtitle": "Az eSIM-ed aktív",
+
+    "stub.coming-soon": "Hamarosan",
+
+    "s-before-you-start.title": "SIM-kártya-kezelő",
+    "s-before-you-start.row": "Mobilcsomag hozzáadása",
+
+    "s-open-link.button": "Android Quick Link",
+
+    "s-add-esim-prefilled.title": "eSIM hozzáadása",
+    "s-add-esim-prefilled.subtitle": "Az adatok automatikusan kitöltve",
+    "s-add-esim-prefilled.button": "Folytatás",
+
+    "s-open-settings.label": "Beállítások",
+
+    "s-open-connections.title": "Beállítások",
+    "s-open-connections.row": "Kapcsolatok",
+
+    "s-open-sim-manager.title": "Kapcsolatok",
+    "s-open-sim-manager.row": "SIM-kártya-kezelő",
+
+    "s-add-mobile-plan.title": "SIM-kártya-kezelő",
+    "s-add-mobile-plan.button": "Mobilcsomag hozzáadása",
+
+    "s-add-using-qr.title": "Szolgáltatói QR-kód beszkennelése",
+    "s-add-using-qr.hint": "Illeszd a QR-kódot a keretbe",
+
+    "s-add-using-code.title": "Aktiválási kód megadása",
+    "s-add-using-code.address-label": "SZERVERCÍM (SM-DP+)",
+    "s-add-using-code.code-label": "AKTIVÁLÁSI KÓD",
+    "s-add-using-code.apn-label": "APN (ACCESS POINT NAME)",
+    "s-add-using-code.next": "Hozzáadás",
+
+    "s-downloading.title": "Profil letöltése…",
+    "s-downloading.subtitle": "Ez eltarthat egy percig",
+
+    "s-enable-roaming.back": "Kapcsolatok",
+    "s-enable-roaming.roaming": "Adatroaming",
+
+    "s-select-data-line.back": "Kapcsolatok",
+    "s-select-data-line.title": "SIM-kártya-kezelő",
+    "s-select-data-line.section": "MOBIL ADATFORGALOM",
+    "s-select-data-line.original": "Eredeti SIM",
+
+    "s-done.title": "Kész!",
+    "s-done.subtitle": "Az eSIM-ed aktív",
+
+    "p-before-you-start.title": "Hálózat és internet",
+    "p-before-you-start.row": "SIM-kártyák",
+
+    "p-open-link.button": "Android Quick Link",
+
+    "p-add-esim-prefilled.title": "eSIM beállítása",
+    "p-add-esim-prefilled.subtitle": "Az adatok automatikusan kitöltve",
+    "p-add-esim-prefilled.button": "Folytatás",
+
+    "p-open-settings.label": "Beállítások",
+
+    "p-open-network-internet.title": "Beállítások",
+    "p-open-network-internet.row": "Hálózat és internet",
+
+    "p-open-sims.title": "Hálózat és internet",
+    "p-open-sims.row": "SIM-kártyák",
+
+    "p-add-sim.title": "SIM-kártyák",
+    "p-add-sim.button": "SIM-kártya hozzáadása",
+
+    "p-scan-qr.title": "eSIM beállítása",
+    "p-scan-qr.hint": "Illeszd a QR-kódot a keretbe",
+
+    "p-enter-manually.title": "Adatok megadása kézzel",
+    "p-enter-manually.address-label": "SM-DP+ CÍM",
+    "p-enter-manually.code-label": "AKTIVÁLÁSI KÓD",
+
+    "p-downloading.title": "Profil letöltése…",
+    "p-downloading.subtitle": "Ez eltarthat egy percig",
+
+    "p-enable-roaming.back": "SIM-kártyák",
+    "p-enable-roaming.roaming": "Adatroaming",
+
+    "p-select-data-line.back": "Hálózat és internet",
+    "p-select-data-line.title": "SIM-kártyák",
+    "p-select-data-line.section": "MOBILADAT",
+    "p-select-data-line.original": "Eredeti SIM",
+
+    "p-done.title": "Kész!",
+    "p-done.subtitle": "Az eSIM-ed aktív",
+
+    "g-before-you-start.title": "Beállítások",
+    "g-before-you-start.row": "eSIM / SIM-kezelő",
+
+    "g-open-link.button": "Android Quick Link",
+
+    "g-open-settings.label": "Beállítások",
+
+    "g-find-sim-settings.search-placeholder": "eSIM keresése",
+    "g-find-sim-settings.hint": "Hálózat és internet / Kapcsolatok / SIM-kártyák",
+
+    "g-add-esim-qr.title": "eSIM hozzáadása",
+    "g-add-esim-qr.hint": "Illeszd a QR-kódot a keretbe",
+
+    "g-add-esim-manual.title": "Adatok megadása kézzel",
+    "g-add-esim-manual.address-label": "SM-DP+ CÍM",
+    "g-add-esim-manual.code-label": "AKTIVÁLÁSI KÓD",
+    "g-add-esim-manual.next": "Hozzáadás",
+
+    "g-downloading.title": "Profil letöltése…",
+    "g-downloading.subtitle": "Ez eltarthat egy percig",
+
+    "g-enable-roaming.back": "SIM-kártyák",
+    "g-enable-roaming.roaming": "Adatroaming",
+
+    "g-select-data-line.back": "Hálózat",
+    "g-select-data-line.title": "SIM-kártyák",
+    "g-select-data-line.section": "MOBILADAT",
+    "g-select-data-line.original": "Eredeti SIM",
+
+    "g-done.title": "Kész!",
+    "g-done.subtitle": "Az eSIM-ed aktív"
+  },
+  "steps": {
+    "ios.before-you-start.title": "Mielőtt elkezdenéd",
+    "ios.before-you-start.body": "Ne aggódj, tényleg nem bonyolult! Az eSIM 2018 óta minden iPhone-on elérhető (iPhone XS, XS Max, XR vagy újabb modell). Egy dolgot érdemes előtte ellenőrizni: a készüléked legyen \"hálózatfüggetlen\" (ne legyen egy adott szolgáltatóhoz zárva). Ezt itt nézheted meg: Beállítások → Általános → Infó → görgess le a \"Szolgáltatói zár\" sorig. Ha ott \"Nincs SIM-korlátozás\" szerepel, mehetünk tovább!",
+    "ios.before-you-start.tap.carrier-lock": "Szolgáltatói zár sor",
+    "ios.before-you-start.warning": "Tipp: az eSIM-et már otthon, utazás előtt feltelepítheted — csak legyen stabil internetkapcsolatod a telepítés pillanatában. Kínában vásárolt iPhone-on (a legújabb iPhone 17e és iPhone Air kivételével) az eSIM sajnos nem elérhető.",
+
+    "ios.open-link.title": "Nyisd meg az e-mailt",
+    "ios.open-link.body": "Nyisd meg a Telemeteor e-mailt azon az iPhone-on, amit használni fogsz, majd koppints az \"Apple Quick Link\" linkre.",
+    "ios.open-link.tap.link": "Apple Quick Link",
+
+    "ios.allow-notification.title": "Engedélyezd az eSIM hozzáadását",
+    "ios.allow-notification.body": "Megjelenik egy \"Új eSIM aktiválása\" értesítés a képernyő tetején. Koppints az \"Engedélyezés\" gombra.",
+    "ios.allow-notification.tap.allow": "Engedélyezés gomb",
+
+    "ios.continue-install.title": "Koppints a Folytatásra",
+    "ios.continue-install.body": "Megjelenik egy megerősítő képernyő az új mobil-előfizetésről. Koppints a \"Folytatás\" gombra.",
+    "ios.continue-install.tap.continue": "Folytatás gomb",
+
+    "ios.open-email-qr.title": "Nyisd meg az e-mailt és a QR-kódot",
+    "ios.open-email-qr.body": "Nyisd meg a Telemeteor e-mailt azon az iPhone-on, amit használni fogsz. Nyomd meg és tartsd lenyomva a QR-kód képét, amíg felugrik egy menü.",
+    "ios.open-email-qr.tap.image": "QR-kód kép",
+
+    "ios.add-esim-prompt.title": "Koppints az \"eSIM hozzáadása\" gombra",
+    "ios.add-esim-prompt.body": "A felugró menüben koppints az \"eSIM hozzáadása\" gombra.",
+    "ios.add-esim-prompt.tap.button": "eSIM hozzáadása gomb",
+
+    "ios.open-camera-qr.title": "Nyisd meg a Kamera appot",
+    "ios.open-camera-qr.body": "Nyisd meg a Kamera appot, és irányítsd a Telemeteor e-mailben kapott QR-kódra (akár egy másik képernyőn, akár kinyomtatva).",
+    "ios.open-camera-qr.tap.frame": "QR-beolvasó keret",
+
+    "ios.cellular-plan-detected.title": "Koppints az értesítésre",
+    "ios.cellular-plan-detected.body": "Amint a Kamera felismeri a kódot, megjelenik egy \"Mobil-előfizetés észlelve\" értesítés. Koppints rá.",
+    "ios.cellular-plan-detected.tap.notification": "Mobil-előfizetés észlelve értesítés",
+
+    "ios.continue-qr.title": "Koppints a Folytatásra",
+    "ios.continue-qr.body": "Megjelenik egy megerősítő képernyő. Koppints a \"Folytatás\" gombra.",
+    "ios.continue-qr.tap.continue": "Folytatás gomb",
+
+    "ios.add-cellular-plan-qr.title": "Koppints a \"Mobil-előfizetés hozzáadása\" gombra",
+    "ios.add-cellular-plan-qr.body": "Az utolsó képernyőn koppints a \"Mobil-előfizetés hozzáadása\" gombra — ezzel elindul a telepítés.",
+    "ios.add-cellular-plan-qr.tap.button": "Mobil-előfizetés hozzáadása gomb",
+
+    "ios.open-settings.title": "Nyisd meg a Beállításokat",
+    "ios.open-settings.body": "Az iPhone kezdőképernyőjén koppints a Beállítások alkalmazás ikonjára.",
+    "ios.open-settings.tap.icon": "Beállítások ikon",
+
+    "ios.open-cellular.title": "Lépj a Mobilhálózat menübe",
+    "ios.open-cellular.body": "A Beállításokban koppints a \"Mobilhálózat\" (vagy \"Mobil adatforgalom\") menüpontra — az elnevezés modellenként kicsit eltérhet.",
+    "ios.open-cellular.tap.row": "Mobilhálózat sor",
+
+    "ios.add-cellular-plan-manual.title": "Koppints a \"Mobil-előfizetés hozzáadása\" gombra",
+    "ios.add-cellular-plan-manual.body": "Koppints a \"Mobil-előfizetés hozzáadása\" gombra.",
+    "ios.add-cellular-plan-manual.tap.button": "Mobil-előfizetés hozzáadása gomb",
+
+    "ios.enter-manually.title": "Add meg az adatokat manuálisan",
+    "ios.enter-manually.body": "Koppints az \"Adatok megadása kézzel\" lehetőségre. Másold be pontosan az e-mailben kapott SM-DP+ címet és aktiválási kódot, majd add meg az APN (Access Point Name) mezőt is, ha a telefon kéri.",
+    "ios.enter-manually.tap.address": "SM-DP+ cím mező",
+    "ios.enter-manually.tap.code": "Aktiválási kód mező",
+    "ios.enter-manually.tap.apn": "APN mező",
+    "ios.enter-manually.warning": "Figyelj oda, hogy az SM-DP+ címet és a kódot pontosan, szóköz nélkül másold be — egy elgépelt karakter is hibát okozhat. A legbiztosabb, ha az e-mailből másolod-beilleszted.",
+
+    "ios.confirm-plan.title": "Erősítsd meg a csomagot",
+    "ios.confirm-plan.body": "Nézd át a csomag adatait, majd koppints a \"Folytatás\" gombra. Már majdnem kész vagy!",
+    "ios.confirm-plan.tap.continue": "Folytatás gomb",
+
+    "ios.label-plan.title": "Nevezd el a csomagot",
+    "ios.label-plan.body": "Adj a csomagnak egy neked ismerős nevet, pl. \"Utazás eSIM\" — ezt a \"Mobilelőfizetés-címke\" beállításnál később is módosíthatod, ha most kihagynád.",
+    "ios.label-plan.tap.field": "Csomagnév mező",
+
+    "ios.line-preferences.title": "Hagyd az eredeti SIM-et hívásokhoz és SMS-hez",
+    "ios.line-preferences.body": "Az \"Alapértelmezett szám\" beállításnál hagyd az eredeti SIM-kártyádat kiválasztva hívásokhoz és SMS-hez. Erre azért van szükség, mert a FaceTime, az iMessage (csak iOS-en), a Viber, a WhatsApp és a hasonló alkalmazások az eredeti kártyád telefonszámához vannak kötve — ha átállítanád ezeket az új eSIM-re, ezek az alkalmazások nem működnének megfelelően. Az új Telemeteor eSIM-et külön, csak adatforgalomra fogjuk beállítani a következő két lépésben.",
+    "ios.line-preferences.tap.default-line": "Eredeti SIM sor",
+
+    "ios.enable-data-roaming.title": "Kapcsold be az adatroamingot",
+    "ios.enable-data-roaming.body": "Az eSIM telepítése UTÁN nyisd meg: Beállítások → Mobilhálózat → Telemeteor → Adatroaming, és kapcsold BE.",
+    "ios.enable-data-roaming.tap.toggle": "Adatroaming kapcsoló",
+    "ios.enable-data-roaming.warning": "Enélkül a lépés nélkül nem fog működni az internet külföldön.",
+
+    "ios.select-data-line.title": "Érkezéskor válaszd a Telemeteort",
+    "ios.select-data-line.body": "Amikor megérkezel a célországba: Beállítások → Mobilhálózat → Mobil adatforgalom, és válaszd ki a Telemeteor eSIM-et. Ettől kezdve ez biztosítja az internetet, míg a hívásokhoz és SMS-hez az eredeti SIM-kártyád marad aktív.",
+    "ios.select-data-line.tap.row": "Mobil adatforgalom sor",
+    "ios.select-data-line.warning": "Ezt csak megérkezés után kapcsold át, hogy addig ne fusson feleslegesen az eSIM adatforgalma.",
+
+    "ios.done.title": "Ügyes voltál, kész vagy!",
+    "ios.done.body": "A Telemeteor eSIM-ed telepítve van. Ne felejtsd el az előző két lépést (adatroaming bekapcsolása és a Telemeteor kiválasztása érkezéskor) — ha azokat is megtetted, már úton is lehetsz!",
+    "ios.done.warning": "A pontos lépések és feliratok készüléktípusonként és iOS-verziónként kicsit eltérhetnek.",
+
+    "samsung.before-you-start.title": "Mielőtt elkezdenéd",
+    "samsung.before-you-start.body": "Ne aggódj, ez tényleg egyszerű! Az eSIM a legtöbb Galaxy S20-as (2020) vagy újabb modellen elérhető. A legbiztosabb módja annak, hogy megtudd, a te telefonod is támogatja-e: nyisd meg a Beállítások → Kapcsolatok → SIM-kártya-kezelő menüt — ha látod ott a \"Mobilcsomag hozzáadása\" sort, mehetünk tovább!",
+    "samsung.before-you-start.tap.row": "Mobilcsomag hozzáadása sor",
+    "samsung.before-you-start.warning": "Egyes régiókban és szolgáltatóknál (pl. amerikai Snapdragon-os Galaxy S20 modellek) az eSIM nem elérhető, függetlenül a készülék korától. Ha bizonytalan vagy, a fenti gyors ellenőrzés a legmegbízhatóbb.",
+
+    "samsung.open-link.title": "Nyisd meg az e-mailt",
+    "samsung.open-link.body": "Nyisd meg a Telemeteor e-mailt azon a telefonon, amit használni fogsz, majd koppints az \"Android Quick Link\" linkre.",
+    "samsung.open-link.tap.link": "Android Quick Link",
+
+    "samsung.add-esim-prefilled.title": "Erősítsd meg az adatokat",
+    "samsung.add-esim-prefilled.body": "A rendszer automatikusan megnyitja az \"eSIM hozzáadása\" képernyőt, az adatok már ki vannak töltve. Koppints a \"Folytatás\" gombra.",
+    "samsung.add-esim-prefilled.tap.button": "Folytatás gomb",
+
+    "samsung.open-settings.title": "Nyisd meg a Beállításokat",
+    "samsung.open-settings.body": "A kezdőképernyőn koppints a Beállítások alkalmazás ikonjára.",
+    "samsung.open-settings.tap.icon": "Beállítások ikon",
+
+    "samsung.open-connections.title": "Lépj a Kapcsolatok menübe",
+    "samsung.open-connections.body": "A Beállításokban koppints a \"Kapcsolatok\" menüpontra.",
+    "samsung.open-connections.tap.row": "Kapcsolatok sor",
+
+    "samsung.open-sim-manager.title": "Koppints a SIM-kártya-kezelőre",
+    "samsung.open-sim-manager.body": "A Kapcsolatok menüben koppints a \"SIM-kártya-kezelő\" lehetőségre.",
+    "samsung.open-sim-manager.tap.row": "SIM-kártya-kezelő sor",
+
+    "samsung.add-mobile-plan.title": "Koppints a \"Mobilcsomag hozzáadása\" gombra",
+    "samsung.add-mobile-plan.body": "Koppints a \"Mobilcsomag hozzáadása\" gombra.",
+    "samsung.add-mobile-plan.tap.button": "Mobilcsomag hozzáadása gomb",
+
+    "samsung.add-using-qr.title": "Koppints a \"Szolgáltatói QR-kód beszkennelése\" gombra",
+    "samsung.add-using-qr.body": "Válaszd a \"Szolgáltatói QR-kód beszkennelése\" lehetőséget, majd olvasd be az e-mailben kapott QR-kódot.",
+    "samsung.add-using-qr.tap.frame": "QR-beolvasó keret",
+
+    "samsung.add-using-code.title": "Add meg az adatokat manuálisan",
+    "samsung.add-using-code.body": "Válaszd az \"Aktiválási kód megadása\" lehetőséget. Másold be pontosan az e-mailben kapott szervercímet (SM-DP+) és aktiválási kódot, majd add meg az APN mezőt is, ha a telefon kéri.",
+    "samsung.add-using-code.tap.address": "Szervercím mező",
+    "samsung.add-using-code.tap.code": "Aktiválási kód mező",
+    "samsung.add-using-code.warning": "Figyelj oda, hogy pontosan, szóköz nélkül másold be az adatokat — a legbiztosabb, ha az e-mailből másolod-beilleszted.",
+
+    "samsung.downloading.title": "Már majdnem kész!",
+    "samsung.downloading.body": "A telefonod letölti és aktiválja a mobilcsomagot az eSIM-en. Ez eltarthat egy percig.",
+
+    "samsung.enable-data-roaming.title": "Kapcsold be az adatroamingot",
+    "samsung.enable-data-roaming.body": "Az eSIM telepítése UTÁN nyisd meg: Beállítások → Kapcsolatok → SIM-kártya-kezelő → Telemeteor → Adatroaming, és kapcsold BE.",
+    "samsung.enable-data-roaming.tap.toggle": "Adatroaming kapcsoló",
+    "samsung.enable-data-roaming.warning": "Enélkül a lépés nélkül nem fog működni az internet külföldön.",
+
+    "samsung.select-data-line.title": "Érkezéskor válaszd a Telemeteort",
+    "samsung.select-data-line.body": "Amikor megérkezel a célországba: Beállítások → Kapcsolatok → SIM-kártya-kezelő, és a mobiladat-forgalomhoz válaszd ki a Telemeteor eSIM-et. A hívásokhoz és SMS-hez az eredeti SIM-kártyád marad aktív.",
+    "samsung.select-data-line.tap.row": "Telemeteor sor",
+    "samsung.select-data-line.warning": "Ezt csak megérkezés után kapcsold át, hogy addig ne fusson feleslegesen az eSIM adatforgalma.",
+
+    "samsung.done.title": "Ügyes voltál, kész vagy!",
+    "samsung.done.body": "A Telemeteor eSIM-ed telepítve van. Ne felejtsd el az előző két lépést (adatroaming bekapcsolása és a Telemeteor kiválasztása érkezéskor) — ha azokat is megtetted, már úton is lehetsz!",
+    "samsung.done.warning": "A pontos lépések és feliratok készüléktípusonként és Android-verziónként kicsit eltérhetnek.",
+
+    "pixel.before-you-start.title": "Mielőtt elkezdenéd",
+    "pixel.before-you-start.body": "Ne aggódj, ez tényleg egyszerű! Az eSIM a Pixel 4-től (2019) minden Pixel telefonon elérhető. A legbiztosabb módja annak, hogy megtudd, a te telefonod is támogatja-e: nyisd meg a Beállítások → Hálózat és internet → SIM-kártyák menüt.",
+    "pixel.before-you-start.tap.row": "SIM-kártyák sor",
+    "pixel.before-you-start.warning": "Néhány régebbi Pixel modellnél (Pixel 2, 3, 3a) régió és szolgáltató szerint eltérő az eSIM-támogatás. Az USA-ban a Pixel 10 sorozat kizárólag eSIM-mel működik, fizikai SIM-kártyát nem fogad.",
+
+    "pixel.open-link.title": "Nyisd meg az e-mailt",
+    "pixel.open-link.body": "Nyisd meg a Telemeteor e-mailt azon a telefonon, amit használni fogsz, majd koppints az \"Android Quick Link\" linkre.",
+    "pixel.open-link.tap.link": "Android Quick Link",
+
+    "pixel.add-esim-prefilled.title": "Erősítsd meg az adatokat",
+    "pixel.add-esim-prefilled.body": "A rendszer automatikusan megnyitja az eSIM beállítása képernyőt, az adatok már ki vannak töltve. Koppints a \"Folytatás\" gombra.",
+    "pixel.add-esim-prefilled.tap.button": "Folytatás gomb",
+
+    "pixel.open-settings.title": "Nyisd meg a Beállításokat",
+    "pixel.open-settings.body": "A kezdőképernyőn koppints a Beállítások alkalmazás ikonjára.",
+    "pixel.open-settings.tap.icon": "Beállítások ikon",
+
+    "pixel.open-network-internet.title": "Lépj a Hálózat és internet menübe",
+    "pixel.open-network-internet.body": "A Beállításokban koppints a \"Hálózat és internet\" menüpontra.",
+    "pixel.open-network-internet.tap.row": "Hálózat és internet sor",
+
+    "pixel.open-sims.title": "Koppints a SIM-kártyákra",
+    "pixel.open-sims.body": "A Hálózat és internet menüben koppints a \"SIM-kártyák\" lehetőségre.",
+    "pixel.open-sims.tap.row": "SIM-kártyák sor",
+
+    "pixel.add-sim.title": "Koppints a \"SIM-kártya hozzáadása\" gombra",
+    "pixel.add-sim.body": "Koppints a \"SIM-kártya hozzáadása\" gombra, majd válaszd az \"eSIM beállítása\" lehetőséget.",
+    "pixel.add-sim.tap.button": "SIM-kártya hozzáadása gomb",
+
+    "pixel.scan-qr.title": "Olvasd be a QR-kódot",
+    "pixel.scan-qr.body": "Kövesd a képernyőn megjelenő utasításokat, és olvasd be az e-mailben kapott QR-kódot.",
+    "pixel.scan-qr.tap.frame": "QR-beolvasó keret",
+
+    "pixel.enter-manually.title": "Add meg az adatokat manuálisan",
+    "pixel.enter-manually.body": "Ha nem tudod beolvasni a QR-kódot, keresd a \"Segítségre van szükséged?\" vagy \"Megadás kézzel\" lehetőséget, majd másold be az e-mailben kapott SM-DP+ címet és aktiválási kódot.",
+    "pixel.enter-manually.tap.address": "SM-DP+ cím mező",
+    "pixel.enter-manually.tap.code": "Aktiválási kód mező",
+    "pixel.enter-manually.warning": "A pontos képernyő és feliratok Pixel-modellenként és Android-verziónként kicsit eltérhetnek — ha nem stimmel 1:1, keress egy hasonló megfogalmazású lehetőséget a beállítási képernyőn.",
+
+    "pixel.downloading.title": "Már majdnem kész!",
+    "pixel.downloading.body": "A telefonod letölti és aktiválja a mobilcsomagot az eSIM-en. Ez eltarthat egy percig.",
+
+    "pixel.enable-data-roaming.title": "Kapcsold be az adatroamingot",
+    "pixel.enable-data-roaming.body": "Az eSIM telepítése UTÁN nyisd meg: Beállítások → Hálózat és internet → SIM-kártyák → Telemeteor → Adatroaming, és kapcsold BE.",
+    "pixel.enable-data-roaming.tap.toggle": "Adatroaming kapcsoló",
+    "pixel.enable-data-roaming.warning": "Enélkül a lépés nélkül nem fog működni az internet külföldön.",
+
+    "pixel.select-data-line.title": "Érkezéskor válaszd a Telemeteort",
+    "pixel.select-data-line.body": "Amikor megérkezel a célországba: Beállítások → Hálózat és internet → SIM-kártyák, és a mobiladat-forgalomhoz válaszd ki a Telemeteor eSIM-et. A hívásokhoz és SMS-hez az eredeti SIM-kártyád marad aktív.",
+    "pixel.select-data-line.tap.row": "Telemeteor sor",
+    "pixel.select-data-line.warning": "Ezt csak megérkezés után kapcsold át, hogy addig ne fusson feleslegesen az eSIM adatforgalma.",
+
+    "pixel.done.title": "Ügyes voltál, kész vagy!",
+    "pixel.done.body": "A Telemeteor eSIM-ed telepítve van. Ne felejtsd el az előző két lépést (adatroaming bekapcsolása és a Telemeteor kiválasztása érkezéskor) — ha azokat is megtetted, már úton is lehetsz!",
+    "pixel.done.warning": "A pontos lépések és feliratok készüléktípusonként és Android-verziónként kicsit eltérhetnek.",
+
+    "generic.before-you-start.title": "Mielőtt elkezdenéd",
+    "generic.before-you-start.body": "Mivel nagyon sokféle Android-gyártó és -felület létezik (Xiaomi, Huawei, OnePlus, Motorola, Oppo és mások), a pontos menüelnevezés készülékenként eltérhet. Az általános recept: nyisd meg a Beállításokat, és keresd a \"SIM-kezelő\", \"eSIM\" vagy \"Mobilhálózat\" menüpontot — sok telefonon a Beállítások tetején lévő keresőbe is beírhatod, hogy \"eSIM\".",
+    "generic.before-you-start.tap.row": "eSIM / SIM-kezelő sor",
+    "generic.before-you-start.warning": "Nem minden Android-telefon támogatja az eSIM-et — ha nem találsz eSIM-mel kapcsolatos beállítást, valószínűleg a készüléked nem támogatja, vagy a gyártó saját, ettől eltérő útmutatót ad hozzá.",
+
+    "generic.open-link.title": "Nyisd meg az e-mailt",
+    "generic.open-link.body": "Nyisd meg a Telemeteor e-mailt azon a telefonon, amit használni fogsz, majd koppints az \"Android Quick Link\" linkre.",
+    "generic.open-link.tap.link": "Android Quick Link",
+    "generic.open-link.warning": "Ez a módszer csak azokon az Android telefonokon működik, amelyek támogatják a Google eSIM gyorslink-funkcióját (Android 10+ és friss Google szolgáltatásokkal). Ha nem történik semmi koppintás után, válaszd inkább a QR-kódos vagy manuális módszert.",
+
+    "generic.open-settings.title": "Nyisd meg a Beállításokat",
+    "generic.open-settings.body": "A kezdőképernyőn koppints a Beállítások alkalmazás ikonjára.",
+    "generic.open-settings.tap.icon": "Beállítások ikon",
+
+    "generic.find-sim-settings.title": "Keresd meg az eSIM beállítást",
+    "generic.find-sim-settings.body": "A Beállításokban keresd a \"Hálózat és internet\", \"Kapcsolatok\" vagy \"SIM-kártyák\" menüpontot — vagy írd be a Beállítások keresőjébe, hogy \"eSIM\".",
+    "generic.find-sim-settings.tap.search": "Beállítások keresője",
+    "generic.find-sim-settings.warning": "A pontos menüszerkezet gyártónként (Xiaomi/MIUI, Huawei/EMUI, OnePlus/OxygenOS stb.) eltér — ha ez a leírás nem stimmel 1:1, keress hasonló elnevezésű menüpontot, vagy nézd meg a gyártód saját eSIM-útmutatóját.",
+
+    "generic.add-esim-qr.title": "Olvasd be a QR-kódot",
+    "generic.add-esim-qr.body": "Keresd az \"eSIM hozzáadása\" vagy \"QR-kód beolvasása\" lehetőséget, majd olvasd be az e-mailben kapott QR-kódot.",
+    "generic.add-esim-qr.tap.frame": "QR-beolvasó keret",
+
+    "generic.add-esim-manual.title": "Add meg az adatokat manuálisan",
+    "generic.add-esim-manual.body": "Keresd a \"Manuális megadás\" vagy \"Aktiválási kód megadása\" lehetőséget. Másold be pontosan az e-mailben kapott SM-DP+ címet és aktiválási kódot.",
+    "generic.add-esim-manual.tap.address": "SM-DP+ cím mező",
+    "generic.add-esim-manual.tap.code": "Aktiválási kód mező",
+    "generic.add-esim-manual.warning": "Figyelj oda, hogy pontosan, szóköz nélkül másold be az adatokat — a legbiztosabb, ha az e-mailből másolod-beilleszted.",
+
+    "generic.downloading.title": "Már majdnem kész!",
+    "generic.downloading.body": "A telefonod letölti és aktiválja a mobilcsomagot az eSIM-en. Ez eltarthat egy percig.",
+
+    "generic.enable-data-roaming.title": "Kapcsold be az adatroamingot",
+    "generic.enable-data-roaming.body": "Az eSIM telepítése UTÁN keresd meg a Telemeteor eSIM sorát a SIM-beállításokban, és kapcsold BE az \"Adatroaming\" opciót.",
+    "generic.enable-data-roaming.tap.toggle": "Adatroaming kapcsoló",
+    "generic.enable-data-roaming.warning": "Enélkül a lépés nélkül nem fog működni az internet külföldön.",
+
+    "generic.select-data-line.title": "Érkezéskor válaszd a Telemeteort",
+    "generic.select-data-line.body": "Amikor megérkezel a célországba: a SIM-beállításokban válaszd ki a Telemeteor eSIM-et a mobiladat-forgalomhoz. A hívásokhoz és SMS-hez az eredeti SIM-kártyád marad aktív.",
+    "generic.select-data-line.tap.row": "Telemeteor sor",
+    "generic.select-data-line.warning": "Ezt csak megérkezés után kapcsold át, hogy addig ne fusson feleslegesen az eSIM adatforgalma.",
+
+    "generic.done.title": "Ügyes voltál, kész vagy!",
+    "generic.done.body": "A Telemeteor eSIM-ed telepítve van. Ne felejtsd el az előző két lépést (adatroaming bekapcsolása és a Telemeteor kiválasztása érkezéskor) — ha azokat is megtetted, már úton is lehetsz!",
+    "generic.done.warning": "Mivel ez egy általános Android-útmutató, a pontos képernyők és feliratok a te konkrét gyártódnál/modelledetnél eltérhetnek — ha elakadsz, a gyártód saját eSIM-útmutatója a legmegbízhatóbb kiegészítő forrás."
+  }
+}

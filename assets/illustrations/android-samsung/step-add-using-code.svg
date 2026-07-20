@@ -1,0 +1,19 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#ffffff"/>
+  <text data-key="screen.s-add-using-code.title" x="24" y="46" font-family="ui-sans-serif,system-ui,sans-serif" font-size="16" font-weight="700" fill="#182746">Add using activation code</text>
+
+  <text data-key="screen.s-add-using-code.address-label" x="24" y="196" font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#5b6b8c">SERVER ADDRESS (SM-DP+)</text>
+  <rect x="20" y="204" width="260" height="52" rx="14" fill="#f5f5f7" stroke="#1447e6" stroke-width="3"/>
+  <rect x="40" y="222" width="180" height="10" rx="5" fill="#182746"/>
+
+  <text data-key="screen.s-add-using-code.code-label" x="24" y="280" font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#5b6b8c">ACTIVATION CODE</text>
+  <rect x="20" y="288" width="260" height="52" rx="14" fill="#f5f5f7" stroke="#1447e6" stroke-width="3"/>
+  <rect x="40" y="306" width="140" height="10" rx="5" fill="#182746"/>
+
+  <text data-key="screen.s-add-using-code.apn-label" x="24" y="364" font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#5b6b8c">APN (ACCESS POINT NAME)</text>
+  <rect x="20" y="372" width="260" height="52" rx="14" fill="#f5f5f7" stroke="#1447e6" stroke-width="3"/>
+  <rect x="40" y="390" width="80" height="10" rx="5" fill="#182746"/>
+
+  <rect x="30" y="450" width="240" height="50" rx="10" fill="#1447e6"/>
+  <text data-key="screen.s-add-using-code.next" x="150" y="482" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#ffffff">Add</text>
+</svg>

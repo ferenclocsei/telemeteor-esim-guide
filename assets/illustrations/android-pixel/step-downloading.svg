@@ -1,0 +1,7 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#ffffff"/>
+  <circle cx="150" cy="270" r="60" fill="none" stroke="#e6eaf0" stroke-width="8"/>
+  <path d="M150 210 a60 60 0 0 1 42 102" stroke="#e8710a" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <text data-key="screen.p-downloading.title" x="150" y="380" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="18" font-weight="700" fill="#182746">Downloading profile…</text>
+  <text data-key="screen.p-downloading.subtitle" x="150" y="406" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#5b6b8c">This may take a minute</text>
+</svg>

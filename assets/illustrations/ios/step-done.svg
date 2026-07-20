@@ -1,0 +1,7 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#ffffff"/>
+  <circle cx="150" cy="260" r="70" fill="#baddff"/>
+  <path d="M118 262 l24 24 l42 -50" stroke="#182746" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text data-key="screen.done.title" x="150" y="380" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">All Set!</text>
+  <text data-key="screen.done.subtitle" x="150" y="406" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#5b6b8c">Your eSIM is active</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#f2f2f7"/>
+  <rect width="300" height="44" fill="#f2f2f7"/>
+  <text x="24" y="30" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="600" fill="#000000">9:41</text>
+  <g fill="#000000">
+    <rect x="228" y="18" width="16" height="10" rx="2" fill="none" stroke="#000" stroke-width="1.2"/>
+    <rect x="230" y="20" width="10" height="6" fill="#000"/>
+    <rect x="246" y="16" width="3" height="12" rx="1"/>
+  </g>
+  <g fill="#007aff">
+    <path d="M22 66 l-8 8 l8 8" stroke="#007aff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text data-key="screen.enable-roaming.back" x="28" y="78" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15">Data</text>
+  </g>
+  <text x="170" y="78" text-anchor="middle" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="17" font-weight="700" fill="#000000">Telemeteor</text>
+
+  <rect x="16" y="108" width="268" height="58" rx="14" fill="#ffffff"/>
+  <text data-key="screen.enable-roaming.turn-on" x="32" y="142" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Turn On This Line</text>
+  <rect x="238" y="123" width="36" height="20" rx="10" fill="#34c759"/>
+  <circle cx="264" cy="133" r="8" fill="#ffffff"/>
+
+  <rect x="16" y="180" width="268" height="128" rx="14" fill="#ffffff"/>
+  <text data-key="screen.enable-roaming.voice-data" x="32" y="208" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Voice &amp; Data</text>
+  <text data-key="screen.enable-roaming.voice-data-value" x="268" y="208" text-anchor="end" fill="#8e8e93" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="14">5G Auto</text>
+  <line x1="32" y1="220" x2="284" y2="220" stroke="#e5e5ea" stroke-width="1"/>
+
+  <text data-key="screen.enable-roaming.roaming" x="32" y="248" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="700" fill="#000000">Data Roaming</text>
+  <rect x="238" y="233" width="36" height="20" rx="10" fill="#34c759"/>
+  <circle cx="264" cy="243" r="8" fill="#ffffff"/>
+  <line x1="32" y1="260" x2="284" y2="260" stroke="#e5e5ea" stroke-width="1"/>
+
+  <text data-key="screen.enable-roaming.data-mode" x="32" y="288" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Data Mode</text>
+  <text data-key="screen.enable-roaming.data-mode-value" x="268" y="288" text-anchor="end" fill="#8e8e93" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="14">Standard</text>
+</svg>

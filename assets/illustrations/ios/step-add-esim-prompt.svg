@@ -1,0 +1,15 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#f4f6fa"/>
+  <rect x="30" y="200" width="240" height="220" rx="24" fill="#ffffff"/>
+  <circle cx="150" cy="248" r="24" fill="#baddff"/>
+  <g fill="none" stroke="#182746" stroke-width="2.4">
+    <rect x="140" y="238" width="20" height="14" rx="3"/>
+    <path d="M144 238 v-4 a6 6 0 0 1 12 0 v4"/>
+  </g>
+  <text data-key="screen.add-esim-prompt.title" x="150" y="304" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="17" font-weight="700" fill="#182746">Add eSIM?</text>
+  <text data-key="screen.add-esim-prompt.subtitle" x="150" y="326" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#5b6b8c">A cellular plan was found</text>
+  <rect x="50" y="366" width="80" height="34" rx="17" fill="#e6eaf0"/>
+  <text data-key="screen.add-esim-prompt.cancel" x="90" y="388" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#182746">Cancel</text>
+  <rect x="140" y="360" width="110" height="46" rx="23" fill="#ff6600"/>
+  <text data-key="screen.add-esim-prompt.add" x="195" y="388" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" font-weight="700" fill="#ffffff">Add eSIM</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#182746" opacity="0.06"/>
+  <rect x="0" y="0" width="300" height="630" fill="#f4f6fa"/>
+  <rect x="30" y="220" width="240" height="240" rx="24" fill="#ffffff"/>
+  <circle cx="150" cy="270" r="26" fill="#baddff"/>
+  <path d="M138 270 l9 9 l16 -18" stroke="#182746" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text data-key="screen.confirm-install.title" x="150" y="330" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="17" font-weight="700" fill="#182746">Install Cellular Plan?</text>
+  <text data-key="screen.confirm-install.subtitle" x="150" y="354" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#5b6b8c">A new plan will be added</text>
+  <rect x="50" y="410" width="80" height="34" rx="17" fill="#e6eaf0"/>
+  <text data-key="screen.confirm-install.cancel" x="90" y="432" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#182746">Cancel</text>
+  <rect x="150" y="404" width="100" height="46" rx="23" fill="#ff6600"/>
+  <text data-key="screen.confirm-install.install" x="200" y="432" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" fill="#ffffff">Install</text>
+</svg>

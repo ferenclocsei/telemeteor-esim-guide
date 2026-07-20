@@ -1,0 +1,12 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#f2f2f7"/>
+  <text data-key="screen.line-preferences.title" x="24" y="46" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="18" font-weight="700" fill="#182746">Default Line</text>
+  <text data-key="screen.line-preferences.section" x="24" y="66" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="11" fill="#5b6b8c">FOR CALLS, SMS &amp; IMESSAGE</text>
+
+  <rect x="20" y="80" width="260" height="56" rx="14" fill="#ffffff" stroke="#ff6600" stroke-width="3"/>
+  <text data-key="screen.line-preferences.original" x="40" y="114" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="700" fill="#182746">Original SIM</text>
+  <path d="M244 108 l8 8 l16 -18" stroke="#007aff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="20" y="146" width="260" height="56" rx="14" fill="#ffffff"/>
+  <text data-key="screen.line-preferences.esim" x="40" y="180" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#182746">Telemeteor eSIM</text>
+</svg>

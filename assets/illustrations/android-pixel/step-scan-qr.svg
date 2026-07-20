@@ -1,0 +1,22 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#182746"/>
+  <text data-key="screen.p-scan-qr.title" x="150" y="80" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="15" font-weight="700" fill="#ffffff">Set up eSIM</text>
+  <rect x="75" y="200" width="150" height="150" rx="16" fill="none" stroke="#e8710a" stroke-width="4"/>
+  <path d="M75 200 v-20 a16 16 0 0 1 16 -16 h20" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M225 200 v-20 a16 16 0 0 0 -16 -16 h-20" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M75 350 v20 a16 16 0 0 0 16 16 h20" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M225 350 v20 a16 16 0 0 1 -16 16 h-20" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <g fill="#baddff">
+    <rect x="95" y="220" width="14" height="14"/>
+    <rect x="115" y="220" width="14" height="14"/>
+    <rect x="95" y="240" width="14" height="14"/>
+    <rect x="150" y="220" width="14" height="14"/>
+    <rect x="190" y="220" width="14" height="14"/>
+    <rect x="95" y="280" width="14" height="14"/>
+    <rect x="130" y="280" width="14" height="14"/>
+    <rect x="170" y="300" width="14" height="14"/>
+    <rect x="190" y="320" width="14" height="14"/>
+    <rect x="110" y="320" width="14" height="14"/>
+  </g>
+  <text data-key="screen.p-scan-qr.hint" x="150" y="400" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#baddff">Align the QR code within the frame</text>
+</svg>

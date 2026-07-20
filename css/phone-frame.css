@@ -1,0 +1,162 @@
+.phone-frame {
+  --phone-scale: 1;
+  width: calc(220px * var(--phone-scale));
+  height: calc(462px * var(--phone-scale));
+  background: #0b0f1a;
+  border-radius: calc(38px * var(--phone-scale));
+  padding: calc(10px * var(--phone-scale));
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.06) inset;
+  flex-shrink: 0;
+}
+
+.phone-frame__screen {
+  width: 100%;
+  height: 100%;
+  background: var(--color-white);
+  border-radius: calc(26px * var(--phone-scale));
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- Bezel / notch variants per osVariant ---- */
+
+.phone-frame__notch {
+  position: absolute;
+  top: calc(10px * var(--phone-scale));
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0b0f1a;
+  z-index: 3;
+}
+
+.phone-frame--ios .phone-frame__notch {
+  width: calc(90px * var(--phone-scale));
+  height: calc(22px * var(--phone-scale));
+  border-radius: calc(14px * var(--phone-scale));
+}
+
+.phone-frame--android-samsung .phone-frame__notch,
+.phone-frame--android-pixel .phone-frame__notch,
+.phone-frame--android-generic .phone-frame__notch {
+  width: calc(12px * var(--phone-scale));
+  height: calc(12px * var(--phone-scale));
+  border-radius: 50%;
+  top: calc(14px * var(--phone-scale));
+}
+
+/* ---- Illustration + step transition ---- */
+
+.phone-frame__illustration-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.phone-frame__illustration {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateX(12px);
+  transition: opacity var(--transition-medium), transform var(--transition-medium);
+  pointer-events: none;
+}
+
+.phone-frame__illustration.is-active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.phone-frame__illustration.is-leaving {
+  opacity: 0;
+  transform: translateX(-12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-frame__illustration {
+    transition: opacity var(--transition-fast);
+    transform: none !important;
+  }
+}
+
+/* ---- Tap-point highlight ---- */
+
+.tap-point {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  width: calc(28px * var(--phone-scale));
+  height: calc(28px * var(--phone-scale));
+  border-radius: 50%;
+  pointer-events: none;
+  animation: tap-pulse 1.8s ease-out infinite;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.tap-point.is-visible {
+  opacity: 1;
+}
+
+.tap-point--rect {
+  border-radius: calc(10px * var(--phone-scale));
+}
+
+@keyframes tap-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(255, 102, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tap-point {
+    animation: none;
+    box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.55);
+  }
+}
+
+/* ---- Phone frame wrapper within guide panel ---- */
+
+.phone-frame-shell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---- Responsive scale (kept here, after the base rule, so it always wins the cascade) ---- */
+
+@media (max-width: 599px) {
+  .phone-frame {
+    --phone-scale: 0.58;
+  }
+}
+
+/* Short phones (e.g. iPhone SE): shrink the mockup further so the step text
+   keeps enough room and is never reduced to a sliver. */
+@media (max-width: 599px) and (max-height: 700px) {
+  .phone-frame {
+    --phone-scale: 0.48;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .phone-frame {
+    --phone-scale: 1.15;
+  }
+}
+
+@media (min-width: 960px) {
+  .phone-frame {
+    --phone-scale: 1.3;
+  }
+}

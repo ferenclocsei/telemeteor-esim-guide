@@ -1,0 +1,7 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#f4f6fa"/>
+  <circle cx="150" cy="270" r="60" fill="#baddff"/>
+  <circle cx="150" cy="270" r="10" fill="#182746"/>
+  <path d="M150 210 a60 60 0 0 1 0 120" stroke="#ff6600" stroke-width="6" fill="none" stroke-dasharray="10 10"/>
+  <text data-key="screen.stub.coming-soon" x="150" y="380" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="18" font-weight="700" fill="#182746">Coming soon</text>
+</svg>
