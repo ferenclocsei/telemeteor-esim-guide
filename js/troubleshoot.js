@@ -1,9 +1,22 @@
 const Troubleshoot = (() => {
   let flow = null;
   const nodesById = {};
+  const svgCache = {};
   let trail = [];
   let currentId = null;
   let cardEl = null;
+
+  // Main checklist path, for the progress bar.
+  const MAIN_PATH = [
+    "region",
+    "airplane",
+    "esim-on",
+    "data-line",
+    "roaming",
+    "apn",
+    "network",
+    "restart",
+  ];
 
   // The support email is always English, regardless of UI language.
   const EN_OS = {
@@ -33,7 +46,11 @@ const Troubleshoot = (() => {
   }
 
   function record(node, answer) {
-    if (node.emailLabel) trail.push({ emailLabel: node.emailLabel, answer });
+    if (node.emailLabel) {
+      // Avoid duplicates if the user goes back and forth.
+      trail = trail.filter((t) => t.emailLabel !== node.emailLabel);
+      trail.push({ emailLabel: node.emailLabel, answer });
+    }
   }
 
   function buildMailto() {
@@ -44,7 +61,7 @@ const Troubleshoot = (() => {
     const lines = [
       "Hello Telemeteor Support,",
       "",
-      "My eSIM is installed but I still have a problem. Details:",
+      "My eSIM is installed but I still have no working internet. Details:",
       "",
       `Device: ${device}`,
     ];
@@ -53,7 +70,14 @@ const Troubleshoot = (() => {
       lines.push("", "Troubleshooting steps I already went through:");
       trail.forEach((t) => lines.push(`- ${t.emailLabel}: ${t.answer}`));
     }
-    lines.push("", "Problem description: [please describe briefly what you see]", "", "Thank you!");
+    lines.push(
+      "",
+      "Problem description: [please describe briefly what you see on your screen]",
+      "",
+      "Country/city I'm in now: [please fill in]",
+      "",
+      "Thank you!"
+    );
     const subject = `eSIM issue - ${device}`;
     return (
       `mailto:${flow.supportEmail}` +
@@ -62,25 +86,80 @@ const Troubleshoot = (() => {
     );
   }
 
-  function button(label, className, onClick) {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = `ts-btn ${className}`;
-    b.textContent = label;
-    b.addEventListener("click", onClick);
-    return b;
+  async function fetchSvg(path) {
+    if (svgCache[path]) return svgCache[path];
+    const res = await fetch(`assets/illustrations/${path}`, { cache: "no-cache" });
+    const text = await res.text();
+    svgCache[path] = text;
+    return text;
   }
+
+  async function renderPhone(container, illustration, token, getToken) {
+    const markup = await fetchSvg(illustration);
+    if (token !== getToken()) return;
+    const doc = new DOMParser().parseFromString(markup, "image/svg+xml");
+    const svg = doc.documentElement;
+    svg.querySelectorAll("[data-key]").forEach((el) => {
+      el.textContent = I18n.t(el.getAttribute("data-key"));
+    });
+    // Anchor to the top so the status bar + screen title stay visible.
+    svg.setAttribute("preserveAspectRatio", "xMidYMin slice");
+    svg.classList.add("ts-phone__svg");
+    container.innerHTML = "";
+    container.appendChild(svg);
+  }
+
+  function button(label, className, onClick, isLink, href) {
+    const el = document.createElement(isLink ? "a" : "button");
+    if (isLink) {
+      el.href = href;
+    } else {
+      el.type = "button";
+      el.addEventListener("click", onClick);
+    }
+    el.className = `ts-btn ${className}`;
+    el.textContent = label;
+    return el;
+  }
+
+  let renderToken = 0;
 
   function render(id) {
     const node = nodesById[id];
     if (!node || !cardEl) return;
     currentId = id;
+    const token = ++renderToken;
     cardEl.innerHTML = "";
 
-    const icon = document.createElement("div");
-    icon.className = "ts-card__icon";
-    icon.textContent = node.icon || "🛟";
-    cardEl.appendChild(icon);
+    // Progress bar for the main checklist.
+    const mainIdx = MAIN_PATH.indexOf(id);
+    if (mainIdx >= 0) {
+      const prog = document.createElement("div");
+      prog.className = "ts-progress";
+      prog.innerHTML =
+        `<span class="ts-progress__fill" style="width:${((mainIdx + 1) / MAIN_PATH.length) * 100}%"></span>`;
+      cardEl.appendChild(prog);
+      const count = document.createElement("p");
+      count.className = "ts-progress__count";
+      count.textContent = I18n.t("ui.ts.progress", { current: mainIdx + 1, total: MAIN_PATH.length });
+      cardEl.appendChild(count);
+    }
+
+    // Visual: phone illustration if present, otherwise a big emoji badge.
+    if (node.illustration) {
+      const phone = document.createElement("div");
+      phone.className = "ts-phone";
+      const screen = document.createElement("div");
+      screen.className = "ts-phone__screen";
+      phone.appendChild(screen);
+      cardEl.appendChild(phone);
+      renderPhone(screen, node.illustration, token, () => renderToken);
+    } else if (node.icon) {
+      const icon = document.createElement("div");
+      icon.className = "ts-card__icon";
+      icon.textContent = node.icon;
+      cardEl.appendChild(icon);
+    }
 
     const h = document.createElement("h2");
     h.className = "ts-card__title";
@@ -97,48 +176,44 @@ const Troubleshoot = (() => {
 
     if (node.type === "intro") {
       actions.appendChild(button(I18n.t("ui.ts.start"), "ts-btn--primary", () => render(node.next)));
-    } else if (node.type === "check") {
-      actions.appendChild(
-        button(I18n.t("ui.ts.solved"), "ts-btn--solved", () => {
-          record(node, "this fixed it");
-          render(node.solved);
-        })
-      );
-      actions.appendChild(
-        button(I18n.t("ui.ts.notsolved"), "ts-btn--muted", () => {
-          record(node, "tried, didn't help");
-          render(node.notsolved);
-        })
-      );
     } else if (node.type === "question") {
       actions.appendChild(
-        button(I18n.t("ui.ts.yes"), "ts-btn--primary", () => {
+        button(I18n.t("ui.ts.yes"), "ts-btn--yes", () => {
           record(node, "yes");
           render(node.yes);
         })
       );
       actions.appendChild(
-        button(I18n.t("ui.ts.no"), "ts-btn--muted", () => {
+        button(I18n.t("ui.ts.no"), "ts-btn--no", () => {
           record(node, "no");
           render(node.no);
         })
       );
-    } else if (node.type === "info") {
-      actions.appendChild(button(I18n.t("ui.ts.next"), "ts-btn--primary", () => render(node.next)));
+    } else if (node.type === "fix") {
+      actions.appendChild(
+        button(I18n.t("ui.ts.solved"), "ts-btn--yes", () => {
+          record(node, "this fixed it");
+          render(node.solved);
+        })
+      );
+      actions.appendChild(
+        button(I18n.t("ui.ts.notsolved"), "ts-btn--no", () => {
+          record(node, "tried, still not working");
+          render(node.notsolved);
+        })
+      );
+    } else if (node.type === "reassure") {
+      actions.appendChild(button(I18n.t("ui.ts.restart"), "ts-btn--muted", () => start()));
     } else if (node.type === "end-success") {
       actions.appendChild(button(I18n.t("ui.ts.restart"), "ts-btn--muted", () => start()));
     } else if (node.type === "end-support") {
-      const a = document.createElement("a");
-      a.className = "ts-btn ts-btn--primary";
-      a.href = buildMailto();
-      a.textContent = I18n.t("ui.ts.email-cta");
-      actions.appendChild(a);
-
+      actions.appendChild(
+        button(I18n.t("ui.ts.email-cta"), "ts-btn--primary", null, true, buildMailto())
+      );
       const note = document.createElement("p");
       note.className = "ts-card__note";
       note.textContent = I18n.t("ui.ts.email-note", { email: flow.supportEmail });
       actions.appendChild(note);
-
       actions.appendChild(button(I18n.t("ui.ts.restart"), "ts-btn--muted", () => start()));
     }
 

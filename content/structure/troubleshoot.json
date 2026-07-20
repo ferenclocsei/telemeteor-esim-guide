@@ -1,59 +1,78 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "start": "intro",
   "supportEmail": "support@telemeteor.com",
+  "_source": "Telemeteor eSIM Hibaelhárítási FAQ v1 (Airalo, GigSky, Saily, Revolut, Holafly synthesis), sections 1 & 13",
   "nodes": [
-    { "id": "intro", "type": "intro", "icon": "🛟", "next": "esim-on" },
-    {
-      "id": "esim-on",
-      "type": "check",
-      "icon": "📶",
-      "emailLabel": "Checked that the eSIM is turned on in Settings",
-      "solved": "success",
-      "notsolved": "region"
-    },
+    { "id": "intro", "type": "intro", "icon": "🛟", "next": "region" },
+
     {
       "id": "region",
       "type": "question",
-      "icon": "🌍",
-      "emailLabel": "I am currently in the plan's region",
-      "yes": "roaming",
+      "illustration": "ts/region.svg",
+      "emailLabel": "In the plan's country/coverage area",
+      "yes": "airplane",
       "no": "wrong-region"
     },
-    { "id": "wrong-region", "type": "info", "icon": "✈️", "next": "support" },
+    { "id": "wrong-region", "type": "reassure", "illustration": "ts/region.svg", "restart": true },
+
+    {
+      "id": "airplane",
+      "type": "fix",
+      "illustration": "ts/airplane.svg",
+      "emailLabel": "Airplane mode is off",
+      "solved": "success",
+      "notsolved": "esim-on"
+    },
+    {
+      "id": "esim-on",
+      "type": "fix",
+      "illustration": "ts/esim-on.svg",
+      "emailLabel": "Telemeteor eSIM is turned on",
+      "solved": "success",
+      "notsolved": "data-line"
+    },
+    {
+      "id": "data-line",
+      "type": "fix",
+      "illustration": "ts/data-line.svg",
+      "emailLabel": "Telemeteor eSIM is selected for mobile data",
+      "solved": "success",
+      "notsolved": "roaming"
+    },
     {
       "id": "roaming",
-      "type": "check",
-      "icon": "🔁",
-      "emailLabel": "Enabled data roaming for the eSIM",
+      "type": "fix",
+      "illustration": "ts/roaming.svg",
+      "emailLabel": "Data roaming is enabled for the eSIM",
+      "solved": "success",
+      "notsolved": "apn"
+    },
+    {
+      "id": "apn",
+      "type": "fix",
+      "illustration": "ts/apn.svg",
+      "emailLabel": "APN matches the one in the email",
       "solved": "success",
       "notsolved": "network"
     },
     {
       "id": "network",
-      "type": "check",
-      "icon": "📡",
+      "type": "fix",
+      "illustration": "ts/network.svg",
       "emailLabel": "Tried manual network selection",
       "solved": "success",
-      "notsolved": "plan"
+      "notsolved": "restart"
     },
     {
-      "id": "plan",
-      "type": "question",
-      "icon": "⏳",
-      "emailLabel": "Plan may be expired or out of data",
-      "yes": "topup",
-      "no": "apn"
-    },
-    { "id": "topup", "type": "info", "icon": "🧾", "next": "support" },
-    {
-      "id": "apn",
-      "type": "check",
-      "icon": "⚙️",
-      "emailLabel": "Checked the APN against the one in my email",
+      "id": "restart",
+      "type": "fix",
+      "illustration": "ts/restart.svg",
+      "emailLabel": "Toggled airplane mode / restarted the phone",
       "solved": "success",
       "notsolved": "support"
     },
+
     { "id": "success", "type": "end-success", "icon": "🎉" },
     { "id": "support", "type": "end-support", "icon": "💬" }
   ]

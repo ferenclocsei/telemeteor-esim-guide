@@ -222,9 +222,56 @@
     IosVersionPicker.init(document.getElementById("ios-version-options"), onIosVersionSelected, IosVersionPicker.current);
     await updateContent();
     Troubleshoot.rerender();
+    renderDetectBanner();
     showPanel(currentPanel);
+  });
+
+  // ---- Auto-detection: offer to start from the phone we recognise ----
+  const detectBannerEl = document.getElementById("detect-banner");
+  const detectDeviceEl = document.getElementById("detect-device");
+  const detectIconEl = document.getElementById("detect-icon");
+  let detected = null;
+
+  function renderDetectBanner() {
+    if (!detected || !detected.confident) {
+      detectBannerEl.hidden = true;
+      return;
+    }
+    const parts = [detected.deviceName];
+    if (detected.osName && detected.osName !== detected.deviceName) parts.push(detected.osName);
+    detectDeviceEl.textContent = parts.join(" · ");
+    detectIconEl.textContent = detected.osVariant === "ios" ? "📱" : "🤖";
+    detectBannerEl.hidden = false;
+  }
+
+  async function applyDetection() {
+    if (!detected) return;
+    // Re-init pickers with detected values (sets state without auto-advancing).
+    DevicePicker.init(document.getElementById("os-options"), onDeviceSelected, detected.osVariant);
+    if (detected.iosTier) {
+      IosVersionPicker.init(
+        document.getElementById("ios-version-options"),
+        onIosVersionSelected,
+        detected.iosTier
+      );
+    }
+    detectBannerEl.hidden = true;
+    await updateContent();
+    // Version is known, so skip the iOS-version step and go straight to method.
+    showPanel("delivery");
+  }
+
+  document.getElementById("detect-go").addEventListener("click", applyDetection);
+  document.getElementById("detect-no").addEventListener("click", () => {
+    detectBannerEl.hidden = true;
   });
 
   await updateContent();
   showPanel("device");
+
+  // Run detection after first paint so it never delays the initial render.
+  DeviceDetect.detect().then((result) => {
+    detected = result;
+    renderDetectBanner();
+  });
 })();

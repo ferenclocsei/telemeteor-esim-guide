@@ -671,6 +671,86 @@ svg {
   display: none;
 }
 
+/* ---------- Device detection banner ---------- */
+
+.detect-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, var(--color-navy), #24365c);
+  color: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.detect-banner[hidden] {
+  display: none;
+}
+
+.detect-banner__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.detect-banner__text {
+  flex: 1 1 140px;
+}
+
+.detect-banner__eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-light);
+}
+
+.detect-banner__device {
+  margin: 2px 0 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.detect-banner__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1 1 160px;
+}
+
+.detect-banner__go {
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-orange);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255, 102, 0, 0.35);
+  transition: transform var(--transition-fast);
+}
+
+.detect-banner__go:hover {
+  transform: translateY(-1px);
+}
+
+.detect-banner__no {
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.detect-banner__no:hover {
+  color: var(--color-white);
+}
+
 /* ---------- Troubleshooter ---------- */
 
 .ts-entry {
@@ -735,6 +815,58 @@ svg {
   font-size: 2.6rem;
 }
 
+/* Progress bar across the top of the troubleshooter card */
+.ts-progress {
+  width: 100%;
+  max-width: 320px;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.ts-progress__fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--color-orange), #ff8a3d);
+  transition: width 0.35s ease;
+}
+
+.ts-progress__count {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+/* Phone mockup inside the troubleshooter card — shows the screen the
+   customer should look at, matching the "show the phone screen" request. */
+.ts-phone {
+  width: 190px;
+  max-width: 62vw;
+  aspect-ratio: 300 / 400;
+  border-radius: 30px;
+  background: #0b1220;
+  padding: 8px;
+  box-shadow: 0 12px 30px rgba(24, 39, 70, 0.28);
+}
+
+.ts-phone__screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ts-phone__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .ts-card__title {
   margin: 0;
   font-size: 1.45rem;
@@ -783,10 +915,18 @@ svg {
   box-shadow: 0 6px 18px rgba(255, 102, 0, 0.3);
 }
 
-.ts-btn--solved {
+/* GREEN = the OK / positive answer (it works, yes) */
+.ts-btn--yes {
   background: #1e9e58;
   color: var(--color-white);
   box-shadow: 0 6px 18px rgba(30, 158, 88, 0.3);
+}
+
+/* RED = the not-OK / negative answer (still broken, no) */
+.ts-btn--no {
+  background: #e5484d;
+  color: var(--color-white);
+  box-shadow: 0 6px 18px rgba(229, 72, 77, 0.28);
 }
 
 .ts-btn--muted {
@@ -863,6 +1003,30 @@ svg {
 @media (max-width: 599px) {
   .page {
     padding: var(--space-4) var(--space-4) var(--space-5);
+  }
+
+  /* Compact troubleshooter so both answer buttons stay near the fold */
+  .ts-card {
+    padding: var(--space-5) var(--space-4);
+    gap: var(--space-2);
+  }
+
+  .ts-phone {
+    width: 150px;
+  }
+
+  .ts-card__title {
+    font-size: 1.2rem;
+  }
+
+  .ts-card__body {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .ts-btn {
+    padding: var(--space-3) var(--space-4);
+    font-size: 0.95rem;
   }
 
   .page-intro {

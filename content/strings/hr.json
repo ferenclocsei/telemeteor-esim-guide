@@ -1,6 +1,10 @@
 {
   "lang": "hr",
-  "reviewMeta": { "machineDraft": true, "reviewedBy": null, "reviewedDate": null },
+  "reviewMeta": {
+    "machineDraft": true,
+    "reviewedBy": null,
+    "reviewedDate": null
+  },
   "ui": {
     "app.title": "Vodič za postavljanje eSIM-a",
     "app.subtitle": "Odaberite svoj uređaj i način instalacije — ostalo vam pokazujemo korak po korak.",
@@ -39,7 +43,10 @@
     "os.status.needs-review": "Ažurira se zbog nedavne promjene operativnog sustava",
     "notice.fallback-en": "Dio sadržaja još nije preveden i prikazan je na engleskom.",
     "stub.coming-soon.title": "Vodič uskoro stiže",
-    "stub.coming-soon.body": "Još uvijek pripremamo vodič korak po korak za ovaj uređaj. U međuvremenu, odaberite iPhone (iOS) za potpuni primjer, ili provjerite upute proizvođača za eSIM."
+    "stub.coming-soon.body": "Još uvijek pripremamo vodič korak po korak za ovaj uređaj. U međuvremenu, odaberite iPhone (iOS) za potpuni primjer, ili provjerite upute proizvođača za eSIM.",
+    "detect.eyebrow": "Čini se da je vaš telefon",
+    "detect.confirm": "Da, počnimo odavde →",
+    "detect.reject": "Nije moj telefon"
   },
   "steps": {}
 }
