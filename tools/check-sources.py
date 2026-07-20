@@ -72,7 +72,13 @@ def extract_published_date(html_text: str):
 
 def collect_targets() -> dict:
     targets = {}
-    for f in sorted(STRUCTURE_DIR.glob("*.json")):
+    # Structure files (per-OS step sequences) + the compatibility catalog both
+    # carry a `sources` array and a `lastVerifiedDate` — watch all of them.
+    source_files = list(STRUCTURE_DIR.glob("*.json"))
+    catalog = ROOT / "content" / "models" / "catalog.json"
+    if catalog.exists():
+        source_files.append(catalog)
+    for f in sorted(source_files):
         data = json.loads(f.read_text())
         variant = data.get("osVariant", f.stem)
         for url in data.get("sources", []):

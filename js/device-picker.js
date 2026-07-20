@@ -16,6 +16,7 @@ const DevicePicker = (() => {
   let osOptionsEl, searchInputEl, resultsEl, emptyEl;
   let current = "ios";
   let onSelect = () => {};
+  let onModelPick = null;
 
   function statusBadge(status) {
     if (status === "stub") return `<span class="option-card__badge">${I18n.t("ui.os.status.stub")}</span>`;
@@ -54,7 +55,10 @@ const DevicePicker = (() => {
       btn.addEventListener("click", () => {
         searchInputEl.value = "";
         resultsEl.innerHTML = "";
-        select(m.osVariant);
+        emptyEl.hidden = true;
+        // Show the eSIM compatibility verdict for the exact model chosen,
+        // instead of jumping straight into the guide.
+        if (onModelPick) onModelPick(m);
       });
       li.appendChild(btn);
       resultsEl.appendChild(li);
@@ -67,17 +71,28 @@ const DevicePicker = (() => {
     onSelect(id);
   }
 
-  function init(container, changeCallback, initial) {
+  function init(container, changeCallback, initial, modelPickCallback) {
     osOptionsEl = document.getElementById("os-options");
     searchInputEl = document.getElementById("model-search-input");
     resultsEl = document.getElementById("model-results");
     emptyEl = document.getElementById("model-search-empty");
     onSelect = changeCallback;
+    if (modelPickCallback) onModelPick = modelPickCallback;
     if (initial) current = initial;
 
     renderOsButtons();
     searchInputEl.addEventListener("input", (e) => renderSearchResults(e.target.value));
   }
 
-  return { init, select, get current() { return current; } };
+  return {
+    init,
+    select,
+    setCurrent(id) {
+      current = id;
+      renderOsButtons();
+    },
+    get current() {
+      return current;
+    },
+  };
 })();

@@ -47,7 +47,13 @@
     "detect.eyebrow": "Čini se da je vaš telefon",
     "detect.confirm": "Da, počnimo odavde →",
     "detect.reject": "Nije moj telefon",
-    "detect.ios-note": "Iz sigurnosnih razloga, iPhone ne otkriva točan model ni verziju iOS-a — potvrdit ćete u sljedećem koraku."
+    "detect.ios-note": "Iz sigurnosnih razloga, iPhone ne otkriva točan model ni verziju iOS-a — potvrdit ćete u sljedećem koraku.",
+    "compat.title.yes": "Da, ovaj telefon podržava eSIM! ✅",
+    "compat.title.region": "Ovaj model obično podržava 🟡",
+    "compat.title.no": "Ovaj model ne podržava eSIM ❌",
+    "compat.cta.guide": "Prikaži postavljanje →",
+    "compat.cta.support": "Pitajte nas ✉️",
+    "compat.cta.change": "Drugi uređaj"
   },
   "steps": {}
 }

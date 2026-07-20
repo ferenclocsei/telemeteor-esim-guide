@@ -42,3 +42,17 @@ Ha a `modern`-only "Apple Quick Link" opciót választja a felhasználó `legacy
 ## Nyitott, ehhez a körhöz nem tartozó feladatok
 
 Lásd: [research-todo.md](research-todo.md).
+
+## eSIM-kompatibilitási adatbázis (content/models/catalog.json)
+
+A kereső mögötti adatbázis minden modellhez tárol egy `esim` státuszt és opcionális `noteKey`-t:
+- `esim: "yes"` — támogatott (zöld verdikt)
+- `esim: "region"` — általában támogatott, de régió/variáns-függő (sárga verdikt)
+- `esim: "no"` — nem támogatott (piros verdikt, nincs „telepítés" gomb)
+- `noteKey` — egy `compat.note.*` string kulcs a figyelmeztető sorhoz (pl. `china`, `us-samsung`, `pixel-old`, `huawei`, `region-android`, `oppo-lite`).
+- `osVariant` — melyik útmutatóra visz tovább (`ios` / `android-samsung` / `android-pixel` / `android-generic`).
+- `aliases` (opcionális) — extra keresőszavak.
+
+**Új modell felvétele** = egy sor a `models` tömbben, kódmódosítás nélkül. A verdikt-szövegek a `content/strings/*.json` `compat.*` kulcsaiban vannak.
+
+**Források és frissesség:** a fájl `sources` és `lastVerifiedDate` mezője a hivatalos gyártói + nagy eSIM-szolgáltatói (Airalo, Holafly) listákra mutat. A `tools/check-sources.py` ezeket is figyeli (lásd fent). Ha egy forrás változik, nézd át az érintett modelleket, frissítsd a `lastVerifiedDate`-et, és futtasd a szkriptet `--accept`-tel.

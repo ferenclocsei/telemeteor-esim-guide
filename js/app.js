@@ -4,8 +4,8 @@
   const DEFAULT_IOS_VERSION = "modern";
   // Wizard order: device first (everyone knows what phone they hold),
   // then iOS version (iOS only), then installation method, then the guide.
-  // "troubleshoot" sits outside the wizard flow (no breadcrumb chip).
-  const PANEL_IDS = ["device", "iosversion", "delivery", "guide", "troubleshoot"];
+  // "compat" and "troubleshoot" sit outside the wizard flow (no breadcrumb chip).
+  const PANEL_IDS = ["device", "iosversion", "delivery", "guide", "compat", "troubleshoot"];
 
   function readParam(name, storageKey, fallback) {
     const url = new URL(window.location.href);
@@ -50,7 +50,7 @@
     PANEL_IDS.forEach((key) => {
       panels[key].hidden = key !== id;
     });
-    wizardProgressEl.hidden = id === "troubleshoot";
+    wizardProgressEl.hidden = id === "troubleshoot" || id === "compat";
     const isIos = isIosSelected();
     let num = 0;
     wizardProgressEl.querySelectorAll("[data-wizard-progress]").forEach((el) => {
@@ -102,7 +102,26 @@
   document.getElementById("ts-entry-guide").addEventListener("click", openTroubleshoot);
   document.getElementById("ts-back").addEventListener("click", () => showPanel(tsReturnPanel));
 
+  // ---- eSIM compatibility verdict (from the exact-model search) ----
+  // (Compat.setMeta runs after ModelCatalog.load, below.)
+  Compat.setCard(document.getElementById("compat-card"));
+
+  function onModelPick(model) {
+    Compat.show(model, {
+      onGuide: async (m) => {
+        DevicePicker.setCurrent(m.osVariant);
+        await updateContent();
+        showPanel(m.osVariant === "ios" ? "iosversion" : "delivery");
+      },
+      onChange: () => showPanel("device"),
+    });
+    showPanel("compat");
+  }
+
+  document.getElementById("compat-back").addEventListener("click", () => showPanel("device"));
+
   await ModelCatalog.load();
+  Compat.setMeta(ModelCatalog.getMeta().lastVerifiedDate);
   PhoneRenderer.mount();
 
   const initialLang = readParam("lang", "esim-guide-lang", I18n.resolveInitialLang());
@@ -206,7 +225,8 @@
   DevicePicker.init(
     document.getElementById("os-options"),
     onDeviceSelected,
-    readParam("os", "esim-guide-os", DEFAULT_OS)
+    readParam("os", "esim-guide-os", DEFAULT_OS),
+    onModelPick
   );
 
   IosVersionPicker.init(
@@ -218,7 +238,7 @@
   langSelectEl.addEventListener("change", async (e) => {
     await I18n.load(e.target.value);
     DeliveryPicker.init(document.getElementById("delivery-options"), onDeliverySelected, DeliveryPicker.current);
-    DevicePicker.init(document.getElementById("os-options"), onDeviceSelected, DevicePicker.current);
+    DevicePicker.init(document.getElementById("os-options"), onDeviceSelected, DevicePicker.current, onModelPick);
     IosVersionPicker.init(document.getElementById("ios-version-options"), onIosVersionSelected, IosVersionPicker.current);
     await updateContent();
     Troubleshoot.rerender();

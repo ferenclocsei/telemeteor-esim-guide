@@ -1,64 +1,1540 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
+  "lastVerifiedDate": "2026-07-20",
+  "sources": [
+    "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W",
+    "https://esim.holafly.com/how-to/esim-phones/",
+    "https://support.apple.com/en-us/109505",
+    "https://www.samsung.com/uk/support/mobile-devices/how-to-use-an-esim-with-your-galaxy-phone/",
+    "https://support.google.com/pixelphone/answer/9449293"
+  ],
+  "statusValues": [
+    "yes",
+    "region",
+    "no"
+  ],
   "models": [
-    { "model": "iPhone Air", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 17 Pro Max", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 17 Pro", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 17e", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 17", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 16e", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 16 Pro Max", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 16 Pro", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 16 Plus", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 16", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 15 Pro Max", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 15 Pro", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 15 Plus", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 15", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 14 Pro Max", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 14 Pro", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 14 Plus", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 14", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone SE (3rd generation, 2022)", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 13 Pro Max", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 13 Pro", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 13 mini", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 13", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 12 Pro Max", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 12 Pro", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 12 mini", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 12", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone SE (2nd generation, 2020)", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 11 Pro Max", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 11 Pro", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone 11", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone XS Max", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone XS", "brand": "Apple", "osVariant": "ios" },
-    { "model": "iPhone XR", "brand": "Apple", "osVariant": "ios" },
-
-    { "model": "Galaxy S25 Ultra", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy S25+", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy S25", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy S24 Ultra", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy S24+", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy S24", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy S23 Ultra", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy S23+", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy S23", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy Z Fold6", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy Z Fold5", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy Z Flip6", "brand": "Samsung", "osVariant": "android-samsung" },
-    { "model": "Galaxy Z Flip5", "brand": "Samsung", "osVariant": "android-samsung" },
-
-    { "model": "Pixel 9 Pro XL", "brand": "Google", "osVariant": "android-pixel" },
-    { "model": "Pixel 9 Pro", "brand": "Google", "osVariant": "android-pixel" },
-    { "model": "Pixel 9", "brand": "Google", "osVariant": "android-pixel" },
-    { "model": "Pixel 8 Pro", "brand": "Google", "osVariant": "android-pixel" },
-    { "model": "Pixel 8", "brand": "Google", "osVariant": "android-pixel" },
-    { "model": "Pixel 8a", "brand": "Google", "osVariant": "android-pixel" },
-    { "model": "Pixel 7 Pro", "brand": "Google", "osVariant": "android-pixel" },
-    { "model": "Pixel 7", "brand": "Google", "osVariant": "android-pixel" },
-
-    { "model": "Egyéb Android eSIM-kompatibilis készülék", "brand": "Egyéb", "osVariant": "android-generic" }
+    {
+      "model": "iPhone Air",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 17 Pro Max",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 17 Pro",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 17",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 17e",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 16e",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 16 Pro Max",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 16 Pro",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 16 Plus",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 16",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 15 Pro Max",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 15 Pro",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 15 Plus",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 15",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 14 Pro Max",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 14 Pro",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 14 Plus",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 14",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone SE (3rd generation, 2022)",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 13 Pro Max",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 13 Pro",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 13 mini",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 13",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 12 Pro Max",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 12 Pro",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 12 mini",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 12",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone SE (2nd generation, 2020)",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 11 Pro Max",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 11 Pro",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 11",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone XS Max",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone XS",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone XR",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S25 Ultra",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S25+",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S25",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S25 Edge",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S24 Ultra",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S24+",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S24",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S24 FE",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S23 Ultra",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S23+",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S23",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S23 FE",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S22 Ultra",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S22+",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S22",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Fold6",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Fold5",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Fold4",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Fold3",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Flip6",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Flip5",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Flip4",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Flip3",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy A56",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy A55 5G",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy A54 5G",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy A36",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy A35 5G",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy A23 5G",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy XCover7 Pro",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S21 Ultra",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "region",
+      "noteKey": "us-samsung"
+    },
+    {
+      "model": "Galaxy S21+",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "region",
+      "noteKey": "us-samsung"
+    },
+    {
+      "model": "Galaxy S21",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "region",
+      "noteKey": "us-samsung"
+    },
+    {
+      "model": "Galaxy S20 Ultra",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "region",
+      "noteKey": "us-samsung"
+    },
+    {
+      "model": "Galaxy S20+",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "region",
+      "noteKey": "us-samsung"
+    },
+    {
+      "model": "Galaxy S20",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "region",
+      "noteKey": "us-samsung"
+    },
+    {
+      "model": "Galaxy S20 FE",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "region",
+      "noteKey": "us-samsung"
+    },
+    {
+      "model": "Galaxy Note 20 Ultra",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "region",
+      "noteKey": "us-samsung"
+    },
+    {
+      "model": "Galaxy Note 20",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "region",
+      "noteKey": "us-samsung"
+    },
+    {
+      "model": "Pixel 10 Pro XL",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 10 Pro",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 10",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 10a",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 9 Pro Fold",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 9 Pro XL",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 9 Pro",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 9",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 9a",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 8 Pro",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 8",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 8a",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 7 Pro",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 7",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 7a",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 6 Pro",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 6",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 6a",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 5",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 5a",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 4 XL",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 4",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 4a",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 4a 5G",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel Fold",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 3 XL",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "region",
+      "noteKey": "pixel-old"
+    },
+    {
+      "model": "Pixel 3",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "region",
+      "noteKey": "pixel-old"
+    },
+    {
+      "model": "Pixel 3a XL",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "region",
+      "noteKey": "pixel-old"
+    },
+    {
+      "model": "Pixel 3a",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "region",
+      "noteKey": "pixel-old"
+    },
+    {
+      "model": "Pixel 2 XL",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "region",
+      "noteKey": "pixel-old"
+    },
+    {
+      "model": "Pixel 2",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "region",
+      "noteKey": "pixel-old"
+    },
+    {
+      "model": "Razr Ultra (2025)",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Razr+ (2025)",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Razr (2025)",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Razr 60 Ultra",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Razr 60",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Razr 50 Ultra",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Razr 50",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Razr 40 Ultra",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Razr 40",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Razr 2022",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Edge 60 Pro",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Edge 60",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Edge 50 Ultra",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Edge 50 Pro",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Edge 50 Fusion",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Edge 50",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Edge 40 Pro",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Edge 40 Neo",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Edge (2024)",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Edge (2023)",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "ThinkPhone",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Moto G86",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Moto G85",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Moto G75",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Moto G55",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Moto G54",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Moto G53",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Moto G35",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Moto G34",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Moto G Stylus 5G",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Moto G Power 5G (2024)",
+      "brand": "Motorola",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Xiaomi 15 Ultra",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 15",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 15T Pro",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 15T",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 14 Pro",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 14",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 14T Pro",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 14T",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 13 Pro",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 13",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 13T Pro",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 13T",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 13 Lite",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Xiaomi 12T Pro",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Poco X7",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Poco F8 Pro",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Redmi Note 14 Pro+",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Redmi Note 14 Pro",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Redmi Note 13 Pro+",
+      "brand": "Xiaomi",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "china"
+    },
+    {
+      "model": "Find N5",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Find X9 Pro",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Find X9",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Find X8 Pro",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Find X8",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Find X5 Pro",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Find X5",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Find X3 Pro",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Find X3",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Find N2 Flip",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Reno 15 Pro",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Reno 15",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Reno 14 Pro",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Reno 14",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "OnePlus 15",
+      "brand": "OnePlus",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "OnePlus 13",
+      "brand": "OnePlus",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "OnePlus 13R",
+      "brand": "OnePlus",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "OnePlus 12",
+      "brand": "OnePlus",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "OnePlus 11",
+      "brand": "OnePlus",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "OnePlus Open",
+      "brand": "OnePlus",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Xperia 1 VII",
+      "brand": "Sony",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Xperia 1 VI",
+      "brand": "Sony",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Xperia 1 V",
+      "brand": "Sony",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Xperia 1 IV",
+      "brand": "Sony",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Xperia 5 V",
+      "brand": "Sony",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Xperia 5 IV",
+      "brand": "Sony",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Xperia 10 VI",
+      "brand": "Sony",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Xperia 10 V",
+      "brand": "Sony",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Xperia 10 IV",
+      "brand": "Sony",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "P40",
+      "brand": "Huawei",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "huawei"
+    },
+    {
+      "model": "P40 Pro",
+      "brand": "Huawei",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "huawei"
+    },
+    {
+      "model": "Mate 40 Pro",
+      "brand": "Huawei",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "huawei"
+    },
+    {
+      "model": "Pura 70 Pro",
+      "brand": "Huawei",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "huawei"
+    },
+    {
+      "model": "Magic7 Pro",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Magic6 Pro",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Magic5 Pro",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Magic V3",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Magic V2",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Honor 400 Pro",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Honor 400",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Honor 200 Pro",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Honor 200",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Honor 90",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "X200 Pro",
+      "brand": "Vivo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "X200",
+      "brand": "Vivo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "X100 Pro",
+      "brand": "Vivo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "X90 Pro",
+      "brand": "Vivo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "V40",
+      "brand": "Vivo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "V50",
+      "brand": "Vivo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "V29",
+      "brand": "Vivo",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Phone (3)",
+      "brand": "Nothing",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Phone (3a) Pro",
+      "brand": "Nothing",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Phone (2)",
+      "brand": "Nothing",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Fairphone 5",
+      "brand": "Fairphone",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Fairphone 4",
+      "brand": "Fairphone",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Realme 14 Pro+",
+      "brand": "Realme",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Realme GT 7",
+      "brand": "Realme",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Nokia XR21",
+      "brand": "Nokia",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Nokia X30",
+      "brand": "Nokia",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Nokia G60 5G",
+      "brand": "Nokia",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Zenfone 12 Ultra",
+      "brand": "Asus",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "ROG Phone 9 Pro",
+      "brand": "Asus",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "ROG Phone 9",
+      "brand": "Asus",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "TCL 60 XE NxtPaper",
+      "brand": "TCL",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "TCL 50 Pro NxtPaper",
+      "brand": "TCL",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "TCL 50 5G",
+      "brand": "TCL",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Oppo A-series / Lite (most)",
+      "brand": "Oppo",
+      "osVariant": "android-generic",
+      "esim": "no",
+      "noteKey": "oppo-lite"
+    }
   ]
 }
