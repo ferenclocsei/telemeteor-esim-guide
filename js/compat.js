@@ -72,12 +72,14 @@ const Compat = (() => {
     sub.textContent = I18n.t(`ui.compat.sub.${status}`);
     cardEl.appendChild(sub);
 
-    if (model.noteKey) {
+    // A model can carry one note (noteKey) or several (noteKeys).
+    const noteKeys = model.noteKeys || (model.noteKey ? [model.noteKey] : []);
+    noteKeys.forEach((key) => {
       const note = document.createElement("p");
       note.className = "compat-card__note";
-      note.textContent = I18n.t(`ui.compat.note.${model.noteKey}`);
+      note.textContent = I18n.t(`ui.compat.note.${key}`);
       cardEl.appendChild(note);
-    }
+    });
 
     const actions = document.createElement("div");
     actions.className = "ts-card__actions";

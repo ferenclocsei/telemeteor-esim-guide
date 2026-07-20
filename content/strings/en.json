@@ -88,7 +88,8 @@
     "compat.note.pixel-old": "Pixel 3/3a variants from some regions (e.g. Australia, Taiwan, Japan) lack eSIM.",
     "compat.note.huawei": "eSIM works, but Huawei phones have no Google services; the China variant has no eSIM.",
     "compat.note.region-android": "On Android, eSIM availability varies by manufacturer and region — worth checking before purchase.",
-    "compat.note.oppo-lite": "Oppo A-series and Lite models generally don't support eSIM."
+    "compat.note.oppo-lite": "Oppo A-series and Lite models generally don't support eSIM.",
+    "compat.note.single-esim": "This model can use only one eSIM at a time (one physical SIM + one eSIM). You can still use the Telemeteor eSIM — but if you already have another eSIM active, you'll need to switch between them."
   },
   "screen": {
     "open-link.app-name": "Mail",

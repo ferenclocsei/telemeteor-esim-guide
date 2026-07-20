@@ -145,7 +145,10 @@
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "iPhone 13 Pro Max",
@@ -180,77 +183,110 @@
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "iPhone 12 Pro",
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "iPhone 12 mini",
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "iPhone 12",
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "iPhone SE (2nd generation, 2020)",
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "iPhone 11 Pro Max",
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "iPhone 11 Pro",
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "iPhone 11",
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "iPhone XS Max",
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "iPhone XS",
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "iPhone XR",
       "brand": "Apple",
       "osVariant": "ios",
       "esim": "yes",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "single-esim"
+      ]
     },
     {
       "model": "Galaxy S25 Ultra",

@@ -53,7 +53,8 @@
     "compat.title.no": "Ovaj model ne podržava eSIM ❌",
     "compat.cta.guide": "Prikaži podešavanje →",
     "compat.cta.support": "Pitajte nas ✉️",
-    "compat.cta.change": "Drugi uređaj"
+    "compat.cta.change": "Drugi uređaj",
+    "compat.note.single-esim": "Ovaj model može istovremeno koristiti samo jedan eSIM (jedna fizička SIM + jedan eSIM). Telemeteor eSIM i dalje možete koristiti — ali ako već imate drugi aktivan eSIM, moraćete da prebacujete između njih."
   },
   "steps": {}
 }

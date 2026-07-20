@@ -88,7 +88,8 @@
     "compat.note.pixel-old": "Néhány régió (pl. Ausztrália, Tajvan, Japán) Pixel 3/3a változatán nincs eSIM.",
     "compat.note.huawei": "Az eSIM működik, de a Huawei készülékeken nincsenek Google-szolgáltatások; a kínai változaton nincs eSIM.",
     "compat.note.region-android": "Az eSIM elérhetősége Androidon gyártónként és régiónként eltér — vásárlás előtt érdemes ellenőrizni.",
-    "compat.note.oppo-lite": "Az Oppo A-szériás és Lite modellek jellemzően nem támogatják az eSIM-et."
+    "compat.note.oppo-lite": "Az Oppo A-szériás és Lite modellek jellemzően nem támogatják az eSIM-et.",
+    "compat.note.single-esim": "Ez a modell egyszerre csak egy eSIM-et tud aktívan használni (egy fizikai SIM + egy eSIM). A Telemeteor eSIM-et így is használhatod — de ha már van egy másik aktív eSIM-ed, váltanod kell közöttük."
   },
   "screen": {
     "open-link.app-name": "Mail",
