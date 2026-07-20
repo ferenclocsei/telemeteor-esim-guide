@@ -34,10 +34,35 @@ const PhoneRenderer = (() => {
       }
       if (tp.label) el.setAttribute("aria-label", tp.label);
       el.setAttribute("aria-hidden", "true");
-      screenEl.appendChild(el);
+      // Inside the illustration wrap so the tap ring zooms WITH the screen
+      // content and stays aligned with the menu row it points at.
+      illustrationWrapEl.appendChild(el);
       tapPointEls.push(el);
       requestAnimationFrame(() => el.classList.add("is-visible"));
     });
+  }
+
+  // Gentle "zoom into the action": on mobile the mockup is small, so we scale
+  // the screen content in toward the highlighted control(s) — using the
+  // tap-point centroid as the focus — so the menu text becomes readable.
+  function applyZoom(tapPoints) {
+    let ox = 55;
+    let oy = 42; // slightly above centre reads better when there are no points
+    if (tapPoints && tapPoints.length) {
+      ox = tapPoints.reduce((s, p) => s + p.x, 0) / tapPoints.length;
+      oy = tapPoints.reduce((s, p) => s + p.y, 0) / tapPoints.length;
+    }
+    // Menu rows are almost full-width and left-aligned, so keep the focus
+    // point centre-ish horizontally — that way the whole row (both ends of the
+    // text) stays within view after the zoom instead of clipping off-screen.
+    ox = Math.min(62, Math.max(48, ox));
+    oy = Math.min(72, Math.max(18, oy));
+    illustrationWrapEl.style.setProperty("--zoom-x", `${ox}%`);
+    illustrationWrapEl.style.setProperty("--zoom-y", `${oy}%`);
+    // Restart the CSS animation (only actually runs on mobile).
+    illustrationWrapEl.classList.remove("is-zooming");
+    void illustrationWrapEl.offsetWidth; // force reflow
+    illustrationWrapEl.classList.add("is-zooming");
   }
 
   async function fetchSvgMarkup(path) {
@@ -81,6 +106,7 @@ const PhoneRenderer = (() => {
     });
 
     renderTapPoints(step.tapPoints || []);
+    applyZoom(step.tapPoints || []);
   }
 
   return { mount, setOsVariant, renderStep };

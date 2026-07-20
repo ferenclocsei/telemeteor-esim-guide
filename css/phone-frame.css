@@ -50,6 +50,22 @@
 .phone-frame__illustration-wrap {
   position: absolute;
   inset: 0;
+  transform-origin: var(--zoom-x, 50%) var(--zoom-y, 50%);
+}
+
+/* Zoom-into-the-action: gives a brief full-screen glimpse, then eases in on
+   the highlighted control so the on-screen menu text is legible. Enabled only
+   on mobile (below), where the mockup is small; a no-op elsewhere. */
+@keyframes screen-zoom {
+  0% {
+    transform: scale(1);
+  }
+  16% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(var(--zoom-scale, 1.6));
+  }
 }
 
 .phone-frame__illustration {
@@ -141,13 +157,37 @@
   .phone-frame {
     --phone-scale: 0.76;
   }
+
+  /* The mockup is small on mobile → zoom the screen content in so the menu
+     labels are readable. Focus point comes from the tap-point centroid. */
+  .phone-frame__illustration-wrap {
+    --zoom-scale: 1.6;
+  }
+
+  .phone-frame__illustration-wrap.is-zooming {
+    animation: screen-zoom 2s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+
+  /* Respect reduced-motion: no movement, but keep it zoomed so text stays
+     readable. */
+  @media (prefers-reduced-motion: reduce) {
+    .phone-frame__illustration-wrap.is-zooming {
+      animation: none;
+      transform: scale(var(--zoom-scale, 1.6));
+    }
+  }
 }
 
 /* Short phones (e.g. iPhone SE): shrink the mockup so title + buttons
-   always stay on screen; in reading mode hide it entirely. */
+   always stay on screen; in reading mode hide it entirely. Zoom in more,
+   since the base mockup is smaller here. */
 @media (max-width: 599px) and (max-height: 700px) {
   .phone-frame {
     --phone-scale: 0.52;
+  }
+
+  .phone-frame__illustration-wrap {
+    --zoom-scale: 2.2;
   }
 
   .guide-panel.is-reading .phone-frame-shell {
