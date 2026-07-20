@@ -4,4 +4,5 @@
   <path d="M118 262 l24 24 l42 -50" stroke="#182746" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   <text data-key="screen.g-done.title" x="150" y="380" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">All Set!</text>
   <text data-key="screen.g-done.subtitle" x="150" y="406" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#5b6b8c">Your eSIM is active</text>
+  <g opacity="0.999"><text x="24" y="27" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" fill="#000000">9:41</text><g stroke="#000000" stroke-width="1.4" fill="none" opacity="0.85"><path d="M236 22 l4 -6 l4 6z" fill="#000000" stroke="none"/><path d="M248 22 a7 7 0 0 1 10 0" /><rect x="264" y="15" width="16" height="9" rx="2"/><rect x="266" y="17" width="9" height="5" fill="#000000" stroke="none"/></g><rect x="112" y="606" width="76" height="5" rx="2.5" fill="#182746" opacity="0.3"/></g>
 </svg>

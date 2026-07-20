@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="ui.app.title">eSIM Setup Guide</title>
-  <link rel="stylesheet" href="css/tokens.css?v=21" />
-  <link rel="stylesheet" href="css/main.css?v=21" />
-  <link rel="stylesheet" href="css/phone-frame.css?v=21" />
+  <link rel="stylesheet" href="css/tokens.css?v=23" />
+  <link rel="stylesheet" href="css/main.css?v=23" />
+  <link rel="stylesheet" href="css/phone-frame.css?v=23" />
 </head>
 <body>
   <header class="site-header">
@@ -88,6 +88,8 @@
           <p class="model-search__empty" id="model-search-empty" hidden data-i18n="ui.os.search.no-results">No matching model found.</p>
         </div>
       </section>
+
+      <button type="button" class="ts-entry" id="ts-entry-home" data-i18n="ui.ts.entry">Installed it, but it's not working? Start the troubleshooter</button>
     </section>
 
     <section class="wizard-panel" id="panel-iosversion" data-wizard-panel="iosversion" hidden>
@@ -148,17 +150,26 @@
         </div>
       </section>
       <p class="guide-verified" id="guide-verified" hidden></p>
+      <button type="button" class="ts-entry ts-entry--subtle" id="ts-entry-guide" data-i18n="ui.ts.entry-guide">Stuck? Troubleshooter →</button>
+    </section>
+
+    <section class="wizard-panel" id="panel-troubleshoot" data-wizard-panel="troubleshoot" hidden>
+      <button type="button" class="wizard-back" id="ts-back">
+        <span aria-hidden="true">←</span> <span data-i18n="ui.nav.prev">Back</span>
+      </button>
+      <section class="ts-card" id="ts-card" aria-live="polite"></section>
     </section>
   </main>
 
-  <script src="js/i18n.js?v=21"></script>
-  <script src="js/model-catalog.js?v=21"></script>
-  <script src="js/content-loader.js?v=21"></script>
-  <script src="js/phone-renderer.js?v=21"></script>
-  <script src="js/step-controller.js?v=21"></script>
-  <script src="js/delivery-picker.js?v=21"></script>
-  <script src="js/device-picker.js?v=21"></script>
-  <script src="js/ios-version-picker.js?v=21"></script>
-  <script src="js/app.js?v=21"></script>
+  <script src="js/i18n.js?v=23"></script>
+  <script src="js/model-catalog.js?v=23"></script>
+  <script src="js/content-loader.js?v=23"></script>
+  <script src="js/phone-renderer.js?v=23"></script>
+  <script src="js/step-controller.js?v=23"></script>
+  <script src="js/delivery-picker.js?v=23"></script>
+  <script src="js/device-picker.js?v=23"></script>
+  <script src="js/ios-version-picker.js?v=23"></script>
+  <script src="js/troubleshoot.js?v=23"></script>
+  <script src="js/app.js?v=23"></script>
 </body>
 </html>

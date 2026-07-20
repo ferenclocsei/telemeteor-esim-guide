@@ -28,4 +28,5 @@
   <line x1="32" y1="256" x2="284" y2="256" stroke="#e5e5ea" stroke-width="1"/>
 
   <text x="32" y="284" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#000000">App data usage</text>
+  <g opacity="0.999"><rect x="20" y="324" width="260" height="56" rx="16" fill="#ffffff"/><circle cx="46" cy="352" r="12" fill="#c9d2de"/><rect x="70" y="347" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="20" y="394" width="260" height="56" rx="16" fill="#ffffff"/><circle cx="46" cy="422" r="12" fill="#c9d2de"/><rect x="70" y="417" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="20" y="464" width="260" height="56" rx="16" fill="#ffffff"/><circle cx="46" cy="492" r="12" fill="#c9d2de"/><rect x="70" y="487" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="112" y="606" width="76" height="5" rx="2.5" fill="#182746" opacity="0.3"/></g>
 </svg>

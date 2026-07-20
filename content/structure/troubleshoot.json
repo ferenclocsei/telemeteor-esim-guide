@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "start": "intro",
+  "supportEmail": "support@telemeteor.com",
+  "nodes": [
+    { "id": "intro", "type": "intro", "icon": "🛟", "next": "esim-on" },
+    {
+      "id": "esim-on",
+      "type": "check",
+      "icon": "📶",
+      "emailLabel": "Checked that the eSIM is turned on in Settings",
+      "solved": "success",
+      "notsolved": "region"
+    },
+    {
+      "id": "region",
+      "type": "question",
+      "icon": "🌍",
+      "emailLabel": "I am currently in the plan's region",
+      "yes": "roaming",
+      "no": "wrong-region"
+    },
+    { "id": "wrong-region", "type": "info", "icon": "✈️", "next": "support" },
+    {
+      "id": "roaming",
+      "type": "check",
+      "icon": "🔁",
+      "emailLabel": "Enabled data roaming for the eSIM",
+      "solved": "success",
+      "notsolved": "network"
+    },
+    {
+      "id": "network",
+      "type": "check",
+      "icon": "📡",
+      "emailLabel": "Tried manual network selection",
+      "solved": "success",
+      "notsolved": "plan"
+    },
+    {
+      "id": "plan",
+      "type": "question",
+      "icon": "⏳",
+      "emailLabel": "Plan may be expired or out of data",
+      "yes": "topup",
+      "no": "apn"
+    },
+    { "id": "topup", "type": "info", "icon": "🧾", "next": "support" },
+    {
+      "id": "apn",
+      "type": "check",
+      "icon": "⚙️",
+      "emailLabel": "Checked the APN against the one in my email",
+      "solved": "success",
+      "notsolved": "support"
+    },
+    { "id": "success", "type": "end-success", "icon": "🎉" },
+    { "id": "support", "type": "end-support", "icon": "💬" }
+  ]
+}

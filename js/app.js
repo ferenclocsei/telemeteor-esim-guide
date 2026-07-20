@@ -4,7 +4,8 @@
   const DEFAULT_IOS_VERSION = "modern";
   // Wizard order: device first (everyone knows what phone they hold),
   // then iOS version (iOS only), then installation method, then the guide.
-  const PANEL_IDS = ["device", "iosversion", "delivery", "guide"];
+  // "troubleshoot" sits outside the wizard flow (no breadcrumb chip).
+  const PANEL_IDS = ["device", "iosversion", "delivery", "guide", "troubleshoot"];
 
   function readParam(name, storageKey, fallback) {
     const url = new URL(window.location.href);
@@ -49,6 +50,7 @@
     PANEL_IDS.forEach((key) => {
       panels[key].hidden = key !== id;
     });
+    wizardProgressEl.hidden = id === "troubleshoot";
     const isIos = isIosSelected();
     let num = 0;
     wizardProgressEl.querySelectorAll("[data-wizard-progress]").forEach((el) => {
@@ -83,6 +85,22 @@
   deliveryBackBtn.addEventListener("click", () => {
     showPanel(isIosSelected() ? "iosversion" : "device");
   });
+
+  // Troubleshooter: reachable from the home screen and from the guide;
+  // back returns to wherever the visitor came from.
+  let tsReturnPanel = "device";
+  Troubleshoot.setCard(document.getElementById("ts-card"));
+
+  async function openTroubleshoot() {
+    await Troubleshoot.load();
+    tsReturnPanel = currentPanel === "troubleshoot" ? "device" : currentPanel;
+    Troubleshoot.start();
+    showPanel("troubleshoot");
+  }
+
+  document.getElementById("ts-entry-home").addEventListener("click", openTroubleshoot);
+  document.getElementById("ts-entry-guide").addEventListener("click", openTroubleshoot);
+  document.getElementById("ts-back").addEventListener("click", () => showPanel(tsReturnPanel));
 
   await ModelCatalog.load();
   PhoneRenderer.mount();
@@ -203,6 +221,7 @@
     DevicePicker.init(document.getElementById("os-options"), onDeviceSelected, DevicePicker.current);
     IosVersionPicker.init(document.getElementById("ios-version-options"), onIosVersionSelected, IosVersionPicker.current);
     await updateContent();
+    Troubleshoot.rerender();
     showPanel(currentPanel);
   });
 

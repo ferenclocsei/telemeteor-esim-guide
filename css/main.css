@@ -168,6 +168,10 @@ svg {
 
 /* ---------- Wizard shell ---------- */
 
+.wizard-progress[hidden] {
+  display: none;
+}
+
 .wizard-progress {
   display: flex;
   justify-content: center;
@@ -665,6 +669,135 @@ svg {
 
 .guide-verified[hidden] {
   display: none;
+}
+
+/* ---------- Troubleshooter ---------- */
+
+.ts-entry {
+  display: block;
+  width: 100%;
+  margin-top: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border: 1.5px dashed var(--color-blue);
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+  color: var(--color-navy);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ts-entry:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+.ts-entry--subtle {
+  border: none;
+  background: none;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-top: var(--space-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ts-entry--subtle:hover {
+  color: var(--color-navy);
+  transform: none;
+  box-shadow: none;
+}
+
+.ts-card {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-7) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  animation: wizard-panel-in var(--transition-medium);
+}
+
+.ts-card__icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--color-blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+}
+
+.ts-card__title {
+  margin: 0;
+  font-size: 1.45rem;
+  color: var(--color-navy);
+}
+
+.ts-card__body {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+  max-width: 48ch;
+}
+
+.ts-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 360px;
+  margin-top: var(--space-3);
+}
+
+.ts-btn {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: var(--space-4) var(--space-5);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ts-btn:hover {
+  transform: translateY(-1px);
+}
+
+.ts-btn--primary {
+  background: var(--color-orange);
+  color: var(--color-white);
+  box-shadow: 0 6px 18px rgba(255, 102, 0, 0.3);
+}
+
+.ts-btn--solved {
+  background: #1e9e58;
+  color: var(--color-white);
+  box-shadow: 0 6px 18px rgba(30, 158, 88, 0.3);
+}
+
+.ts-btn--muted {
+  background: var(--color-bg);
+  color: var(--color-navy);
+}
+
+.ts-card__note {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
 }
 
 /* ---------- Responsive breakpoints ---------- */
