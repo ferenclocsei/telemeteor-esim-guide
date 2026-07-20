@@ -82,7 +82,7 @@
     "compat.cta.guide": "Mutasd a telepítést →",
     "compat.cta.support": "Kérdezz minket ✉️",
     "compat.cta.change": "Másik készülék",
-    "compat.disclaimer": "A kompatibilitási adatok hivatalos gyártói és nagy eSIM-szolgáltatói listákból származnak (utolsó ellenőrzés: {date}). Ha kételkedsz, a *#06# tárcsázásával megnézheted, van-e EID-számod — ha igen, a telefonod tud eSIM-et.",
+    "compat.disclaimer": "A kompatibilitási adatok hivatalos gyártói forrásokból származnak (utolsó ellenőrzés: {date}). Ha kételkedsz, a *#06# tárcsázásával megnézheted, van-e EID-számod — ha igen, a telefonod tud eSIM-et.",
     "compat.note.china": "A kínai (és egyes hongkongi) piacra szánt változatokon nincs eSIM.",
     "compat.note.us-samsung": "Az USA-ban vásárolt (Snapdragon) változaton nincs eSIM — az európai/globális változaton igen.",
     "compat.note.pixel-old": "Néhány régió (pl. Ausztrália, Tajvan, Japán) Pixel 3/3a változatán nincs eSIM.",

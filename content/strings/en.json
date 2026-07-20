@@ -82,7 +82,7 @@
     "compat.cta.guide": "Show me the setup →",
     "compat.cta.support": "Ask us ✉️",
     "compat.cta.change": "Different device",
-    "compat.disclaimer": "Compatibility data comes from official manufacturer and major eSIM-provider lists (last checked: {date}). If in doubt, dial *#06# — if you see an EID number, your phone supports eSIM.",
+    "compat.disclaimer": "Compatibility data comes from official manufacturer sources (last checked: {date}). If in doubt, dial *#06# — if you see an EID number, your phone supports eSIM.",
     "compat.note.china": "Variants made for the mainland China (and some Hong Kong) market don't have eSIM.",
     "compat.note.us-samsung": "The US (Snapdragon) variant has no eSIM — the European/global variant does.",
     "compat.note.pixel-old": "Pixel 3/3a variants from some regions (e.g. Australia, Taiwan, Japan) lack eSIM.",

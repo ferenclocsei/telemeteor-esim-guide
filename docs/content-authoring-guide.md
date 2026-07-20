@@ -55,4 +55,4 @@ A kereső mögötti adatbázis minden modellhez tárol egy `esim` státuszt és 
 
 **Új modell felvétele** = egy sor a `models` tömbben, kódmódosítás nélkül. A verdikt-szövegek a `content/strings/*.json` `compat.*` kulcsaiban vannak.
 
-**Források és frissesség:** a fájl `sources` és `lastVerifiedDate` mezője a hivatalos gyártói + nagy eSIM-szolgáltatói (Airalo, Holafly) listákra mutat. A `tools/check-sources.py` ezeket is figyeli (lásd fent). Ha egy forrás változik, nézd át az érintett modelleket, frissítsd a `lastVerifiedDate`-et, és futtasd a szkriptet `--accept`-tel.
+**Források és frissesség:** a fájl `sources` és `lastVerifiedDate` mezője a hivatalos gyártói forrásokra (és néhány karbantartott nyilvános kompatibilitási listára) mutat. A `tools/check-sources.py` ezeket is figyeli (lásd fent). Ha egy forrás változik, nézd át az érintett modelleket, frissítsd a `lastVerifiedDate`-et, és futtasd a szkriptet `--accept`-tel.
