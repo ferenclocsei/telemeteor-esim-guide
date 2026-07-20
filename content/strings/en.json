@@ -1,6 +1,10 @@
 {
   "lang": "en",
-  "reviewMeta": { "machineDraft": false, "reviewedBy": null, "reviewedDate": null },
+  "reviewMeta": {
+    "machineDraft": false,
+    "reviewedBy": null,
+    "reviewedDate": null
+  },
   "ui": {
     "app.title": "eSIM Setup Guide",
     "app.subtitle": "Pick your device and how you'd like to install — we'll walk you through the rest, step by step.",
@@ -10,13 +14,15 @@
     "wizard.step-guide": "Guide",
     "hero.eyebrow": "Don't worry, we've got you",
     "hero.title": "This is easier than it looks",
-    "hero.body": "We know setting up a new eSIM can feel intimidating the first time — but we promise it isn't! Step by step, we'll show you exactly what you'll see on your own phone's screen. Just follow the highlighted buttons and you can't go wrong.",
+    "hero.body": "Step by step, we'll show you exactly what you'll see on your own phone's screen. Just follow the highlighted buttons — you can't go wrong.",
     "hero.chip1": "About 2 minutes, start to finish",
     "hero.chip2": "No technical knowledge needed",
     "hero.chip3": "We show you exactly where to tap",
     "nav.next": "Next",
     "nav.prev": "Back",
     "nav.step-of": "Step {current} of {total}",
+    "nav.step-short": "{current}/{total}",
+    "nav.details": "More details",
     "nav.restart": "Start over",
     "lang.label": "Language",
     "delivery.title": "How would you like to install it?",
@@ -55,60 +61,47 @@
   "screen": {
     "open-link.app-name": "Mail",
     "open-link.button": "Apple Quick Link",
-
     "allow-notification.title": "Activate New eSIM",
     "allow-notification.subtitle": "Ready to activate a new plan",
     "allow-notification.close": "Close",
     "allow-notification.allow": "Allow",
-
     "confirm-install.title": "Install Cellular Plan?",
     "confirm-install.subtitle": "A new plan will be added",
     "confirm-install.cancel": "Cancel",
     "confirm-install.install": "Continue",
-
     "open-settings.label": "Settings",
-
     "open-cellular.title": "Settings",
     "open-cellular.row": "Cellular",
-
     "add-cellular-plan.title": "Cellular",
     "add-cellular-plan.section": "SIM CARDS",
     "add-cellular-plan.button": "Add Cellular Plan",
-
     "add-esim-prompt.title": "Add eSIM?",
     "add-esim-prompt.subtitle": "A cellular plan was found",
     "add-esim-prompt.cancel": "Cancel",
     "add-esim-prompt.add": "Add eSIM",
-
     "open-camera-qr.title": "Scan QR Code",
     "open-camera-qr.hint": "Align the QR code within the frame",
-
     "cellular-plan-detected.title": "Cellular Plan Detected",
     "cellular-plan-detected.subtitle": "Tap to continue setup",
-
     "enter-manually.title": "Enter Details",
     "enter-manually.address-label": "SM-DP+ ADDRESS",
     "enter-manually.code-label": "ACTIVATION CODE",
     "enter-manually.apn-label": "APN (ACCESS POINT NAME)",
     "enter-manually.next": "Next",
-
     "confirm-plan.title": "Cellular Plan",
     "confirm-plan.data-label": "Data",
     "confirm-plan.data-value": "Unlimited",
     "confirm-plan.valid": "Valid 15 days",
     "confirm-plan.continue": "Continue",
-
     "label-plan.title": "Cellular Plan Label",
     "label-plan.section": "PLAN NAME",
     "label-plan.option-travel": "Travel eSIM",
     "label-plan.option-personal": "Personal",
     "label-plan.continue": "Continue",
-
     "line-preferences.title": "Default Line",
     "line-preferences.section": "FOR CALLS & SMS",
     "line-preferences.original": "Original SIM",
     "line-preferences.esim": "Telemeteor eSIM",
-
     "before-you-start.back": "General",
     "before-you-start.title": "About",
     "before-you-start.name-label": "Name",
@@ -116,7 +109,6 @@
     "before-you-start.carrier-label": "Carrier",
     "before-you-start.lock-label": "Carrier Lock",
     "before-you-start.lock-value": "No SIM restrictions",
-
     "enable-roaming.back": "Data",
     "enable-roaming.turn-on": "Turn On This Line",
     "enable-roaming.voice-data": "Voice & Data",
@@ -124,377 +116,283 @@
     "enable-roaming.roaming": "Data Roaming",
     "enable-roaming.data-mode": "Data Mode",
     "enable-roaming.data-mode-value": "Standard",
-
     "select-data-line.back": "Cellular",
     "select-data-line.title": "Mobile Data",
     "select-data-line.section": "MOBILE DATA",
     "select-data-line.original": "Original SIM",
     "select-data-line.footnote": "Data is used from the selected line.",
-
     "done.title": "All Set!",
     "done.subtitle": "Your eSIM is active",
-
     "stub.coming-soon": "Coming soon",
-
     "s-before-you-start.title": "SIM card manager",
     "s-before-you-start.row": "Add mobile plan",
-
     "s-open-link.button": "Android Quick Link",
-
     "s-add-esim-prefilled.title": "Add eSIM",
     "s-add-esim-prefilled.subtitle": "Details filled in automatically",
     "s-add-esim-prefilled.button": "Continue",
-
     "s-open-settings.label": "Settings",
-
     "s-open-connections.title": "Settings",
     "s-open-connections.row": "Connections",
-
     "s-open-sim-manager.title": "Connections",
     "s-open-sim-manager.row": "SIM card manager",
-
     "s-add-mobile-plan.title": "SIM card manager",
     "s-add-mobile-plan.button": "Add mobile plan",
-
     "s-add-using-qr.title": "Add using QR code",
     "s-add-using-qr.hint": "Align the QR code within the frame",
-
     "s-add-using-code.title": "Add using activation code",
     "s-add-using-code.address-label": "SERVER ADDRESS (SM-DP+)",
     "s-add-using-code.code-label": "ACTIVATION CODE",
     "s-add-using-code.apn-label": "APN (ACCESS POINT NAME)",
     "s-add-using-code.next": "Add",
-
     "s-downloading.title": "Downloading profile…",
     "s-downloading.subtitle": "This may take a minute",
-
     "s-enable-roaming.back": "Connections",
     "s-enable-roaming.roaming": "Data roaming",
-
     "s-select-data-line.back": "Connections",
     "s-select-data-line.title": "SIM card manager",
     "s-select-data-line.section": "MOBILE DATA",
     "s-select-data-line.original": "Original SIM",
-
     "s-done.title": "All Set!",
     "s-done.subtitle": "Your eSIM is active",
-
     "p-before-you-start.title": "Network & internet",
     "p-before-you-start.row": "SIMs",
-
     "p-open-link.button": "Android Quick Link",
-
     "p-add-esim-prefilled.title": "Set up eSIM",
     "p-add-esim-prefilled.subtitle": "Details filled in automatically",
     "p-add-esim-prefilled.button": "Continue",
-
     "p-open-settings.label": "Settings",
-
     "p-open-network-internet.title": "Settings",
     "p-open-network-internet.row": "Network & internet",
-
     "p-open-sims.title": "Network & internet",
     "p-open-sims.row": "SIMs",
-
     "p-add-sim.title": "SIMs",
     "p-add-sim.button": "Add SIM",
-
     "p-scan-qr.title": "Set up eSIM",
     "p-scan-qr.hint": "Align the QR code within the frame",
-
     "p-enter-manually.title": "Enter it manually",
     "p-enter-manually.address-label": "SM-DP+ ADDRESS",
     "p-enter-manually.code-label": "ACTIVATION CODE",
-
     "p-downloading.title": "Downloading profile…",
     "p-downloading.subtitle": "This may take a minute",
-
     "p-enable-roaming.back": "SIMs",
     "p-enable-roaming.roaming": "Data roaming",
-
     "p-select-data-line.back": "Network & internet",
     "p-select-data-line.title": "SIMs",
     "p-select-data-line.section": "MOBILE DATA",
     "p-select-data-line.original": "Original SIM",
-
     "p-done.title": "All Set!",
     "p-done.subtitle": "Your eSIM is active",
-
     "g-before-you-start.title": "Settings",
     "g-before-you-start.row": "eSIM / SIM manager",
-
     "g-open-link.button": "Android Quick Link",
-
     "g-open-settings.label": "Settings",
-
     "g-find-sim-settings.search-placeholder": "Search eSIM",
     "g-find-sim-settings.hint": "Network & internet / Connections / SIMs",
-
     "g-add-esim-qr.title": "Add eSIM",
     "g-add-esim-qr.hint": "Align the QR code within the frame",
-
     "g-add-esim-manual.title": "Enter it manually",
     "g-add-esim-manual.address-label": "SM-DP+ ADDRESS",
     "g-add-esim-manual.code-label": "ACTIVATION CODE",
     "g-add-esim-manual.next": "Add",
-
     "g-downloading.title": "Downloading profile…",
     "g-downloading.subtitle": "This may take a minute",
-
     "g-enable-roaming.back": "SIMs",
     "g-enable-roaming.roaming": "Data roaming",
-
     "g-select-data-line.back": "Network",
     "g-select-data-line.title": "SIMs",
     "g-select-data-line.section": "MOBILE DATA",
     "g-select-data-line.original": "Original SIM",
-
     "g-done.title": "All Set!",
     "g-done.subtitle": "Your eSIM is active"
   },
   "steps": {
     "ios.before-you-start.title": "Before you start",
-    "ios.before-you-start.body": "Don't worry, this really isn't complicated! eSIM has been available on every iPhone since 2018 (iPhone XS, XS Max, XR or later). One thing worth checking first: your phone needs to be \"carrier-unlocked\" (not locked to a specific network). Check this under: Settings → General → About → scroll down to \"Carrier Lock\". If it says \"No SIM restrictions\", you're good to go!",
+    "ios.before-you-start.body": "Don't worry, this really isn't complicated! eSIM has been available on every iPhone since 2018 (iPhone XS, XS Max, XR or later). One thing worth checking first: your phone needs to be \"carrier-unlocked\" (not locked to a specific network). Check this under: Settings → General → About → scroll down to \"Carrier Lock\". If it says \"No SIM restrictions\", you're good to go! Tip: install your eSIM at home before you travel — you need a stable internet connection at the moment of install.",
     "ios.before-you-start.tap.carrier-lock": "Carrier Lock row",
-    "ios.before-you-start.warning": "Tip: you can install your eSIM at home before you travel — you just need a stable internet connection at the moment of installation. On iPhones bought in mainland China (except the newest iPhone 17e and iPhone Air), eSIM isn't available at all.",
-
+    "ios.before-you-start.warning": "On iPhones bought in mainland China, eSIM is not available (except iPhone 17e and iPhone Air).",
     "ios.open-link.title": "Open the email",
     "ios.open-link.body": "Open the Telemeteor email on the iPhone you want to use, then tap the \"Apple Quick Link\" link.",
     "ios.open-link.tap.link": "Apple Quick Link",
-
     "ios.allow-notification.title": "Allow the eSIM to be added",
     "ios.allow-notification.body": "An \"Activate New eSIM\" notification appears at the top of the screen. Tap \"Allow\".",
     "ios.allow-notification.tap.allow": "Allow button",
-
     "ios.continue-install.title": "Tap Continue",
     "ios.continue-install.body": "A confirmation screen appears with the new cellular plan. Tap \"Continue\".",
     "ios.continue-install.tap.continue": "Continue button",
-
     "ios.open-email-qr.title": "Open the email and the QR code",
     "ios.open-email-qr.body": "Open the Telemeteor email on the iPhone you want to use. Press and hold the QR code image until a menu pops up.",
     "ios.open-email-qr.tap.image": "QR code image",
-
     "ios.add-esim-prompt.title": "Tap \"Add eSIM\"",
     "ios.add-esim-prompt.body": "In the pop-up menu, tap \"Add eSIM\".",
     "ios.add-esim-prompt.tap.button": "Add eSIM button",
-
     "ios.open-camera-qr.title": "Open the Camera app",
     "ios.open-camera-qr.body": "Open the Camera app and point it at the QR code from the Telemeteor email (on a screen or printed out).",
     "ios.open-camera-qr.tap.frame": "QR scan frame",
-
     "ios.cellular-plan-detected.title": "Tap the notification",
     "ios.cellular-plan-detected.body": "Once the Camera recognizes the code, a \"Cellular Plan Detected\" notification appears. Tap it.",
     "ios.cellular-plan-detected.tap.notification": "Cellular Plan Detected notification",
-
     "ios.continue-qr.title": "Tap Continue",
     "ios.continue-qr.body": "A confirmation screen appears. Tap \"Continue\".",
     "ios.continue-qr.tap.continue": "Continue button",
-
     "ios.add-cellular-plan-qr.title": "Tap \"Add Cellular Plan\"",
     "ios.add-cellular-plan-qr.body": "On the final screen, tap \"Add Cellular Plan\" to start the installation.",
     "ios.add-cellular-plan-qr.tap.button": "Add Cellular Plan button",
-
     "ios.open-settings.title": "Open Settings",
     "ios.open-settings.body": "On your iPhone's home screen, tap the Settings app icon.",
     "ios.open-settings.tap.icon": "Settings icon",
-
     "ios.open-cellular.title": "Go to Cellular",
     "ios.open-cellular.body": "In Settings, tap \"Cellular\" (or \"Mobile Data\") — the exact name can vary slightly by model.",
     "ios.open-cellular.tap.row": "Cellular row",
-
     "ios.add-cellular-plan-manual.title": "Tap \"Add Cellular Plan\"",
     "ios.add-cellular-plan-manual.body": "Tap \"Add Cellular Plan\".",
     "ios.add-cellular-plan-manual.tap.button": "Add Cellular Plan button",
-
     "ios.enter-manually.title": "Enter the details manually",
     "ios.enter-manually.body": "Tap \"Enter Details Manually\". Carefully paste in the SM-DP+ address and activation code from the email, then fill in the APN (Access Point Name) too, if your phone asks for it.",
     "ios.enter-manually.tap.address": "SM-DP+ address field",
     "ios.enter-manually.tap.code": "Activation code field",
     "ios.enter-manually.tap.apn": "APN field",
-    "ios.enter-manually.warning": "Make sure you copy the SM-DP+ address and code exactly, with no extra spaces — a single mistyped character can cause an error. Copy-pasting straight from the email is safest.",
-
+    "ios.enter-manually.warning": "Enter the details exactly, with no extra spaces — copy-pasting from the email is safest.",
     "ios.confirm-plan.title": "Confirm the plan",
     "ios.confirm-plan.body": "Review the plan details and tap \"Continue\". You're almost done!",
     "ios.confirm-plan.tap.continue": "Continue button",
-
     "ios.label-plan.title": "Label your plan",
     "ios.label-plan.body": "Give the plan a name you'll recognize, e.g. \"Travel eSIM\" — you can change this later under \"Cellular Plan Label\" if you skip it now.",
     "ios.label-plan.tap.field": "Plan label field",
-
     "ios.line-preferences.title": "Keep calls & SMS on your original SIM",
     "ios.line-preferences.body": "Under \"Default Line\", keep your original SIM selected for calls and SMS. This matters because FaceTime, iMessage (iOS only), Viber, WhatsApp and similar apps are tied to your original card's phone number — switching these to the new eSIM would break them. We'll set up the new Telemeteor eSIM separately, just for data, in the next two steps.",
     "ios.line-preferences.tap.default-line": "Original SIM row",
-
     "ios.enable-data-roaming.title": "Turn on data roaming",
     "ios.enable-data-roaming.body": "After installing the eSIM, go to: Settings → Mobile Data → Telemeteor → Data Roaming, and turn it ON.",
     "ios.enable-data-roaming.tap.toggle": "Data Roaming toggle",
     "ios.enable-data-roaming.warning": "Without this step, your data won't work abroad.",
-
     "ios.select-data-line.title": "On arrival, select Telemeteor",
     "ios.select-data-line.body": "When you land in your destination country: Settings → Mobile Data → Mobile Data, and choose the Telemeteor eSIM. From then on this line handles your data, while calls and SMS stay on your original SIM.",
     "ios.select-data-line.tap.row": "Mobile Data row",
     "ios.select-data-line.warning": "Only switch this after you land, so the eSIM's data doesn't run unnecessarily before then.",
-
     "ios.done.title": "Nicely done, you're all set!",
     "ios.done.body": "Your Telemeteor eSIM is installed. Don't forget the previous two steps (turning on data roaming and selecting Telemeteor on arrival) — once those are done, you're ready to go!",
     "ios.done.warning": "Exact steps and labels can vary slightly by device model and iOS version.",
-
     "samsung.before-you-start.title": "Before you start",
     "samsung.before-you-start.body": "Don't worry, this is genuinely simple! eSIM is available on most Galaxy S20 (2020) and later models. The most reliable way to check if yours supports it: open Settings → Connections → SIM card manager — if you see \"Add mobile plan\" there, you're good to go!",
     "samsung.before-you-start.tap.row": "Add mobile plan row",
-    "samsung.before-you-start.warning": "In some regions and on some carrier variants (e.g. US Snapdragon Galaxy S20 models), eSIM isn't available regardless of the device's age. If in doubt, the quick check above is the most reliable way to know.",
-
+    "samsung.before-you-start.warning": "Some regional variants (e.g. US Galaxy S20) don't have eSIM — the quick check above is what counts.",
     "samsung.open-link.title": "Open the email",
     "samsung.open-link.body": "Open the Telemeteor email on the phone you want to use, then tap the \"Android Quick Link\" link.",
     "samsung.open-link.tap.link": "Android Quick Link",
-
     "samsung.add-esim-prefilled.title": "Confirm the details",
     "samsung.add-esim-prefilled.body": "The \"Add eSIM\" screen opens automatically with the details already filled in. Tap \"Continue\".",
     "samsung.add-esim-prefilled.tap.button": "Continue button",
-
     "samsung.open-settings.title": "Open Settings",
     "samsung.open-settings.body": "On your home screen, tap the Settings app icon.",
     "samsung.open-settings.tap.icon": "Settings icon",
-
     "samsung.open-connections.title": "Go to Connections",
     "samsung.open-connections.body": "In Settings, tap \"Connections\".",
     "samsung.open-connections.tap.row": "Connections row",
-
     "samsung.open-sim-manager.title": "Tap SIM card manager",
     "samsung.open-sim-manager.body": "In Connections, tap \"SIM card manager\".",
     "samsung.open-sim-manager.tap.row": "SIM card manager row",
-
     "samsung.add-mobile-plan.title": "Tap \"Add mobile plan\"",
     "samsung.add-mobile-plan.body": "Tap \"Add mobile plan\".",
     "samsung.add-mobile-plan.tap.button": "Add mobile plan button",
-
     "samsung.add-using-qr.title": "Tap \"Add using QR code\"",
     "samsung.add-using-qr.body": "Choose \"Add using QR code\", then scan the QR code from the email.",
     "samsung.add-using-qr.tap.frame": "QR scan frame",
-
     "samsung.add-using-code.title": "Enter the details manually",
     "samsung.add-using-code.body": "Choose \"Add using activation code\". Carefully paste in the server address (SM-DP+) and activation code from the email, then fill in the APN too, if your phone asks for it.",
     "samsung.add-using-code.tap.address": "Server address field",
     "samsung.add-using-code.tap.code": "Activation code field",
     "samsung.add-using-code.warning": "Make sure you copy the details exactly, with no extra spaces — copy-pasting straight from the email is safest.",
-
     "samsung.downloading.title": "Almost there!",
     "samsung.downloading.body": "Your phone is downloading and activating the plan on your eSIM. This may take a minute.",
-
     "samsung.enable-data-roaming.title": "Turn on data roaming",
     "samsung.enable-data-roaming.body": "After installing the eSIM, go to: Settings → Connections → SIM card manager → Telemeteor → Data roaming, and turn it ON.",
     "samsung.enable-data-roaming.tap.toggle": "Data roaming toggle",
     "samsung.enable-data-roaming.warning": "Without this step, your data won't work abroad.",
-
     "samsung.select-data-line.title": "On arrival, select Telemeteor",
     "samsung.select-data-line.body": "When you land in your destination country: Settings → Connections → SIM card manager, and choose the Telemeteor eSIM for mobile data. Calls and SMS stay on your original SIM.",
     "samsung.select-data-line.tap.row": "Telemeteor row",
     "samsung.select-data-line.warning": "Only switch this after you land, so the eSIM's data doesn't run unnecessarily before then.",
-
     "samsung.done.title": "Nicely done, you're all set!",
     "samsung.done.body": "Your Telemeteor eSIM is installed. Don't forget the previous two steps (turning on data roaming and selecting Telemeteor on arrival) — once those are done, you're ready to go!",
     "samsung.done.warning": "Exact steps and labels can vary slightly by device model and Android version.",
-
     "pixel.before-you-start.title": "Before you start",
-    "pixel.before-you-start.body": "Don't worry, this is genuinely simple! eSIM is available on every Pixel phone from the Pixel 4 (2019) onward. The most reliable way to check if yours supports it: open Settings → Network & internet → SIMs.",
+    "pixel.before-you-start.body": "Don't worry, this is genuinely simple! eSIM is available on every Pixel phone from the Pixel 4 (2019) onward. The most reliable way to check if yours supports it: open Settings → Network & internet → SIMs. (In the US, the Pixel 10 series is eSIM-only and takes no physical SIM.)",
     "pixel.before-you-start.tap.row": "SIMs row",
-    "pixel.before-you-start.warning": "A few older Pixel models (Pixel 2, 3, 3a) have region/carrier-specific eSIM exceptions. In the US, the Pixel 10 series is eSIM-only and doesn't accept a physical SIM at all.",
-
+    "pixel.before-you-start.warning": "On Pixel 2/3/3a, eSIM support varies by region and carrier.",
     "pixel.open-link.title": "Open the email",
     "pixel.open-link.body": "Open the Telemeteor email on the phone you want to use, then tap the \"Android Quick Link\" link.",
     "pixel.open-link.tap.link": "Android Quick Link",
-
     "pixel.add-esim-prefilled.title": "Confirm the details",
     "pixel.add-esim-prefilled.body": "The eSIM setup screen opens automatically with the details already filled in. Tap \"Continue\".",
     "pixel.add-esim-prefilled.tap.button": "Continue button",
-
     "pixel.open-settings.title": "Open Settings",
     "pixel.open-settings.body": "On your home screen, tap the Settings app icon.",
     "pixel.open-settings.tap.icon": "Settings icon",
-
     "pixel.open-network-internet.title": "Go to Network & internet",
     "pixel.open-network-internet.body": "In Settings, tap \"Network & internet\".",
     "pixel.open-network-internet.tap.row": "Network & internet row",
-
     "pixel.open-sims.title": "Tap SIMs",
     "pixel.open-sims.body": "In Network & internet, tap \"SIMs\".",
     "pixel.open-sims.tap.row": "SIMs row",
-
     "pixel.add-sim.title": "Tap \"Add SIM\"",
     "pixel.add-sim.body": "Tap \"Add SIM\", then choose \"Set up an eSIM\".",
     "pixel.add-sim.tap.button": "Add SIM button",
-
     "pixel.scan-qr.title": "Scan the QR code",
     "pixel.scan-qr.body": "Follow the on-screen instructions and scan the QR code from the email.",
     "pixel.scan-qr.tap.frame": "QR scan frame",
-
     "pixel.enter-manually.title": "Enter the details manually",
     "pixel.enter-manually.body": "If you can't scan the QR code, look for \"Need help?\" or \"Enter it manually\", then paste in the SM-DP+ address and activation code from the email.",
     "pixel.enter-manually.tap.address": "SM-DP+ address field",
     "pixel.enter-manually.tap.code": "Activation code field",
-    "pixel.enter-manually.warning": "The exact screen and wording can vary slightly by Pixel model and Android version — if it doesn't match exactly, look for a similarly worded option on the setup screen.",
-
+    "pixel.enter-manually.warning": "Wording can vary slightly by model — look for the closest matching option.",
     "pixel.downloading.title": "Almost there!",
     "pixel.downloading.body": "Your phone is downloading and activating the plan on your eSIM. This may take a minute.",
-
     "pixel.enable-data-roaming.title": "Turn on data roaming",
     "pixel.enable-data-roaming.body": "After installing the eSIM, go to: Settings → Network & internet → SIMs → Telemeteor → Data roaming, and turn it ON.",
     "pixel.enable-data-roaming.tap.toggle": "Data roaming toggle",
     "pixel.enable-data-roaming.warning": "Without this step, your data won't work abroad.",
-
     "pixel.select-data-line.title": "On arrival, select Telemeteor",
     "pixel.select-data-line.body": "When you land in your destination country: Settings → Network & internet → SIMs, and choose the Telemeteor eSIM for mobile data. Calls and SMS stay on your original SIM.",
     "pixel.select-data-line.tap.row": "Telemeteor row",
     "pixel.select-data-line.warning": "Only switch this after you land, so the eSIM's data doesn't run unnecessarily before then.",
-
     "pixel.done.title": "Nicely done, you're all set!",
     "pixel.done.body": "Your Telemeteor eSIM is installed. Don't forget the previous two steps (turning on data roaming and selecting Telemeteor on arrival) — once those are done, you're ready to go!",
     "pixel.done.warning": "Exact steps and labels can vary slightly by device model and Android version.",
-
     "generic.before-you-start.title": "Before you start",
     "generic.before-you-start.body": "Since there are so many different Android manufacturers and interfaces (Xiaomi, Huawei, OnePlus, Motorola, Oppo and others), the exact menu names can vary by device. The general recipe: open Settings, and look for \"SIM manager\", \"eSIM\" or \"Mobile network\" — on many phones you can also type \"eSIM\" into the search bar at the top of Settings.",
     "generic.before-you-start.tap.row": "eSIM / SIM manager row",
-    "generic.before-you-start.warning": "Not every Android phone supports eSIM — if you can't find an eSIM-related setting, your device likely doesn't support it, or the manufacturer provides its own guide that differs from this one.",
-
+    "generic.before-you-start.warning": "If you can't find an eSIM setting, your device most likely doesn't support it.",
     "generic.open-link.title": "Open the email",
-    "generic.open-link.body": "Open the Telemeteor email on the phone you want to use, then tap the \"Android Quick Link\" link.",
+    "generic.open-link.body": "Open the Telemeteor email on the phone you want to use, then tap the \"Android Quick Link\" link. This method needs Android 10+ with up-to-date Google services.",
     "generic.open-link.tap.link": "Android Quick Link",
-    "generic.open-link.warning": "This method only works on Android phones that support Google's eSIM quick-link feature (Android 10+ with up-to-date Google services). If nothing happens after tapping, use the QR code or manual method instead.",
-
+    "generic.open-link.warning": "If nothing happens after tapping, use the QR code or manual method instead.",
     "generic.open-settings.title": "Open Settings",
     "generic.open-settings.body": "On your home screen, tap the Settings app icon.",
     "generic.open-settings.tap.icon": "Settings icon",
-
     "generic.find-sim-settings.title": "Find the eSIM setting",
     "generic.find-sim-settings.body": "In Settings, look for \"Network & internet\", \"Connections\" or \"SIMs\" — or type \"eSIM\" into the Settings search bar.",
     "generic.find-sim-settings.tap.search": "Settings search bar",
-    "generic.find-sim-settings.warning": "The exact menu structure differs by manufacturer (Xiaomi/MIUI, Huawei/EMUI, OnePlus/OxygenOS, etc.) — if this doesn't match exactly, look for a similarly named option, or check your manufacturer's own eSIM guide.",
-
+    "generic.find-sim-settings.warning": "Menu names differ by manufacturer — look for a similarly named option.",
     "generic.add-esim-qr.title": "Scan the QR code",
     "generic.add-esim-qr.body": "Look for \"Add eSIM\" or \"Scan QR code\", then scan the QR code from the email.",
     "generic.add-esim-qr.tap.frame": "QR scan frame",
-
     "generic.add-esim-manual.title": "Enter the details manually",
     "generic.add-esim-manual.body": "Look for \"Enter manually\" or \"Use activation code\". Carefully paste in the SM-DP+ address and activation code from the email.",
     "generic.add-esim-manual.tap.address": "SM-DP+ address field",
     "generic.add-esim-manual.tap.code": "Activation code field",
     "generic.add-esim-manual.warning": "Make sure you copy the details exactly, with no extra spaces — copy-pasting straight from the email is safest.",
-
     "generic.downloading.title": "Almost there!",
     "generic.downloading.body": "Your phone is downloading and activating the plan on your eSIM. This may take a minute.",
-
     "generic.enable-data-roaming.title": "Turn on data roaming",
     "generic.enable-data-roaming.body": "After installing the eSIM, find the Telemeteor eSIM row in your SIM settings and turn ON \"Data roaming\".",
     "generic.enable-data-roaming.tap.toggle": "Data roaming toggle",
     "generic.enable-data-roaming.warning": "Without this step, your data won't work abroad.",
-
     "generic.select-data-line.title": "On arrival, select Telemeteor",
     "generic.select-data-line.body": "When you land in your destination country: in your SIM settings, choose the Telemeteor eSIM for mobile data. Calls and SMS stay on your original SIM.",
     "generic.select-data-line.tap.row": "Telemeteor row",
     "generic.select-data-line.warning": "Only switch this after you land, so the eSIM's data doesn't run unnecessarily before then.",
-
     "generic.done.title": "Nicely done, you're all set!",
     "generic.done.body": "Your Telemeteor eSIM is installed. Don't forget the previous two steps (turning on data roaming and selecting Telemeteor on arrival) — once those are done, you're ready to go!",
-    "generic.done.warning": "Since this is a general Android guide, the exact screens and labels may differ on your specific manufacturer/model — if you get stuck, your manufacturer's own eSIM guide is the most reliable extra resource."
+    "generic.done.warning": "If you get stuck, your manufacturer's own eSIM guide is the best companion source."
   }
 }

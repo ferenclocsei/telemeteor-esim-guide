@@ -507,36 +507,59 @@ svg {
   padding: var(--space-2) var(--space-4);
 }
 
-.step-text {
+.step-sheet {
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 42ch;
+  max-width: 46ch;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
 }
 
-.step-text__eyebrow {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-blue-light);
-  margin: 0 0 var(--space-2);
+.step-progressbar {
+  width: 100%;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.16);
+  overflow: hidden;
 }
 
-.step-text h2 {
-  margin: 0 0 var(--space-2);
-  font-size: 1.25rem;
+.step-progressbar__fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--color-orange), #ff8a3d);
+  transition: width 0.35s ease;
 }
 
-.step-text p {
+.step-sheet__eyebrow {
   margin: 0;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.95rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-blue-light);
+}
+
+.step-sheet__count::before {
+  content: " · ";
+  opacity: 0.6;
+}
+
+.step-sheet__title {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.25;
 }
 
 .step-text__warning {
-  margin-top: var(--space-3);
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 600;
   background: var(--color-warning-bg);
   color: var(--color-warning-text);
   border-radius: var(--radius-control);
@@ -547,27 +570,66 @@ svg {
   display: none;
 }
 
+.step-details {
+  width: 100%;
+}
+
+.step-details summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-blue-light);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+  user-select: none;
+}
+
+.step-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.step-details summary::after {
+  content: "▾";
+  font-size: 0.7rem;
+  transition: transform var(--transition-fast);
+}
+
+.step-details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.step-details__body {
+  margin: var(--space-3) 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  max-height: 26dvh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
 .step-nav {
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: center;
-  gap: var(--space-4);
+  align-items: stretch;
+  gap: var(--space-3);
+  width: 100%;
+  margin-top: var(--space-2);
 }
 
 .step-nav button {
   border: none;
   border-radius: var(--radius-pill);
-  padding: var(--space-3) var(--space-5);
   font-weight: 700;
-  font-size: 0.9rem;
   cursor: pointer;
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
-}
-
-.step-nav button:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
+  transition: transform var(--transition-fast), opacity var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .step-nav button:not(:disabled):hover {
@@ -577,38 +639,18 @@ svg {
 .step-nav__prev {
   background: rgba(255, 255, 255, 0.14);
   color: var(--color-white);
+  font-size: 1.15rem;
+  width: 54px;
+  flex: 0 0 auto;
 }
 
 .step-nav__next {
   background: var(--color-orange);
   color: var(--color-white);
-}
-
-.step-progress {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  gap: var(--space-2);
-}
-
-.step-progress__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transition: background var(--transition-fast), transform var(--transition-fast);
-}
-
-.step-progress__dot--active {
-  background: var(--color-orange);
-  transform: scale(1.3);
-}
-
-.step-progress__label {
-  position: relative;
-  z-index: 1;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.7);
+  flex: 1;
+  font-size: 1.02rem;
+  padding: var(--space-4) var(--space-5);
+  box-shadow: 0 6px 18px rgba(255, 102, 0, 0.35);
 }
 
 /* Content-freshness line under the guide: which official-source check date
@@ -634,11 +676,48 @@ svg {
   }
 }
 
-/* Desktop: bigger phone mockup, more breathing room — still one wizard panel at a time */
+/* Desktop: two-column guide — big phone on the left, big type on the right.
+   The details text is always expanded here (JS keeps it open). */
 @media (min-width: 960px) {
+  .wizard-panel[data-wizard-panel="guide"] {
+    max-width: 980px;
+  }
+
   .guide-panel {
-    min-height: 640px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-7);
+    padding: var(--space-7);
+    min-height: 620px;
+  }
+
+  .guide-panel__fallback-notice {
+    grid-column: 1 / -1;
+  }
+
+  .step-sheet {
+    text-align: left;
+    align-items: flex-start;
+    max-width: none;
+  }
+
+  .step-sheet__title {
+    font-size: 1.9rem;
+  }
+
+  .step-details summary {
+    display: none;
+  }
+
+  .step-details__body {
+    margin-top: 0;
+    font-size: 1.05rem;
+    max-height: none;
+  }
+
+  .step-nav {
+    max-width: 340px;
   }
 
   .picker-group--standalone {
@@ -658,10 +737,27 @@ svg {
   }
 
   .page-intro h1 {
-    font-size: 1.35rem;
+    font-size: 1.55rem;
   }
 
   .page-intro p {
+    font-size: 0.92rem;
+  }
+
+  /* Bigger, friendlier tap targets on the picker screens */
+  .picker-group h2 {
+    font-size: 1.12rem;
+  }
+
+  .option-card__icon {
+    font-size: 1.9rem;
+  }
+
+  .option-card__name {
+    font-size: 1.02rem;
+  }
+
+  .option-card__desc {
     font-size: 0.85rem;
   }
 
@@ -710,58 +806,46 @@ svg {
   }
 
   .guide-panel {
-    padding: var(--space-4) var(--space-3);
-    gap: var(--space-2);
+    padding: var(--space-4) var(--space-4) var(--space-5);
+    gap: var(--space-3);
     /* 120px = header + page padding + breadcrumb chrome above the panel;
-       measured, with a small safety margin. Keeps the Next button on-screen. */
+       measured. Keeps the Next button on-screen without page scrolling. */
     max-height: calc(100dvh - 120px);
     justify-content: space-between;
   }
 
-  /* When the panel hits its max-height, the only element allowed to give way
-     is the step text (it becomes scrollable) — the phone mockup, progress dots
-     and nav buttons must never be clipped or pushed off-screen. */
   .phone-frame-shell,
-  .step-progress,
-  .step-progress__label,
   .step-nav,
   .guide-panel__fallback-notice {
     flex-shrink: 0;
   }
 
-  .step-text {
+  .step-sheet {
     flex: 0 1 auto;
-    min-height: 4.5rem;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: thin;
+    min-height: 0;
+    gap: var(--space-2);
   }
 
-  /* Fade hint only when there really is more text below the fold. */
-  .step-text.is-scrollable::after {
-    content: "";
-    position: sticky;
-    bottom: -1px;
-    display: block;
-    height: 18px;
-    margin-top: -18px;
-    background: linear-gradient(to bottom, transparent, var(--color-navy));
-    pointer-events: none;
+  .step-sheet__title {
+    font-size: 1.3rem;
   }
 
-  .step-text h2 {
-    font-size: 1.05rem;
+  .step-details__body {
+    max-height: 22dvh;
+    font-size: 0.95rem;
   }
 
-  .step-text p {
-    font-size: 0.85rem;
+  .step-text__warning {
+    font-size: 0.78rem;
+    padding: var(--space-1) var(--space-3);
   }
 
-  .step-nav {
-    align-self: stretch;
+  /* Reading mode: details open → the phone gives way to the text. */
+  .guide-panel.is-reading .phone-frame {
+    --phone-scale: 0.34;
   }
 
-  .step-nav button {
-    flex: 1;
+  .guide-panel.is-reading .step-details__body {
+    max-height: 24dvh;
   }
 }

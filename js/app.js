@@ -65,9 +65,7 @@
       el.disabled = !done;
     });
     window.scrollTo({ top: 0, behavior: "smooth" });
-    // The overflow flag must be recomputed once the guide is actually visible
-    // (a hidden panel reports zero heights).
-    if (id === "guide") updateStepTextOverflow();
+    if (id === "guide") syncStepDetails(false);
   }
 
   // Completed breadcrumb chips are clickable: jump straight back to that step.
@@ -104,20 +102,32 @@
     } else {
       stepWarningEl.hidden = true;
     }
-    // Reset scroll and flag overflow so the fade hint only shows when
-    // there genuinely is more text below the fold.
-    stepTextEl.scrollTop = 0;
-    updateStepTextOverflow();
+    syncStepDetails(true);
   }
 
-  function updateStepTextOverflow() {
-    stepTextEl.classList.toggle(
-      "is-scrollable",
-      stepTextEl.scrollHeight > stepTextEl.clientHeight + 2
-    );
+  // On desktop there is room: the detailed text is always visible.
+  // On mobile it starts collapsed behind a "More details" toggle so the
+  // big picture (phone + one short instruction) stays uncluttered.
+  const desktopQuery = window.matchMedia("(min-width: 960px)");
+  const stepDetailsEl = document.getElementById("step-details");
+  const guidePanelEl = document.getElementById("guide-panel");
+
+  // "Reading mode": while the details are open on mobile, the phone mockup
+  // shrinks (or hides on short screens) so the text and the nav buttons
+  // always stay on screen.
+  stepDetailsEl.addEventListener("toggle", () => {
+    guidePanelEl.classList.toggle("is-reading", stepDetailsEl.open && !desktopQuery.matches);
+  });
+
+  function syncStepDetails(collapseOnMobile) {
+    if (desktopQuery.matches) {
+      stepDetailsEl.open = true;
+    } else if (collapseOnMobile) {
+      stepDetailsEl.open = false;
+    }
   }
 
-  window.addEventListener("resize", updateStepTextOverflow);
+  window.addEventListener("resize", () => syncStepDetails(false));
 
   function onGuideBackAtStart() {
     showPanel("delivery");

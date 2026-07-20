@@ -43,16 +43,13 @@ const StepController = (() => {
   }
 
   function renderProgress() {
-    progressEl.innerHTML = "";
-    steps.forEach((_, i) => {
-      const dot = document.createElement("span");
-      dot.className = "step-progress__dot" + (i === index ? " step-progress__dot--active" : "");
-      progressEl.appendChild(dot);
-    });
-    progressLabelEl.textContent = I18n.t("ui.nav.step-of", {
+    const fill = document.getElementById("step-progress-fill");
+    if (fill) fill.style.width = `${((index + 1) / steps.length) * 100}%`;
+    progressLabelEl.textContent = I18n.t("ui.nav.step-short", {
       current: index + 1,
       total: steps.length,
     });
+    prevBtn.setAttribute("aria-label", I18n.t("ui.nav.prev"));
     nextBtn.textContent = index === steps.length - 1 ? I18n.t("ui.nav.restart") : I18n.t("ui.nav.next");
   }
 

@@ -12,6 +12,8 @@
     "nav.next": "Dalje",
     "nav.prev": "Nazad",
     "nav.step-of": "Korak {current} od {total}",
+    "nav.step-short": "{current}/{total}",
+    "nav.details": "Detaljnije",
     "nav.restart": "Počni ispočetka",
     "lang.label": "Jezik",
     "delivery.title": "Kako želite da ga instalirate?",
