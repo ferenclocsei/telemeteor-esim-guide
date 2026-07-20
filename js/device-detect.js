@@ -34,14 +34,24 @@ const DeviceDetect = (() => {
       (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
     if (isIos) {
+      // Two hard limits on iOS, both by Apple's design, not bugs we can fix:
+      //  - The exact model (e.g. "iPhone 15 Pro Max") is NEVER exposed to a
+      //    web page — Safari only ever says "iPhone".
+      //  - On recent iOS the reported OS version in the UA is frozen/capped
+      //    (e.g. iOS 26 can report "18_7"), so it is NOT trustworthy to show.
+      // We therefore display only "iPhone" and never a precise version number.
+      // The parsed version is still used internally for the modern/legacy tier:
+      // a capped-high value reads as modern (correct), a genuinely old device
+      // still reports its real low version and reads as legacy (correct).
       const ver = parseIosVersion(ua);
       return {
         confident: true,
         osVariant: "ios",
         iosTier: iosTier(ver),
-        version: ver ? `${ver.major}.${ver.minor}` : null,
+        version: null,
         deviceName: "iPhone",
-        osName: ver ? `iOS ${ver.major}.${ver.minor}` : "iOS",
+        osName: null,
+        modelHidden: true,
       };
     }
 

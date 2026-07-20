@@ -71,7 +71,8 @@
     "ts.progress": "{current}/{total}",
     "detect.eyebrow": "Looks like your phone is",
     "detect.confirm": "Yes, start here →",
-    "detect.reject": "Not my phone"
+    "detect.reject": "Not my phone",
+    "detect.ios-note": "For privacy, iPhone doesn't reveal its exact model or iOS version — you'll confirm it in the next step."
   },
   "screen": {
     "open-link.app-name": "Mail",

@@ -713,6 +713,17 @@ svg {
   font-weight: 800;
 }
 
+.detect-banner__note {
+  margin: 4px 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.detect-banner__note[hidden] {
+  display: none;
+}
+
 .detect-banner__actions {
   display: flex;
   flex-direction: column;

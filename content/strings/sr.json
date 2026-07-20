@@ -46,7 +46,8 @@
     "stub.coming-soon.body": "Još uvek pripremamo vodič korak po korak za ovaj uređaj. U međuvremenu, izaberite iPhone (iOS) da vidite kompletan primer, ili proverite uputstva proizvođača za eSIM.",
     "detect.eyebrow": "Izgleda da je vaš telefon",
     "detect.confirm": "Da, počnimo odavde →",
-    "detect.reject": "Nije moj telefon"
+    "detect.reject": "Nije moj telefon",
+    "detect.ios-note": "Iz bezbednosnih razloga, iPhone ne otkriva tačan model ni verziju iOS-a — potvrdićete u sledećem koraku."
   },
   "steps": {}
 }

@@ -230,6 +230,7 @@
   const detectBannerEl = document.getElementById("detect-banner");
   const detectDeviceEl = document.getElementById("detect-device");
   const detectIconEl = document.getElementById("detect-icon");
+  const detectNoteEl = document.getElementById("detect-note");
   let detected = null;
 
   function renderDetectBanner() {
@@ -241,24 +242,36 @@
     if (detected.osName && detected.osName !== detected.deviceName) parts.push(detected.osName);
     detectDeviceEl.textContent = parts.join(" · ");
     detectIconEl.textContent = detected.osVariant === "ios" ? "📱" : "🤖";
+    // iOS hides the exact model + a trustworthy version, so we say so honestly.
+    if (detected.modelHidden) {
+      detectNoteEl.textContent = I18n.t("ui.detect.ios-note");
+      detectNoteEl.hidden = false;
+    } else {
+      detectNoteEl.hidden = true;
+    }
     detectBannerEl.hidden = false;
   }
 
   async function applyDetection() {
-    if (!detected) return;
+    if (!detected || !detected.confident) return;
     // Re-init pickers with detected values (sets state without auto-advancing).
     DevicePicker.init(document.getElementById("os-options"), onDeviceSelected, detected.osVariant);
-    if (detected.iosTier) {
+    detectBannerEl.hidden = true;
+    if (detected.osVariant === "ios") {
+      // iOS never reveals a trustworthy version, so we pre-select the likely
+      // tier but still land on the version step for the user to confirm.
       IosVersionPicker.init(
         document.getElementById("ios-version-options"),
         onIosVersionSelected,
-        detected.iosTier
+        detected.iosTier || "modern"
       );
+      await updateContent();
+      showPanel("iosversion");
+    } else {
+      // Android's version comes from client hints and is reliable — skip ahead.
+      await updateContent();
+      showPanel("delivery");
     }
-    detectBannerEl.hidden = true;
-    await updateContent();
-    // Version is known, so skip the iOS-version step and go straight to method.
-    showPanel("delivery");
   }
 
   document.getElementById("detect-go").addEventListener("click", applyDetection);

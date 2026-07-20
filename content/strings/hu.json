@@ -71,7 +71,8 @@
     "ts.progress": "{current}/{total}",
     "detect.eyebrow": "Úgy tűnik, a telefonod",
     "detect.confirm": "Igen, kezdjük ezzel →",
-    "detect.reject": "Nem ez a telefonom"
+    "detect.reject": "Nem ez a telefonom",
+    "detect.ios-note": "Az iPhone biztonsági okból nem árulja el a pontos modellt és iOS-verziót — a következő lépésben te erősíted meg."
   },
   "screen": {
     "open-link.app-name": "Mail",
