@@ -1,29 +1,22 @@
 const PhoneRenderer = (() => {
-  let frameEl, screenEl, illustrationWrapEl;
+  let frameEl, screenEl, illustrationWrapEl, spotlightEl;
   let activeSvg = null;
   let tapPointEls = [];
   let fingerEl = null;
   let renderToken = 0;
-  let lastStep = null;
-  const svgTextCache = {};
 
-  // On mobile the mockup is small, so instead of shrinking the whole phone
-  // screen (tiny text), we crop the SVG to a full-width band centred on the
-  // action — this enlarges the content ~2x and never clips a row sideways.
-  const VIEWBOX_W = 300;
-  const VIEWBOX_H = 630;
-  const BAND_H = 250; // visible band height (viewBox units) on mobile
-  const mobileMq = window.matchMedia("(max-width: 599px)");
+  const svgTextCache = {};
 
   function mount() {
     frameEl = document.getElementById("phone-frame");
     screenEl = document.getElementById("phone-screen");
     illustrationWrapEl = document.getElementById("illustration-wrap");
-    // Re-render when crossing the mobile/desktop boundary so the crop + tap
-    // points recompute for the new layout.
-    mobileMq.addEventListener("change", () => {
-      if (lastStep) renderStep(lastStep);
-    });
+    // A dim "spotlight" overlay that keeps a bright circle on the target and
+    // gently darkens the rest — the eye goes straight to where to tap.
+    spotlightEl = document.createElement("div");
+    spotlightEl.className = "phone-frame__spotlight";
+    spotlightEl.setAttribute("aria-hidden", "true");
+    screenEl.appendChild(spotlightEl);
   }
 
   function setOsVariant(osVariant) {
@@ -40,16 +33,12 @@ const PhoneRenderer = (() => {
     }
   }
 
-  // Returns { top } — the top of the visible band in viewBox units — for the
-  // current step's tap-point centroid, or a centred band when there are none.
-  function bandTop(tapPoints) {
-    let cyFrac = 0.5;
-    if (tapPoints && tapPoints.length) {
-      cyFrac =
-        tapPoints.reduce((s, p) => s + p.y, 0) / tapPoints.length / 100;
-    }
-    const cy = cyFrac * VIEWBOX_H;
-    return Math.min(VIEWBOX_H - BAND_H, Math.max(0, cy - BAND_H / 2));
+  function centroid(tapPoints) {
+    if (!tapPoints || !tapPoints.length) return null;
+    return {
+      x: tapPoints.reduce((s, p) => s + p.x, 0) / tapPoints.length,
+      y: tapPoints.reduce((s, p) => s + p.y, 0) / tapPoints.length,
+    };
   }
 
   function fingerSvg() {
@@ -61,27 +50,29 @@ const PhoneRenderer = (() => {
       </svg>`;
   }
 
-  function renderTapPoints(tapPoints, top) {
+  function renderTapPoints(tapPoints) {
     clearTapPoints();
+    const c = centroid(tapPoints);
+
+    // Position / enable the spotlight on the target (or clear it).
+    if (c) {
+      spotlightEl.style.setProperty("--spot-x", `${c.x}%`);
+      spotlightEl.style.setProperty("--spot-y", `${c.y}%`);
+      spotlightEl.classList.add("is-active");
+    } else {
+      spotlightEl.classList.remove("is-active");
+    }
+
     if (!tapPoints || !tapPoints.length) return;
-    const mobile = mobileMq.matches;
 
     tapPoints.forEach((tp, i) => {
-      // On mobile the visible band is [top, top+BAND_H]; map the point into it.
-      let yPct = tp.y;
-      if (mobile) {
-        yPct = (((tp.y / 100) * VIEWBOX_H - top) / BAND_H) * 100;
-      }
       const el = document.createElement("div");
       el.className = "tap-point" + (tp.shape === "rect" ? " tap-point--rect" : "");
       el.style.left = `${tp.x}%`;
-      el.style.top = `${yPct}%`;
+      el.style.top = `${tp.y}%`;
       if (tp.shape === "rect") {
-        el.style.width = mobile ? "80%" : "34%";
-        el.style.height = mobile ? "20%" : `${Math.max(tp.radius * 2, 24)}px`;
-      } else if (mobile) {
-        el.style.width = "26%";
-        el.style.height = "22%";
+        el.style.width = "42%";
+        el.style.height = `${Math.max(tp.radius * 2, 24)}px`;
       }
       if (tp.label) el.setAttribute("aria-label", tp.label);
       el.setAttribute("aria-hidden", "true");
@@ -89,13 +80,12 @@ const PhoneRenderer = (() => {
       tapPointEls.push(el);
       requestAnimationFrame(() => el.classList.add("is-visible"));
 
-      // A pointing finger on the first (primary) tap point.
       if (i === 0) {
         fingerEl = document.createElement("div");
         fingerEl.className = "tap-finger";
         fingerEl.innerHTML = fingerSvg();
         fingerEl.style.left = `${tp.x}%`;
-        fingerEl.style.top = `${yPct}%`;
+        fingerEl.style.top = `${tp.y}%`;
         illustrationWrapEl.appendChild(fingerEl);
         requestAnimationFrame(() => fingerEl.classList.add("is-visible"));
       }
@@ -117,7 +107,6 @@ const PhoneRenderer = (() => {
   }
 
   async function renderStep(step) {
-    lastStep = step;
     const token = ++renderToken;
     const markup = await fetchSvgMarkup(`assets/illustrations/${step.illustration}`);
     if (token !== renderToken) return; // a newer step was requested meanwhile
@@ -125,17 +114,7 @@ const PhoneRenderer = (() => {
     const doc = new DOMParser().parseFromString(markup, "image/svg+xml");
     const svgEl = doc.documentElement;
     applyScreenText(svgEl);
-
-    const mobile = mobileMq.matches;
-    const top = bandTop(step.tapPoints);
-    if (mobile) {
-      // Show a full-width, action-centred band → big, readable text.
-      svgEl.setAttribute("viewBox", `0 ${top} ${VIEWBOX_W} ${BAND_H}`);
-      svgEl.setAttribute("preserveAspectRatio", "xMidYMid meet");
-    } else {
-      svgEl.setAttribute("viewBox", `0 0 ${VIEWBOX_W} ${VIEWBOX_H}`);
-      svgEl.setAttribute("preserveAspectRatio", "xMidYMid slice");
-    }
+    svgEl.setAttribute("preserveAspectRatio", "xMidYMid slice");
     svgEl.classList.add("phone-frame__illustration");
     svgEl.setAttribute("role", "img");
     svgEl.setAttribute("aria-label", step.title || "");
@@ -153,7 +132,7 @@ const PhoneRenderer = (() => {
       }
     });
 
-    renderTapPoints(step.tapPoints || [], top);
+    renderTapPoints(step.tapPoints || []);
   }
 
   return { mount, setOsVariant, renderStep };

@@ -81,6 +81,27 @@
   }
 }
 
+/* ---- Focus spotlight — gently dims everything but the target ---- */
+
+.phone-frame__spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+  background: radial-gradient(
+    circle 150px at var(--spot-x, 50%) var(--spot-y, 50%),
+    transparent 0,
+    transparent 78px,
+    rgba(9, 13, 24, 0.5) 150px
+  );
+}
+
+.phone-frame__spotlight.is-active {
+  opacity: 1;
+}
+
 /* ---- Tap-point highlight — a bright ring that says "here" ---- */
 
 .tap-point {

@@ -51,6 +51,9 @@
       panels[key].hidden = key !== id;
     });
     wizardProgressEl.hidden = id === "troubleshoot" || id === "compat";
+    // On the guide, the phone is the hero — free up vertical space (mobile
+    // hides the breadcrumb via CSS; the back arrow still handles going back).
+    document.body.classList.toggle("on-guide", id === "guide");
     const isIos = isIosSelected();
     let num = 0;
     wizardProgressEl.querySelectorAll("[data-wizard-progress]").forEach((el) => {
@@ -67,7 +70,6 @@
       el.disabled = !done;
     });
     window.scrollTo({ top: 0, behavior: "smooth" });
-    if (id === "guide") syncStepDetails(false);
   }
 
   // Completed breadcrumb chips are clickable: jump straight back to that step.
@@ -138,21 +140,6 @@
       stepWarningEl.textContent = step.warning;
     } else {
       stepWarningEl.hidden = true;
-    }
-    syncStepDetails(true);
-  }
-
-  // The instruction (title) carries the message; the full description sits
-  // behind an optional "More details" toggle — open by default on desktop
-  // (there is room), collapsed on mobile so the phone stays the hero.
-  const desktopQuery = window.matchMedia("(min-width: 960px)");
-  const stepDetailsEl = document.getElementById("step-details");
-
-  function syncStepDetails(collapseOnMobile) {
-    if (desktopQuery.matches) {
-      stepDetailsEl.open = true;
-    } else if (collapseOnMobile) {
-      stepDetailsEl.open = false;
     }
   }
 
