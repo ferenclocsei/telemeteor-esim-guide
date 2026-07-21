@@ -1,0 +1,40 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#ffffff"/>
+  <rect x="0" y="0" width="300" height="64" fill="#f4f6fa"/>
+  <text data-key="screen.open-email-qr.app-name" x="24" y="56" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">Mail</text>
+
+  <rect x="20" y="90" width="260" height="90" rx="14" fill="#f4f6fa"/>
+  <circle cx="46" cy="118" r="14" fill="#baddff"/>
+  <rect x="70" y="110" width="150" height="10" rx="5" fill="#182746"/>
+  <rect x="70" y="128" width="110" height="8" rx="4" fill="#5b6b8c"/>
+
+  <rect x="20" y="200" width="260" height="8" rx="4" fill="#e6eaf0"/>
+  <rect x="20" y="220" width="200" height="8" rx="4" fill="#e6eaf0"/>
+
+  <!-- The QR code image inside the email — press and hold this -->
+  <rect x="75" y="255" width="150" height="150" rx="10" fill="#ffffff" stroke="#182746" stroke-width="3"/>
+  <g fill="#182746">
+    <rect x="90" y="270" width="34" height="34"/>
+    <rect x="176" y="270" width="34" height="34"/>
+    <rect x="90" y="356" width="34" height="34"/>
+    <rect x="99" y="279" width="16" height="16" fill="#ffffff"/>
+    <rect x="185" y="279" width="16" height="16" fill="#ffffff"/>
+    <rect x="99" y="365" width="16" height="16" fill="#ffffff"/>
+    <rect x="140" y="270" width="10" height="10"/>
+    <rect x="158" y="288" width="10" height="10"/>
+    <rect x="140" y="310" width="10" height="10"/>
+    <rect x="122" y="330" width="10" height="10"/>
+    <rect x="158" y="330" width="10" height="10"/>
+    <rect x="140" y="352" width="10" height="10"/>
+    <rect x="176" y="352" width="10" height="10"/>
+    <rect x="194" y="330" width="10" height="10"/>
+    <rect x="176" y="312" width="10" height="10"/>
+    <rect x="194" y="374" width="10" height="10"/>
+    <rect x="158" y="374" width="10" height="10"/>
+  </g>
+
+  <text data-key="screen.open-email-qr.hint" x="150" y="440" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" fill="#5b6b8c">Press and hold the QR code</text>
+
+  <rect x="20" y="470" width="240" height="8" rx="4" fill="#e6eaf0"/>
+  <rect x="20" y="490" width="180" height="8" rx="4" fill="#e6eaf0"/>
+<text x="24" y="27" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" fill="#182746">9:41</text><g stroke="#182746" stroke-width="1.4" fill="none" opacity="0.85"><path d="M236 22 l4 -6 l4 6z" fill="#182746" stroke="none"/><path d="M248 22 a7 7 0 0 1 10 0"/><rect x="264" y="15" width="16" height="9" rx="2"/><rect x="266" y="17" width="9" height="5" fill="#182746" stroke="none"/></g></svg>

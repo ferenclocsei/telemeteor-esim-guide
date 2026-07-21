@@ -1,13 +1,13 @@
 <svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
-  <rect width="300" height="630" fill="#ffffff"/>
-  <text data-key="screen.label-plan.title" x="24" y="46" font-family="ui-sans-serif,system-ui,sans-serif" font-size="18" font-weight="700" fill="#182746">Label Plan</text>
+  <rect width="300" height="630" fill="#ffffff"/><text x="24" y="27" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" fill="#182746">9:41</text><g stroke="#182746" stroke-width="1.4" fill="none" opacity="0.85"><path d="M236 22 l4 -6 l4 6z" fill="#182746" stroke="none"/><path d="M248 22 a7 7 0 0 1 10 0"/><rect x="264" y="15" width="16" height="9" rx="2"/><rect x="266" y="17" width="9" height="5" fill="#182746" stroke="none"/></g>
+  <text data-key="screen.label-plan.title" x="24" y="54" font-family="ui-sans-serif,system-ui,sans-serif" font-size="18" font-weight="700" fill="#182746">Label Plan</text>
   <text data-key="screen.label-plan.section" x="24" y="86" font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#5b6b8c">PLAN NAME</text>
-  <rect x="20" y="96" width="260" height="56" rx="14" fill="#f4f6fa" stroke="#ff6600" stroke-width="3"/>
+  <rect x="20" y="96" width="260" height="56" rx="14" fill="#f4f6fa"/>
   <rect x="40" y="116" width="120" height="12" rx="6" fill="#182746"/>
   <rect x="20" y="176" width="120" height="44" rx="22" fill="#e6eaf0"/>
-  <text data-key="screen.label-plan.option-travel" x="80" y="203" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#182746">Travel eSIM</text>
+  <text data-key="screen.label-plan.option-travel" data-maxw="104" x="80" y="203" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#182746">Travel eSIM</text>
   <rect x="150" y="176" width="120" height="44" rx="22" fill="#e6eaf0"/>
-  <text data-key="screen.label-plan.option-personal" x="210" y="203" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#182746">Personal</text>
-  <rect x="30" y="404" width="240" height="50" rx="25" fill="#ff6600"/>
-  <text data-key="screen.label-plan.continue" x="150" y="436" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#ffffff">Continue</text>
+  <text data-key="screen.label-plan.option-personal" data-maxw="104" x="210" y="203" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#182746">Personal</text>
+  <rect x="30" y="404" width="240" height="50" rx="25" fill="#007aff"/>
+  <text data-key="screen.label-plan.continue" data-maxw="224" x="150" y="436" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#ffffff">Continue</text>
 </svg>

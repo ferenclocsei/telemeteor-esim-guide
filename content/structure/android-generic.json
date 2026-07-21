@@ -10,10 +10,20 @@
   "steps": [
     {
       "id": "before-you-start",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "android-generic/step-before-you-start.svg",
       "tapPoints": [
-        { "x": 50, "y": 34, "shape": "rect", "radius": 8, "labelKey": "generic.before-you-start.tap.row" }
+        {
+          "x": 50.0,
+          "y": 34.1,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "generic.before-you-start.tap.row",
+          "w": 90.7,
+          "h": 12.4
+        }
       ],
       "titleKey": "generic.before-you-start.title",
       "bodyKey": "generic.before-you-start.body",
@@ -21,10 +31,20 @@
     },
     {
       "id": "open-link",
-      "appliesTo": ["link"],
+      "appliesTo": [
+        "link"
+      ],
       "illustration": "android-generic/step-open-link.svg",
       "tapPoints": [
-        { "x": 50, "y": 62, "shape": "rect", "radius": 8, "labelKey": "generic.open-link.tap.link" }
+        {
+          "x": 50.0,
+          "y": 63.2,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "generic.open-link.tap.link",
+          "w": 84.0,
+          "h": 10.2
+        }
       ],
       "titleKey": "generic.open-link.title",
       "bodyKey": "generic.open-link.body",
@@ -32,10 +52,21 @@
     },
     {
       "id": "open-settings",
-      "appliesTo": ["qr", "manual"],
+      "appliesTo": [
+        "qr",
+        "manual"
+      ],
       "illustration": "android-generic/step-open-settings.svg",
       "tapPoints": [
-        { "x": 82, "y": 10, "shape": "circle", "radius": 7, "labelKey": "generic.open-settings.tap.icon" }
+        {
+          "x": 82.0,
+          "y": 9.5,
+          "shape": "circle",
+          "radius": 7,
+          "labelKey": "generic.open-settings.tap.icon",
+          "w": 24.0,
+          "h": 10.8
+        }
       ],
       "titleKey": "generic.open-settings.title",
       "bodyKey": "generic.open-settings.body",
@@ -43,10 +74,21 @@
     },
     {
       "id": "find-sim-settings",
-      "appliesTo": ["qr", "manual"],
+      "appliesTo": [
+        "qr",
+        "manual"
+      ],
       "illustration": "android-generic/step-find-sim-settings.svg",
       "tapPoints": [
-        { "x": 50, "y": 14.8, "shape": "rect", "radius": 8, "labelKey": "generic.find-sim-settings.tap.search" }
+        {
+          "x": 50.0,
+          "y": 14.8,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "generic.find-sim-settings.tap.search",
+          "w": 90.7,
+          "h": 8.6
+        }
       ],
       "titleKey": "generic.find-sim-settings.title",
       "bodyKey": "generic.find-sim-settings.body",
@@ -54,10 +96,20 @@
     },
     {
       "id": "add-esim-qr",
-      "appliesTo": ["qr"],
+      "appliesTo": [
+        "qr"
+      ],
       "illustration": "android-generic/step-add-esim-qr.svg",
       "tapPoints": [
-        { "x": 50, "y": 47.6, "shape": "rect", "radius": 10, "labelKey": "generic.add-esim-qr.tap.frame" }
+        {
+          "x": 50.0,
+          "y": 47.6,
+          "shape": "rect",
+          "radius": 10,
+          "labelKey": "generic.add-esim-qr.tap.frame",
+          "w": 70.7,
+          "h": 33.0
+        }
       ],
       "titleKey": "generic.add-esim-qr.title",
       "bodyKey": "generic.add-esim-qr.body",
@@ -65,11 +117,29 @@
     },
     {
       "id": "add-esim-manual",
-      "appliesTo": ["manual"],
+      "appliesTo": [
+        "manual"
+      ],
       "illustration": "android-generic/step-add-esim-manual.svg",
       "tapPoints": [
-        { "x": 50, "y": 36.5, "shape": "rect", "radius": 8, "labelKey": "generic.add-esim-manual.tap.address" },
-        { "x": 50, "y": 49.8, "shape": "rect", "radius": 8, "labelKey": "generic.add-esim-manual.tap.code" }
+        {
+          "x": 50.0,
+          "y": 22.9,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "generic.add-esim-manual.tap.address",
+          "w": 90.7,
+          "h": 9.6
+        },
+        {
+          "x": 50.0,
+          "y": 36.2,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "generic.add-esim-manual.tap.code",
+          "w": 90.7,
+          "h": 9.6
+        }
       ],
       "titleKey": "generic.add-esim-manual.title",
       "bodyKey": "generic.add-esim-manual.body",
@@ -77,7 +147,9 @@
     },
     {
       "id": "downloading",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "android-generic/step-downloading.svg",
       "tapPoints": [],
       "titleKey": "generic.downloading.title",
@@ -86,10 +158,20 @@
     },
     {
       "id": "enable-data-roaming",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "android-generic/step-enable-roaming.svg",
       "tapPoints": [
-        { "x": 88, "y": 38, "shape": "circle", "radius": 10, "labelKey": "generic.enable-data-roaming.tap.toggle" }
+        {
+          "x": 85.3,
+          "y": 37.9,
+          "shape": "circle",
+          "radius": 10,
+          "labelKey": "generic.enable-data-roaming.tap.toggle",
+          "w": 16.0,
+          "h": 4.5
+        }
       ],
       "titleKey": "generic.enable-data-roaming.title",
       "bodyKey": "generic.enable-data-roaming.body",
@@ -97,10 +179,20 @@
     },
     {
       "id": "select-data-line-on-arrival",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "android-generic/step-select-data-line.svg",
       "tapPoints": [
-        { "x": 50, "y": 33.2, "shape": "rect", "radius": 8, "labelKey": "generic.select-data-line.tap.row" }
+        {
+          "x": 50.0,
+          "y": 33.2,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "generic.select-data-line.tap.row",
+          "w": 93.3,
+          "h": 10.5
+        }
       ],
       "titleKey": "generic.select-data-line.title",
       "bodyKey": "generic.select-data-line.body",
@@ -108,7 +200,9 @@
     },
     {
       "id": "done",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "android-generic/step-done.svg",
       "tapPoints": [],
       "titleKey": "generic.done.title",

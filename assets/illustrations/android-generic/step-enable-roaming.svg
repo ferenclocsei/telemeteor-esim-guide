@@ -6,15 +6,15 @@
   </g>
 
   <rect x="16" y="104" width="268" height="58" rx="16" fill="#f5f5f7"/>
-  <text x="32" y="138" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#182746">Turn on this SIM</text>
+  <text data-key="screen.g-enable-roaming.turn-on" data-maxw="196" x="32" y="138" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#182746">Turn on this SIM</text>
   <rect x="238" y="119" width="36" height="20" rx="10" fill="#5b6b8c"/>
   <circle cx="264" cy="129" r="8" fill="#ffffff"/>
 
   <rect x="16" y="176" width="268" height="128" rx="16" fill="#f5f5f7"/>
-  <text x="32" y="204" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#182746">Network mode</text>
+  <text data-key="screen.g-enable-roaming.network-mode" x="32" y="204" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#182746">Network mode</text>
   <line x1="32" y1="216" x2="284" y2="216" stroke="#e5e5ea" stroke-width="1"/>
 
-  <text data-key="screen.g-enable-roaming.roaming" x="32" y="244" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#182746">Data roaming</text>
+  <text data-key="screen.g-enable-roaming.roaming" data-maxw="196" x="32" y="244" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#182746">Data roaming</text>
   <rect x="238" y="229" width="36" height="20" rx="10" fill="#5b6b8c"/>
   <circle cx="264" cy="239" r="8" fill="#ffffff"/>
   <g opacity="0.999"><text x="24" y="27" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" fill="#000000">9:41</text><g stroke="#000000" stroke-width="1.4" fill="none" opacity="0.85"><path d="M236 22 l4 -6 l4 6z" fill="#000000" stroke="none"/><path d="M248 22 a7 7 0 0 1 10 0" /><rect x="264" y="15" width="16" height="9" rx="2"/><rect x="266" y="17" width="9" height="5" fill="#000000" stroke="none"/></g><rect x="20" y="324" width="260" height="56" rx="16" fill="#f5f5f7"/><circle cx="46" cy="352" r="12" fill="#c9d2de"/><rect x="70" y="347" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="20" y="394" width="260" height="56" rx="16" fill="#f5f5f7"/><circle cx="46" cy="422" r="12" fill="#c9d2de"/><rect x="70" y="417" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="20" y="464" width="260" height="56" rx="16" fill="#f5f5f7"/><circle cx="46" cy="492" r="12" fill="#c9d2de"/><rect x="70" y="487" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="112" y="606" width="76" height="5" rx="2.5" fill="#182746" opacity="0.3"/></g>

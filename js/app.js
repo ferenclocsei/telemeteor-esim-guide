@@ -129,6 +129,7 @@
   const initialLang = readParam("lang", "esim-guide-lang", I18n.resolveInitialLang());
   await I18n.load(initialLang);
   langSelectEl.value = I18n.currentLang;
+  document.documentElement.classList.add("i18n-ready");
 
   function onStepChange(step) {
     PhoneRenderer.renderStep(step);

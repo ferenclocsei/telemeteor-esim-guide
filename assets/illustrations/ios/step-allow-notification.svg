@@ -10,7 +10,7 @@
     <rect x="216" y="150" width="60" height="60" rx="16" fill="#26365c"/>
   </g>
 
-  <rect x="16" y="360" width="268" height="92" rx="20" fill="#ffffff" stroke="#ff6600" stroke-width="3"/>
+  <rect x="16" y="360" width="268" height="92" rx="20" fill="#ffffff"/>
   <circle cx="46" cy="396" r="14" fill="#baddff"/>
   <path d="M40 396 l4 4 l8 -9" stroke="#182746" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   <text data-key="screen.allow-notification.title" x="68" y="392" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="14" font-weight="700" fill="#000000">Activate New eSIM</text>
@@ -19,4 +19,4 @@
   <text data-key="screen.allow-notification.close" x="90" y="446" text-anchor="middle" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="13" fill="#8e8e93">Close</text>
   <line x1="150" y1="428" x2="150" y2="448" stroke="#e5e5ea" stroke-width="1"/>
   <text data-key="screen.allow-notification.allow" x="210" y="446" text-anchor="middle" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="13" font-weight="700" fill="#007aff">Allow</text>
-</svg>
+<text x="24" y="27" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" fill="#ffffff">9:41</text><g stroke="#ffffff" stroke-width="1.4" fill="none" opacity="0.85"><path d="M236 22 l4 -6 l4 6z" fill="#ffffff" stroke="none"/><path d="M248 22 a7 7 0 0 1 10 0"/><rect x="264" y="15" width="16" height="9" rx="2"/><rect x="266" y="17" width="9" height="5" fill="#ffffff" stroke="none"/></g></svg>

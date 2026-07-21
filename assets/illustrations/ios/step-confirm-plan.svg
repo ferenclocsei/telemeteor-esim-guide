@@ -1,12 +1,12 @@
 <svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
-  <rect width="300" height="630" fill="#ffffff"/>
-  <text data-key="screen.confirm-plan.title" x="24" y="46" font-family="ui-sans-serif,system-ui,sans-serif" font-size="18" font-weight="700" fill="#182746">Cellular Plan</text>
+  <rect width="300" height="630" fill="#ffffff"/><text x="24" y="27" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" fill="#182746">9:41</text><g stroke="#182746" stroke-width="1.4" fill="none" opacity="0.85"><path d="M236 22 l4 -6 l4 6z" fill="#182746" stroke="none"/><path d="M248 22 a7 7 0 0 1 10 0"/><rect x="264" y="15" width="16" height="9" rx="2"/><rect x="266" y="17" width="9" height="5" fill="#182746" stroke="none"/></g>
+  <text data-key="screen.confirm-plan.title" x="24" y="54" font-family="ui-sans-serif,system-ui,sans-serif" font-size="18" font-weight="700" fill="#182746">Cellular Plan</text>
   <rect x="20" y="80" width="260" height="120" rx="16" fill="#baddff"/>
   <text data-key="screen.confirm-plan.data-label" x="40" y="120" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#182746">Data</text>
   <text data-key="screen.confirm-plan.data-value" x="40" y="146" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">Unlimited</text>
   <text data-key="screen.confirm-plan.valid" x="40" y="172" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#182746">Valid 30 days</text>
   <rect x="20" y="216" width="260" height="8" rx="4" fill="#e6eaf0"/>
   <rect x="20" y="236" width="200" height="8" rx="4" fill="#e6eaf0"/>
-  <rect x="30" y="404" width="240" height="50" rx="25" fill="#ff6600"/>
-  <text data-key="screen.confirm-plan.continue" x="150" y="436" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#ffffff">Continue</text>
+  <rect x="30" y="404" width="240" height="50" rx="25" fill="#007aff"/>
+  <text data-key="screen.confirm-plan.continue" data-maxw="224" x="150" y="436" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#ffffff">Continue</text>
 </svg>

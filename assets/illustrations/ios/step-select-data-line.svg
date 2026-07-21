@@ -9,9 +9,9 @@
   </g>
   <g fill="#007aff">
     <path d="M22 66 l-8 8 l8 8" stroke="#007aff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <text data-key="screen.select-data-line.back" x="28" y="78" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15">Cellular</text>
+    <text data-key="screen.select-data-line.back" data-maxw="76" x="28" y="78" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15">Cellular</text>
   </g>
-  <text data-key="screen.select-data-line.title" x="180" y="78" text-anchor="middle" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="17" font-weight="700" fill="#000000">Mobile Data</text>
+  <text data-key="screen.select-data-line.title" data-maxw="176" x="192" y="78" text-anchor="middle" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="17" font-weight="700" fill="#000000">Mobile Data</text>
 
   <text data-key="screen.select-data-line.section" x="32" y="104" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="12" fill="#8e8e93">MOBILE DATA</text>
 
@@ -19,9 +19,9 @@
   <text data-key="screen.select-data-line.original" x="32" y="146" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Original SIM</text>
   <path d="M250 140 l7 7 l13 -15" stroke="#8e8e93" stroke-width="0" fill="none"/>
 
-  <rect x="16" y="184" width="268" height="58" rx="14" fill="#ffffff" stroke="#ff6600" stroke-width="3"/>
+  <rect x="16" y="184" width="268" height="58" rx="14" fill="#ffffff"/>
   <text x="32" y="218" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="700" fill="#000000">Telemeteor</text>
   <path d="M244 210 l8 8 l16 -18" stroke="#007aff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
   <text data-key="screen.select-data-line.footnote" x="32" y="272" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="12" fill="#8e8e93">Data is used from the selected line.</text>
-</svg>
+<rect x="16" y="294" width="268" height="58" rx="14" fill="#ffffff"/><circle cx="44" cy="323" r="12" fill="#c9d2de"/><rect x="68" y="318" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="16" y="360" width="268" height="58" rx="14" fill="#ffffff"/><circle cx="44" cy="389" r="12" fill="#c9d2de"/><rect x="68" y="384" width="104" height="10" rx="5" fill="#c9d2de"/><rect x="16" y="426" width="268" height="58" rx="14" fill="#ffffff"/><circle cx="44" cy="455" r="12" fill="#c9d2de"/><rect x="68" y="450" width="146" height="10" rx="5" fill="#c9d2de"/><rect x="16" y="492" width="268" height="58" rx="14" fill="#ffffff"/><circle cx="44" cy="521" r="12" fill="#c9d2de"/><rect x="68" y="516" width="118" height="10" rx="5" fill="#c9d2de"/></svg>

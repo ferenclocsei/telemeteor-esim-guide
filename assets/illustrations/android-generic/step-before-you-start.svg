@@ -6,7 +6,7 @@
 
   <rect x="20" y="112" width="260" height="56" rx="16" fill="#ffffff"/>
   <rect x="40" y="132" width="180" height="16" rx="8" fill="#e6eaf0"/>
-  <text x="46" y="144" font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#8e8e93">Search settings</text>
+  <text data-key="screen.g-before-you-start.search" x="46" y="144" font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#8e8e93">Search settings</text>
 
   <rect x="20" y="180" width="260" height="70" rx="16" fill="#ffffff" stroke="#5b6b8c" stroke-width="3"/>
   <circle cx="46" cy="215" r="14" fill="#5b6b8c"/>

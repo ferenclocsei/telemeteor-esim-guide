@@ -4,9 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="ui.app.title">eSIM Setup Guide</title>
-  <link rel="stylesheet" href="css/tokens.css?v=40" />
-  <link rel="stylesheet" href="css/main.css?v=40" />
-  <link rel="stylesheet" href="css/phone-frame.css?v=40" />
+  <link rel="stylesheet" href="css/tokens.css?v=48" />
+  <link rel="stylesheet" href="css/main.css?v=48" />
+  <link rel="stylesheet" href="css/phone-frame.css?v=48" />
+  <style>
+    /* No flash of untranslated text: the page is held back for the few
+       milliseconds it takes to load the visitor's language. Deliberately not
+       animated — a transition can stall in a throttled tab and leave the page
+       invisible. */
+    html:not(.i18n-ready) body { visibility: hidden; }
+  </style>
+  <noscript><style>html:not(.i18n-ready) body { visibility: visible; }</style></noscript>
+  <script>
+    // Failsafe: if anything goes wrong while loading, never leave the visitor
+    // staring at a blank page — show it anyway.
+    setTimeout(function () {
+      document.documentElement.classList.add("i18n-ready");
+    }, 2500);
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -182,18 +197,18 @@
     </section>
   </main>
 
-  <script src="js/i18n.js?v=40"></script>
-  <script src="js/model-catalog.js?v=40"></script>
-  <script src="js/content-loader.js?v=40"></script>
-  <script src="js/phone-renderer.js?v=40"></script>
-  <script src="js/step-controller.js?v=40"></script>
-  <script src="js/delivery-picker.js?v=40"></script>
-  <script src="js/device-picker.js?v=40"></script>
-  <script src="js/ios-version-picker.js?v=40"></script>
-  <script src="js/device-detect.js?v=40"></script>
-  <script src="js/compat.js?v=40"></script>
-  <script src="js/troubleshoot.js?v=40"></script>
-  <script src="js/app.js?v=40"></script>
-  <script src="js/viewport-fix.js?v=40"></script>
+  <script src="js/i18n.js?v=48"></script>
+  <script src="js/model-catalog.js?v=48"></script>
+  <script src="js/content-loader.js?v=48"></script>
+  <script src="js/phone-renderer.js?v=48"></script>
+  <script src="js/step-controller.js?v=48"></script>
+  <script src="js/delivery-picker.js?v=48"></script>
+  <script src="js/device-picker.js?v=48"></script>
+  <script src="js/ios-version-picker.js?v=48"></script>
+  <script src="js/device-detect.js?v=48"></script>
+  <script src="js/compat.js?v=48"></script>
+  <script src="js/troubleshoot.js?v=48"></script>
+  <script src="js/app.js?v=48"></script>
+  <script src="js/viewport-fix.js?v=48"></script>
 </body>
 </html>

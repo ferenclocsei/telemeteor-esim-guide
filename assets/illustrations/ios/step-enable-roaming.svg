@@ -14,7 +14,7 @@
   <text x="170" y="78" text-anchor="middle" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="17" font-weight="700" fill="#000000">Telemeteor</text>
 
   <rect x="16" y="108" width="268" height="58" rx="14" fill="#ffffff"/>
-  <text data-key="screen.enable-roaming.turn-on" x="32" y="142" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Turn On This Line</text>
+  <text data-key="screen.enable-roaming.turn-on" data-maxw="196" x="32" y="142" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Turn On This Line</text>
   <rect x="238" y="123" width="36" height="20" rx="10" fill="#34c759"/>
   <circle cx="264" cy="133" r="8" fill="#ffffff"/>
 
@@ -23,11 +23,11 @@
   <text data-key="screen.enable-roaming.voice-data-value" x="268" y="208" text-anchor="end" fill="#8e8e93" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="14">5G Auto</text>
   <line x1="32" y1="220" x2="284" y2="220" stroke="#e5e5ea" stroke-width="1"/>
 
-  <text data-key="screen.enable-roaming.roaming" x="32" y="248" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="700" fill="#000000">Data Roaming</text>
+  <text data-key="screen.enable-roaming.roaming" data-maxw="196" x="32" y="248" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="700" fill="#000000">Data Roaming</text>
   <rect x="238" y="233" width="36" height="20" rx="10" fill="#34c759"/>
   <circle cx="264" cy="243" r="8" fill="#ffffff"/>
   <line x1="32" y1="260" x2="284" y2="260" stroke="#e5e5ea" stroke-width="1"/>
 
   <text data-key="screen.enable-roaming.data-mode" x="32" y="288" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Data Mode</text>
   <text data-key="screen.enable-roaming.data-mode-value" x="268" y="288" text-anchor="end" fill="#8e8e93" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="14">Standard</text>
-</svg>
+<rect x="16" y="310" width="268" height="58" rx="14" fill="#ffffff"/><circle cx="44" cy="339" r="12" fill="#c9d2de"/><rect x="68" y="334" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="16" y="376" width="268" height="58" rx="14" fill="#ffffff"/><circle cx="44" cy="405" r="12" fill="#c9d2de"/><rect x="68" y="400" width="104" height="10" rx="5" fill="#c9d2de"/><rect x="16" y="442" width="268" height="58" rx="14" fill="#ffffff"/><circle cx="44" cy="471" r="12" fill="#c9d2de"/><rect x="68" y="466" width="146" height="10" rx="5" fill="#c9d2de"/><rect x="16" y="508" width="268" height="58" rx="14" fill="#ffffff"/><circle cx="44" cy="537" r="12" fill="#c9d2de"/><rect x="68" y="532" width="118" height="10" rx="5" fill="#c9d2de"/></svg>

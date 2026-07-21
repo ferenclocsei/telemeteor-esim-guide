@@ -12,9 +12,9 @@
   </g>
   <g fill="#007aff">
     <path d="M22 66 l-8 8 l8 8" stroke="#007aff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <text data-key="screen.before-you-start.back" x="28" y="78" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15">General</text>
+    <text data-key="screen.before-you-start.back" data-maxw="76" x="28" y="78" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15">General</text>
   </g>
-  <text data-key="screen.before-you-start.title" x="150" y="78" text-anchor="middle" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="17" font-weight="700" fill="#000000">About</text>
+  <text data-key="screen.before-you-start.title" data-maxw="176" x="192" y="78" text-anchor="middle" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="17" font-weight="700" fill="#000000">About</text>
 
   <rect x="16" y="110" width="268" height="238" rx="14" fill="#ffffff"/>
   <g font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">
@@ -31,7 +31,7 @@
     <line x1="32" y1="230" x2="284" y2="230" stroke="#e5e5ea" stroke-width="1"/>
   </g>
 
-  <rect x="16" y="360" width="268" height="58" rx="14" fill="#ffffff" stroke="#ff6600" stroke-width="3"/>
+  <rect x="16" y="360" width="268" height="58" rx="14" fill="#ffffff"/>
   <text data-key="screen.before-you-start.lock-label" x="32" y="384" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="600" fill="#000000">Carrier Lock</text>
   <text data-key="screen.before-you-start.lock-value" x="32" y="402" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="12" fill="#34c759">No SIM restrictions</text>
-</svg>
+<rect x="16" y="434" width="268" height="58" rx="14" fill="#ffffff"/><circle cx="44" cy="463" r="12" fill="#c9d2de"/><rect x="68" y="458" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="16" y="500" width="268" height="58" rx="14" fill="#ffffff"/><circle cx="44" cy="529" r="12" fill="#c9d2de"/><rect x="68" y="524" width="104" height="10" rx="5" fill="#c9d2de"/></svg>

@@ -18,10 +18,20 @@
   "steps": [
     {
       "id": "before-you-start",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "ios/step-before-you-start.svg",
       "tapPoints": [
-        { "x": 50, "y": 63, "shape": "rect", "radius": 8, "labelKey": "ios.before-you-start.tap.carrier-lock" }
+        {
+          "x": 50.0,
+          "y": 61.7,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.before-you-start.tap.carrier-lock",
+          "w": 93.3,
+          "h": 10.5
+        }
       ],
       "titleKey": "ios.before-you-start.title",
       "bodyKey": "ios.before-you-start.body",
@@ -29,10 +39,20 @@
     },
     {
       "id": "open-link",
-      "appliesTo": ["link"],
+      "appliesTo": [
+        "link"
+      ],
       "illustration": "ios/step-open-link.svg",
       "tapPoints": [
-        { "x": 50, "y": 62, "shape": "rect", "radius": 8, "labelKey": "ios.open-link.tap.link" }
+        {
+          "x": 50.0,
+          "y": 63.5,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.open-link.tap.link",
+          "w": 84.0,
+          "h": 10.8
+        }
       ],
       "titleKey": "ios.open-link.title",
       "bodyKey": "ios.open-link.body",
@@ -40,10 +60,20 @@
     },
     {
       "id": "allow-notification",
-      "appliesTo": ["link"],
+      "appliesTo": [
+        "link"
+      ],
       "illustration": "ios/step-allow-notification.svg",
       "tapPoints": [
-        { "x": 70, "y": 69, "shape": "rect", "radius": 8, "labelKey": "ios.allow-notification.tap.allow" }
+        {
+          "x": 50.0,
+          "y": 64.4,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.allow-notification.tap.allow",
+          "w": 93.3,
+          "h": 15.9
+        }
       ],
       "titleKey": "ios.allow-notification.title",
       "bodyKey": "ios.allow-notification.body",
@@ -51,10 +81,20 @@
     },
     {
       "id": "continue-install",
-      "appliesTo": ["link"],
+      "appliesTo": [
+        "link"
+      ],
       "illustration": "ios/step-confirm-install.svg",
       "tapPoints": [
-        { "x": 67, "y": 68, "shape": "rect", "radius": 8, "labelKey": "ios.continue-install.tap.continue" }
+        {
+          "x": 50.0,
+          "y": 65.7,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.continue-install.tap.continue",
+          "w": 70.7,
+          "h": 9.6
+        }
       ],
       "titleKey": "ios.continue-install.title",
       "bodyKey": "ios.continue-install.body",
@@ -62,11 +102,23 @@
     },
     {
       "id": "open-email-qr",
-      "appliesTo": ["qr"],
-      "iosVersion": ["modern"],
-      "illustration": "ios/step-open-link.svg",
+      "appliesTo": [
+        "qr"
+      ],
+      "iosVersion": [
+        "modern"
+      ],
+      "illustration": "ios/step-open-email-qr.svg",
       "tapPoints": [
-        { "x": 50, "y": 62, "shape": "rect", "radius": 8, "labelKey": "ios.open-email-qr.tap.image" }
+        {
+          "x": 50.0,
+          "y": 52.4,
+          "shape": "rect",
+          "radius": 10,
+          "labelKey": "ios.open-email-qr.tap.image",
+          "w": 54.0,
+          "h": 25.1
+        }
       ],
       "titleKey": "ios.open-email-qr.title",
       "bodyKey": "ios.open-email-qr.body",
@@ -74,11 +126,23 @@
     },
     {
       "id": "add-esim-prompt",
-      "appliesTo": ["qr"],
-      "iosVersion": ["modern"],
+      "appliesTo": [
+        "qr"
+      ],
+      "iosVersion": [
+        "modern"
+      ],
       "illustration": "ios/step-add-esim-prompt.svg",
       "tapPoints": [
-        { "x": 65, "y": 61, "shape": "rect", "radius": 8, "labelKey": "ios.add-esim-prompt.tap.button" }
+        {
+          "x": 50.0,
+          "y": 58.7,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.add-esim-prompt.tap.button",
+          "w": 70.7,
+          "h": 9.6
+        }
       ],
       "titleKey": "ios.add-esim-prompt.title",
       "bodyKey": "ios.add-esim-prompt.body",
@@ -86,11 +150,23 @@
     },
     {
       "id": "open-camera-qr",
-      "appliesTo": ["qr"],
-      "iosVersion": ["legacy"],
+      "appliesTo": [
+        "qr"
+      ],
+      "iosVersion": [
+        "legacy"
+      ],
       "illustration": "ios/step-open-camera-qr.svg",
       "tapPoints": [
-        { "x": 50, "y": 44, "shape": "rect", "radius": 10, "labelKey": "ios.open-camera-qr.tap.frame" }
+        {
+          "x": 50.0,
+          "y": 43.7,
+          "shape": "rect",
+          "radius": 10,
+          "labelKey": "ios.open-camera-qr.tap.frame",
+          "w": 54.0,
+          "h": 25.1
+        }
       ],
       "titleKey": "ios.open-camera-qr.title",
       "bodyKey": "ios.open-camera-qr.body",
@@ -98,11 +174,23 @@
     },
     {
       "id": "cellular-plan-detected",
-      "appliesTo": ["qr"],
-      "iosVersion": ["legacy"],
+      "appliesTo": [
+        "qr"
+      ],
+      "iosVersion": [
+        "legacy"
+      ],
       "illustration": "ios/step-cellular-plan-detected.svg",
       "tapPoints": [
-        { "x": 50, "y": 63, "shape": "rect", "radius": 8, "labelKey": "ios.cellular-plan-detected.tap.notification" }
+        {
+          "x": 50.0,
+          "y": 63.5,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.cellular-plan-detected.tap.notification",
+          "w": 93.3,
+          "h": 14.0
+        }
       ],
       "titleKey": "ios.cellular-plan-detected.title",
       "bodyKey": "ios.cellular-plan-detected.body",
@@ -110,10 +198,20 @@
     },
     {
       "id": "continue-qr",
-      "appliesTo": ["qr"],
+      "appliesTo": [
+        "qr"
+      ],
       "illustration": "ios/step-confirm-install.svg",
       "tapPoints": [
-        { "x": 67, "y": 68, "shape": "rect", "radius": 8, "labelKey": "ios.continue-qr.tap.continue" }
+        {
+          "x": 50.0,
+          "y": 65.7,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.continue-qr.tap.continue",
+          "w": 70.7,
+          "h": 9.6
+        }
       ],
       "titleKey": "ios.continue-qr.title",
       "bodyKey": "ios.continue-qr.body",
@@ -121,10 +219,20 @@
     },
     {
       "id": "add-cellular-plan-qr",
-      "appliesTo": ["qr"],
+      "appliesTo": [
+        "qr"
+      ],
       "illustration": "ios/step-add-cellular-plan.svg",
       "tapPoints": [
-        { "x": 50, "y": 68, "shape": "rect", "radius": 8, "labelKey": "ios.add-cellular-plan-qr.tap.button" }
+        {
+          "x": 50.0,
+          "y": 64.3,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.add-cellular-plan-qr.tap.button",
+          "w": 84.0,
+          "h": 9.2
+        }
       ],
       "titleKey": "ios.add-cellular-plan-qr.title",
       "bodyKey": "ios.add-cellular-plan-qr.body",
@@ -132,10 +240,20 @@
     },
     {
       "id": "open-settings",
-      "appliesTo": ["manual"],
+      "appliesTo": [
+        "manual"
+      ],
       "illustration": "ios/step-open-settings.svg",
       "tapPoints": [
-        { "x": 82, "y": 10, "shape": "circle", "radius": 7, "labelKey": "ios.open-settings.tap.icon" }
+        {
+          "x": 82.0,
+          "y": 9.5,
+          "shape": "circle",
+          "radius": 7,
+          "labelKey": "ios.open-settings.tap.icon",
+          "w": 24.0,
+          "h": 10.8
+        }
       ],
       "titleKey": "ios.open-settings.title",
       "bodyKey": "ios.open-settings.body",
@@ -143,10 +261,20 @@
     },
     {
       "id": "open-cellular",
-      "appliesTo": ["manual"],
+      "appliesTo": [
+        "manual"
+      ],
       "illustration": "ios/step-open-cellular.svg",
       "tapPoints": [
-        { "x": 50, "y": 28, "shape": "rect", "radius": 8, "labelKey": "ios.open-cellular.tap.row" }
+        {
+          "x": 50.0,
+          "y": 27.6,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.open-cellular.tap.row",
+          "w": 90.7,
+          "h": 10.2
+        }
       ],
       "titleKey": "ios.open-cellular.title",
       "bodyKey": "ios.open-cellular.body",
@@ -154,10 +282,20 @@
     },
     {
       "id": "add-cellular-plan-manual",
-      "appliesTo": ["manual"],
+      "appliesTo": [
+        "manual"
+      ],
       "illustration": "ios/step-add-cellular-plan.svg",
       "tapPoints": [
-        { "x": 50, "y": 68, "shape": "rect", "radius": 8, "labelKey": "ios.add-cellular-plan-manual.tap.button" }
+        {
+          "x": 50.0,
+          "y": 64.3,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.add-cellular-plan-manual.tap.button",
+          "w": 84.0,
+          "h": 9.2
+        }
       ],
       "titleKey": "ios.add-cellular-plan-manual.title",
       "bodyKey": "ios.add-cellular-plan-manual.body",
@@ -165,12 +303,38 @@
     },
     {
       "id": "enter-manually",
-      "appliesTo": ["manual"],
+      "appliesTo": [
+        "manual"
+      ],
       "illustration": "ios/step-enter-manually.svg",
       "tapPoints": [
-        { "x": 50, "y": 34, "shape": "rect", "radius": 8, "labelKey": "ios.enter-manually.tap.address" },
-        { "x": 50, "y": 47, "shape": "rect", "radius": 8, "labelKey": "ios.enter-manually.tap.code" },
-        { "x": 50, "y": 60, "shape": "rect", "radius": 8, "labelKey": "ios.enter-manually.tap.apn" }
+        {
+          "x": 50.0,
+          "y": 36.5,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.enter-manually.tap.address",
+          "w": 90.7,
+          "h": 9.6
+        },
+        {
+          "x": 50.0,
+          "y": 49.8,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.enter-manually.tap.code",
+          "w": 90.7,
+          "h": 9.6
+        },
+        {
+          "x": 50.0,
+          "y": 63.2,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.enter-manually.tap.apn",
+          "w": 90.7,
+          "h": 9.6
+        }
       ],
       "titleKey": "ios.enter-manually.title",
       "bodyKey": "ios.enter-manually.body",
@@ -178,10 +342,20 @@
     },
     {
       "id": "confirm-plan",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "ios/step-confirm-plan.svg",
       "tapPoints": [
-        { "x": 50, "y": 68, "shape": "rect", "radius": 8, "labelKey": "ios.confirm-plan.tap.continue" }
+        {
+          "x": 50.0,
+          "y": 68.1,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.confirm-plan.tap.continue",
+          "w": 84.0,
+          "h": 9.2
+        }
       ],
       "titleKey": "ios.confirm-plan.title",
       "bodyKey": "ios.confirm-plan.body",
@@ -189,10 +363,20 @@
     },
     {
       "id": "label-plan",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "ios/step-label-plan.svg",
       "tapPoints": [
-        { "x": 50, "y": 20, "shape": "rect", "radius": 8, "labelKey": "ios.label-plan.tap.field" }
+        {
+          "x": 50.0,
+          "y": 19.7,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.label-plan.tap.field",
+          "w": 90.7,
+          "h": 10.2
+        }
       ],
       "titleKey": "ios.label-plan.title",
       "bodyKey": "ios.label-plan.body",
@@ -200,10 +384,20 @@
     },
     {
       "id": "line-preferences",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "ios/step-line-preferences.svg",
       "tapPoints": [
-        { "x": 50, "y": 17, "shape": "rect", "radius": 8, "labelKey": "ios.line-preferences.tap.default-line" }
+        {
+          "x": 50.0,
+          "y": 17.1,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.line-preferences.tap.default-line",
+          "w": 90.7,
+          "h": 10.2
+        }
       ],
       "titleKey": "ios.line-preferences.title",
       "bodyKey": "ios.line-preferences.body",
@@ -211,10 +405,20 @@
     },
     {
       "id": "enable-data-roaming",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "ios/step-enable-roaming.svg",
       "tapPoints": [
-        { "x": 88, "y": 39, "shape": "circle", "radius": 10, "labelKey": "ios.enable-data-roaming.tap.toggle" }
+        {
+          "x": 85.3,
+          "y": 38.6,
+          "shape": "circle",
+          "radius": 10,
+          "labelKey": "ios.enable-data-roaming.tap.toggle",
+          "w": 16.0,
+          "h": 4.5
+        }
       ],
       "titleKey": "ios.enable-data-roaming.title",
       "bodyKey": "ios.enable-data-roaming.body",
@@ -222,10 +426,20 @@
     },
     {
       "id": "select-data-line-on-arrival",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "ios/step-select-data-line.svg",
       "tapPoints": [
-        { "x": 50, "y": 33, "shape": "rect", "radius": 8, "labelKey": "ios.select-data-line.tap.row" }
+        {
+          "x": 50.0,
+          "y": 33.8,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.select-data-line.tap.row",
+          "w": 93.3,
+          "h": 10.5
+        }
       ],
       "titleKey": "ios.select-data-line.title",
       "bodyKey": "ios.select-data-line.body",
@@ -233,7 +447,9 @@
     },
     {
       "id": "done",
-      "appliesTo": ["all"],
+      "appliesTo": [
+        "all"
+      ],
       "illustration": "ios/step-done.svg",
       "tapPoints": [],
       "titleKey": "ios.done.title",

@@ -107,6 +107,8 @@ const Troubleshoot = (() => {
     svg.classList.add("ts-phone__svg");
     container.innerHTML = "";
     container.appendChild(svg);
+    // Same guard as the guide: shrink any label a translation made too wide.
+    requestAnimationFrame(() => PhoneRenderer.fitScreenText(svg));
   }
 
   function button(label, className, onClick, isLink, href) {

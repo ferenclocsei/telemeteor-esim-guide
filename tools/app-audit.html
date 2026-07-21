@@ -1,0 +1,79 @@
+<!doctype html><meta charset="utf-8"><title>App layout audit</title>
+<style>body{font:13px ui-monospace,monospace;background:#0f172a;color:#e2e8f0;padding:12px;margin:0}
+pre{white-space:pre-wrap}.ok{color:#4ade80}.bad{color:#f87171}</style>
+<div id="log">running…</div>
+<iframe id="fr" style="width:375px;height:812px;border:1px solid #334155;position:fixed;right:8px;top:8px"></iframe>
+<script>
+const COMBOS=[
+ ['ios',/iPhone/,/17\.4 (vagy újabb|or later|ili nov)/i,/QR/],
+ ['ios',/iPhone/,/17\.3/,/Manuál|kézzel|Manual|Ručn|Ručni|adatok|podaci/i],
+ ['ios',/iPhone/,/17\.4 (vagy újabb|or later|ili nov)/i,/^\W*🔗?\s*(Apple|Android|Quick|Brzi)/i],
+ ['samsung',/Samsung/,null,/Manuál|kézzel|Manual|Ručn|Ručni|adatok|podaci/i],
+ ['samsung',/Samsung/,null,/QR/],
+ ['pixel',/Pixel/,null,/^\W*🔗?\s*(Apple|Android|Quick|Brzi)/i],
+ ['pixel',/Pixel/,null,/QR/],
+ ['generic',/Egyéb|Other|Drugi|Ostali/i,null,/QR/],
+ ['generic',/Egyéb|Other|Drugi|Ostali/i,null,/Manuál|kézzel|Manual|Ručn|Ručni|adatok|podaci/i],
+];
+const LANG=new URLSearchParams(location.search).get('lang')||'hu';
+const s=ms=>new Promise(r=>setTimeout(r,ms));
+const fr=document.getElementById('fr');
+function load(url){return new Promise(r=>{fr.onload=()=>r();fr.src=url});}
+(async()=>{
+ const rows=[],bad=[];
+ for(const [os,osre,ver,delre] of COMBOS){
+  await load(`../index.html?lang=${LANG}&_=${Date.now()}`);
+  const D=fr.contentDocument, W=fr.contentWindow;
+  W.localStorage.clear();
+  await load(`../index.html?lang=${LANG}&_=${Date.now()}`);
+  const d=fr.contentDocument, w=fr.contentWindow;
+  // Only ever click a card that is actually on screen — every step's cards
+  // live in the DOM at once, and clicking a hidden one silently does nothing.
+  // Only ever click a card that is actually on screen — every step's cards
+  // live in the DOM at once, and clicking a hidden one silently does nothing.
+  // Retry, because a step's cards appear only once its content has loaded.
+  const pick=async re=>{
+    for(let a=0;a<12;a++){
+      const b=[...d.querySelectorAll('.option-card,button')]
+        .find(x=>x.offsetParent!==null && re.test(x.textContent.replace(/\s+/g,' ').trim()));
+      if(b){b.click();return true}
+      await s(180);
+    }
+    return false};
+  // Scope to the guide's own nav, and only a button that is actually on screen.
+  const next=()=>[...d.querySelectorAll('.step-nav button, .step-nav a')]
+      .find(b=>b.offsetParent!==null && !/back|prev/i.test(b.className));
+  await s(500);
+  if(!await pick(osre)){bad.push(`${os}: device button not found`);continue}
+  await s(300);
+  if(ver){ await pick(ver); await s(300); }
+  if(!await pick(delre)){bad.push(`${os}: delivery button not found`);continue}
+  await s(800);
+  for(let i=0;i<16;i++){
+   await s(340);
+   const nav=d.querySelector('.step-nav'); if(!nav) break;
+   const title=(d.getElementById('step-title')||{}).textContent||'';
+   const svgs=d.querySelectorAll('#illustration-wrap svg').length;
+   const rings=d.querySelectorAll('.tap-point').length;
+   const ph=d.querySelector('.phone-frame').getBoundingClientRect();
+   const nb=Math.round(nav.getBoundingClientRect().bottom);
+   const vh=w.innerHeight;
+   const row={combo:`${os}/${delre.source.slice(0,6)}`,step:i+1,title:title.slice(0,26),svgs,rings,phoneH:Math.round(ph.height),navBottom:nb,vh};
+   rows.push(row);
+   if(!title) bad.push(`${row.combo} step ${i+1}: empty title`);
+   if(svgs>1) bad.push(`${row.combo} step ${i+1}: ${svgs} screens stacked`);
+   if(nb>vh) bad.push(`${row.combo} step ${i+1}: nav ${nb-vh}px below the fold`);
+   if(ph.height<300) bad.push(`${row.combo} step ${i+1}: phone only ${Math.round(ph.height)}px tall`);
+   // a ring must sit inside the phone screen
+   d.querySelectorAll('.tap-point').forEach(r=>{const rb=r.getBoundingClientRect(),pb=d.querySelector('#phone-screen').getBoundingClientRect();
+     if(rb.left<pb.left-1||rb.right>pb.right+1||rb.top<pb.top-1||rb.bottom>pb.bottom+1) bad.push(`${row.combo} step ${i+1}: ring outside the screen`);});
+   const n=next(); if(!n||n.disabled) break; n.click();
+  }
+ }
+ window.__rows=rows; window.__bad=[...new Set(bad)];
+ log.innerHTML=`<b>${LANG}</b> — ${rows.length} steps walked, `+
+   (window.__bad.length?`<span class="bad">${window.__bad.length} problems</span><pre>${window.__bad.join('\n')}</pre>`
+                       :`<span class="ok">0 problems</span>`)+
+   `<pre>min phone ${Math.min(...rows.map(r=>r.phoneH))}px · max nav bottom ${Math.max(...rows.map(r=>r.navBottom))} / ${rows[0].vh}px</pre>`;
+})();
+</script>

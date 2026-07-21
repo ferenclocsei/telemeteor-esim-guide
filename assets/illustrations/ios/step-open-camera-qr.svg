@@ -1,7 +1,7 @@
 <svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
-  <rect width="300" height="630" fill="#0f1c33"/>
+  <rect width="300" height="630" fill="#0f1c33"/><text x="24" y="27" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" fill="#ffffff">9:41</text><g stroke="#ffffff" stroke-width="1.4" fill="none" opacity="0.85"><path d="M236 22 l4 -6 l4 6z" fill="#ffffff" stroke="none"/><path d="M248 22 a7 7 0 0 1 10 0"/><rect x="264" y="15" width="16" height="9" rx="2"/><rect x="266" y="17" width="9" height="5" fill="#ffffff" stroke="none"/></g>
   <text data-key="screen.open-camera-qr.title" x="150" y="80" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff">Scan QR Code</text>
-  <rect x="75" y="200" width="150" height="150" rx="16" fill="none" stroke="#ff6600" stroke-width="4"/>
+  
   <path d="M75 200 v-20 a16 16 0 0 1 16 -16 h20" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round"/>
   <path d="M225 200 v-20 a16 16 0 0 0 -16 -16 h-20" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round"/>
   <path d="M75 350 v20 a16 16 0 0 0 16 16 h20" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round"/>

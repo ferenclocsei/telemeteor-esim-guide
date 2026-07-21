@@ -1,6 +1,6 @@
 <svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
   <rect width="300" height="630" fill="#ffffff"/>
-  <text x="24" y="46" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">Settings</text>
+  <text data-key="screen.g-find-sim-settings.title" x="24" y="56" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">Settings</text>
 
   <rect x="20" y="70" width="260" height="46" rx="14" fill="#f5f5f7" stroke="#5b6b8c" stroke-width="3"/>
   <circle cx="42" cy="93" r="8" fill="none" stroke="#5b6b8c" stroke-width="2.4"/>
@@ -8,7 +8,7 @@
 
   <rect x="20" y="140" width="260" height="56" rx="16" fill="#dfe4ea"/>
   <circle cx="46" cy="168" r="12" fill="#5b6b8c"/>
-  <text x="70" y="173" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#182746">Add eSIM</text>
+  <text data-key="screen.g-find-sim-settings.add" x="70" y="173" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#182746">Add eSIM</text>
 
   <text data-key="screen.g-find-sim-settings.hint" x="24" y="228" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#5b6b8c">Network &amp; internet / Connections / SIM cards</text>
   <g opacity="0.999"><text x="24" y="27" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" fill="#000000">9:41</text><g stroke="#000000" stroke-width="1.4" fill="none" opacity="0.85"><path d="M236 22 l4 -6 l4 6z" fill="#000000" stroke="none"/><path d="M248 22 a7 7 0 0 1 10 0" /><rect x="264" y="15" width="16" height="9" rx="2"/><rect x="266" y="17" width="9" height="5" fill="#000000" stroke="none"/></g><rect x="20" y="260" width="260" height="56" rx="16" fill="#f5f5f7"/><circle cx="46" cy="288" r="12" fill="#c9d2de"/><rect x="70" y="283" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="20" y="326" width="260" height="56" rx="16" fill="#f5f5f7"/><circle cx="46" cy="354" r="12" fill="#c9d2de"/><rect x="70" y="349" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="20" y="392" width="260" height="56" rx="16" fill="#f5f5f7"/><circle cx="46" cy="420" r="12" fill="#c9d2de"/><rect x="70" y="415" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="20" y="458" width="260" height="56" rx="16" fill="#f5f5f7"/><circle cx="46" cy="486" r="12" fill="#c9d2de"/><rect x="70" y="481" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="112" y="606" width="76" height="5" rx="2.5" fill="#182746" opacity="0.3"/></g>

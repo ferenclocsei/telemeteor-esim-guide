@@ -1,0 +1,65 @@
+<!doctype html><meta charset="utf-8"><title>All screens audit</title>
+<style>body{font:12px system-ui;background:#eef2f7;margin:0;padding:14px}
+h2{font-size:14px;margin:18px 0 8px}
+.grid{display:flex;flex-wrap:wrap;gap:14px}
+figure{margin:0;text-align:center;width:150px}
+.p{width:150px;aspect-ratio:300/630;overflow:hidden;border-radius:22px;background:#0b1220;padding:6px}
+.s{width:100%;height:100%;border-radius:17px;overflow:hidden;background:#fff}
+svg{width:100%;height:100%;display:block}
+figcaption{font-size:10px;margin-top:4px;color:#425}
+#bar{position:sticky;top:0;background:#eef2f7;padding:6px 0;z-index:9}</style>
+<div id="bar">lang: <select id="lang"><option>hu<option>en<option>sr<option>hr</select>
+<span id="verdict"></span></div>
+<div id="out"></div>
+<script>
+// Mirrors PhoneRenderer.fitScreenText so the audit shows exactly what ships.
+function fit(svgEl){
+  const vb=svgEl.viewBox&&svgEl.viewBox.baseVal, W=vb&&vb.width?vb.width:300, PAD=10;
+  svgEl.querySelectorAll('text[data-key]').forEach(el=>{
+    let len; try{len=el.getComputedTextLength()}catch(e){return}
+    if(!len) return;
+    const x=parseFloat(el.getAttribute('x'))||0, an=el.getAttribute('text-anchor')||'start';
+    let avail = an==='middle' ? 2*Math.min(x-PAD, W-x-PAD) : an==='end' ? x-PAD : W-x-PAD;
+    const d=parseFloat(el.getAttribute('data-maxw')); if(!isNaN(d)) avail=Math.min(avail,d);
+    if(avail<=0||len<=avail) return;
+    const base=parseFloat(el.getAttribute('font-size'))||14;
+    el.setAttribute('font-size', Math.max(7.5, base*(avail/len)).toFixed(2));
+  });
+}
+async function render(lang){
+  out.innerHTML=''; verdict.textContent=' — rendering…';
+  const S=await (await fetch(`../content/strings/${lang}.json?_=${Date.now()}`)).json();
+  const t=k=>{ if(k.startsWith('ui.'))return S.ui?S.ui[k.slice(3)]:undefined;
+    if(k.startsWith('screen.'))return S.screen?S.screen[k.slice(7)]:undefined;
+    return S.steps?S.steps[k]:undefined;};
+  const files=await (await fetch('svg-list.json?_='+Date.now())).json();
+  const byDir={}; for(const f of files){const d=f.split('/')[0];(byDir[d]=byDir[d]||[]).push(f);}
+  const shrunk=[];
+  for(const [d,list] of Object.entries(byDir)){
+    const h=document.createElement('h2'); h.textContent=d; out.appendChild(h);
+    const g=document.createElement('div'); g.className='grid'; out.appendChild(g);
+    for(const f of list){
+      const txt=await (await fetch(`../assets/illustrations/${f}?_=${Date.now()}`)).text();
+      const svg=new DOMParser().parseFromString(txt,"image/svg+xml").documentElement;
+      svg.querySelectorAll('[data-key]').forEach(el=>{
+        const v=t(el.getAttribute('data-key'));
+        el.textContent = v===undefined ? '⟨'+el.getAttribute('data-key')+'⟩' : v;
+      });
+      svg.setAttribute("preserveAspectRatio","xMidYMid slice");
+      const fig=document.createElement('figure');
+      fig.innerHTML=`<div class="p"><div class="s"></div></div><figcaption>${f.split('/')[1]}</figcaption>`;
+      fig.querySelector('.s').appendChild(svg); g.appendChild(fig);
+      const before=[...svg.querySelectorAll('text[data-key]')].map(e=>e.getAttribute('font-size'));
+      fit(svg);
+      [...svg.querySelectorAll('text[data-key]')].forEach((e,i)=>{
+        const now=parseFloat(e.getAttribute('font-size'));
+        if(now < parseFloat(before[i])-0.01) shrunk.push(`${f} ${e.getAttribute('data-key')} ${before[i]}→${now}`);
+      });
+    }
+  }
+  window.__shrunk=shrunk;
+  verdict.textContent=` — ${files.length} screens, ${shrunk.length} labels auto-shrunk`;
+}
+lang.onchange=()=>render(lang.value);
+render('hu');
+</script>

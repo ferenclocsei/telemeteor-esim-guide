@@ -1,10 +1,10 @@
 <svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
-  <rect width="300" height="630" fill="#ffffff"/>
-  <text data-key="screen.add-cellular-plan.title" x="24" y="46" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">Cellular</text>
+  <rect width="300" height="630" fill="#ffffff"/><text x="24" y="27" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" fill="#182746">9:41</text><g stroke="#182746" stroke-width="1.4" fill="none" opacity="0.85"><path d="M236 22 l4 -6 l4 6z" fill="#182746" stroke="none"/><path d="M248 22 a7 7 0 0 1 10 0"/><rect x="264" y="15" width="16" height="9" rx="2"/><rect x="266" y="17" width="9" height="5" fill="#182746" stroke="none"/></g>
+  <text data-key="screen.add-cellular-plan.title" x="24" y="56" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#182746">Cellular</text>
   <rect x="20" y="80" width="260" height="56" rx="14" fill="#f4f6fa"/>
   <rect x="40" y="98" width="140" height="10" rx="5" fill="#5b6b8c"/>
   <rect x="20" y="146" width="260" height="80" rx="14" fill="#f4f6fa"/>
   <text data-key="screen.add-cellular-plan.section" x="40" y="192" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#5b6b8c">SIM CARDS</text>
-  <rect x="30" y="404" width="240" height="50" rx="25" fill="#ff6600"/>
-  <text data-key="screen.add-cellular-plan.button" x="150" y="436" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#ffffff">Add Cellular Plan</text>
-</svg>
+  <rect x="20" y="236" width="260" height="52" rx="14" fill="#f4f6fa"/><circle cx="46" cy="262" r="11" fill="#c9d2de"/><rect x="68" y="257" width="132" height="10" rx="5" fill="#c9d2de"/><rect x="20" y="296" width="260" height="52" rx="14" fill="#f4f6fa"/><circle cx="46" cy="322" r="11" fill="#c9d2de"/><rect x="68" y="317" width="106" height="10" rx="5" fill="#c9d2de"/><rect x="30" y="380" width="240" height="50" rx="25" fill="#007aff"/>
+  <text data-key="screen.add-cellular-plan.button" data-maxw="224" x="150" y="412" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#ffffff">Add Cellular Plan</text>
+<rect x="20" y="452" width="260" height="52" rx="14" fill="#f4f6fa"/><circle cx="46" cy="478" r="11" fill="#c9d2de"/><rect x="68" y="473" width="144" height="10" rx="5" fill="#c9d2de"/><rect x="20" y="512" width="260" height="52" rx="14" fill="#f4f6fa"/><circle cx="46" cy="538" r="11" fill="#c9d2de"/><rect x="68" y="533" width="118" height="10" rx="5" fill="#c9d2de"/><rect x="112" y="606" width="76" height="5" rx="2.5" fill="#182746" opacity="0.3"/></svg>

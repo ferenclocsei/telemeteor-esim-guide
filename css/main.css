@@ -908,10 +908,14 @@ svg {
 .ts-phone {
   width: 190px;
   max-width: 62vw;
-  aspect-ratio: 300 / 400;
+  /* Phone-like proportion; the SVG is a full 300x630 screen and is cropped
+     from the top, so the frame never shows an empty lower half. */
+  aspect-ratio: 300 / 470;
   border-radius: 30px;
   background: #0b1220;
   padding: 8px;
+  /* Guarantees the aspect ratio wins over the intrinsic size of the SVG. */
+  overflow: hidden;
   box-shadow: 0 12px 30px rgba(24, 39, 70, 0.28);
 }
 
@@ -1021,12 +1025,18 @@ svg {
   .guide-panel {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
+    /* The phone is much taller than the text beside it. Two flexible spacer
+       rows absorb the difference so the text block sits centred against the
+       phone instead of being stretched apart by it. */
     grid-template-areas:
       "notice notice"
+      "phone  spacer-top"
       "phone  head"
       "phone  details"
       "phone  warning"
-      "phone  nav";
+      "phone  nav"
+      "phone  spacer-bottom";
+    grid-template-rows: auto 1fr auto auto auto auto 1fr;
     align-content: center;
     align-items: center;
     column-gap: var(--space-7);
@@ -1226,13 +1236,14 @@ svg {
     display: block;
   }
 
-  /* Description: visible, compact, never a scrollbar — clamped to a few lines. */
+  /* Description: shown in full for normal steps. Only the rare long one is
+     clamped, and the phone flexes to give the text the room it needs. */
   .step-body {
     flex: 0 0 auto;
     font-size: 0.86rem;
     line-height: 1.4;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

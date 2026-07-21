@@ -3,8 +3,8 @@
   <g>
     <rect x="24" y="30" width="60" height="60" rx="18" fill="#e6eaf0"/>
     <rect x="120" y="30" width="60" height="60" rx="18" fill="#e6eaf0"/>
-    <rect x="216" y="30" width="60" height="60" rx="18" fill="#baddff" stroke="#e8710a" stroke-width="4"/>
-    <circle cx="246" cy="60" r="14" fill="#e8710a"/>
+    <rect x="216" y="30" width="60" height="60" rx="18" fill="#baddff"/>
+    <circle cx="246" cy="60" r="14" fill="#0b57d0"/>
     <rect x="24" y="120" width="60" height="60" rx="18" fill="#e6eaf0"/>
     <rect x="120" y="120" width="60" height="60" rx="18" fill="#e6eaf0"/>
     <rect x="216" y="120" width="60" height="60" rx="18" fill="#e6eaf0"/>

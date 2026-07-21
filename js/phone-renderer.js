@@ -1,8 +1,7 @@
 const PhoneRenderer = (() => {
-  let frameEl, screenEl, illustrationWrapEl, spotlightEl;
+  let frameEl, screenEl, illustrationWrapEl;
   let activeSvg = null;
   let tapPointEls = [];
-  let fingerEl = null;
   let renderToken = 0;
 
   const svgTextCache = {};
@@ -11,12 +10,6 @@ const PhoneRenderer = (() => {
     frameEl = document.getElementById("phone-frame");
     screenEl = document.getElementById("phone-screen");
     illustrationWrapEl = document.getElementById("illustration-wrap");
-    // A dim "spotlight" overlay that keeps a bright circle on the target and
-    // gently darkens the rest — the eye goes straight to where to tap.
-    spotlightEl = document.createElement("div");
-    spotlightEl.className = "phone-frame__spotlight";
-    spotlightEl.setAttribute("aria-hidden", "true");
-    screenEl.appendChild(spotlightEl);
   }
 
   function setOsVariant(osVariant) {
@@ -27,10 +20,6 @@ const PhoneRenderer = (() => {
   function clearTapPoints() {
     tapPointEls.forEach((el) => el.remove());
     tapPointEls = [];
-    if (fingerEl) {
-      fingerEl.remove();
-      fingerEl = null;
-    }
   }
 
   function centroid(tapPoints) {
@@ -41,54 +30,24 @@ const PhoneRenderer = (() => {
     };
   }
 
-  function fingerSvg() {
-    // A clean pointing-hand cursor — reads as "tap here" without any words.
-    return `
-      <svg viewBox="0 0 44 48" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M18 4c0-2.2 1.8-4 4-4s4 1.8 4 4v16l4-2c2-1 4.4-.3 5.5 1.6l4 7c1.7 2.9 2.2 6.3 1.4 9.6l-1.1 4.6c-.7 3-3.4 5.1-6.5 5.1H22c-2.5 0-4.9-1.1-6.5-3l-9-10.6c-1.6-1.9-1.4-4.7.5-6.2 1.6-1.3 3.9-1.2 5.4.2L18 24V4z"
-          fill="#ffffff" stroke="#182746" stroke-width="1.5" stroke-linejoin="round"/>
-      </svg>`;
-  }
-
   function renderTapPoints(tapPoints) {
     clearTapPoints();
-    const c = centroid(tapPoints);
-
-    // Position / enable the spotlight on the target (or clear it).
-    if (c) {
-      spotlightEl.style.setProperty("--spot-x", `${c.x}%`);
-      spotlightEl.style.setProperty("--spot-y", `${c.y}%`);
-      spotlightEl.classList.add("is-active");
-    } else {
-      spotlightEl.classList.remove("is-active");
-    }
-
     if (!tapPoints || !tapPoints.length) return;
 
-    tapPoints.forEach((tp, i) => {
+    tapPoints.forEach((tp) => {
+      // A hollow, pulsing frame sized to the element it points at — it outlines
+      // the target and never covers its label.
       const el = document.createElement("div");
       el.className = "tap-point" + (tp.shape === "rect" ? " tap-point--rect" : "");
       el.style.left = `${tp.x}%`;
       el.style.top = `${tp.y}%`;
-      if (tp.shape === "rect") {
-        el.style.width = "42%";
-        el.style.height = `${Math.max(tp.radius * 2, 24)}px`;
-      }
+      el.style.width = `${tp.w || 86}%`;
+      el.style.height = `${tp.h || 11}%`;
       if (tp.label) el.setAttribute("aria-label", tp.label);
       el.setAttribute("aria-hidden", "true");
       illustrationWrapEl.appendChild(el);
       tapPointEls.push(el);
       requestAnimationFrame(() => el.classList.add("is-visible"));
-
-      if (i === 0) {
-        fingerEl = document.createElement("div");
-        fingerEl.className = "tap-finger";
-        fingerEl.innerHTML = fingerSvg();
-        fingerEl.style.left = `${tp.x}%`;
-        fingerEl.style.top = `${tp.y}%`;
-        illustrationWrapEl.appendChild(fingerEl);
-        requestAnimationFrame(() => fingerEl.classList.add("is-visible"));
-      }
     });
   }
 
@@ -106,6 +65,42 @@ const PhoneRenderer = (() => {
     });
   }
 
+  // Translations are longer in some languages than the English the screens were
+  // drawn with (Serbian "Upravljanje SIM karticama" is twice the width of
+  // "SIM card manager"). Rather than hand-tuning every screen, shrink any label
+  // that no longer fits the space it has. Must run after the SVG is in the DOM,
+  // because it measures the rendered text.
+  function fitScreenText(svgEl) {
+    const vb = svgEl.viewBox && svgEl.viewBox.baseVal;
+    const boxWidth = vb && vb.width ? vb.width : 300;
+    const PAD = 10;
+
+    svgEl.querySelectorAll("text[data-key]").forEach((el) => {
+      let len;
+      try {
+        len = el.getComputedTextLength();
+      } catch (err) {
+        return; // not rendered — nothing to measure
+      }
+      if (!len) return;
+
+      const x = parseFloat(el.getAttribute("x")) || 0;
+      const anchor = el.getAttribute("text-anchor") || "start";
+      let avail;
+      if (anchor === "middle") avail = 2 * Math.min(x - PAD, boxWidth - x - PAD);
+      else if (anchor === "end") avail = x - PAD;
+      else avail = boxWidth - x - PAD;
+
+      // A label sharing its row with another one declares its own budget.
+      const declared = parseFloat(el.getAttribute("data-maxw"));
+      if (!Number.isNaN(declared)) avail = Math.min(avail, declared);
+      if (avail <= 0 || len <= avail) return;
+
+      const base = parseFloat(el.getAttribute("font-size")) || 14;
+      el.setAttribute("font-size", Math.max(7.5, base * (avail / len)).toFixed(2));
+    });
+  }
+
   async function renderStep(step) {
     const token = ++renderToken;
     const markup = await fetchSvgMarkup(`assets/illustrations/${step.illustration}`);
@@ -119,21 +114,30 @@ const PhoneRenderer = (() => {
     svgEl.setAttribute("role", "img");
     svgEl.setAttribute("aria-label", step.title || "");
 
-    const prevSvg = activeSvg;
+    // Never show two screens at once: the previous illustration and its ring go
+    // immediately, so the incoming screen fades in over the phone's own
+    // background instead of being blended with the screen it replaces.
+    clearTapPoints();
+    if (activeSvg) activeSvg.remove();
+    // Paint the wrap with the incoming screen's own background so the fade-in
+    // never flashes through to whatever was behind it.
+    const bgRect = svgEl.querySelector("rect");
+    const bg = bgRect && bgRect.getAttribute("width") === "300" ? bgRect.getAttribute("fill") : null;
+    illustrationWrapEl.style.background = bg || "#f2f2f7";
     illustrationWrapEl.appendChild(svgEl);
     activeSvg = svgEl;
 
     requestAnimationFrame(() => {
+      fitScreenText(svgEl);
       svgEl.classList.add("is-active");
-      if (prevSvg) {
-        prevSvg.classList.add("is-leaving");
-        prevSvg.classList.remove("is-active");
-        window.setTimeout(() => prevSvg.remove(), 360);
-      }
     });
 
-    renderTapPoints(step.tapPoints || []);
+    // The ring only appears once the screen it points at is actually there.
+    window.setTimeout(() => {
+      if (token !== renderToken) return;
+      renderTapPoints(step.tapPoints || []);
+    }, 240);
   }
 
-  return { mount, setOsVariant, renderStep };
+  return { mount, setOsVariant, renderStep, fitScreenText };
 })();

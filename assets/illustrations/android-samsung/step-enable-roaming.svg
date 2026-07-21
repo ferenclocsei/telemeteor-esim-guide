@@ -7,26 +7,26 @@
     <rect x="254" y="16" width="12" height="6" fill="#000"/>
   </g>
   <g fill="#1447e6">
-    <path d="M22 62 l-8 8 l8 8" stroke="#1447e6" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
     <text data-key="screen.s-enable-roaming.back" x="28" y="74" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14">Connections</text>
   </g>
   <text x="170" y="74" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="16" font-weight="700" fill="#000000">Telemeteor</text>
 
   <rect x="16" y="104" width="268" height="58" rx="16" fill="#ffffff"/>
-  <text x="32" y="138" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#000000">Turn on this SIM</text>
+  <text data-key="screen.s-enable-roaming.turn-on" data-maxw="196" x="32" y="138" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#000000">Turn on this SIM</text>
   <rect x="238" y="119" width="36" height="20" rx="10" fill="#34c759"/>
   <circle cx="264" cy="129" r="8" fill="#ffffff"/>
 
   <rect x="16" y="176" width="268" height="128" rx="16" fill="#ffffff"/>
-  <text x="32" y="204" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#000000">Network mode</text>
+  <text data-key="screen.s-enable-roaming.network-mode" x="32" y="204" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#000000">Network mode</text>
   <text x="268" y="204" text-anchor="end" fill="#8e8e93" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">5G/LTE</text>
   <line x1="32" y1="216" x2="284" y2="216" stroke="#e5e5ea" stroke-width="1"/>
 
-  <text data-key="screen.s-enable-roaming.roaming" x="32" y="244" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#000000">Data roaming</text>
+  <text data-key="screen.s-enable-roaming.roaming" data-maxw="196" x="32" y="244" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#000000">Data roaming</text>
   <rect x="238" y="229" width="36" height="20" rx="10" fill="#34c759"/>
   <circle cx="264" cy="239" r="8" fill="#ffffff"/>
   <line x1="32" y1="256" x2="284" y2="256" stroke="#e5e5ea" stroke-width="1"/>
 
-  <text x="32" y="284" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#000000">Mobile data usage</text>
+  <text data-key="screen.s-enable-roaming.data-usage" x="32" y="284" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#000000">Mobile data usage</text>
   <g opacity="0.999"><rect x="20" y="324" width="260" height="56" rx="16" fill="#ffffff"/><circle cx="46" cy="352" r="12" fill="#c9d2de"/><rect x="70" y="347" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="20" y="394" width="260" height="56" rx="16" fill="#ffffff"/><circle cx="46" cy="422" r="12" fill="#c9d2de"/><rect x="70" y="417" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="20" y="464" width="260" height="56" rx="16" fill="#ffffff"/><circle cx="46" cy="492" r="12" fill="#c9d2de"/><rect x="70" y="487" width="130" height="10" rx="5" fill="#c9d2de"/><rect x="112" y="606" width="76" height="5" rx="2.5" fill="#182746" opacity="0.3"/></g>
 </svg>
