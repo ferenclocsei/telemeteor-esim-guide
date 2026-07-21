@@ -142,19 +142,11 @@
     syncStepDetails(true);
   }
 
-  // On desktop there is room: the detailed text is always visible.
-  // On mobile it starts collapsed behind a "More details" toggle so the
-  // big picture (phone + one short instruction) stays uncluttered.
+  // The instruction (title) carries the message; the full description sits
+  // behind an optional "More details" toggle — open by default on desktop
+  // (there is room), collapsed on mobile so the phone stays the hero.
   const desktopQuery = window.matchMedia("(min-width: 960px)");
   const stepDetailsEl = document.getElementById("step-details");
-  const guidePanelEl = document.getElementById("guide-panel");
-
-  // "Reading mode": while the details are open on mobile, the phone mockup
-  // shrinks (or hides on short screens) so the text and the nav buttons
-  // always stay on screen.
-  stepDetailsEl.addEventListener("toggle", () => {
-    guidePanelEl.classList.toggle("is-reading", stepDetailsEl.open && !desktopQuery.matches);
-  });
 
   function syncStepDetails(collapseOnMobile) {
     if (desktopQuery.matches) {
@@ -163,8 +155,6 @@
       stepDetailsEl.open = false;
     }
   }
-
-  window.addEventListener("resize", () => syncStepDetails(false));
 
   function onGuideBackAtStart() {
     showPanel("delivery");
