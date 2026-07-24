@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><title>Icon gallery</title>
+<style>body{font:13px system-ui;background:#132038;color:#eaf0f8;margin:0;padding:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.cell{background:#1b2b48;border-radius:14px;padding:16px;text-align:center}
+.tile{width:56px;height:56px;margin:0 auto 8px;display:grid;place-items:center;border-radius:16px;
+ color:#132038;background:linear-gradient(145deg,#ffd8b0,#ffb27a 55%,#ff9354)}
+.tile svg{width:30px;height:30px}
+.blue{background:#BADDFF}
+h2{margin:0 0 12px}</style>
+<h2>Step / delivery icons — do any read wrong?</h2>
+<div class="grid" id="g"></div>
+<script src="../js/icons.js?v=54"></script>
+<script>
+const names=['prepare','gear','camera','scan','link','email','bell','keyboard','sparkle','check','add','globe','signal','download','tag','phone','done','target'];
+for(const n of names){
+ const c=document.createElement('div'); c.className='cell';
+ c.innerHTML=`<div class="tile">${Icons.get(n)}</div><div>${n}</div>`;
+ g.appendChild(c);
+}
+</script>

@@ -133,32 +133,6 @@
   langSelectEl.value = I18n.currentLang;
   document.documentElement.classList.add("i18n-ready");
 
-  // A universal, language-free icon for each step — the eye lands on the
-  // picture, not a wall of words. Matched most-specific first.
-  const STEP_ICONS = [
-    [/done|all-set|finish/, "🎉"],
-    [/downloading|installing/, "⏳"],
-    [/roaming/, "🌍"],
-    [/select-data-line|data-line/, "📶"],
-    [/line-preferences/, "📞"],
-    [/label/, "🏷️"],
-    [/email/, "📧"],
-    [/camera|scan|qr/, "📷"],
-    [/link/, "🔗"],
-    [/notification|allow/, "🔔"],
-    [/manual|enter/, "⌨️"],
-    [/detected|found/, "✨"],
-    [/continue|confirm/, "👉"],
-    [/add-/, "➕"],
-    [/settings|cellular|connection|sim-manager|network|sims|find-sim/, "⚙️"],
-    [/before-you-start/, "👀"],
-  ];
-  function iconForStep(id) {
-    const key = String(id || "");
-    for (const [re, icon] of STEP_ICONS) if (re.test(key)) return icon;
-    return "👆";
-  }
-
   const prefersReducedMotion =
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -190,7 +164,7 @@
     PhoneRenderer.renderStep(step);
     stepEyebrowEl.textContent = DeliveryPicker.currentName();
     if (stepIconEl) {
-      stepIconEl.textContent = iconForStep(step.id);
+      stepIconEl.innerHTML = Icons.forStep(step.id);
       // replay the badge pop each step
       stepIconEl.classList.remove("is-in");
       void stepIconEl.offsetWidth;

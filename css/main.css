@@ -404,6 +404,27 @@ svg {
   display: inline-flex;
 }
 
+/* Delivery-method line icon: a soft square tile with a navy glyph, matching
+   the device cards' silhouette style so the two picker steps feel of a piece. */
+.option-card__icon--line {
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  color: var(--color-navy);
+  background: var(--color-blue-light);
+}
+
+.option-card__icon--line svg {
+  width: 23px;
+  height: 23px;
+}
+
+.option-card[aria-pressed="true"] .option-card__icon--line {
+  background: #fff;
+}
+
 .option-card__name {
   font-weight: 700;
   font-size: 0.95rem;
@@ -529,6 +550,7 @@ svg {
   height: 340px;
   top: -120px;
   right: -100px;
+  animation: glow-drift-a 16s ease-in-out infinite;
 }
 
 .guide-panel::after {
@@ -536,6 +558,42 @@ svg {
   height: 260px;
   bottom: -120px;
   left: -80px;
+  background: radial-gradient(circle, var(--color-orange) 0%, transparent 70%);
+  opacity: 0.22;
+  animation: glow-drift-b 20s ease-in-out infinite;
+}
+
+/* Two brand-coloured glows breathe slowly behind the phone — the telemeteor.com
+   look, alive but never distracting. */
+@keyframes glow-drift-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(-26px, 30px) scale(1.12);
+    opacity: 0.48;
+  }
+}
+
+@keyframes glow-drift-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(34px, -22px) scale(1.15);
+    opacity: 0.32;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guide-panel::before,
+  .guide-panel::after {
+    animation: none;
+  }
 }
 
 .guide-panel__fallback-notice {
@@ -628,25 +686,43 @@ svg {
   height: 52px;
   display: grid;
   place-items: center;
-  font-size: 1.6rem;
-  line-height: 1;
   border-radius: 16px;
-  background: linear-gradient(140deg, rgba(255, 138, 61, 0.28), rgba(255, 102, 0, 0.16));
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  /* A warm, softly-lit tile; the line glyph inside is deep navy for contrast. */
+  color: var(--color-navy);
+  background: linear-gradient(145deg, #ffd8b0, #ffb27a 55%, #ff9354);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 6px 14px rgba(255, 102, 0, 0.28);
+}
+
+.step-head__icon svg {
+  width: 27px;
+  height: 27px;
 }
 
 .step-head__icon.is-in {
-  animation: badge-pop 0.5s cubic-bezier(0.2, 1.35, 0.4, 1) both;
+  animation: badge-pop 0.5s cubic-bezier(0.2, 1.4, 0.4, 1);
 }
 
+/* Starts and ends at the identity transform, so the badge is always full-size
+   at rest — even if the run-once animation never gets a chance to advance. */
 @keyframes badge-pop {
-  from {
-    transform: scale(0.3) rotate(-12deg);
-    opacity: 0;
-  }
-  to {
+  0% {
     transform: scale(1) rotate(0);
-    opacity: 1;
+  }
+  28% {
+    transform: scale(0.82) rotate(-8deg);
+  }
+  62% {
+    transform: scale(1.1) rotate(4deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-head__icon.is-in {
+    animation: none;
   }
 }
 
@@ -1222,8 +1298,10 @@ svg {
     font-size: 1.05rem;
   }
   .step-text__warning {
-    grid-area: details;
+    /* Its own row — must never sit on top of the description. */
+    grid-area: warning;
     align-self: start;
+    justify-self: start;
   }
   .step-nav {
     grid-area: nav;
@@ -1378,8 +1456,12 @@ svg {
   .step-head__icon {
     width: 40px;
     height: 40px;
-    font-size: 1.25rem;
     border-radius: 12px;
+  }
+
+  .step-head__icon svg {
+    width: 21px;
+    height: 21px;
   }
 
   .step-head__text {
@@ -1459,8 +1541,12 @@ svg {
   .step-head__icon {
     width: 34px;
     height: 34px;
-    font-size: 1.05rem;
     border-radius: 10px;
+  }
+
+  .step-head__icon svg {
+    width: 18px;
+    height: 18px;
   }
 
   .step-head__title {

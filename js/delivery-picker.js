@@ -1,8 +1,8 @@
 const DeliveryPicker = (() => {
   const OPTIONS = [
-    { id: "link", icon: "🔗", nameKey: "ui.delivery.link.name", descKey: "ui.delivery.link.desc" },
-    { id: "qr", icon: "▦", nameKey: "ui.delivery.qr.name", descKey: "ui.delivery.qr.desc" },
-    { id: "manual", icon: "⌨️", nameKey: "ui.delivery.manual.name", descKey: "ui.delivery.manual.desc" },
+    { id: "link", icon: "link", nameKey: "ui.delivery.link.name", descKey: "ui.delivery.link.desc" },
+    { id: "qr", icon: "scan", nameKey: "ui.delivery.qr.name", descKey: "ui.delivery.qr.desc" },
+    { id: "manual", icon: "keyboard", nameKey: "ui.delivery.manual.name", descKey: "ui.delivery.manual.desc" },
   ];
 
   let containerEl;
@@ -33,7 +33,7 @@ const DeliveryPicker = (() => {
       const desc = opt.id === "link" ? linkDesc() : I18n.t(opt.descKey);
       const badge = disabled ? `<span class="option-card__badge">${I18n.t("ui.iosversion.legacy.badge")}</span>` : "";
       btn.innerHTML = `
-        <span class="option-card__icon">${opt.icon}</span>
+        <span class="option-card__icon option-card__icon--line">${Icons.get(opt.icon)}</span>
         <span class="option-card__name">${name}</span>
         <span class="option-card__desc">${desc}</span>
         ${badge}
