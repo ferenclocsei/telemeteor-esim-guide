@@ -60,14 +60,15 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transform: translateX(12px);
+  /* Each screen settles up into place with a gentle rise + scale. */
+  transform: translateY(12px) scale(0.98);
   transition: opacity var(--transition-medium), transform var(--transition-medium);
   pointer-events: none;
 }
 
 .phone-frame__illustration.is-active {
   opacity: 1;
-  transform: translateX(0);
+  transform: none;
   pointer-events: auto;
 }
 
@@ -98,6 +99,32 @@
   opacity: 1;
 }
 
+/* A second, softer sonar ring rippling outward from the target — reads as an
+   unmistakable "tap right here" without ever filling over the label. */
+.tap-point::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px solid var(--color-orange);
+  opacity: 0;
+  animation: tap-ripple 1.8s ease-out infinite;
+}
+
+@keyframes tap-ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  70% {
+    transform: scale(1.16);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .tap-point--rect {
   border-radius: 12px;
 }
@@ -118,6 +145,143 @@
   .tap-point {
     animation: none;
     box-shadow: 0 0 0 4px var(--color-orange);
+  }
+  .tap-point::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   Living screens — motion drawn straight onto the phone so the
+   guide shows rather than tells. Each animation is self-contained,
+   restarts every time its step is rendered, and its finished frame
+   equals the static SVG — so disabling motion loses nothing.
+   Elements are tagged with these classes inside the step SVGs.
+   ============================================================ */
+
+/* The download arc spins. Every download screen centres it at 150,270. */
+.anim-spin {
+  transform-box: view-box;
+  transform-origin: 150px 270px;
+  animation: screen-spin 0.9s linear infinite;
+}
+@keyframes screen-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* "All set" — the badge pops in and the checkmark draws itself. */
+.anim-pop {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: screen-pop 0.55s cubic-bezier(0.2, 1.35, 0.4, 1) both;
+}
+@keyframes screen-pop {
+  from {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.anim-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: screen-draw 0.45s 0.3s ease-out forwards;
+}
+@keyframes screen-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* A switch flips itself on: the track greens up, the knob slides across. */
+.anim-toggle-track {
+  animation: screen-track 0.5s 0.25s both;
+}
+@keyframes screen-track {
+  from {
+    fill: #e5e5ea;
+  }
+  to {
+    fill: #34c759;
+  }
+}
+.anim-toggle-knob {
+  transform-box: fill-box;
+  animation: screen-knob 0.5s 0.25s cubic-bezier(0.2, 1, 0.35, 1) both;
+}
+@keyframes screen-knob {
+  from {
+    transform: translateX(-16px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* The camera's scan line glides down the QR frame, over and over. */
+.anim-scanline {
+  transform-box: view-box;
+  animation: screen-scan 2.1s ease-in-out infinite;
+}
+@keyframes screen-scan {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.95;
+  }
+  50% {
+    transform: translateY(var(--scan, 140px));
+    opacity: 0.95;
+  }
+  88% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+/* A slow, calm breath on hero/illustration accents. */
+.anim-float {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: screen-float 3.2s ease-in-out infinite;
+}
+@keyframes screen-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-spin,
+  .anim-pop,
+  .anim-draw,
+  .anim-toggle-track,
+  .anim-toggle-knob,
+  .anim-scanline,
+  .anim-float {
+    animation: none;
+  }
+  /* leave the drawn state fully visible when motion is off */
+  .anim-draw {
+    stroke-dashoffset: 0;
+  }
+  .anim-scanline {
+    opacity: 0.9;
   }
 }
 

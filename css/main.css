@@ -359,6 +359,43 @@ svg {
   border-color: var(--color-navy);
   background: var(--color-blue-light);
   box-shadow: var(--shadow-soft);
+  animation: card-pick 0.4s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+
+@keyframes card-pick {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.035);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* The selected card's icon gives a little cheer. */
+.option-card[aria-pressed="true"] .option-card__icon {
+  animation: icon-cheer 0.45s ease;
+}
+
+@keyframes icon-cheer {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  40% {
+    transform: scale(1.25) rotate(-8deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option-card[aria-pressed="true"],
+  .option-card[aria-pressed="true"] .option-card__icon {
+    animation: none;
+  }
 }
 
 .option-card__icon {
@@ -534,16 +571,92 @@ svg {
 }
 
 .step-progressbar__fill {
+  position: relative;
   display: block;
   height: 100%;
   width: 0;
   border-radius: var(--radius-pill);
   background: linear-gradient(90deg, var(--color-orange), #ff8a3d);
   transition: width 0.35s ease;
+  overflow: hidden;
+}
+
+/* A soft sheen travels the filled bar so progress feels live, not static. */
+.step-progressbar__fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: progress-sheen 2.4s ease-in-out infinite;
+}
+
+@keyframes progress-sheen {
+  0% {
+    transform: translateX(-100%);
+  }
+  60%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-progressbar__fill::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Icon + text sit on one row so the big glyph leads the eye into the title. */
+.step-head__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  text-align: left;
+}
+
+.step-head__icon {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  line-height: 1;
+  border-radius: 16px;
+  background: linear-gradient(140deg, rgba(255, 138, 61, 0.28), rgba(255, 102, 0, 0.16));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.step-head__icon.is-in {
+  animation: badge-pop 0.5s cubic-bezier(0.2, 1.35, 0.4, 1) both;
+}
+
+@keyframes badge-pop {
+  from {
+    transform: scale(0.3) rotate(-12deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+.step-head__text {
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .step-head__eyebrow {
-  margin: var(--space-1) 0 0;
+  margin: 0;
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -561,6 +674,50 @@ svg {
   font-size: 1.5rem;
   line-height: 1.2;
   font-weight: 800;
+}
+
+/* Confetti celebration on the final step — the reward for finishing. */
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 6;
+  border-radius: inherit;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -12px;
+  width: 9px;
+  height: 14px;
+  border-radius: 2px;
+  opacity: 0;
+  animation-name: confetti-fall;
+  animation-timing-function: cubic-bezier(0.3, 0.6, 0.4, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate(0, -10px) rotate(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    /* --fall is the panel height in px, set per burst (percentages in a
+       transform resolve against the element's own tiny size, not the panel). */
+    transform: translate(var(--drift, 0), var(--fall, 600px)) rotate(var(--spin, 540deg));
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confetti-layer {
+    display: none;
+  }
 }
 
 .step-text__warning {
@@ -1211,8 +1368,31 @@ svg {
     gap: var(--space-1);
   }
 
+  /* Centre the icon+title as one glanceable header on phones. */
+  .step-head__row {
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-2);
+  }
+
+  .step-head__icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    border-radius: 12px;
+  }
+
+  .step-head__text {
+    flex: 0 1 auto;
+  }
+
   .step-head__title {
-    font-size: 1.3rem;
+    font-size: 1.32rem;
+  }
+
+  /* Description steps back so the title + picture carry the moment. */
+  .step-body {
+    opacity: 0.82;
   }
 
   .phone-frame-shell {
@@ -1274,6 +1454,13 @@ svg {
 
   .step-head {
     gap: 2px;
+  }
+
+  .step-head__icon {
+    width: 34px;
+    height: 34px;
+    font-size: 1.05rem;
+    border-radius: 10px;
   }
 
   .step-head__title {

@@ -14,8 +14,8 @@
 
   <rect x="16" y="104" width="268" height="58" rx="16" fill="#ffffff"/>
   <text data-key="screen.s-enable-roaming.turn-on" data-maxw="196" x="32" y="138" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#000000">Turn on this SIM</text>
-  <rect x="238" y="119" width="36" height="20" rx="10" fill="#34c759"/>
-  <circle cx="264" cy="129" r="8" fill="#ffffff"/>
+  <rect x="238" y="119" width="36" height="20" rx="10" fill="#34c759" class="anim-toggle-track"/>
+  <circle cx="264" cy="129" r="8" fill="#ffffff" class="anim-toggle-knob" style="transform-box:fill-box"/>
 
   <rect x="16" y="176" width="268" height="128" rx="16" fill="#ffffff"/>
   <text data-key="screen.s-enable-roaming.network-mode" x="32" y="204" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#000000">Network mode</text>
@@ -23,8 +23,8 @@
   <line x1="32" y1="216" x2="284" y2="216" stroke="#e5e5ea" stroke-width="1"/>
 
   <text data-key="screen.s-enable-roaming.roaming" data-maxw="196" x="32" y="244" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#000000">Data roaming</text>
-  <rect x="238" y="229" width="36" height="20" rx="10" fill="#34c759"/>
-  <circle cx="264" cy="239" r="8" fill="#ffffff"/>
+  <rect x="238" y="229" width="36" height="20" rx="10" fill="#34c759" class="anim-toggle-track"/>
+  <circle cx="264" cy="239" r="8" fill="#ffffff" class="anim-toggle-knob" style="transform-box:fill-box"/>
   <line x1="32" y1="256" x2="284" y2="256" stroke="#e5e5ea" stroke-width="1"/>
 
   <text data-key="screen.s-enable-roaming.data-usage" x="32" y="284" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" fill="#000000">Mobile data usage</text>

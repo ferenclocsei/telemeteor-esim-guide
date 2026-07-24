@@ -15,8 +15,8 @@
 
   <rect x="16" y="108" width="268" height="58" rx="14" fill="#ffffff"/>
   <text data-key="screen.enable-roaming.turn-on" data-maxw="196" x="32" y="142" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Turn On This Line</text>
-  <rect x="238" y="123" width="36" height="20" rx="10" fill="#34c759"/>
-  <circle cx="264" cy="133" r="8" fill="#ffffff"/>
+  <rect x="238" y="123" width="36" height="20" rx="10" fill="#34c759" class="anim-toggle-track"/>
+  <circle cx="264" cy="133" r="8" fill="#ffffff" class="anim-toggle-knob" style="transform-box:fill-box"/>
 
   <rect x="16" y="180" width="268" height="128" rx="14" fill="#ffffff"/>
   <text data-key="screen.enable-roaming.voice-data" x="32" y="208" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Voice &amp; Data</text>
@@ -24,8 +24,8 @@
   <line x1="32" y1="220" x2="284" y2="220" stroke="#e5e5ea" stroke-width="1"/>
 
   <text data-key="screen.enable-roaming.roaming" data-maxw="196" x="32" y="248" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="700" fill="#000000">Data Roaming</text>
-  <rect x="238" y="233" width="36" height="20" rx="10" fill="#34c759"/>
-  <circle cx="264" cy="243" r="8" fill="#ffffff"/>
+  <rect x="238" y="233" width="36" height="20" rx="10" fill="#34c759" class="anim-toggle-track"/>
+  <circle cx="264" cy="243" r="8" fill="#ffffff" class="anim-toggle-knob" style="transform-box:fill-box"/>
   <line x1="32" y1="260" x2="284" y2="260" stroke="#e5e5ea" stroke-width="1"/>
 
   <text data-key="screen.enable-roaming.data-mode" x="32" y="288" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Data Mode</text>

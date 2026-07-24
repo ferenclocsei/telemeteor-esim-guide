@@ -27,7 +27,9 @@
   const stepBodyEl = document.getElementById("step-body");
   const stepWarningEl = document.getElementById("step-warning");
   const stepEyebrowEl = document.getElementById("step-eyebrow");
+  const stepIconEl = document.getElementById("step-icon");
   const stepTextEl = document.getElementById("step-text");
+  const guidePanelEl = document.getElementById("guide-panel");
   const fallbackNoticeEl = document.getElementById("fallback-notice");
   const langSelectEl = document.getElementById("lang-select");
   const wizardProgressEl = document.getElementById("wizard-progress");
@@ -131,9 +133,69 @@
   langSelectEl.value = I18n.currentLang;
   document.documentElement.classList.add("i18n-ready");
 
+  // A universal, language-free icon for each step — the eye lands on the
+  // picture, not a wall of words. Matched most-specific first.
+  const STEP_ICONS = [
+    [/done|all-set|finish/, "🎉"],
+    [/downloading|installing/, "⏳"],
+    [/roaming/, "🌍"],
+    [/select-data-line|data-line/, "📶"],
+    [/line-preferences/, "📞"],
+    [/label/, "🏷️"],
+    [/email/, "📧"],
+    [/camera|scan|qr/, "📷"],
+    [/link/, "🔗"],
+    [/notification|allow/, "🔔"],
+    [/manual|enter/, "⌨️"],
+    [/detected|found/, "✨"],
+    [/continue|confirm/, "👉"],
+    [/add-/, "➕"],
+    [/settings|cellular|connection|sim-manager|network|sims|find-sim/, "⚙️"],
+    [/before-you-start/, "👀"],
+  ];
+  function iconForStep(id) {
+    const key = String(id || "");
+    for (const [re, icon] of STEP_ICONS) if (re.test(key)) return icon;
+    return "👆";
+  }
+
+  const prefersReducedMotion =
+    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // A short, celebratory confetti burst — the payoff for finishing.
+  function celebrate() {
+    if (prefersReducedMotion || !guidePanelEl) return;
+    const colors = ["#FF6600", "#00A0FF", "#F9A272", "#BADDFF", "#182746"];
+    const layer = document.createElement("div");
+    layer.className = "confetti-layer";
+    layer.setAttribute("aria-hidden", "true");
+    const fall = guidePanelEl.clientHeight + 40;
+    for (let i = 0; i < 28; i++) {
+      const piece = document.createElement("span");
+      piece.className = "confetti-piece";
+      piece.style.left = `${Math.random() * 100}%`;
+      piece.style.background = colors[i % colors.length];
+      piece.style.animationDelay = `${Math.random() * 0.35}s`;
+      piece.style.animationDuration = `${1.6 + Math.random() * 1.1}s`;
+      piece.style.setProperty("--drift", `${(Math.random() - 0.5) * 140}px`);
+      piece.style.setProperty("--spin", `${360 + Math.random() * 540}deg`);
+      piece.style.setProperty("--fall", `${fall}px`);
+      layer.appendChild(piece);
+    }
+    guidePanelEl.appendChild(layer);
+    window.setTimeout(() => layer.remove(), 3200);
+  }
+
   function onStepChange(step) {
     PhoneRenderer.renderStep(step);
     stepEyebrowEl.textContent = DeliveryPicker.currentName();
+    if (stepIconEl) {
+      stepIconEl.textContent = iconForStep(step.id);
+      // replay the badge pop each step
+      stepIconEl.classList.remove("is-in");
+      void stepIconEl.offsetWidth;
+      stepIconEl.classList.add("is-in");
+    }
     stepTitleEl.textContent = step.title;
     stepBodyEl.textContent = step.body;
     if (step.warning) {
@@ -142,6 +204,7 @@
     } else {
       stepWarningEl.hidden = true;
     }
+    if (/done|all-set|finish/.test(String(step.id || ""))) celebrate();
   }
 
   function onGuideBackAtStart() {

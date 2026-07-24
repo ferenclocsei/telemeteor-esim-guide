@@ -16,4 +16,4 @@
 
   <text data-key="screen.g-add-esim-qr.hint" x="150" y="440" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" fill="#baddff">Align the QR code inside the frame</text>
   <g opacity="0.999"><rect x="112" y="606" width="76" height="5" rx="2.5" fill="#ffffff" opacity="0.55"/></g>
-</svg>
+<rect class="anim-scanline" x="62" y="228" width="176" height="3" rx="1.5" fill="#8fd0ff" style="--scan:150px"/></svg>

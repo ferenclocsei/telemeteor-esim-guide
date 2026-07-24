@@ -19,4 +19,4 @@
     <rect x="110" y="320" width="14" height="14"/>
   </g>
   <text data-key="screen.open-camera-qr.hint" x="150" y="400" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#baddff">Align the QR code within the frame</text>
-</svg>
+<rect class="anim-scanline" x="88" y="206" width="124" height="3" rx="1.5" fill="#baddff" style="--scan:140px"/></svg>
