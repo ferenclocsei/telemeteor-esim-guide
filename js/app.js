@@ -104,6 +104,8 @@
 
   document.getElementById("ts-entry-home").addEventListener("click", openTroubleshoot);
   document.getElementById("ts-entry-guide").addEventListener("click", openTroubleshoot);
+  const tsEntryIcon = document.getElementById("ts-entry-icon");
+  if (tsEntryIcon) tsEntryIcon.innerHTML = Icons.get("help");
   document.getElementById("ts-back").addEventListener("click", () => showPanel(tsReturnPanel));
 
   // ---- eSIM compatibility verdict (from the exact-model search) ----

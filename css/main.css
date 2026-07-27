@@ -1076,7 +1076,9 @@ svg {
 /* ---------- Troubleshooter ---------- */
 
 .ts-entry {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   width: 100%;
   margin-top: var(--space-4);
   padding: var(--space-4) var(--space-5);
@@ -1089,6 +1091,22 @@ svg {
   text-align: left;
   cursor: pointer;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ts-entry__icon {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  color: #1b63c9;
+  background: #dcecff;
+}
+
+.ts-entry__icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 .ts-entry:hover {

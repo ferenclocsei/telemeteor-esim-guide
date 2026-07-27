@@ -57,7 +57,7 @@
     "guide.verified": "A lépések hivatalos gyártói források alapján ellenőrizve: {date}",
     "stub.coming-soon.title": "A kalauz hamarosan érkezik",
     "stub.coming-soon.body": "Ehhez a készülékhez még dolgozunk a lépésről lépésre kalauzon. Addig is nézd meg az iPhone (iOS) példát, vagy a gyártód hivatalos eSIM-útmutatóját.",
-    "ts.entry": "🛟 Telepítetted, de nem működik? Indítsd el a hibaelhárítót",
+    "ts.entry": "Telepítetted, de nem működik? Indítsd el a hibaelhárítót",
     "ts.entry-guide": "Elakadtál? Nyisd meg a hibaelhárítót →",
     "ts.start": "Kezdjük!",
     "ts.solved": "Megvan, működik! 🎉",

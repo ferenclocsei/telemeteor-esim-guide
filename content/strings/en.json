@@ -57,7 +57,7 @@
     "guide.verified": "Steps verified against official manufacturer sources: {date}",
     "stub.coming-soon.title": "Guide coming soon",
     "stub.coming-soon.body": "We're still writing the step-by-step guide for this device. In the meantime, choose iPhone (iOS) to see a full example, or check your device manufacturer's eSIM instructions.",
-    "ts.entry": "🛟 Installed it, but it's not working? Start the troubleshooter",
+    "ts.entry": "Installed it, but it's not working? Start the troubleshooter",
     "ts.entry-guide": "Stuck? Open the troubleshooter →",
     "ts.start": "Let's go!",
     "ts.solved": "That worked! 🎉",
