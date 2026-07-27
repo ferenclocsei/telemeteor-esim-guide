@@ -111,7 +111,7 @@ const Troubleshoot = (() => {
     requestAnimationFrame(() => PhoneRenderer.fitScreenText(svg));
   }
 
-  function button(label, className, onClick, isLink, href) {
+  function button(label, className, onClick, isLink, href, iconName) {
     const el = document.createElement(isLink ? "a" : "button");
     if (isLink) {
       el.href = href;
@@ -120,7 +120,15 @@ const Troubleshoot = (() => {
       el.addEventListener("click", onClick);
     }
     el.className = `ts-btn ${className}`;
-    el.textContent = label;
+    if (iconName) {
+      el.classList.add("ts-btn--icon");
+      const span = document.createElement("span");
+      span.textContent = label;
+      el.innerHTML = `<span class="ts-btn__icon">${Icons.get(iconName)}</span>`;
+      el.appendChild(span);
+    } else {
+      el.textContent = label;
+    }
     return el;
   }
 
@@ -147,7 +155,7 @@ const Troubleshoot = (() => {
       cardEl.appendChild(count);
     }
 
-    // Visual: phone illustration if present, otherwise a big emoji badge.
+    // Visual: phone illustration if present, otherwise a line-icon badge.
     if (node.illustration) {
       const phone = document.createElement("div");
       phone.className = "ts-phone";
@@ -158,8 +166,8 @@ const Troubleshoot = (() => {
       renderPhone(screen, node.illustration, token, () => renderToken);
     } else if (node.icon) {
       const icon = document.createElement("div");
-      icon.className = "ts-card__icon";
-      icon.textContent = node.icon;
+      icon.className = "ts-card__icon ts-card__icon--" + node.icon;
+      icon.innerHTML = Icons.get(node.icon);
       cardEl.appendChild(icon);
     }
 
@@ -210,7 +218,7 @@ const Troubleshoot = (() => {
       actions.appendChild(button(I18n.t("ui.ts.restart"), "ts-btn--muted", () => start()));
     } else if (node.type === "end-support") {
       actions.appendChild(
-        button(I18n.t("ui.ts.email-cta"), "ts-btn--primary", null, true, buildMailto())
+        button(I18n.t("ui.ts.email-cta"), "ts-btn--primary", null, true, buildMailto(), "email")
       );
       const note = document.createElement("p");
       note.className = "ts-card__note";

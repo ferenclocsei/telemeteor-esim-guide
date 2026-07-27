@@ -103,6 +103,27 @@ const Icons = (() => {
       '<circle cx="12" cy="12" r="7.6"/>' +
         '<circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/>'
     ),
+    // Region-dependent — a warning triangle.
+    warn: svg(
+      '<path d="M12 4.3L21 19.7a1 1 0 0 1-.87 1.5H3.87A1 1 0 0 1 3 19.7z"/>' +
+        '<path d="M12 10v4"/>' +
+        '<path d="M12 17.4v.01"/>'
+    ),
+    // Not supported — an x in a circle.
+    error: svg(
+      '<circle cx="12" cy="12" r="8.4"/>' + '<path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"/>'
+    ),
+    // A generic phone — used by the "we recognised your device" banner.
+    device: svg(
+      '<rect x="6" y="2.5" width="12" height="19" rx="3.2"/>' +
+        '<path d="M10.5 5.2h3"/>'
+    ),
+    // Help / rescue — a lifebuoy, for the troubleshooter intro.
+    help: svg(
+      '<circle cx="12" cy="12" r="8.5"/>' +
+        '<circle cx="12" cy="12" r="3.4"/>' +
+        '<path d="M6 6l3.6 3.6M18 6l-3.6 3.6M6 18l3.6-3.6M18 18l-3.6-3.6"/>'
+    ),
   };
 
   // Which glyph leads each guide step, matched most-specific first.

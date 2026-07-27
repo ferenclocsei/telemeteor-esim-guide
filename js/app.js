@@ -276,7 +276,7 @@
     const parts = [detected.deviceName];
     if (detected.osName && detected.osName !== detected.deviceName) parts.push(detected.osName);
     detectDeviceEl.textContent = parts.join(" · ");
-    detectIconEl.textContent = detected.osVariant === "ios" ? "📱" : "🤖";
+    detectIconEl.innerHTML = Icons.get("device");
     // iOS hides the exact model + a trustworthy version, so we say so honestly.
     if (detected.modelHidden) {
       detectNoteEl.textContent = I18n.t("ui.detect.ios-note");

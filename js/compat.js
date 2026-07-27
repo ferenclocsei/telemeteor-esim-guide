@@ -7,7 +7,7 @@ const Compat = (() => {
   let lastVerifiedDate = "";
   const SUPPORT_EMAIL = "support@telemeteor.com";
 
-  const ICON = { yes: "✅", region: "🟡", no: "❌" };
+  const ICON = { yes: "check", region: "warn", no: "error" };
 
   function setCard(el) {
     cardEl = el;
@@ -33,7 +33,7 @@ const Compat = (() => {
     )}&body=${encodeURIComponent(body)}`;
   }
 
-  function button(label, cls, onClick, isLink, href) {
+  function button(label, cls, onClick, isLink, href, iconName) {
     const el = document.createElement(isLink ? "a" : "button");
     if (isLink) el.href = href;
     else {
@@ -41,7 +41,15 @@ const Compat = (() => {
       el.addEventListener("click", onClick);
     }
     el.className = `ts-btn ${cls}`;
-    el.textContent = label;
+    if (iconName) {
+      el.classList.add("ts-btn--icon");
+      const span = document.createElement("span");
+      span.textContent = label;
+      el.innerHTML = `<span class="ts-btn__icon">${Icons.get(iconName)}</span>`;
+      el.appendChild(span);
+    } else {
+      el.textContent = label;
+    }
     return el;
   }
 
@@ -54,7 +62,7 @@ const Compat = (() => {
 
     const icon = document.createElement("div");
     icon.className = "compat-card__icon";
-    icon.textContent = ICON[status] || "🟡";
+    icon.innerHTML = Icons.get(ICON[status] || "warn");
     cardEl.appendChild(icon);
 
     const name = document.createElement("p");
@@ -92,7 +100,7 @@ const Compat = (() => {
       );
     }
     actions.appendChild(
-      button(I18n.t("ui.compat.cta.support"), status === "no" ? "ts-btn--primary" : "ts-btn--muted", null, true, supportMailto(model))
+      button(I18n.t("ui.compat.cta.support"), status === "no" ? "ts-btn--primary" : "ts-btn--muted", null, true, supportMailto(model), "email")
     );
     actions.appendChild(
       button(I18n.t("ui.compat.cta.change"), "ts-btn--muted", () =>

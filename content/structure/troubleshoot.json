@@ -4,8 +4,12 @@
   "supportEmail": "support@telemeteor.com",
   "_source": "Telemeteor eSIM Hibaelhárítási FAQ v1 (Airalo, GigSky, Saily, Revolut, Holafly synthesis), sections 1 & 13",
   "nodes": [
-    { "id": "intro", "type": "intro", "icon": "🛟", "next": "region" },
-
+    {
+      "id": "intro",
+      "type": "intro",
+      "icon": "help",
+      "next": "region"
+    },
     {
       "id": "region",
       "type": "question",
@@ -14,8 +18,12 @@
       "yes": "airplane",
       "no": "wrong-region"
     },
-    { "id": "wrong-region", "type": "reassure", "illustration": "ts/region.svg", "restart": true },
-
+    {
+      "id": "wrong-region",
+      "type": "reassure",
+      "illustration": "ts/region.svg",
+      "restart": true
+    },
     {
       "id": "airplane",
       "type": "fix",
@@ -72,8 +80,15 @@
       "solved": "success",
       "notsolved": "support"
     },
-
-    { "id": "success", "type": "end-success", "icon": "🎉" },
-    { "id": "support", "type": "end-support", "icon": "💬" }
+    {
+      "id": "success",
+      "type": "end-success",
+      "icon": "check"
+    },
+    {
+      "id": "support",
+      "type": "end-support",
+      "icon": "email"
+    }
   ]
 }
