@@ -975,133 +975,189 @@
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 15",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 15T Pro",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 15T",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 14 Pro",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 14",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 14T Pro",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 14T",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 13 Pro",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 13",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 13T Pro",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 13T",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Xiaomi 13 Lite",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
-      "esim": "region",
-      "noteKey": "china"
+      "esim": "no",
+      "noteKeys": [
+        "xiaomi-lite"
+      ]
     },
     {
       "model": "Xiaomi 12T Pro",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Poco X7",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Poco F8 Pro",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Redmi Note 14 Pro+",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Redmi Note 14 Pro",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Redmi Note 13 Pro+",
       "brand": "Xiaomi",
       "osVariant": "android-generic",
       "esim": "region",
-      "noteKey": "china"
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
     },
     {
       "model": "Find N5",

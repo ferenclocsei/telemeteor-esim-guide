@@ -73,3 +73,20 @@ A `content/structure/android-generic.json` lépéssora (10 lépés, `status: "re
 
 - [ ] Illusztráció-stílus: a képernyők most már valósághű iOS-kinézetűek (státusz sáv, natív navigáció, csoportosított lista), de nem literális screenshot — ha teljesen 1:1 pontos megjelenés kell, valódi képernyőfotók beillesztése a legmegbízhatóbb út.
 - [ ] Szolgáltató-specifikus eltérések (`warningKey`) tartalmának pontosítása, ha indokolt.
+
+## Xiaomi eSIM — findings (verified 2026-08, sources below)
+
+**Support is ROM-gated, not just model-gated.** Global ROM Xiaomi/Redmi/POCO flagships support eSIM; the **China (Guohang) ROM disables eSIM at the system level** even when the hardware chip is present — no menu/dev-option unlocks it. So the same model name can support eSIM abroad and not in China → compat verdict is `region` + note `china`.
+
+**Model / sub-model differences:**
+- eSIM: Xiaomi 13/13 Pro/13T/13T Pro, 14/14 Pro/14 Ultra/14T/14T Pro, 15/15 Pro/15 Ultra/15T/15T Pro; POCO F-series and POCO X7; Redmi Note Pro+/select-market Pro.
+- **No eSIM: Xiaomi 13 Lite** (catalog → `no`), most budget Redmi/POCO, and all China variants.
+- Verify on-device: dial **`*#06#`** — if an **EID** appears, the phone supports eSIM.
+
+**Storage limit → must delete an old eSIM.** Xiaomi stores ~5–8 (max ~10) eSIM profiles. Official Xiaomi FAQ: *"if the maximum limit of added eSIM cards is exceeded, any previously unused eSIM cards must be deleted before you can enter a new one."* An **activated** eSIM must first be unbound by the operator. Delete path: **Settings → SIM cards & mobile networks → Manage eSIM → pick the eSIM → Disable → Delete.**
+
+**Install path (HyperOS ≈ MIUI):** Settings → SIM cards & mobile networks → (Manage eSIM) → Add eSIM → Scan QR / Enter code manually. If "Add eSIM" is missing, the device likely lacks eSIM support or is a China ROM.
+
+Built into: the guide's new `remove-old-esim` step (all variants), generic `before-you-start` (ROM + `*#06#`), the compat notes `xiaomi-storage` / `xiaomi-lite`, and the troubleshooter `installed?` → `delete-old` branch.
+
+Sources: mi.com FAQ KA-535492; yohomobile.com Xiaomi eSIM guides; drfone Xiaomi eSIM setup; circles.life Xiaomi eSIM guide; esim.school Chinese-Android eSIM guide.

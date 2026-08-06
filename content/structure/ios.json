@@ -38,6 +38,27 @@
       "warningKey": "ios.before-you-start.warning"
     },
     {
+      "id": "remove-old-esim",
+      "appliesTo": [
+        "all"
+      ],
+      "illustration": "ios/step-remove-old-esim.svg",
+      "tapPoints": [
+        {
+          "x": 50.0,
+          "y": 64.6,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.remove-old-esim.tap.delete",
+          "w": 72.0,
+          "h": 9.5
+        }
+      ],
+      "titleKey": "ios.remove-old-esim.title",
+      "bodyKey": "ios.remove-old-esim.body",
+      "warningKey": "ios.remove-old-esim.warning"
+    },
+    {
       "id": "open-link",
       "appliesTo": [
         "link"

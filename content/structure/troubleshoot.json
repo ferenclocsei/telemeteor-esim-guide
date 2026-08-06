@@ -8,7 +8,23 @@
       "id": "intro",
       "type": "intro",
       "icon": "help",
-      "next": "region"
+      "next": "installed"
+    },
+    {
+      "id": "installed",
+      "type": "question",
+      "yes": "region",
+      "no": "delete-old",
+      "emailLabel": "eSIM was added to the phone",
+      "illustration": "ts/esim-on.svg"
+    },
+    {
+      "id": "delete-old",
+      "type": "fix",
+      "solved": "success",
+      "notsolved": "region",
+      "emailLabel": "Deleted an old eSIM and re-added the Telemeteor eSIM",
+      "illustration": "ts/delete-esim.svg"
     },
     {
       "id": "region",

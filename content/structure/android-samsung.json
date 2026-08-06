@@ -32,6 +32,27 @@
       "warningKey": "samsung.before-you-start.warning"
     },
     {
+      "id": "remove-old-esim",
+      "appliesTo": [
+        "all"
+      ],
+      "illustration": "android-samsung/step-remove-old-esim.svg",
+      "tapPoints": [
+        {
+          "x": 50.0,
+          "y": 64.6,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "samsung.remove-old-esim.tap.delete",
+          "w": 72.0,
+          "h": 9.5
+        }
+      ],
+      "titleKey": "samsung.remove-old-esim.title",
+      "bodyKey": "samsung.remove-old-esim.body",
+      "warningKey": "samsung.remove-old-esim.warning"
+    },
+    {
       "id": "open-link",
       "appliesTo": [
         "link"

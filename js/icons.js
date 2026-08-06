@@ -118,6 +118,13 @@ const Icons = (() => {
       '<rect x="6" y="2.5" width="12" height="19" rx="3.2"/>' +
         '<path d="M10.5 5.2h3"/>'
     ),
+    // Trash — delete an old eSIM.
+    trash: svg(
+      '<path d="M5 7h14"/>' +
+        '<path d="M8 7V5.4A1.4 1.4 0 0 1 9.4 4h5.2A1.4 1.4 0 0 1 16 5.4V7"/>' +
+        '<path d="M6.6 7l.9 12.1a2 2 0 0 0 2 1.9h5a2 2 0 0 0 2-1.9L17.4 7"/>' +
+        '<path d="M10 10.5v6.5M14 10.5v6.5"/>'
+    ),
     // Help / rescue — a lifebuoy, for the troubleshooter intro.
     help: svg(
       '<circle cx="12" cy="12" r="8.5"/>' +
@@ -138,6 +145,7 @@ const Icons = (() => {
     [/camera/, "camera"],
     [/scan|qr/, "scan"],
     [/link/, "link"],
+    [/remove-old-esim|remove|delete|trash/, "trash"],
     [/notification|allow/, "bell"],
     [/manual|enter/, "keyboard"],
     [/detected|found/, "sparkle"],
