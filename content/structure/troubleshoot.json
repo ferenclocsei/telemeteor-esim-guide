@@ -22,7 +22,7 @@
       "id": "delete-old",
       "type": "fix",
       "solved": "success",
-      "notsolved": "region",
+      "notsolved": "support",
       "emailLabel": "Deleted an old eSIM and re-added the Telemeteor eSIM",
       "illustration": "ts/delete-esim.svg"
     },

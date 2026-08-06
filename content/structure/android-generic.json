@@ -13,16 +13,16 @@
       "appliesTo": [
         "all"
       ],
-      "illustration": "android-generic/step-before-you-start.svg",
+      "illustration": "shared/step-check-esim.svg",
       "tapPoints": [
         {
           "x": 50.0,
-          "y": 34.1,
+          "y": 42.9,
           "shape": "rect",
-          "radius": 8,
-          "labelKey": "generic.before-you-start.tap.row",
-          "w": 90.7,
-          "h": 12.4
+          "radius": 10,
+          "labelKey": "generic.before-you-start.tap.eid",
+          "w": 84.0,
+          "h": 16.5
         }
       ],
       "titleKey": "generic.before-you-start.title",
