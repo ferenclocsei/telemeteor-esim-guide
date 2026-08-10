@@ -91,7 +91,13 @@
     "compat.note.oppo-lite": "Az Oppo A-szériás és Lite modellek jellemzően nem támogatják az eSIM-et.",
     "compat.note.single-esim": "Ez a modell egyszerre csak egy eSIM-et tud aktívan használni (egy fizikai SIM + egy eSIM). A Telemeteor eSIM-et így is használhatod — de ha már van egy másik aktív eSIM-ed, váltanod kell közöttük.",
     "compat.note.xiaomi-storage": "A Xiaomi, Redmi és POCO készülékek csak néhány eSIM-et tárolnak. Ha a lista megtelt, egy régi vagy lejárt eSIM-et törölni kell az új előtt: Beállítások → SIM-kártyák és mobilhálózatok → eSIM kezelése.",
-    "compat.note.xiaomi-lite": "A Xiaomi 13 Lite nem támogatja az eSIM-et — ehhez eSIM-képes készülék kell."
+    "compat.note.xiaomi-lite": "A Xiaomi 13 Lite nem támogatja az eSIM-et — ehhez eSIM-képes készülék kell.",
+    "os.android-xiaomi.name": "Xiaomi / Redmi / POCO",
+    "os.search.unknown-cta": "Nincs a listában? Ellenőrizd, támogatja-e →",
+    "compat.unknown.title": "Valószínűleg nem támogatja az eSIM-et",
+    "compat.unknown.sub": "Ezt a pontos modellt nem találjuk az adatbázisunkban. Sok ritkább vagy régebbi készülék nem tud eSIM-et — de nem mind.",
+    "compat.unknown.howto": "Ellenőrizd biztosra a telefonodon: tárcsázd a *#06#-ot. Ha megjelenik egy „EID\" feliratú, kb. 32 jegyű szám, mégis van eSIM. Ha csak IMEI/MEID, akkor nincs.",
+    "db.updated": "Kompatibilitási adatbázis frissítve: {date}"
   },
   "screen": {
     "open-link.app-name": "Mail",
@@ -550,6 +556,14 @@
     "ios.before-you-start.tap.eid": "EID sor",
     "samsung.before-you-start.tap.eid": "EID sor",
     "pixel.before-you-start.tap.eid": "EID sor",
-    "generic.before-you-start.tap.eid": "EID sor"
+    "generic.before-you-start.tap.eid": "EID sor",
+    "xiaomi.before-you-start.title": "Először: van eSIM és melyik ROM?",
+    "xiaomi.before-you-start.body": "Tárcsázd a *#06#-ot: ha megjelenik egy „EID\" feliratú, kb. 32 jegyű szám, van eSIM. Xiaomi/Redmi/POCO-nál csak a Global ROM támogatja (a kínai ROM sosem, a chip ellenére sem). Néhány régebbi vagy bizonyos modemtípusú modell egyáltalán nem támogatott.",
+    "xiaomi.before-you-start.warning": "Ha a *#06# csak IMEI-t mutat, vagy a Beállításokban nincs „eSIM hozzáadása\", a telefonod nem tud eSIM-et. SIM-lockos készüléken az aktiválás blokkolva lehet.",
+    "xiaomi.before-you-start.tap.eid": "EID sor",
+    "xiaomi.remove-old-esim.title": "Töröld a régi eSIM-et (gyakori Xiaomi-gond)",
+    "xiaomi.remove-old-esim.body": "A Xiaomi csak néhány eSIM-et tárol (kb. 5–8). Ha megtelt, vagy egy régi/lejárt eSIM van rajta, azt előbb törölnöd kell: Beállítások → SIM-kártyák és mobilhálózatok → eSIM kezelése → válaszd a régit → Letiltás → Törlés.",
+    "xiaomi.remove-old-esim.warning": "Csak akkor töröld, ha 100%-ig biztos vagy benne, hogy nincs rá szükséged! Aktív eSIM-et a szolgáltatóddal lehet leállítani.",
+    "xiaomi.remove-old-esim.tap.delete": "„Törlés\" gomb"
   }
 }

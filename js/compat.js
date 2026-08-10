@@ -117,5 +117,53 @@ const Compat = (() => {
     }
   }
 
-  return { setCard, setMeta, show };
+  // No exact model in the database (after typo-tolerant search). We can't claim
+  // it's unsupported, but many rarer/older phones aren't — so we say "probably
+  // not, verify it yourself" and give the reliable on-device check.
+  function showUnknown(query, h) {
+    handlers = h || {};
+    if (!cardEl) return;
+    const model = { brand: "", model: (query || "").trim() };
+    cardEl.innerHTML = "";
+    cardEl.className = "compat-card compat-card--region";
+
+    const icon = document.createElement("div");
+    icon.className = "compat-card__icon";
+    icon.innerHTML = Icons.get("warn");
+    cardEl.appendChild(icon);
+
+    if (model.model) {
+      const name = document.createElement("p");
+      name.className = "compat-card__model";
+      name.textContent = `„${model.model}"`;
+      cardEl.appendChild(name);
+    }
+
+    const title = document.createElement("h2");
+    title.className = "compat-card__title";
+    title.textContent = I18n.t("ui.compat.unknown.title");
+    cardEl.appendChild(title);
+
+    const sub = document.createElement("p");
+    sub.className = "compat-card__sub";
+    sub.textContent = I18n.t("ui.compat.unknown.sub");
+    cardEl.appendChild(sub);
+
+    const how = document.createElement("p");
+    how.className = "compat-card__note";
+    how.textContent = I18n.t("ui.compat.unknown.howto");
+    cardEl.appendChild(how);
+
+    const actions = document.createElement("div");
+    actions.className = "compat-card__actions";
+    actions.appendChild(
+      button(I18n.t("ui.compat.cta.support"), "ts-btn--primary", null, true, supportMailto(model), "email")
+    );
+    actions.appendChild(
+      button(I18n.t("ui.compat.cta.change"), "ts-btn--muted", () => handlers.onChange && handlers.onChange())
+    );
+    cardEl.appendChild(actions);
+  }
+
+  return { setCard, setMeta, show, showUnknown };
 })();

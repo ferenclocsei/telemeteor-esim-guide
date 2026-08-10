@@ -91,7 +91,13 @@
     "compat.note.oppo-lite": "Oppo A-series and Lite models generally don't support eSIM.",
     "compat.note.single-esim": "This model can use only one eSIM at a time (one physical SIM + one eSIM). You can still use the Telemeteor eSIM — but if you already have another eSIM active, you'll need to switch between them.",
     "compat.note.xiaomi-storage": "Xiaomi, Redmi and POCO phones store only a few eSIMs. If the list is full, delete an old or expired eSIM before adding the new one: Settings → SIM cards & mobile networks → Manage eSIM.",
-    "compat.note.xiaomi-lite": "The Xiaomi 13 Lite does not support eSIM — you will need an eSIM-capable phone."
+    "compat.note.xiaomi-lite": "The Xiaomi 13 Lite does not support eSIM — you will need an eSIM-capable phone.",
+    "os.android-xiaomi.name": "Xiaomi / Redmi / POCO",
+    "os.search.unknown-cta": "Not in the list? Check if it’s supported →",
+    "compat.unknown.title": "It probably doesn’t support eSIM",
+    "compat.unknown.sub": "We couldn’t find this exact model in our database. Many rarer or older phones don’t support eSIM — but not all.",
+    "compat.unknown.howto": "Check for sure on the phone: dial *#06#. If an “EID” number of about 32 digits appears, it does have eSIM. If only IMEI/MEID, it doesn’t.",
+    "db.updated": "Compatibility database updated: {date}"
   },
   "screen": {
     "open-link.app-name": "Mail",
@@ -550,6 +556,14 @@
     "ios.before-you-start.tap.eid": "EID row",
     "samsung.before-you-start.tap.eid": "EID row",
     "pixel.before-you-start.tap.eid": "EID row",
-    "generic.before-you-start.tap.eid": "EID row"
+    "generic.before-you-start.tap.eid": "EID row",
+    "xiaomi.before-you-start.title": "First: eSIM support and which ROM?",
+    "xiaomi.before-you-start.body": "Dial *#06#: an “EID” number of about 32 digits means you have eSIM. On Xiaomi/Redmi/POCO only the Global ROM supports it (the China ROM never does, even with the chip). Some older models or certain modem types are not supported at all.",
+    "xiaomi.before-you-start.warning": "If *#06# shows only IMEI, or Settings has no “Add eSIM”, your phone does not support eSIM. On a carrier-locked phone activation may be blocked.",
+    "xiaomi.before-you-start.tap.eid": "EID row",
+    "xiaomi.remove-old-esim.title": "Delete the old eSIM (common on Xiaomi)",
+    "xiaomi.remove-old-esim.body": "Xiaomi stores only a few eSIMs (about 5–8). If it is full, or an old/expired eSIM is on it, delete that first: Settings → SIM cards & mobile networks → Manage eSIM → pick the old one → Disable → Delete.",
+    "xiaomi.remove-old-esim.warning": "Only delete it if you are 100% sure you don’t need it! An eSIM that is still active can be released by your carrier.",
+    "xiaomi.remove-old-esim.tap.delete": "“Delete” button"
   }
 }

@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 2,
+  "osVariant": "android-xiaomi",
+  "osVersionRange": "HyperOS / MIUI (Global ROM)",
+  "lastVerifiedDate": "2026-07-17",
+  "sources": [
+    "https://source.android.com/docs/core/connect/esim-overview"
+  ],
+  "status": "ready",
+  "steps": [
+    {
+      "id": "before-you-start",
+      "appliesTo": [
+        "all"
+      ],
+      "illustration": "shared/step-check-esim.svg",
+      "tapPoints": [
+        {
+          "x": 50.0,
+          "y": 42.9,
+          "shape": "rect",
+          "radius": 10,
+          "labelKey": "xiaomi.before-you-start.tap.eid",
+          "w": 84.0,
+          "h": 16.5
+        }
+      ],
+      "titleKey": "xiaomi.before-you-start.title",
+      "bodyKey": "xiaomi.before-you-start.body",
+      "warningKey": "xiaomi.before-you-start.warning"
+    },
+    {
+      "id": "remove-old-esim",
+      "appliesTo": [
+        "all"
+      ],
+      "illustration": "android-generic/step-remove-old-esim.svg",
+      "tapPoints": [
+        {
+          "x": 50.0,
+          "y": 64.6,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "xiaomi.remove-old-esim.tap.delete",
+          "w": 72.0,
+          "h": 9.5
+        }
+      ],
+      "titleKey": "xiaomi.remove-old-esim.title",
+      "bodyKey": "xiaomi.remove-old-esim.body",
+      "warningKey": "xiaomi.remove-old-esim.warning"
+    },
+    {
+      "id": "open-link",
+      "appliesTo": [
+        "link"
+      ],
+      "illustration": "android-generic/step-open-link.svg",
+      "tapPoints": [
+        {
+          "x": 50.0,
+          "y": 63.2,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "generic.open-link.tap.link",
+          "w": 84.0,
+          "h": 10.2
+        }
+      ],
+      "titleKey": "generic.open-link.title",
+      "bodyKey": "generic.open-link.body",
+      "warningKey": "generic.open-link.warning"
+    },
+    {
+      "id": "open-settings",
+      "appliesTo": [
+        "qr",
+        "manual"
+      ],
+      "illustration": "android-generic/step-open-settings.svg",
+      "tapPoints": [
+        {
+          "x": 82.0,
+          "y": 9.5,
+          "shape": "circle",
+          "radius": 7,
+          "labelKey": "generic.open-settings.tap.icon",
+          "w": 24.0,
+          "h": 10.8
+        }
+      ],
+      "titleKey": "generic.open-settings.title",
+      "bodyKey": "generic.open-settings.body",
+      "warningKey": null
+    },
+    {
+      "id": "find-sim-settings",
+      "appliesTo": [
+        "qr",
+        "manual"
+      ],
+      "illustration": "android-generic/step-find-sim-settings.svg",
+      "tapPoints": [
+        {
+          "x": 50.0,
+          "y": 14.8,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "generic.find-sim-settings.tap.search",
+          "w": 90.7,
+          "h": 8.6
+        }
+      ],
+      "titleKey": "generic.find-sim-settings.title",
+      "bodyKey": "generic.find-sim-settings.body",
+      "warningKey": "generic.find-sim-settings.warning"
+    },
+    {
+      "id": "add-esim-qr",
+      "appliesTo": [
+        "qr"
+      ],
+      "illustration": "android-generic/step-add-esim-qr.svg",
+      "tapPoints": [
+        {
+          "x": 50.0,
+          "y": 47.6,
+          "shape": "rect",
+          "radius": 10,
+          "labelKey": "generic.add-esim-qr.tap.frame",
+          "w": 70.7,
+          "h": 33.0
+        }
+      ],
+      "titleKey": "generic.add-esim-qr.title",
+      "bodyKey": "generic.add-esim-qr.body",
+      "warningKey": null
+    },
+    {
+      "id": "add-esim-manual",
+      "appliesTo": [
+        "manual"
+      ],
+      "illustration": "android-generic/step-add-esim-manual.svg",
+      "tapPoints": [
+        {
+          "x": 50.0,
+          "y": 22.9,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "generic.add-esim-manual.tap.address",
+          "w": 90.7,
+          "h": 9.6
+        },
+        {
+          "x": 50.0,
+          "y": 36.2,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "generic.add-esim-manual.tap.code",
+          "w": 90.7,
+          "h": 9.6
+        }
+      ],
+      "titleKey": "generic.add-esim-manual.title",
+      "bodyKey": "generic.add-esim-manual.body",
+      "warningKey": "generic.add-esim-manual.warning"
+    },
+    {
+      "id": "downloading",
+      "appliesTo": [
+        "all"
+      ],
+      "illustration": "android-generic/step-downloading.svg",
+      "tapPoints": [],
+      "titleKey": "generic.downloading.title",
+      "bodyKey": "generic.downloading.body",
+      "warningKey": null
+    },
+    {
+      "id": "enable-data-roaming",
+      "appliesTo": [
+        "all"
+      ],
+      "illustration": "android-generic/step-enable-roaming.svg",
+      "tapPoints": [
+        {
+          "x": 85.3,
+          "y": 37.9,
+          "shape": "circle",
+          "radius": 10,
+          "labelKey": "generic.enable-data-roaming.tap.toggle",
+          "w": 16.0,
+          "h": 4.5
+        }
+      ],
+      "titleKey": "generic.enable-data-roaming.title",
+      "bodyKey": "generic.enable-data-roaming.body",
+      "warningKey": "generic.enable-data-roaming.warning"
+    },
+    {
+      "id": "select-data-line-on-arrival",
+      "appliesTo": [
+        "all"
+      ],
+      "illustration": "android-generic/step-select-data-line.svg",
+      "tapPoints": [
+        {
+          "x": 50.0,
+          "y": 33.2,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "generic.select-data-line.tap.row",
+          "w": 93.3,
+          "h": 10.5
+        }
+      ],
+      "titleKey": "generic.select-data-line.title",
+      "bodyKey": "generic.select-data-line.body",
+      "warningKey": "generic.select-data-line.warning"
+    },
+    {
+      "id": "done",
+      "appliesTo": [
+        "all"
+      ],
+      "illustration": "android-generic/step-done.svg",
+      "tapPoints": [],
+      "titleKey": "generic.done.title",
+      "bodyKey": "generic.done.body",
+      "warningKey": "generic.done.warning"
+    }
+  ]
+}

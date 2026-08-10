@@ -20,6 +20,12 @@
       "status": "ready"
     },
     {
+      "id": "android-xiaomi",
+      "labelKey": "ui.os.android-xiaomi.name",
+      "icon": "xiaomi",
+      "status": "ready"
+    },
+    {
       "id": "android-generic",
       "labelKey": "ui.os.android-generic.name",
       "icon": "android",

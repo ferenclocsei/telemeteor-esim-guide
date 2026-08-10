@@ -91,7 +91,13 @@
     "compat.note.oppo-lite": "Oppo A-serija i Lite modeli uglavnom ne podržavaju eSIM.",
     "compat.note.single-esim": "Ovaj model može istovremeno koristiti samo jedan eSIM (jedna fizička SIM + jedan eSIM). Telemeteor eSIM i dalje možete koristiti — ali ako već imate drugi aktivan eSIM, moraćete da prebacujete između njih.",
     "compat.note.xiaomi-storage": "Xiaomi, Redmi i POCO telefoni čuvaju samo nekoliko eSIM-ova. Ako je lista puna, obrišite stari ili istekli eSIM pre dodavanja novog: Podešavanja → SIM kartice i mobilne mreže → Upravljanje eSIM-om.",
-    "compat.note.xiaomi-lite": "Xiaomi 13 Lite ne podržava eSIM — biće vam potreban telefon koji podržava eSIM."
+    "compat.note.xiaomi-lite": "Xiaomi 13 Lite ne podržava eSIM — biće vam potreban telefon koji podržava eSIM.",
+    "os.android-xiaomi.name": "Xiaomi / Redmi / POCO",
+    "os.search.unknown-cta": "Nije na listi? Proverite da li je podržan →",
+    "compat.unknown.title": "Verovatno ne podržava eSIM",
+    "compat.unknown.sub": "Ovaj tačan model ne nalazimo u našoj bazi. Mnogi ređi ili stariji telefoni ne podržavaju eSIM — ali ne svi.",
+    "compat.unknown.howto": "Proverite sigurno na telefonu: pozovite *#06#. Ako se pojavi broj „EID\" od oko 32 cifre, ipak ima eSIM. Ako samo IMEI/MEID, nema.",
+    "db.updated": "Baza kompatibilnosti ažurirana: {date}"
   },
   "screen": {
     "open-link.app-name": "Mejl",
@@ -550,6 +556,14 @@
     "ios.before-you-start.tap.eid": "EID red",
     "samsung.before-you-start.tap.eid": "EID red",
     "pixel.before-you-start.tap.eid": "EID red",
-    "generic.before-you-start.tap.eid": "EID red"
+    "generic.before-you-start.tap.eid": "EID red",
+    "xiaomi.before-you-start.title": "Prvo: podrška za eSIM i koji ROM?",
+    "xiaomi.before-you-start.body": "Pozovite *#06#: broj „EID\" od oko 32 cifre znači da imate eSIM. Kod Xiaomi/Redmi/POCO samo Global ROM to podržava (kineski ROM nikada, čak i sa čipom). Neki stariji modeli ili određeni tipovi modema uopšte nisu podržani.",
+    "xiaomi.before-you-start.warning": "Ako *#06# prikazuje samo IMEI, ili u podešavanjima nema „Dodaj eSIM\", vaš telefon ne podržava eSIM. Na telefonu zaključanom na operatera aktivacija može biti blokirana.",
+    "xiaomi.before-you-start.tap.eid": "EID red",
+    "xiaomi.remove-old-esim.title": "Obrišite stari eSIM (čest problem na Xiaomi)",
+    "xiaomi.remove-old-esim.body": "Xiaomi čuva samo nekoliko eSIM-ova (oko 5–8). Ako je pun ili je na njemu stari/istekli eSIM, prvo ga obrišite: Podešavanja → SIM kartice i mobilne mreže → Upravljanje eSIM-om → izaberite stari → Onemogući → Obriši.",
+    "xiaomi.remove-old-esim.warning": "Obrišite ga samo ako ste 100% sigurni da vam ne treba! eSIM koji je još aktivan može ukinuti vaš operater.",
+    "xiaomi.remove-old-esim.tap.delete": "Dugme „Obriši\""
   }
 }

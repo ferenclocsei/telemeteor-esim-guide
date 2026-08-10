@@ -124,16 +124,32 @@
     showPanel("compat");
   }
 
+  // Search found no model, even after typo-tolerant matching.
+  function onModelNoMatch(query) {
+    Compat.showUnknown(query, { onChange: () => showPanel("device") });
+    showPanel("compat");
+  }
+
   document.getElementById("compat-back").addEventListener("click", () => showPanel("device"));
 
   await ModelCatalog.load();
   Compat.setMeta(ModelCatalog.getMeta().lastVerifiedDate);
   PhoneRenderer.mount();
 
+  // Faint provenance line at the very bottom — updated whenever the catalog is.
+  const dbNoteEl = document.getElementById("db-note");
+  const dbDate = ModelCatalog.getMeta().lastVerifiedDate;
+  function renderDbNote() {
+    if (!dbNoteEl || !dbDate) return;
+    dbNoteEl.hidden = false;
+    dbNoteEl.textContent = I18n.t("ui.db.updated", { date: dbDate });
+  }
+
   const initialLang = readParam("lang", "esim-guide-lang", I18n.resolveInitialLang());
   await I18n.load(initialLang);
   langSelectEl.value = I18n.currentLang;
   document.documentElement.classList.add("i18n-ready");
+  renderDbNote();
 
   const prefersReducedMotion =
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -243,7 +259,8 @@
     document.getElementById("os-options"),
     onDeviceSelected,
     readParam("os", "esim-guide-os", DEFAULT_OS),
-    onModelPick
+    onModelPick,
+    onModelNoMatch
   );
 
   IosVersionPicker.init(
@@ -255,9 +272,10 @@
   langSelectEl.addEventListener("change", async (e) => {
     await I18n.load(e.target.value);
     DeliveryPicker.init(document.getElementById("delivery-options"), onDeliverySelected, DeliveryPicker.current);
-    DevicePicker.init(document.getElementById("os-options"), onDeviceSelected, DevicePicker.current, onModelPick);
+    DevicePicker.init(document.getElementById("os-options"), onDeviceSelected, DevicePicker.current, onModelPick, onModelNoMatch);
     IosVersionPicker.init(document.getElementById("ios-version-options"), onIosVersionSelected, IosVersionPicker.current);
     await updateContent();
+    renderDbNote();
     Troubleshoot.rerender();
     renderDetectBanner();
     showPanel(currentPanel);

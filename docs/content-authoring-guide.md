@@ -56,3 +56,14 @@ A kereső mögötti adatbázis minden modellhez tárol egy `esim` státuszt és 
 **Új modell felvétele** = egy sor a `models` tömbben, kódmódosítás nélkül. A verdikt-szövegek a `content/strings/*.json` `compat.*` kulcsaiban vannak.
 
 **Források és frissesség:** a fájl `sources` és `lastVerifiedDate` mezője a hivatalos gyártói forrásokra (és néhány karbantartott nyilvános kompatibilitási listára) mutat. A `tools/check-sources.py` ezeket is figyeli (lásd fent). Ha egy forrás változik, nézd át az érintett modelleket, frissítsd a `lastVerifiedDate`-et, és futtasd a szkriptet `--accept`-tel.
+
+## How the compatibility database stays fresh (and where the "updated" date comes from)
+
+The eSIM data is a **curated, verified list** in `content/models/catalog.json`, not a live feed. It updates in three deliberate steps:
+
+1. **Detect** — `python3 tools/check-sources.py` fingerprints every official source page (Apple/Samsung/Google support pages + carrier device lists) plus a new-device watchlist, and diffs them against `tools/source-state.json`. Run it quarterly and after any big OS/device launch. It prints which sources changed or which watched devices now exist.
+2. **Verify & edit** — for anything it flags, confirm the fact against the official source (and, for phones, the `*#06#`/EID behaviour), then edit `catalog.json`: add/adjust the model's `esim` (`yes`/`region`/`no`) and `noteKeys`. Firmware-dependent changes (e.g. a HyperOS build that adds/removes eSIM in a region) are captured the same way — as a model note or a `region` verdict.
+3. **Stamp** — bump `catalog.json`'s top-level `lastVerifiedDate` to today. That single date drives the faint "Compatibility database updated: …" line at the bottom of the page (`ui.db.updated`) and the per-verdict disclaimer. `content/structure/*.json` files carry their own `lastVerifiedDate` for the guide steps.
+3. Then `git commit` + push; GitHub Pages redeploys.
+
+There is no automatic/continuous auto-update — it is a repeatable human-or-assistant pass driven by the watchdog, so every published number stays traceable to a source. `docs/research-todo.md` records the open re-verification items and the Xiaomi findings.

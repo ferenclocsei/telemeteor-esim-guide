@@ -24,6 +24,9 @@ const DeviceDetect = (() => {
     if (m.startsWith("pixel")) return "android-pixel";
     if (m.startsWith("sm-") || m.includes("samsung") || m.startsWith("galaxy"))
       return "android-samsung";
+    // Xiaomi's UA model tokens: "M2101…"/"2201…" build codes are unreliable, but
+    // the brand names are clear when present.
+    if (/xiaomi|redmi|poco|\bmi\b/.test(m)) return "android-xiaomi";
     return "android-generic";
   }
 

@@ -26,7 +26,7 @@ const ONLY=q.get('os');
 const ALL=[['ios','qr'],['ios','manual'],['ios','link'],
               ['android-samsung','manual'],['android-samsung','qr'],['android-samsung','link'],
               ['android-pixel','manual'],['android-pixel','qr'],['android-pixel','link'],
-              ['android-generic','manual'],['android-generic','qr'],['android-generic','link']];
+              ['android-xiaomi','manual'],['android-xiaomi','qr'],['android-xiaomi','link'],['android-generic','manual'],['android-generic','qr'],['android-generic','link']];
 const COMBOS = ONLY ? ALL.filter(c=>c[0]===ONLY) : ALL;
 (async()=>{
  const S=await (await fetch(`../content/strings/${LANG}.json?_=`+Date.now())).json();

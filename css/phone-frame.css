@@ -38,6 +38,7 @@
 
 .phone-frame--android-samsung .phone-frame__notch,
 .phone-frame--android-pixel .phone-frame__notch,
+.phone-frame--android-xiaomi .phone-frame__notch,
 .phone-frame--android-generic .phone-frame__notch {
   width: calc(12px * var(--phone-scale));
   height: calc(12px * var(--phone-scale));

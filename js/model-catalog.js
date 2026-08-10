@@ -20,16 +20,43 @@ const ModelCatalog = (() => {
     return catalogMeta;
   }
 
+  // Fold away the noise people actually type: case, spaces, dashes, "+"/"plus",
+  // so "iphone15promax", "iPhone 15 Pro Max" and "iphone-15-pro-max" all match.
+  function norm(s) {
+    return String(s || "")
+      .toLowerCase()
+      .replace(/\bplus\b/g, "+")
+      .replace(/[^a-z0-9+]/g, "");
+  }
+
+  function haystack(m) {
+    const parts = [m.brand, m.model, `${m.brand} ${m.model}`, ...(m.aliases || [])];
+    return parts.map(norm);
+  }
+
+  // Ranked, typo/spacing-tolerant search. Returns exact-ish matches first.
   function search(query) {
-    const q = query.trim().toLowerCase();
-    if (!q) return [];
-    return models.filter((m) => {
-      if (m.model.toLowerCase().includes(q)) return true;
-      if (m.brand.toLowerCase().includes(q)) return true;
-      if (`${m.brand} ${m.model}`.toLowerCase().includes(q)) return true;
-      if (m.aliases && m.aliases.some((a) => a.toLowerCase().includes(q))) return true;
-      return false;
-    });
+    const raw = query.trim();
+    if (!raw) return [];
+    const nq = norm(raw);
+    if (!nq) return [];
+    const tokens = raw.toLowerCase().split(/[^a-z0-9+]+/).map(norm).filter(Boolean);
+
+    const scored = [];
+    for (const m of models) {
+      const hs = haystack(m);
+      let score = 0;
+      // Whole normalized query appears in a field.
+      if (hs.some((h) => h.includes(nq))) score = 100 - Math.min(60, hs[1].length - nq.length);
+      // Otherwise: every typed token appears somewhere (handles word order / extra words).
+      else if (tokens.length && tokens.every((t) => hs.some((h) => h.includes(t)))) score = 40;
+      if (score > 0) {
+        if (norm(`${m.brand} ${m.model}`).startsWith(nq)) score += 30;
+        scored.push({ m, score });
+      }
+    }
+    scored.sort((a, b) => b.score - a.score || a.m.model.length - b.m.model.length);
+    return scored.map((s) => s.m);
   }
 
   function getOsVariants() {
