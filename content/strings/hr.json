@@ -97,7 +97,9 @@
     "compat.unknown.title": "Vjerojatno ne podržava eSIM",
     "compat.unknown.sub": "Ovaj točan model ne nalazimo u našoj bazi. Mnogi rjeđi ili stariji telefoni ne podržavaju eSIM — ali ne svi.",
     "compat.unknown.howto": "Provjerite sigurno na telefonu: nazovite *#06#. Ako se pojavi broj „EID\" od oko 32 znamenke, ipak ima eSIM. Ako samo IMEI/MEID, nema.",
-    "db.updated": "Baza kompatibilnosti ažurirana: {date}"
+    "db.updated": "Baza kompatibilnosti ažurirana: {date}",
+    "compat.note.model-code-check": "Isti naziv pokriva više varijanti (4G / 5G / Pro). Točan kod modela pronađite u Postavke → O telefonu → Model. 4G varijante obično NE podržavaju eSIM — samo Pro 5G.",
+    "compat.model-code": "Kod modela: {code}"
   },
   "screen": {
     "open-link.app-name": "Mail",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "lastVerifiedDate": "2026-07-20",
+  "lastVerifiedDate": "2026-08-07",
   "sources": [
     "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W",
     "https://esim.holafly.com/how-to/esim-phones/",
@@ -1156,7 +1156,52 @@
       "esim": "region",
       "noteKeys": [
         "china",
-        "xiaomi-storage"
+        "xiaomi-storage",
+        "model-code-check"
+      ]
+    },
+    {
+      "model": "Redmi Note 13 4G",
+      "brand": "Xiaomi",
+      "osVariant": "android-xiaomi",
+      "esim": "no",
+      "code": "23129RAA4G",
+      "aliases": [
+        "23129RAA4G",
+        "23124RA7EO"
+      ],
+      "noteKeys": [
+        "model-code-check"
+      ]
+    },
+    {
+      "model": "Redmi Note 13 Pro 4G",
+      "brand": "Xiaomi",
+      "osVariant": "android-xiaomi",
+      "esim": "no",
+      "code": "23117RA68G",
+      "aliases": [
+        "23117RA68G"
+      ],
+      "noteKeys": [
+        "model-code-check"
+      ]
+    },
+    {
+      "model": "Redmi Note 13 Pro 5G",
+      "brand": "Xiaomi",
+      "osVariant": "android-xiaomi",
+      "esim": "region",
+      "code": "2312DRA50G",
+      "aliases": [
+        "2312DRA50G",
+        "2312DRA50C",
+        "2312CRAD3C"
+      ],
+      "noteKeys": [
+        "china",
+        "xiaomi-storage",
+        "model-code-check"
       ]
     },
     {

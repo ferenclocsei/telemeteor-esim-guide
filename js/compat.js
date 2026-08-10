@@ -70,6 +70,14 @@ const Compat = (() => {
     name.textContent = `${model.brand} ${model.model}`;
     cardEl.appendChild(name);
 
+    // The internal model code confirms the exact variant (4G/5G/Pro differ).
+    if (model.code) {
+      const code = document.createElement("p");
+      code.className = "compat-card__code";
+      code.textContent = I18n.t("ui.compat.model-code", { code: model.code });
+      cardEl.appendChild(code);
+    }
+
     const title = document.createElement("h2");
     title.className = "compat-card__title";
     title.textContent = I18n.t(`ui.compat.title.${status}`);

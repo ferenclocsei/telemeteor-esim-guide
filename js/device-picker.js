@@ -77,7 +77,17 @@ const DevicePicker = (() => {
       const li = document.createElement("li");
       const btn = document.createElement("button");
       btn.type = "button";
-      btn.textContent = `${m.brand} ${m.model}`;
+      // Show the internal model code when a name maps to several variants
+      // (e.g. Redmi Note 13 Pro 4G vs 5G) so the pick is unambiguous.
+      const nameSpan = document.createElement("span");
+      nameSpan.textContent = `${m.brand} ${m.model}`;
+      btn.appendChild(nameSpan);
+      if (m.code) {
+        const codeSpan = document.createElement("span");
+        codeSpan.className = "model-results__code";
+        codeSpan.textContent = m.code;
+        btn.appendChild(codeSpan);
+      }
       btn.addEventListener("click", () => {
         searchInputEl.value = "";
         resultsEl.innerHTML = "";

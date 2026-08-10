@@ -97,7 +97,9 @@
     "compat.unknown.title": "It probably doesn’t support eSIM",
     "compat.unknown.sub": "We couldn’t find this exact model in our database. Many rarer or older phones don’t support eSIM — but not all.",
     "compat.unknown.howto": "Check for sure on the phone: dial *#06#. If an “EID” number of about 32 digits appears, it does have eSIM. If only IMEI/MEID, it doesn’t.",
-    "db.updated": "Compatibility database updated: {date}"
+    "db.updated": "Compatibility database updated: {date}",
+    "compat.note.model-code-check": "The same name covers several variants (4G / 5G / Pro). Find the exact model code under Settings → About phone → Model. The 4G variants usually do NOT support eSIM — only the Pro 5G.",
+    "compat.model-code": "Model code: {code}"
   },
   "screen": {
     "open-link.app-name": "Mail",

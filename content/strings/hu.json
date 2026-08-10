@@ -97,7 +97,9 @@
     "compat.unknown.title": "Valószínűleg nem támogatja az eSIM-et",
     "compat.unknown.sub": "Ezt a pontos modellt nem találjuk az adatbázisunkban. Sok ritkább vagy régebbi készülék nem tud eSIM-et — de nem mind.",
     "compat.unknown.howto": "Ellenőrizd biztosra a telefonodon: tárcsázd a *#06#-ot. Ha megjelenik egy „EID\" feliratú, kb. 32 jegyű szám, mégis van eSIM. Ha csak IMEI/MEID, akkor nincs.",
-    "db.updated": "Kompatibilitási adatbázis frissítve: {date}"
+    "db.updated": "Kompatibilitási adatbázis frissítve: {date}",
+    "compat.note.model-code-check": "Ugyanaz a név több változatot takar (4G / 5G / Pro). A pontos típuskódot itt találod: Beállítások → A telefonról → Modell. A 4G változatok jellemzően NEM támogatják az eSIM-et — csak a Pro 5G.",
+    "compat.model-code": "Típuskód: {code}"
   },
   "screen": {
     "open-link.app-name": "Mail",
