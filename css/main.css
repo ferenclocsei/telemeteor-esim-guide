@@ -1200,6 +1200,10 @@ svg {
   background: #ffe7d4;
   color: #d9611a;
 }
+.ts-card__icon--warn {
+  background: #fdecc8;
+  color: #b5771a;
+}
 
 /* Progress bar across the top of the troubleshooter card */
 .ts-progress {

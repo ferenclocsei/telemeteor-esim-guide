@@ -14,9 +14,22 @@
       "id": "installed",
       "type": "question",
       "yes": "region",
-      "no": "delete-old",
+      "no": "esim-check",
       "emailLabel": "eSIM was added to the phone",
       "illustration": "ts/esim-on.svg"
+    },
+    {
+      "id": "esim-check",
+      "type": "question",
+      "yes": "delete-old",
+      "no": "no-esim",
+      "emailLabel": "Phone shows an EID (*#06# — eSIM hardware present)",
+      "illustration": "shared/step-check-esim.svg"
+    },
+    {
+      "id": "no-esim",
+      "type": "reassure",
+      "icon": "warn"
     },
     {
       "id": "delete-old",

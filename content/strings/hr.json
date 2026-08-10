@@ -566,6 +566,10 @@
     "xiaomi.remove-old-esim.title": "Izbrišite stari eSIM (čest problem na Xiaomi)",
     "xiaomi.remove-old-esim.body": "Xiaomi pohranjuje samo nekoliko eSIM-ova (oko 5–8). Ako je pun ili je na njemu stari/istekli eSIM, prvo ga izbrišite: Postavke → SIM kartice i mobilne mreže → Upravljanje eSIM-om → odaberite stari → Onemogući → Izbriši.",
     "xiaomi.remove-old-esim.warning": "Izbrišite ga samo ako ste 100% sigurni da vam ne treba! eSIM koji je još aktivan može ukinuti vaš operater.",
-    "xiaomi.remove-old-esim.tap.delete": "Gumb „Izbriši\""
+    "xiaomi.remove-old-esim.tap.delete": "Gumb „Izbriši\"",
+    "ts.esim-check.title": "Podržava li vaš telefon uopće eSIM?",
+    "ts.esim-check.body": "Nazovite *#06#. Vidite li broj „EID\" od oko 32 znamenke? Ako da, eSIM hardver postoji. Ako samo IMEI/MEID, ne postoji.",
+    "ts.no-esim.title": "Vaš telefon ne podržava eSIM",
+    "ts.no-esim.body": "Bez EID-a nema eSIM hardvera, pa se Telemeteor eSIM ne može instalirati. Provjerite točan kod modela: Postavke → O telefonu → Model. Isti naziv postoji u 4G/5G/Pro varijantama i samo neke podržavaju eSIM. Ako ste sigurni da imate EID, javite se podršci."
   }
 }

@@ -566,6 +566,10 @@
     "xiaomi.remove-old-esim.title": "Delete the old eSIM (common on Xiaomi)",
     "xiaomi.remove-old-esim.body": "Xiaomi stores only a few eSIMs (about 5–8). If it is full, or an old/expired eSIM is on it, delete that first: Settings → SIM cards & mobile networks → Manage eSIM → pick the old one → Disable → Delete.",
     "xiaomi.remove-old-esim.warning": "Only delete it if you are 100% sure you don’t need it! An eSIM that is still active can be released by your carrier.",
-    "xiaomi.remove-old-esim.tap.delete": "“Delete” button"
+    "xiaomi.remove-old-esim.tap.delete": "“Delete” button",
+    "ts.esim-check.title": "Does your phone support eSIM at all?",
+    "ts.esim-check.body": "Dial *#06#. Do you see an “EID” number of about 32 digits? If yes, the eSIM hardware is there. If only IMEI/MEID, it isn’t.",
+    "ts.no-esim.title": "Your phone doesn’t support eSIM",
+    "ts.no-esim.body": "Without an EID there is no eSIM hardware, so the Telemeteor eSIM can’t be installed. Check your exact model code: Settings → About phone → Model. The same name exists in 4G/5G/Pro variants and only some support eSIM. If you’re sure you have an EID, contact support."
   }
 }

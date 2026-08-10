@@ -566,6 +566,10 @@
     "xiaomi.remove-old-esim.title": "Töröld a régi eSIM-et (gyakori Xiaomi-gond)",
     "xiaomi.remove-old-esim.body": "A Xiaomi csak néhány eSIM-et tárol (kb. 5–8). Ha megtelt, vagy egy régi/lejárt eSIM van rajta, azt előbb törölnöd kell: Beállítások → SIM-kártyák és mobilhálózatok → eSIM kezelése → válaszd a régit → Letiltás → Törlés.",
     "xiaomi.remove-old-esim.warning": "Csak akkor töröld, ha 100%-ig biztos vagy benne, hogy nincs rá szükséged! Aktív eSIM-et a szolgáltatóddal lehet leállítani.",
-    "xiaomi.remove-old-esim.tap.delete": "„Törlés\" gomb"
+    "xiaomi.remove-old-esim.tap.delete": "„Törlés\" gomb",
+    "ts.esim-check.title": "Tud a telefonod egyáltalán eSIM-et?",
+    "ts.esim-check.body": "Tárcsázd a *#06#-ot. Látsz egy „EID\" feliratú, kb. 32 jegyű számot? Ha igen, van eSIM-hardver. Ha csak IMEI/MEID látszik, akkor nincs.",
+    "ts.no-esim.title": "A telefonod nem támogatja az eSIM-et",
+    "ts.no-esim.body": "EID nélkül nincs eSIM-hardver, így a Telemeteor eSIM sem telepíthető. Ellenőrizd a pontos típuskódot: Beállítások → A telefonról → Modell. Ugyanaz a név létezik 4G/5G/Pro változatban is, és csak egyes változatok tudnak eSIM-et. Ha biztos vagy benne, hogy van EID-d, írj a supportnak."
   }
 }
