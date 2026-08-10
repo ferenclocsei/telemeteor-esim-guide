@@ -145,7 +145,10 @@
     dbNoteEl.textContent = I18n.t("ui.db.updated", { date: dbDate });
   }
 
-  const initialLang = readParam("lang", "esim-guide-lang", I18n.resolveInitialLang());
+  // Language is resolved once, host-first: telemeteor.com can hand off the
+  // active language via ?lang=, window.TELEMETEOR_ESIM_LANG, or
+  // <html data-esim-lang>. See docs/INTEGRATION.md.
+  const initialLang = I18n.resolveInitialLang();
   await I18n.load(initialLang);
   langSelectEl.value = I18n.currentLang;
   document.documentElement.classList.add("i18n-ready");
@@ -269,8 +272,11 @@
     readParam("iosv", "esim-guide-iosv", DEFAULT_IOS_VERSION)
   );
 
-  langSelectEl.addEventListener("change", async (e) => {
-    await I18n.load(e.target.value);
+  // Re-render everything in a new language (used by the switcher and by the
+  // host-site hand-off below).
+  async function applyLanguage(lang) {
+    await I18n.load(lang);
+    langSelectEl.value = I18n.currentLang;
     DeliveryPicker.init(document.getElementById("delivery-options"), onDeliverySelected, DeliveryPicker.current);
     DevicePicker.init(document.getElementById("os-options"), onDeviceSelected, DevicePicker.current, onModelPick, onModelNoMatch);
     IosVersionPicker.init(document.getElementById("ios-version-options"), onIosVersionSelected, IosVersionPicker.current);
@@ -279,6 +285,18 @@
     Troubleshoot.rerender();
     renderDetectBanner();
     showPanel(currentPanel);
+  }
+
+  langSelectEl.addEventListener("change", (e) => applyLanguage(e.target.value));
+
+  // Host-site language hand-off for the embedded case: telemeteor.com can switch
+  // the guide's language live by posting a message to the iframe. Ignored unless
+  // it maps to a supported language. See docs/INTEGRATION.md.
+  window.addEventListener("message", (e) => {
+    const data = e && e.data;
+    if (!data || data.type !== "telemeteor-esim:set-lang") return;
+    const lang = I18n.normalizeLang(data.lang);
+    if (lang && lang !== I18n.currentLang) applyLanguage(lang);
   });
 
   // ---- Auto-detection: offer to start from the phone we recognise ----

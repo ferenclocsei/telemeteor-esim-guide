@@ -13,22 +13,57 @@ const I18n = (() => {
     return res.json();
   }
 
+  // Accept the many ways a host site or browser can spell a language and fold
+  // them onto our four supported codes. Returns null if we can't map it.
+  const LANG_ALIASES = {
+    hun: "hu",
+    magyar: "hu",
+    eng: "en",
+    srp: "sr",
+    srb: "sr",
+    "sr-latn": "sr",
+    "sr-cyrl": "sr",
+    "sr-rs": "sr",
+    hrv: "hr",
+    "hr-hr": "hr",
+  };
+
+  function normalizeLang(code) {
+    if (!code) return null;
+    const c = String(code).toLowerCase().trim();
+    if (SUPPORTED.includes(c)) return c;
+    if (LANG_ALIASES[c]) return LANG_ALIASES[c];
+    const two = c.slice(0, 2);
+    if (SUPPORTED.includes(two)) return two;
+    if (LANG_ALIASES[two]) return LANG_ALIASES[two];
+    return null;
+  }
+
+  // Priority: an explicit hand-off from the host site (telemeteor.com) wins,
+  // whether it arrives as a ?lang= URL parameter or a server-injected global /
+  // <html data-esim-lang="…">. Then the visitor's own earlier choice, then the
+  // browser, then Hungarian.
   function resolveInitialLang() {
     const url = new URL(window.location.href);
-    const urlLang = url.searchParams.get("lang");
-    if (urlLang && SUPPORTED.includes(urlLang)) return urlLang;
+    const fromUrl = normalizeLang(url.searchParams.get("lang"));
+    if (fromUrl) return fromUrl;
 
-    const stored = window.localStorage.getItem("esim-guide-lang");
-    if (stored && SUPPORTED.includes(stored)) return stored;
+    const injected = normalizeLang(
+      window.TELEMETEOR_ESIM_LANG || document.documentElement.getAttribute("data-esim-lang")
+    );
+    if (injected) return injected;
 
-    const nav = (navigator.language || "en").slice(0, 2).toLowerCase();
-    if (SUPPORTED.includes(nav)) return nav;
+    const stored = normalizeLang(window.localStorage.getItem("esim-guide-lang"));
+    if (stored) return stored;
+
+    const nav = normalizeLang(navigator.language);
+    if (nav) return nav;
 
     return "hu";
   }
 
   async function load(lang) {
-    currentLang = SUPPORTED.includes(lang) ? lang : "hu";
+    currentLang = normalizeLang(lang) || "hu";
     currentStrings = await fetchLangFile(currentLang);
     fallbackStrings =
       currentLang === FALLBACK_LANG ? currentStrings : await fetchLangFile(FALLBACK_LANG);
@@ -86,6 +121,7 @@ const I18n = (() => {
     load,
     t,
     resolveInitialLang,
+    normalizeLang,
     applyStaticText,
     consumeFallbackFlag,
     get currentLang() {
