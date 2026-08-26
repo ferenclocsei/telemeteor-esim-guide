@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "osVariant": "android-xiaomi",
   "osVersionRange": "HyperOS / MIUI (Global ROM)",
-  "lastVerifiedDate": "2026-07-17",
+  "lastVerifiedDate": "2026-08-07",
   "sources": [
     "https://source.android.com/docs/core/connect/esim-overview"
   ],
@@ -34,16 +34,16 @@
       "appliesTo": [
         "all"
       ],
-      "illustration": "android-generic/step-remove-old-esim.svg",
+      "illustration": "android-xiaomi/step-remove-old-esim.svg",
       "tapPoints": [
         {
           "x": 50.0,
-          "y": 64.6,
+          "y": 53.5,
           "shape": "rect",
-          "radius": 8,
+          "radius": 10,
           "labelKey": "xiaomi.remove-old-esim.tap.delete",
           "w": 72.0,
-          "h": 9.5
+          "h": 9.0
         }
       ],
       "titleKey": "xiaomi.remove-old-esim.title",
@@ -99,41 +99,41 @@
         "qr",
         "manual"
       ],
-      "illustration": "android-generic/step-find-sim-settings.svg",
+      "illustration": "android-xiaomi/step-find-sim-settings.svg",
       "tapPoints": [
         {
           "x": 50.0,
-          "y": 14.8,
+          "y": 37.1,
           "shape": "rect",
-          "radius": 8,
-          "labelKey": "generic.find-sim-settings.tap.search",
-          "w": 90.7,
-          "h": 8.6
+          "radius": 10,
+          "labelKey": "xiaomi.find-sim-settings.tap.manage",
+          "w": 90.0,
+          "h": 8.5
         }
       ],
-      "titleKey": "generic.find-sim-settings.title",
-      "bodyKey": "generic.find-sim-settings.body",
-      "warningKey": "generic.find-sim-settings.warning"
+      "titleKey": "xiaomi.find-sim-settings.title",
+      "bodyKey": "xiaomi.find-sim-settings.body",
+      "warningKey": null
     },
     {
       "id": "add-esim-qr",
       "appliesTo": [
         "qr"
       ],
-      "illustration": "android-generic/step-add-esim-qr.svg",
+      "illustration": "android-xiaomi/step-add-esim-qr.svg",
       "tapPoints": [
         {
           "x": 50.0,
-          "y": 47.6,
+          "y": 45.2,
           "shape": "rect",
           "radius": 10,
-          "labelKey": "generic.add-esim-qr.tap.frame",
-          "w": 70.7,
-          "h": 33.0
+          "labelKey": "xiaomi.add-esim-qr.tap.frame",
+          "w": 52.0,
+          "h": 27.0
         }
       ],
-      "titleKey": "generic.add-esim-qr.title",
-      "bodyKey": "generic.add-esim-qr.body",
+      "titleKey": "xiaomi.add-esim-qr.title",
+      "bodyKey": "xiaomi.add-esim-qr.body",
       "warningKey": null
     },
     {
@@ -141,30 +141,30 @@
       "appliesTo": [
         "manual"
       ],
-      "illustration": "android-generic/step-add-esim-manual.svg",
+      "illustration": "android-xiaomi/step-add-esim-manual.svg",
       "tapPoints": [
         {
           "x": 50.0,
-          "y": 22.9,
+          "y": 26.2,
           "shape": "rect",
           "radius": 8,
-          "labelKey": "generic.add-esim-manual.tap.address",
-          "w": 90.7,
-          "h": 9.6
+          "labelKey": "xiaomi.add-esim-manual.tap.smdp",
+          "w": 90.0,
+          "h": 8.0
         },
         {
           "x": 50.0,
-          "y": 36.2,
+          "y": 39.2,
           "shape": "rect",
           "radius": 8,
-          "labelKey": "generic.add-esim-manual.tap.code",
-          "w": 90.7,
-          "h": 9.6
+          "labelKey": "xiaomi.add-esim-manual.tap.code",
+          "w": 90.0,
+          "h": 8.0
         }
       ],
-      "titleKey": "generic.add-esim-manual.title",
-      "bodyKey": "generic.add-esim-manual.body",
-      "warningKey": "generic.add-esim-manual.warning"
+      "titleKey": "xiaomi.add-esim-manual.title",
+      "bodyKey": "xiaomi.add-esim-manual.body",
+      "warningKey": "xiaomi.add-esim-manual.warning"
     },
     {
       "id": "downloading",
@@ -182,42 +182,42 @@
       "appliesTo": [
         "all"
       ],
-      "illustration": "android-generic/step-enable-roaming.svg",
+      "illustration": "android-xiaomi/step-enable-roaming.svg",
       "tapPoints": [
         {
           "x": 85.3,
-          "y": 37.9,
+          "y": 30.5,
           "shape": "circle",
           "radius": 10,
-          "labelKey": "generic.enable-data-roaming.tap.toggle",
-          "w": 16.0,
-          "h": 4.5
+          "labelKey": "xiaomi.enable-data-roaming.tap.toggle",
+          "w": 17.0,
+          "h": 5.0
         }
       ],
-      "titleKey": "generic.enable-data-roaming.title",
-      "bodyKey": "generic.enable-data-roaming.body",
-      "warningKey": "generic.enable-data-roaming.warning"
+      "titleKey": "xiaomi.enable-data-roaming.title",
+      "bodyKey": "xiaomi.enable-data-roaming.body",
+      "warningKey": "xiaomi.enable-data-roaming.warning"
     },
     {
       "id": "select-data-line-on-arrival",
       "appliesTo": [
         "all"
       ],
-      "illustration": "android-generic/step-select-data-line.svg",
+      "illustration": "android-xiaomi/step-select-data-line.svg",
       "tapPoints": [
         {
           "x": 50.0,
-          "y": 33.2,
+          "y": 34.3,
           "shape": "rect",
-          "radius": 8,
-          "labelKey": "generic.select-data-line.tap.row",
-          "w": 93.3,
-          "h": 10.5
+          "radius": 10,
+          "labelKey": "xiaomi.select-data-line.tap.row",
+          "w": 90.0,
+          "h": 8.5
         }
       ],
-      "titleKey": "generic.select-data-line.title",
-      "bodyKey": "generic.select-data-line.body",
-      "warningKey": "generic.select-data-line.warning"
+      "titleKey": "xiaomi.select-data-line.title",
+      "bodyKey": "xiaomi.select-data-line.body",
+      "warningKey": null
     },
     {
       "id": "done",

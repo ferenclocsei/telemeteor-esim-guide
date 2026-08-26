@@ -1205,6 +1205,76 @@
       ]
     },
     {
+      "model": "Xiaomi 17",
+      "brand": "Xiaomi",
+      "osVariant": "android-xiaomi",
+      "esim": "region",
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
+    },
+    {
+      "model": "Xiaomi 17 Ultra",
+      "brand": "Xiaomi",
+      "osVariant": "android-xiaomi",
+      "esim": "region",
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
+    },
+    {
+      "model": "Xiaomi 17T",
+      "brand": "Xiaomi",
+      "osVariant": "android-xiaomi",
+      "esim": "region",
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
+    },
+    {
+      "model": "Xiaomi 17T Pro",
+      "brand": "Xiaomi",
+      "osVariant": "android-xiaomi",
+      "esim": "region",
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
+    },
+    {
+      "model": "Redmi Note 15 Pro",
+      "brand": "Xiaomi",
+      "osVariant": "android-xiaomi",
+      "esim": "region",
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
+    },
+    {
+      "model": "Redmi Note 15 Pro+",
+      "brand": "Xiaomi",
+      "osVariant": "android-xiaomi",
+      "esim": "region",
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
+    },
+    {
+      "model": "Poco F8 Ultra",
+      "brand": "Xiaomi",
+      "osVariant": "android-xiaomi",
+      "esim": "region",
+      "noteKeys": [
+        "china",
+        "xiaomi-storage"
+      ]
+    },
+    {
       "model": "Find N5",
       "brand": "Oppo",
       "osVariant": "android-generic",

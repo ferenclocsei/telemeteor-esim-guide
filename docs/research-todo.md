@@ -90,3 +90,8 @@ A `content/structure/android-generic.json` lépéssora (10 lépés, `status: "re
 Built into: the guide's new `remove-old-esim` step (all variants), generic `before-you-start` (ROM + `*#06#`), the compat notes `xiaomi-storage` / `xiaomi-lite`, and the troubleshooter `installed?` → `delete-old` branch.
 
 Sources: mi.com FAQ KA-535492; yohomobile.com Xiaomi eSIM guides; drfone Xiaomi eSIM setup; circles.life Xiaomi eSIM guide; esim.school Chinese-Android eSIM guide.
+
+## Xiaomi list — 2026-08-07 refresh notes
+- Added (Global eSIM, region-gated): Xiaomi 17 / 17 Ultra / 17T / 17T Pro, Redmi Note 15 Pro / Pro+, POCO F8 Ultra.
+- Conflicting sources — re-verify before asserting: **Xiaomi 13 Lite** (kept "no"; one aggregator lists it as eSIM) and **Xiaomi 14 Ultra** (omitted; sources disagree). POCO "X8 Pro Max" seen in one aggregator only — omitted.
+- HyperOS install path confirmed: Settings → SIM cards & mobile networks → Manage eSIM → Add eSIM (Scan QR / Enter manually). Delete: Manage eSIM → eSIM → Disable eSIM → Delete eSIM. Xiaomi illustrations now reflect this (assets/illustrations/android-xiaomi/).
