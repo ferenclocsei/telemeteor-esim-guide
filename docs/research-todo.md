@@ -95,3 +95,23 @@ Sources: mi.com FAQ KA-535492; yohomobile.com Xiaomi eSIM guides; drfone Xiaomi 
 - Added (Global eSIM, region-gated): Xiaomi 17 / 17 Ultra / 17T / 17T Pro, Redmi Note 15 Pro / Pro+, POCO F8 Ultra.
 - Conflicting sources — re-verify before asserting: **Xiaomi 13 Lite** (kept "no"; one aggregator lists it as eSIM) and **Xiaomi 14 Ultra** (omitted; sources disagree). POCO "X8 Pro Max" seen in one aggregator only — omitted.
 - HyperOS install path confirmed: Settings → SIM cards & mobile networks → Manage eSIM → Add eSIM (Scan QR / Enter manually). Delete: Manage eSIM → eSIM → Disable eSIM → Delete eSIM. Xiaomi illustrations now reflect this (assets/illustrations/android-xiaomi/).
+
+## Catalog refresh — 2026-09-09 (246 models)
+Added 15 already-released / just-announced eSIM models found by `check-sources.py`
+against the eSIM device lists (Holafly/Airalo/Saily), Samsung Newsroom, Google
+Store and Apple. All mirror the existing verdict convention (`esim:"yes"` +
+`noteKey:"china"` for Apple/Samsung, no note for Pixel):
+- **Apple** — iPhone 18 Pro, iPhone 18 Pro Max (announced at Apple's 2026-09-09
+  event; on sale ~2026-09-18; all iPhones since XS support eSIM + dual eSIM).
+- **Samsung** — Galaxy S26 / S26+ / S26 Ultra (rel. 2026-03-11; no S26 Edge —
+  cancelled), Galaxy S26 FE (2026-09-04), Galaxy S25 FE (2025-09), Galaxy Z
+  Fold8 Ultra / Fold8 / Flip8 (2026-08-07), Galaxy Z Fold7 / Flip7 (2025-07-25).
+- **Google** — Pixel 11 / 11 Pro / 11 Pro XL (Made by Google 2026-08-12,
+  on sale 2026-08-20).
+
+Deliberately NOT added yet (would be speculative):
+- **iPhone 18 / iPhone 18e / iPhone Air 2** — Apple split the line; these are
+  reported for **spring 2027**, not shipping yet. Add when launched.
+- **Foldable iPhone** ("iPhone Fold"/"Ultra") — final marketing name unconfirmed.
+- **Galaxy Z Flip7 FE** — real but niche; add if a concrete customer case shows up.
+`tools/check-sources.py --accept` was re-run to re-baseline `source-state.json`.

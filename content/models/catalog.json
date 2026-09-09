@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "lastVerifiedDate": "2026-08-07",
+  "lastVerifiedDate": "2026-09-09",
   "sources": [
     "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W",
     "https://esim.holafly.com/how-to/esim-phones/",
@@ -14,6 +14,20 @@
     "no"
   ],
   "models": [
+    {
+      "model": "iPhone 18 Pro Max",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "iPhone 18 Pro",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes",
+      "noteKey": "china"
+    },
     {
       "model": "iPhone Air",
       "brand": "Apple",
@@ -289,6 +303,41 @@
       ]
     },
     {
+      "model": "Galaxy S26 Ultra",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S26+",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S26",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S26 FE",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy S25 FE",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
       "model": "Galaxy S25 Ultra",
       "brand": "Samsung",
       "osVariant": "android-samsung",
@@ -388,6 +437,41 @@
     },
     {
       "model": "Galaxy S22",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Fold8 Ultra",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Fold8",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Flip8",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Fold7",
+      "brand": "Samsung",
+      "osVariant": "android-samsung",
+      "esim": "yes",
+      "noteKey": "china"
+    },
+    {
+      "model": "Galaxy Z Flip7",
       "brand": "Samsung",
       "osVariant": "android-samsung",
       "esim": "yes",
@@ -560,6 +644,24 @@
       "osVariant": "android-samsung",
       "esim": "region",
       "noteKey": "us-samsung"
+    },
+    {
+      "model": "Pixel 11 Pro XL",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 11 Pro",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
+    },
+    {
+      "model": "Pixel 11",
+      "brand": "Google",
+      "osVariant": "android-pixel",
+      "esim": "yes"
     },
     {
       "model": "Pixel 10 Pro XL",

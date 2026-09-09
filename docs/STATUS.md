@@ -1,6 +1,6 @@
 # Project status — where we are
 
-_Last updated: 2026-08-07 · current release: `?v=64`_
+_Last updated: 2026-09-09 · current release: `?v=66`_
 
 A quick "pick up here" note so any new session (or teammate) is instantly in the
 picture. Full detail lives in the other `docs/` files and the git history.
@@ -30,8 +30,8 @@ Every guide flow: **before-you-start = the *#06#/EID capability check** →
 **remove-old-esim** (delete an old eSIM first) → install steps → done.
 
 ## Compatibility DB (content/models/catalog.json)
-224 models, `lastVerifiedDate` shown in the faint page footer (currently
-2026-08-07). Verdicts `yes`/`region`/`no` + per-model `noteKeys`; ambiguous
+246 models, `lastVerifiedDate` shown in the faint page footer (currently
+2026-09-09). Verdicts `yes`/`region`/`no` + per-model `noteKeys`; ambiguous
 same-name variants carry a `code` + `aliases` (e.g. Redmi Note 13 Pro **5G**
 `2312DRA50G` = supported vs **4G** `23117RA68G` = not). Search is
 typo/spacing-tolerant and matches model codes; no match → a "probably not
@@ -44,6 +44,10 @@ doesn't support eSIM"; EID yes → **delete-old** → still failing → support.
 roaming → apn → network → restart → support.
 
 ## Recent work (newest first)
+- DB freshness pass (2026-09-09, `?v=66`): +15 released/announced eSIM models →
+  246. Apple iPhone 18 Pro / 18 Pro Max; Samsung Galaxy S26 / S26+ / S26 Ultra,
+  S26 FE, S25 FE, Z Fold8 Ultra / Fold8 / Flip8, Z Fold7 / Flip7; Google Pixel
+  11 / 11 Pro / 11 Pro XL. `check-sources.py --accept` re-baselined.
 - 1-page dev quick-start; English integration/deploy docs; host-site language
   hand-off (+ normalize codes, postMessage).
 - Troubleshooter gated behind an eSIM-capability check before support.
