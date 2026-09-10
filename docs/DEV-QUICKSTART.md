@@ -13,7 +13,8 @@ https://www.telemeteor.com/esim-guide/
 - `index.html` sits at the folder root (`/esim-guide/index.html`).
 - Keep the folder layout — the app uses **relative paths** (`content/…`,
   `assets/…`, `css/…`, `js/…`). Don't rewrite them.
-- Only these are needed at runtime: `index.html css/ js/ assets/illustrations/ content/`
+- Only these are needed at runtime: `index.html css/ js/ assets/ content/`
+  (`assets/` holds both `illustrations/` and the self-hosted `fonts/` — copy the whole folder)
   (skip `.git/ docs/ tools/` — harmless if copied).
 - No cache rules needed — versioned `?v=NN` on assets, `no-cache` on JSON.
 

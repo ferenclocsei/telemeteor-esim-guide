@@ -136,7 +136,11 @@ svg {
 
 .hero-reassurance__title {
   margin: 0 0 var(--space-2);
-  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  font-size: clamp(1.3rem, 1.8vw, 1.6rem);
   color: var(--color-navy);
 }
 
@@ -767,9 +771,12 @@ svg {
 
 .step-head__title {
   margin: 0;
+  font-family: var(--font-display);
   font-size: 1.5rem;
   line-height: 1.2;
-  font-weight: 800;
+  font-weight: var(--weight-display);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 /* Confetti celebration on the final step — the reward for finishing. */

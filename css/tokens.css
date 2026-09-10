@@ -1,3 +1,16 @@
+/* ---------------------------------------------------------------------------
+   Brand webfont — Montserrat (self-hosted, GDPR-safe: no external CDN call).
+   Subsetted to Latin + Latin-Ext (covers hu ő/ű and sr/hr diacritics) and
+   served as woff2. Weights: 400 body · 500 medium · 600 semibold · 700 bold ·
+   800 extrabold · 900 black (the TeleMeteor Design System display face).
+--------------------------------------------------------------------------- */
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/montserrat-400.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 500; font-display: swap; src: url("../assets/fonts/montserrat-500.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 600; font-display: swap; src: url("../assets/fonts/montserrat-600.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/montserrat-700.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 800; font-display: swap; src: url("../assets/fonts/montserrat-800.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 900; font-display: swap; src: url("../assets/fonts/montserrat-900.woff2") format("woff2"); }
+
 :root {
   /* Brand palette lifted from telemeteor.com */
   --color-navy: #182746;
@@ -14,8 +27,12 @@
   --color-warning-bg: #fff4e5;
   --color-warning-text: #8a4b00;
 
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Display face for large headings — the TeleMeteor Design System uses the
+     black (900) weight for its display type. */
+  --font-display: "Montserrat", var(--font-sans);
+  --weight-display: 800;
 
   --radius-pill: 999px;
   --radius-card: 20px;

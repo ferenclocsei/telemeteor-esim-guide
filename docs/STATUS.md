@@ -1,6 +1,6 @@
 # Project status — where we are
 
-_Last updated: 2026-09-09 · current release: `?v=66`_
+_Last updated: 2026-09-10 · current release: `?v=67`_
 
 A quick "pick up here" note so any new session (or teammate) is instantly in the
 picture. Full detail lives in the other `docs/` files and the git history.
@@ -44,6 +44,13 @@ doesn't support eSIM"; EID yes → **delete-old** → still failing → support.
 roaming → apn → network → restart → support.
 
 ## Recent work (newest first)
+- Brand reskin (2026-09-10, `?v=67`): adopted the **TeleMeteor Design System** —
+  self-hosted **Montserrat** webfont (`assets/fonts/*.woff2`, subset Latin+Lat-Ext,
+  6 weights; @font-face in `css/tokens.css`, `--font-sans`/`--font-display`).
+  Palette was already brand (navy/blue/orange). Primary buttons stay **orange**
+  (brand/webshop choice); orange `#FF6600` remains the tap-ring color; headings use
+  the display face (800). flow-audit hu = 0; app-audit unchanged vs baseline (same
+  10 pre-existing final-step timing artifacts). DS details: telemeteor-design-system memory.
 - DB freshness pass (2026-09-09, `?v=66`): +15 released/announced eSIM models →
   246. Apple iPhone 18 Pro / 18 Pro Max; Samsung Galaxy S26 / S26+ / S26 Ultra,
   S26 FE, S25 FE, Z Fold8 Ultra / Fold8 / Flip8, Z Fold7 / Flip7; Google Pixel

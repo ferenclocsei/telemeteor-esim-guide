@@ -29,8 +29,10 @@ Minimum files needed at runtime:
 
 ```
 index.html
-css/      js/      assets/illustrations/      content/
+css/      js/      assets/      content/
 ```
+(`assets/` contains `illustrations/` and the self-hosted `fonts/` — the brand
+Montserrat webfont is served from the repo, no external font CDN.)
 
 Cache-busting is already handled: every CSS/JS include carries `?v=NN`, bumped on
 each release, and JSON/SVG is fetched with `no-cache`. No special cache rules
