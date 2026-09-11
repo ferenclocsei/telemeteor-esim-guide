@@ -1,6 +1,6 @@
 # Project status — where we are
 
-_Last updated: 2026-09-10 · current release: `?v=67`_
+_Last updated: 2026-09-11 · current release: `?v=68`_
 
 A quick "pick up here" note so any new session (or teammate) is instantly in the
 picture. Full detail lives in the other `docs/` files and the git history.
@@ -44,6 +44,11 @@ doesn't support eSIM"; EID yes → **delete-old** → still failing → support.
 roaming → apn → network → restart → support.
 
 ## Recent work (newest first)
+- Card refinement (2026-09-11, `?v=68`): adopted the DS radius + elevation scales
+  in `css/tokens.css` (radius.css/elevation.css) — full `--radius-xs…3xl` +
+  `--shadow-xs…lg`/`--shadow-panel`/`--focus-ring`; cards go 20px→16px (DS content
+  card) with the softer DS card shadow (`0 8px 24px rgba(24,39,70,.14)`). Pure
+  token change, propagates via `--radius-card`/`--shadow-card`; no main.css edits.
 - Brand reskin (2026-09-10, `?v=67`): adopted the **TeleMeteor Design System** —
   self-hosted **Montserrat** webfont (`assets/fonts/*.woff2`, subset Latin+Lat-Ext,
   6 weights; @font-face in `css/tokens.css`, `--font-sans`/`--font-display`).
