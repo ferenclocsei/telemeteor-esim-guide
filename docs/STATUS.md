@@ -44,6 +44,13 @@ doesn't support eSIM"; EID yes → **delete-old** → still failing → support.
 roaming → apn → network → restart → support.
 
 ## Recent work (newest first)
+- Animated install demo (`esim-anim.html`, standalone page at repo root): iPhone
+  only for now, all three delivery methods (Quick Link / QR / manual) as an
+  auto-playing, method-switchable animation with a realistic iOS mockup (Dynamic
+  Island, iOS status bar, grouped Settings UI, iOS switches, system "Add eSIM?"
+  sheet). Self-hosted Montserrat (no font CDN); orange ring = "tap here". Live at
+  `/esim-anim.html`. Not embedded in the wizard yet; next: extend to the other OS
+  and/or embed. Also mirrored as a Claude Design artifact.
 - Card refinement (2026-09-11, `?v=68`): adopted the DS radius + elevation scales
   in `css/tokens.css` (radius.css/elevation.css) — full `--radius-xs…3xl` +
   `--shadow-xs…lg`/`--shadow-panel`/`--focus-ring`; cards go 20px→16px (DS content

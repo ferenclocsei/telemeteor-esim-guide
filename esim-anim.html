@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eSIM Telepítés iPhone-on — TeleMeteor</title>
+<meta name="description" content="Mind a három eSIM-telepítési mód (Quick Link, QR, kézi) iPhone-on, valósághű iOS-megjelenítéssel, a TeleMeteor arculatában.">
+<!-- Self-hosted Montserrat (no external font CDN, GDPR-safe) -->
+<style>
+  @font-face{font-family:"Montserrat";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/montserrat-400.woff2") format("woff2")}
+  @font-face{font-family:"Montserrat";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/montserrat-500.woff2") format("woff2")}
+  @font-face{font-family:"Montserrat";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/montserrat-600.woff2") format("woff2")}
+  @font-face{font-family:"Montserrat";font-style:normal;font-weight:700;font-display:swap;src:url("assets/fonts/montserrat-700.woff2") format("woff2")}
+  @font-face{font-family:"Montserrat";font-style:normal;font-weight:800;font-display:swap;src:url("assets/fonts/montserrat-800.woff2") format("woff2")}
+  @font-face{font-family:"Montserrat";font-style:normal;font-weight:900;font-display:swap;src:url("assets/fonts/montserrat-900.woff2") format("woff2")}
+</style>
+<style>
+  :root{
+    --navy:#182746; --navy-700:#1E3A6B; --navy-900:#0F1B33;
+    --blue:#00A0FF; --orange:#FF6600; --green:#16A06A;
+    --paper:#F4F6FB; --card:#FFFFFF; --line:#E4EAF3; --hair:#EAF0F8;
+    --ink:#182746; --muted:#5B6B84;
+    --shadow-phone:0 10px 26px rgba(24,39,70,.16), 0 40px 80px rgba(24,39,70,.24);
+    --shadow-card:0 2px 8px rgba(24,39,70,.10);
+    --r-card:16px; --r-pill:999px;
+    --font:"Montserrat",ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;
+    /* iOS palette (screen is always rendered in iOS light) */
+    --ios-bg:#F2F2F7; --ios-cell:#FFFFFF; --ios-sep:#D9D9DE; --ios-label:#1C1C1E;
+    --ios-sub:#8A8A8E; --ios-blue:#007AFF; --ios-green:#34C759; --ios-fill:#E4E4E9;
+    --ios-tert:#C2C2C7; --ios-orange:#FF9500;
+    --ios-font:-apple-system,"SF Pro Text","SF Pro","Segoe UI",system-ui,Roboto,sans-serif;
+  }
+  :root:not([data-theme="light"]){ @media (prefers-color-scheme:dark){
+    --paper:var(--navy-900); --card:#182746; --line:#26395C; --hair:#22344F;
+    --ink:#EAF2FF; --muted:#9DB0D0;
+    --shadow-phone:0 12px 30px rgba(0,0,0,.5), 0 50px 90px rgba(0,0,0,.55);
+    --shadow-card:0 2px 8px rgba(0,0,0,.35);
+  }}
+  :root[data-theme="dark"]{
+    --paper:var(--navy-900); --card:#182746; --line:#26395C; --hair:#22344F;
+    --ink:#EAF2FF; --muted:#9DB0D0;
+    --shadow-phone:0 12px 30px rgba(0,0,0,.5), 0 50px 90px rgba(0,0,0,.55);
+    --shadow-card:0 2px 8px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:15px;
+    line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:22px 18px 46px;text-align:center}
+
+  header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;
+    padding-bottom:16px;border-bottom:1px solid var(--hair);margin-bottom:16px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mark{width:32px;height:32px;border-radius:9px;flex:0 0 auto;display:grid;place-items:center;color:#fff;
+    background:linear-gradient(135deg,var(--navy),var(--navy-700))}
+  .brand .name{font-weight:900;letter-spacing:-.01em;font-size:16px}
+  .brand .name b{color:var(--blue)}
+  .brand .sub{font-size:11px;color:var(--muted);font-weight:600}
+  .tbtn{border:1px solid var(--hair);background:var(--card);color:var(--ink);font-family:inherit;font-weight:600;
+    font-size:12.5px;padding:8px 12px;border-radius:var(--r-pill);cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+  .tbtn:hover{border-color:var(--blue)}
+
+  h1{font-size:clamp(19px,3.2vw,25px);font-weight:900;letter-spacing:-.01em;margin:2px 0 4px;text-wrap:balance}
+  .lead{color:var(--muted);font-size:13px;margin:0 auto 16px;max-width:54ch}
+
+  /* method selector */
+  .methods{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:18px}
+  .method{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--card);
+    color:var(--ink);font-family:inherit;font-weight:700;font-size:13px;padding:10px 15px;border-radius:14px;
+    cursor:pointer;box-shadow:var(--shadow-card);transition:transform .15s,border-color .15s;text-align:left}
+  .method:hover{transform:translateY(-1px)}
+  .method .mi{width:30px;height:30px;border-radius:8px;flex:0 0 auto;display:grid;place-items:center;
+    background:var(--blue);color:#fff}
+  .method .mi svg{width:17px;height:17px}
+  .method .mt small{display:block;font-weight:600;font-size:10.5px;color:var(--muted)}
+  .method[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .method[aria-selected="true"] .mt small{color:#aebfe0}
+
+  /* ===== realistic iPhone ===== */
+  .phonewrap{display:flex;justify-content:center;perspective:1600px}
+  .device{position:relative;width:300px;height:614px;border-radius:54px;background:#0b0d12;
+    padding:11px;box-shadow:var(--shadow-phone),inset 0 0 0 2px #2a2e37;animation:float 6.5s ease-in-out infinite}
+  .device::before,.device::after{content:"";position:absolute;background:#0b0d12;border-radius:3px}
+  .device::before{left:-3px;top:150px;width:3px;height:34px;box-shadow:0 46px 0 #0b0d12,0 92px 0 #0b0d12}
+  .device::after{right:-3px;top:190px;width:3px;height:64px}
+  @keyframes float{0%,100%{transform:translateY(0) rotateX(0)}50%{transform:translateY(-7px)}}
+  .screen{position:relative;width:100%;height:100%;border-radius:44px;background:var(--ios-bg);
+    overflow:hidden;font-family:var(--ios-font);color:var(--ios-label)}
+  .screen.onDark{background:#0a0a0c}
+
+  .island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:96px;height:28px;
+    background:#000;border-radius:16px;z-index:9}
+  .statusbar{position:absolute;top:0;left:0;right:0;height:52px;display:flex;align-items:center;
+    justify-content:space-between;padding:18px 26px 0;font-size:13px;font-weight:700;z-index:8;color:var(--ios-label)}
+  .screen.onDark .statusbar{color:#fff}
+  .statusbar .rgt{display:flex;align-items:center;gap:5px}
+  .statusbar svg{display:block}
+
+  .homebar{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:128px;height:5px;
+    border-radius:3px;background:#1c1c1e;opacity:.85;z-index:8}
+  .screen.onDark .homebar{background:#fff}
+
+  .stage{position:relative}
+  .ios-content{position:absolute;left:0;right:0;top:52px;bottom:0;overflow:hidden}
+  .ios-content.animate{animation:scene-in .5s cubic-bezier(.22,1,.36,1)}
+  @keyframes scene-in{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
+  .ios-content.back.animate{animation:scene-in-b .5s cubic-bezier(.22,1,.36,1)}
+  @keyframes scene-in-b{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:translateX(0)}}
+
+  /* iOS building blocks */
+  .nav{height:46px;display:flex;align-items:center;justify-content:center;position:relative;font-size:16px;font-weight:600}
+  .nav .back{position:absolute;left:8px;display:inline-flex;align-items:center;gap:1px;color:var(--ios-blue);font-weight:500;font-size:15px}
+  .nav .back svg{width:19px;height:19px}
+  .nav .rgtbtn{position:absolute;right:14px;color:var(--ios-blue);font-size:16px;font-weight:600}
+  .bigtitle{font-size:30px;font-weight:800;letter-spacing:-.02em;padding:2px 18px 10px}
+  .ghead{font-size:12px;font-weight:600;color:var(--ios-sub);text-transform:uppercase;letter-spacing:.03em;margin:16px 0 6px;padding:0 32px;text-align:left}
+  .group{margin:0 16px 2px;background:var(--ios-cell);border-radius:12px;overflow:hidden}
+  .group.muted{opacity:.55}
+  .cell{position:relative;display:flex;align-items:center;gap:12px;padding:0 12px;min-height:46px;text-align:left}
+  .cell:not(:first-child)::after{content:"";position:absolute;top:0;left:50px;right:0;height:.5px;background:var(--ios-sep)}
+  .cell .lead{width:29px;height:29px;border-radius:7px;flex:0 0 auto;display:grid;place-items:center;color:#fff}
+  .cell .lead svg{width:18px;height:18px}
+  .cell .lbl{font-size:15px}
+  .cell .lbl.blue{color:var(--ios-blue)}
+  .cell .val{margin-left:auto;color:var(--ios-sub);font-size:15px}
+  .cell .chev{margin-left:auto;color:var(--ios-tert);display:flex}
+  .cell .val + .chev{margin-left:8px}
+  .cell .chev svg{width:16px;height:16px}
+  .cell.tall{min-height:58px;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;padding:10px 14px}
+  .cell.tall .k{font-size:11px;color:var(--ios-sub)}
+  .cell.tall .v{font-size:15px;color:var(--ios-label);font-weight:500}
+
+  .sw{width:51px;height:31px;border-radius:16px;background:var(--ios-fill);position:relative;flex:0 0 auto;margin-left:auto;transition:background .35s}
+  .sw::after{content:"";position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .35s cubic-bezier(.22,1,.36,1)}
+  .sw.on{background:var(--ios-green)}
+  .sw.on::after{left:22px}
+
+  .pad{padding:0 16px}
+  .btn-primary{display:block;background:var(--ios-blue);color:#fff;border-radius:13px;padding:14px;font-size:16px;font-weight:600;text-align:center;margin:12px 16px 0}
+  .btn-text{color:var(--ios-blue);text-align:center;font-size:16px;padding:14px}
+
+  /* mail scene */
+  .mail-head{padding:8px 18px 12px;text-align:left;border-bottom:.5px solid var(--ios-sep)}
+  .mail-from{display:flex;align-items:center;gap:10px}
+  .mail-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-700));color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;font-family:var(--font)}
+  .mail-from .mf{font-weight:700;font-size:14px}
+  .mail-from .mt{font-size:11px;color:var(--ios-sub)}
+  .mail-subj{font-size:15px;font-weight:700;margin:10px 2px 0}
+  .mail-body{padding:14px 18px;text-align:left;font-size:13.5px;color:#2b2b2e;line-height:1.5}
+  .mail-body .muted{color:var(--ios-sub);font-size:12.5px}
+  .ql{display:block;margin:16px 0 6px;background:var(--ios-blue);color:#fff;border-radius:12px;padding:14px;text-align:center;font-weight:700;font-size:15px}
+  .ql small{display:block;font-weight:500;opacity:.85;font-size:11px;margin-top:2px}
+
+  /* sheet scene */
+  .backdrop{position:absolute;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(2px)}
+  .sheet{position:absolute;left:9px;right:9px;bottom:12px;background:#F7F7FA;border-radius:20px;padding:20px 18px 14px;text-align:center;animation:sheetup .45s cubic-bezier(.22,1,.36,1)}
+  @keyframes sheetup{from{transform:translateY(70px);opacity:.4}to{transform:translateY(0);opacity:1}}
+  .sheet .sim{width:60px;height:60px;border-radius:15px;margin:0 auto 12px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--ios-green),#2aa84a)}
+  .sheet .sim svg{width:32px;height:32px}
+  .sheet h3{margin:0;font-size:19px;font-weight:800;color:var(--ios-label)}
+  .sheet p{margin:5px 0 14px;font-size:12.5px;color:var(--ios-sub)}
+
+  /* qr scan scene */
+  .cam{position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 40%,#1b1d22,#0a0a0c)}
+  .finder{position:absolute;top:150px;left:50%;transform:translateX(-50%);width:190px;height:190px}
+  .finder .qrimg{position:absolute;inset:20px;background:#fff;border-radius:8px;padding:10px}
+  .finder .qrimg svg{width:100%;height:100%;display:block}
+  .fbrk{position:absolute;width:30px;height:30px;border:3px solid #fff}
+  .fb1{top:0;left:0;border-right:0;border-bottom:0;border-radius:8px 0 0 0}
+  .fb2{top:0;right:0;border-left:0;border-bottom:0;border-radius:0 8px 0 0}
+  .fb3{bottom:0;left:0;border-right:0;border-top:0;border-radius:0 0 0 8px}
+  .fb4{bottom:0;right:0;border-left:0;border-top:0;border-radius:0 0 8px 0}
+  .cam .scan{position:absolute;left:22px;right:22px;height:3px;border-radius:3px;top:22px;
+    background:linear-gradient(90deg,transparent,var(--orange),transparent);box-shadow:0 0 12px 2px rgba(255,102,0,.6);animation:scan 1.9s ease-in-out infinite}
+  @keyframes scan{0%{top:24px}50%{top:158px}100%{top:24px}}
+  .camhint{position:absolute;bottom:64px;left:24px;right:24px;text-align:center;color:#fff;font-size:13px;font-weight:500;opacity:.92}
+
+  /* continue / installing / done */
+  .center{position:absolute;inset:52px 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 26px;text-align:center;gap:14px}
+  .hero-sim{width:88px;height:88px;border-radius:22px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--ios-blue),#0a63d6);box-shadow:0 12px 26px rgba(0,122,255,.3)}
+  .hero-sim svg{width:46px;height:46px}
+  .center h3{margin:0;font-size:21px;font-weight:800}
+  .center p{margin:0;font-size:13px;color:var(--ios-sub);max-width:24ch}
+  .continue-btn{position:absolute;left:16px;right:16px;bottom:26px}
+
+  .spinner{width:34px;height:34px;position:relative}
+  .spinner i{position:absolute;left:50%;top:50%;width:3px;height:9px;border-radius:2px;background:var(--ios-sub);
+    transform-origin:1.5px 17px;opacity:.25}
+  @keyframes fade{to{opacity:.25}}
+
+  .checkwrap{width:100px;height:100px;border-radius:50%;display:grid;place-items:center;
+    background:color-mix(in srgb,var(--ios-green) 15%,transparent);animation:pop .5s cubic-bezier(.22,1,.36,1)}
+  @keyframes pop{0%{transform:scale(.5)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
+  .checkwrap svg{width:54px;height:54px}
+  .checkwrap .ck{fill:none;stroke:var(--ios-green);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw .6s .2s ease forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2}
+  .confetti b{position:absolute;top:-16px;width:9px;height:14px;border-radius:2px;opacity:.9;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(600px) rotate(560deg);opacity:.1}}
+
+  /* tap ring (brand) */
+  .ring{position:absolute;border:2.5px solid var(--orange);border-radius:12px;opacity:0;pointer-events:none;z-index:10;
+    box-shadow:0 0 0 4px rgba(255,102,0,.12);transition:opacity .2s ease}
+  .ring.show{opacity:1;animation:ringpulse 1.4s ease-in-out infinite}
+  .ring.tap{animation:none;transform:scale(.96);opacity:.9}
+  .ring .dot{position:absolute;right:10px;top:50%;width:12px;height:12px;border-radius:50%;transform:translateY(-50%);background:var(--orange);box-shadow:0 0 0 6px rgba(255,102,0,.18)}
+  @keyframes ringpulse{0%,100%{box-shadow:0 0 0 4px rgba(255,102,0,.12)}50%{box-shadow:0 0 0 9px rgba(255,102,0,.03)}}
+
+  /* caption + controls */
+  .caption{margin:18px auto 0;font-weight:700;font-size:15px;min-height:22px;max-width:36ch;text-wrap:balance}
+  .steplabel{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-top:12px}
+  .dots{display:flex;gap:7px;justify-content:center;margin:12px 0 4px;flex-wrap:wrap}
+  .dots i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:.3s}
+  .dots i.on{background:var(--blue);transform:scale(1.25)}
+  .controls{display:flex;gap:10px;justify-content:center;margin-top:12px}
+  .ctl{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow-card)}
+  .ctl:hover{border-color:var(--blue);color:var(--blue)}
+  .ctl svg{width:20px;height:20px}
+  .ctl.primary{background:var(--navy);color:#fff;border-color:var(--navy);width:52px;height:52px}
+  .ctl.primary svg{width:23px;height:23px}
+  .note{margin-top:20px;font-size:11px;color:var(--muted);opacity:.85}
+
+  @media (prefers-reduced-motion:reduce){
+    .device{animation:none}
+    .ring.show{animation:none}
+    .cam .scan{animation:none;top:90px}
+    .ios-content.animate,.ios-content.back.animate{animation:none}
+    .checkwrap,.checkwrap .ck{animation:none;stroke-dashoffset:0}
+    .sheet{animation:none}
+    .confetti{display:none}
+    .spinner i{animation:none!important;opacity:.4}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 6h4M9.5 10.5h5M9.5 14h5M11 18h2"/></svg></span>
+      <div><div class="name">Tele<b>Meteor</b></div><div class="sub">iPhone · eSIM telepítés</div></div>
+    </div>
+    <button class="tbtn" id="themeBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg><span id="themeLabel">Sötét</span></button>
+  </header>
+
+  <h1>eSIM telepítése iPhone-on — mind a 3 módszer</h1>
+  <p class="lead">Válaszd ki, hogyan kaptad az eSIM-et, és nézd végig az animált folyamatot valósághű iOS-képernyőkön. A <b style="color:var(--orange)">narancs gyűrű</b> mindig azt mutatja: itt koppints.</p>
+
+  <div class="methods" id="methods" role="tablist"></div>
+
+  <div class="stage">
+    <div class="phonewrap">
+      <div class="device">
+        <div class="screen" id="screen">
+          <div class="island"></div>
+          <div class="statusbar">
+            <span>9:41</span>
+            <span class="rgt">
+              <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="5.5" width="3" height="6.5" rx="1"/><rect x="9" y="3" width="3" height="9" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
+              <span style="font-size:12px;font-weight:700">5G</span>
+              <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor" aria-hidden="true"><path d="M8.5 2.6c2.3 0 4.4.9 6 2.4l-1.3 1.3a6.7 6.7 0 00-9.4 0L2.5 5A8.5 8.5 0 018.5 2.6zM8.5 6a4 4 0 012.8 1.2L8.5 10 5.7 7.2A4 4 0 018.5 6z"/></svg>
+              <svg width="26" height="13" viewBox="0 0 26 13" fill="none" aria-hidden="true"><rect x="1" y="1" width="21" height="11" rx="3" stroke="currentColor" stroke-opacity=".4" stroke-width="1"/><rect x="2.5" y="2.5" width="16" height="8" rx="1.6" fill="currentColor"/><rect x="23.5" y="4.5" width="1.8" height="4" rx=".9" fill="currentColor" fill-opacity=".5"/></svg>
+            </span>
+          </div>
+          <div class="ios-content" id="content"></div>
+          <div class="ring" id="ring" aria-hidden="true"><span class="dot"></span></div>
+          <div class="homebar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="steplabel" id="steplabel"></div>
+    <div class="caption" id="caption"></div>
+    <div class="dots" id="dots"></div>
+    <div class="controls">
+      <button class="ctl" id="prevBtn" type="button" aria-label="Előző"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="ctl primary" id="playBtn" type="button" aria-label="Lejátszás/szünet"></button>
+      <button class="ctl" id="nextBtn" type="button" aria-label="Következő"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      <button class="ctl" id="replayBtn" type="button" aria-label="Újra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></button>
+    </div>
+  </div>
+
+  <p class="note">Illusztráció a TeleMeteor arculatában — a menü-útvonalak és feliratok a valós iOS-folyamatot követik. Példa SM‑DP+ cím és aktiválási kód, valós ügyféladat nélkül.</p>
+</div>
+
+<script>
+(function(){
+  var chev='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+  var backchev='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>';
+  function g(p,sw){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="'+(sw||2)+'" stroke-linecap="round" stroke-linejoin="round">'+p+'</svg>';}
+  var ICON={
+    plane:'<path d="M10.2 3a1.4 1.4 0 012.6 0l.3 5.7 6 3.2a1 1 0 01.5.9v.8a.5.5 0 01-.7.5l-5.8-1.7-.3 3.6 1.7 1.3a.5.5 0 01.2.4v.6a.4.4 0 01-.5.4l-3-.8-3 .8a.4.4 0 01-.5-.4v-.6a.5.5 0 01.2-.4l1.7-1.3-.3-3.6L3.4 14a.5.5 0 01-.7-.5v-.8a1 1 0 01.5-.9l6-3.2z" fill="currentColor" stroke="none"/>',
+    wifi:'<path d="M4.5 9.5a11 11 0 0115 0M7.5 12.5a7 7 0 019 0M10.4 15.4a3 3 0 013.2 0"/>',
+    bt:'<path d="M8 7l8 10-4 3V4l4 3-8 10"/>',
+    cell:'<rect x="3" y="14" width="3" height="6" rx="1" fill="currentColor" stroke="none"/><rect x="8" y="10" width="3" height="10" rx="1" fill="currentColor" stroke="none"/><rect x="13" y="6" width="3" height="14" rx="1" fill="currentColor" stroke="none"/><rect x="18" y="3" width="3" height="17" rx="1" fill="currentColor" stroke="none"/>',
+    esim:'<rect x="4" y="3" width="16" height="18" rx="3"/><path d="M9 3v5M4 12h16M13 16h4M15 14v4" stroke-width="1.9"/>',
+    sim:'<path d="M6 3h8l4 4v14a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z"/><rect x="8.5" y="12" width="7" height="6" rx="1.2"/>',
+    qr:'<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path d="M14 14h2v2h-2zM18 14h2v2h-2zM16 16v2M14 18h2M18 18h2" stroke-width="1.8"/>',
+    key:'<path d="M15 7a4 4 0 10-3.9 5L14 14l2 2 2-2 2 2 2-2-6-6z" transform="scale(-1,1) translate(-24,0)"/>',
+    globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+    mail:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/>',
+    check:'<path d="M5 12l4 4L19 6"/>'
+  };
+  function iconSq(glyph,bg){return '<span class="lead" style="background:'+bg+'">'+g(glyph)+'</span>';}
+
+  // stylised QR (fixed pattern, not a real code)
+  function qrSVG(){
+    var s=25,cells=[],seed=0x51ab;
+    for(var y=0;y<s;y++)for(var x=0;x<s;x++){seed=(seed*1103515245+12345)&0x7fffffff;if((seed>>6&1))cells.push('<rect x="'+x+'" y="'+y+'" width="1" height="1"/>');}
+    function f(cx,cy){return '<rect x="'+cx+'" y="'+cy+'" width="7" height="7" fill="none" stroke="#0a0a0c" stroke-width="1"/><rect x="'+(cx+2)+'" y="'+(cy+2)+'" width="3" height="3"/>';}
+    return '<svg viewBox="0 0 25 25" fill="#0a0a0c" shape-rendering="crispEdges">'+cells.join('')+f(0,0)+f(18,0)+f(0,18)+'</svg>';
+  }
+
+  // ===== scene builders =====
+  function nav(title,back,right){
+    return '<div class="nav">'+(back?'<span class="back">'+backchev+back+'</span>':'')+title+(right?'<span class="rgtbtn">'+right+'</span>':'')+'</div>';
+  }
+  function cell(o){ // {glyph,bg,label,blue,val,chev,sw,swon,tap}
+    var lead=o.glyph?iconSq(o.glyph,o.bg||'#8A8A8E'):'';
+    var trail = o.sw?('<span class="sw'+(o.swon?' on':'')+'"></span>')
+               : (o.val?('<span class="val">'+o.val+'</span>'):'') + (o.chev===false?'':'<span class="chev">'+chev+'</span>');
+    return '<div class="cell'+(o.tap?'" id="taptarget':'')+'">'+lead+'<span class="lbl'+(o.blue?' blue':'')+'">'+o.label+'</span>'+trail+'</div>';
+  }
+
+  var SIM_BIG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z"/><rect x="8.5" y="12" width="7" height="6" rx="1.2"/><path d="M12 12v6M8.5 15h7"/></svg>';
+
+  function B(sc){
+    var t=sc.type;
+    if(t==='settings-home'){
+      return nav('Beállítások')+'<div class="bigtitle">Beállítások</div>'+
+        '<div class="group">'+
+        cell({glyph:ICON.plane,bg:'#FF9500',label:'Repülőgép mód',sw:true,swon:false})+
+        cell({glyph:ICON.wifi,bg:'#007AFF',label:'Wi‑Fi',val:'Otthoni'})+
+        cell({glyph:ICON.bt,bg:'#007AFF',label:'Bluetooth',val:'Be'})+
+        cell({glyph:ICON.cell,bg:'#34C759',label:'Mobilhálózat',tap:true})+
+        '</div>';
+    }
+    if(t==='settings-cellular'){
+      return nav('Mobilhálózat','Beállítások')+
+        '<div class="group" style="margin-top:12px">'+
+        cell({glyph:ICON.cell,bg:'#34C759',label:'Mobiladat',sw:true,swon:true})+
+        cell({glyph:ICON.globe,bg:'#5AC8FA',label:'Adatroaming',sw:true,swon:false})+
+        '</div>'+
+        '<div class="group" style="margin-top:22px">'+
+        cell({glyph:ICON.esim,bg:'#007AFF',label:'eSIM hozzáadása',blue:true,tap:true})+
+        cell({glyph:ICON.sim,bg:'#8A8A8E',label:'Fizikai SIM',val:'Nincs'})+
+        '</div>';
+    }
+    if(t==='choice'){
+      return nav('eSIM hozzáadása','Mobilhálózat')+
+        '<div class="ghead">Átvitel másik készülékről</div>'+
+        '<div class="group muted">'+
+        cell({glyph:ICON.cell,bg:'#8A8A8E',label:'Átvitel másik iPhone-ról'})+
+        cell({glyph:ICON.globe,bg:'#8A8A8E',label:'Átvitel Androidról'})+
+        '</div>'+
+        '<div class="ghead">Új eSIM telepítése</div>'+
+        '<div class="group">'+
+        cell({glyph:ICON.qr,bg:'#007AFF',label:'QR-kód használata',tap:sc.tap==='qr'})+
+        cell({glyph:ICON.key,bg:'#5856D6',label:'Adatok kézi megadása',blue:true,chev:false,tap:sc.tap==='manual'})+
+        '</div>';
+    }
+    if(t==='qrscan'){
+      return '<div class="cam"><div class="finder"><div class="qrimg">'+qrSVG()+'</div><span class="fbrk fb1"></span><span class="fbrk fb2"></span><span class="fbrk fb3"></span><span class="fbrk fb4"></span></div><div class="scan"></div><div class="camhint">Helyezd a Telemeteor QR-kódot a keretbe</div></div>';
+    }
+    if(t==='mail'){
+      return nav('Beérkezők','Postafiókok')+
+        '<div class="mail-head"><div class="mail-from"><span class="mail-av">T</span><div><div class="mf">Telemeteor</div><div class="mt">részére: én — most</div></div></div><div class="mail-subj">Az eSIM-ed készen áll 🎉</div></div>'+
+        '<div class="mail-body">Kedves Utazó!<br><br>Köszönjük a vásárlást. A telepítéshez koppints az alábbi gombra — az iPhone automatikusan hozzáadja az eSIM-et.'+
+        '<a class="ql" id="taptarget">eSIM telepítése<small>Apple Quick Link</small></a>'+
+        '<span class="muted">Vagy olvasd be a levélben lévő QR-kódot, illetve add meg kézzel az adatokat.</span></div>';
+    }
+    if(t==='sheet'){
+      var bg=B({type:'settings-cellular'}).replace('id="taptarget"','');
+      return '<div style="filter:blur(1px);opacity:.5">'+bg+'</div>'+
+        '<div class="backdrop"></div>'+
+        '<div class="sheet"><div class="sim">'+SIM_BIG+'</div><h3>eSIM hozzáadása?</h3><p>Mobilszolgáltatói csomag található: Telemeteor</p>'+
+        '<a class="btn-primary" id="taptarget" style="margin:0">eSIM hozzáadása</a><div class="btn-text">Mégse</div></div>';
+    }
+    if(t==='manual'){
+      return nav('Adatok megadása','eSIM hozzáadása','<span id="taptarget">Tovább</span>')+
+        '<div class="ghead">Aktiválási adatok</div>'+
+        '<div class="group">'+
+        '<div class="cell tall"><span class="k">SM‑DP+ cím</span><span class="v">sm-dp-plus.telemeteor.com</span></div>'+
+        '<div class="cell tall"><span class="k">Aktiválási kód</span><span class="v">K2‑9F4X‑TM88‑DEMO</span></div>'+
+        '</div>'+
+        '<div class="ghead">Megerősítő kód (ha kéri)</div>'+
+        '<div class="group"><div class="cell tall"><span class="k">Kód</span><span class="v" style="color:var(--ios-sub)">— nem szükséges —</span></div></div>'+
+        '<div style="padding:10px 30px;text-align:left;font-size:11.5px;color:var(--ios-sub)">Ezeket a Telemeteor e-mailből másolod be.</div>';
+    }
+    if(t==='continue'){
+      return '<div class="center"><div class="hero-sim">'+SIM_BIG+'</div><h3>Mobilszolgáltatói csomag</h3><p>Telemeteor — készen áll a telepítésre.</p></div>'+
+        '<a class="btn-primary continue-btn" id="taptarget">Folytatás</a>';
+    }
+    if(t==='installing'){
+      var bars='';for(var i=0;i<12;i++){bars+='<i style="transform:translate(-50%,-50%) rotate('+(i*30)+'deg);animation:fade 1s linear '+(-i/12)+'s infinite"></i>';}
+      return '<div class="center"><div class="spinner">'+bars+'</div><h3 style="font-size:17px">eSIM aktiválása…</h3><p>Ez néhány másodperc.</p></div>';
+    }
+    if(t==='plan'){
+      return nav('Telemeteor','Mobilhálózat')+
+        '<div class="ghead">Ez a vonal</div>'+
+        '<div class="group" style="margin-bottom:2px">'+
+        cell({glyph:ICON.cell,bg:'#34C759',label:'Ez a vonal be van kapcsolva',sw:true,swon:true})+
+        '</div>'+
+        '<div class="ghead">Mobiladat</div>'+
+        '<div class="group">'+
+        '<div class="cell" id="taptarget"><span class="lead" style="background:#5AC8FA">'+g(ICON.globe)+'</span><span class="lbl">Adatroaming</span><span class="sw" id="roamsw"></span></div>'+
+        '</div>'+
+        '<div style="padding:10px 30px;text-align:left;font-size:11.5px;color:var(--ios-sub)">Külföldi adathasználathoz az adatroaming legyen bekapcsolva.</div>';
+    }
+    if(t==='done'){
+      return '<div class="confetti" id="conf"></div><div class="center"><div class="checkwrap"><svg viewBox="0 0 52 52"><path class="ck" d="M14 27l8 8 16-18" pathLength="1"/></svg></div><h3>Sikeres telepítés</h3><p>Az eSIM aktív — indulhat az utazás.</p></div>';
+    }
+    return '';
+  }
+
+  // ===== flows =====
+  var tail=[
+    {type:'continue', cap:'Koppints a „Folytatás” gombra'},
+    {type:'installing', cap:'Az eSIM aktiválása folyamatban…'},
+    {type:'plan', cap:'Kapcsold be az adatroamingot'},
+    {type:'done', cap:'Kész! Az eSIM használatra kész.'}
+  ];
+  var FLOWS={
+    link:{ name:'Quick Link', desc:'egy koppintás az e-mailből', icon:ICON.mail, scenes:[
+      {type:'mail', cap:'Nyisd meg a Telemeteor e-mailt, és koppints az „eSIM telepítése” gombra'},
+      {type:'sheet', cap:'Erősítsd meg: koppints az „eSIM hozzáadása” gombra'}
+    ].concat(tail)},
+    qr:{ name:'QR-kód', desc:'beolvasás kamerával', icon:ICON.qr, scenes:[
+      {type:'settings-home', cap:'Nyisd meg a Beállítások → Mobilhálózat menüt'},
+      {type:'settings-cellular', cap:'Koppints az „eSIM hozzáadása” sorra'},
+      {type:'choice', tap:'qr', cap:'Válaszd a „QR-kód használata” lehetőséget'},
+      {type:'qrscan', dark:true, cap:'Tartsd a QR-kódot a keretbe — az iPhone beolvassa'}
+    ].concat(tail)},
+    manual:{ name:'Kézi megadás', desc:'SM‑DP+ cím + kód', icon:ICON.key, scenes:[
+      {type:'settings-home', cap:'Nyisd meg a Beállítások → Mobilhálózat menüt'},
+      {type:'settings-cellular', cap:'Koppints az „eSIM hozzáadása” sorra'},
+      {type:'choice', tap:'manual', cap:'Görgess le, és válaszd az „Adatok kézi megadása” lehetőséget'},
+      {type:'manual', cap:'Írd be az e-mailből az SM‑DP+ címet és az aktiválási kódot, majd „Tovább”'}
+    ].concat(tail)}
+  };
+  var ORDER=['link','qr','manual'];
+
+  var content=document.getElementById('content'), ring=document.getElementById('ring'),
+      screen=document.getElementById('screen'), caption=document.getElementById('caption'),
+      steplabel=document.getElementById('steplabel'), dots=document.getElementById('dots'),
+      methods=document.getElementById('methods');
+  var cur='link', idx=0, timers=[], playing=true, prevIdx=-1;
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function clearTimers(){timers.forEach(clearTimeout);timers=[];}
+  function later(fn,ms){var t=setTimeout(fn,ms);timers.push(t);return t;}
+
+  ORDER.forEach(function(k){
+    var f=FLOWS[k],b=document.createElement('button');
+    b.className='method';b.setAttribute('role','tab');b.setAttribute('aria-selected',k===cur);
+    b.innerHTML='<span class="mi">'+g(f.icon,2)+'</span><span class="mt">'+f.name+'<small>'+f.desc+'</small></span>';
+    b.onclick=function(){select(k);};methods.appendChild(b);f._tab=b;
+  });
+
+  function select(k){cur=k;idx=0;prevIdx=-1;playing=true;
+    ORDER.forEach(function(o){FLOWS[o]._tab.setAttribute('aria-selected',o===k);});
+    buildDots();play();syncPlay();}
+  function buildDots(){dots.innerHTML='';FLOWS[cur].scenes.forEach(function(_,i){var d=document.createElement('i');if(i===idx)d.className='on';dots.appendChild(d);});}
+  function markDots(){[].forEach.call(dots.children,function(d,i){d.className=i===idx?'on':'';});}
+
+  function render(sc,goingBack){
+    ring.classList.remove('show','tap');
+    screen.classList.toggle('onDark',!!sc.dark);
+    content.classList.remove('animate','back');
+    content.innerHTML=B(sc);
+    if(!reduce){void content.offsetWidth;content.classList.add('animate');if(goingBack)content.classList.add('back');}
+  }
+  function placeRing(){
+    var el=document.getElementById('taptarget'); if(!el){ring.classList.remove('show');return;}
+    var r=el.getBoundingClientRect(), s=screen.getBoundingClientRect(), pad=6;
+    ring.style.top=(r.top-s.top-pad)+'px';
+    ring.style.left=(r.left-s.left-pad)+'px';
+    ring.style.width=(r.width+pad*2)+'px';
+    ring.style.height=(r.height+pad*2)+'px';
+  }
+
+  function play(){
+    clearTimers();
+    var f=FLOWS[cur], sc=f.scenes[idx];
+    steplabel.textContent='Lépés '+(idx+1)+' / '+f.scenes.length+' · '+f.name;
+    caption.textContent=sc.cap;
+    render(sc, prevIdx>idx); markDots(); prevIdx=idx;
+
+    var hasTap=/settings|choice|mail|sheet|manual|continue|plan/.test(sc.type);
+    if(sc.type==='qrscan'){ if(playing) later(next, reduce?2000:2600); return; }
+    if(sc.type==='installing'){ if(playing) later(next, reduce?1500:2000); return; }
+    if(sc.type==='done'){ if(!reduce) burst(); if(playing) later(function(){idx=0;prevIdx=-1;play();}, 3200); return; }
+    if(sc.type==='plan'){
+      later(function(){var s=document.getElementById('roamsw');if(s)s.classList.add('on');placeRing();ring.classList.add('show');}, reduce?300:700);
+      if(playing) later(function(){ring.classList.add('tap');}, reduce?1500:1900);
+      if(playing) later(next, reduce?2000:2350);
+      return;
+    }
+    // generic tap scenes
+    later(function(){placeRing();ring.classList.add('show');}, reduce?250:650);
+    if(playing) later(function(){ring.classList.add('tap');}, reduce?1500:1900);
+    if(playing) later(next, reduce?1950:2350);
+  }
+  function next(){idx=(idx+1)%FLOWS[cur].scenes.length;play();}
+  function prev(){idx=(idx-1+FLOWS[cur].scenes.length)%FLOWS[cur].scenes.length;play();}
+
+  function burst(){
+    var c=document.getElementById('conf');if(!c)return;
+    var cols=['#182746','#00A0FF','#FF6600','#BADDFF','#34C759'];
+    for(var i=0;i<28;i++){var p=document.createElement('b');p.style.left=(Math.random()*100)+'%';
+      p.style.background=cols[i%cols.length];p.style.animationDuration=(1.6+Math.random()*1.4)+'s';
+      p.style.animationDelay=(Math.random()*.5)+'s';p.style.transform='rotate('+(Math.random()*360)+'deg)';c.appendChild(p);}
+  }
+
+  var playBtn=document.getElementById('playBtn');
+  var IP='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg>',
+      IPA='<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+  function syncPlay(){playBtn.innerHTML=playing?IPA:IP;}
+  playBtn.onclick=function(){playing=!playing;syncPlay();if(playing)play();else clearTimers();};
+  document.getElementById('nextBtn').onclick=function(){playing=false;syncPlay();next();};
+  document.getElementById('prevBtn').onclick=function(){playing=false;syncPlay();prev();};
+  document.getElementById('replayBtn').onclick=function(){idx=0;prevIdx=-1;playing=true;syncPlay();play();};
+  window.addEventListener('resize',function(){if(document.getElementById('taptarget')&&ring.classList.contains('show'))placeRing();});
+
+  (function(){var b=document.getElementById('themeBtn'),lab=document.getElementById('themeLabel'),root=document.documentElement;
+    function c(){var t=root.getAttribute('data-theme');return t?t:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}
+    function s(){lab.textContent=c()==='dark'?'Világos':'Sötét';}
+    b.onclick=function(){root.setAttribute('data-theme',c()==='dark'?'light':'dark');s();};s();})();
+
+  select('link');syncPlay();
+})();
+</script>
+</body>
+</html>
