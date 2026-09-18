@@ -88,7 +88,7 @@
     overflow:hidden;font-family:var(--ios-font);color:var(--ios-label)}
   .screen.onDark{background:#0a0a0c}
 
-  .island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:96px;height:28px;
+  .island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:84px;height:27px;
     background:#000;border-radius:16px;z-index:9}
   .statusbar{position:absolute;top:0;left:0;right:0;height:52px;display:flex;align-items:center;
     justify-content:space-between;padding:18px 26px 0;font-size:13px;font-weight:700;z-index:8;color:var(--ios-label)}
@@ -108,10 +108,14 @@
   @keyframes scene-in-b{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:translateX(0)}}
 
   /* iOS building blocks */
-  .nav{height:46px;display:flex;align-items:center;justify-content:center;position:relative;font-size:16px;font-weight:600}
-  .nav .back{position:absolute;left:8px;display:inline-flex;align-items:center;gap:1px;color:var(--ios-blue);font-weight:500;font-size:15px}
-  .nav .back svg{width:19px;height:19px}
-  .nav .rgtbtn{position:absolute;right:14px;color:var(--ios-blue);font-size:16px;font-weight:600}
+  .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:6px;height:46px;padding:0 12px}
+  .nav-l{min-width:0;overflow:hidden}
+  .nav-t{justify-self:center;max-width:100%;font-size:16px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .nav-r{min-width:0;overflow:hidden;text-align:right}
+  .nav .back{display:inline-flex;align-items:center;gap:1px;max-width:100%;color:var(--ios-blue);font-weight:500;font-size:15px}
+  .nav .back .bl{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .nav .back svg{width:19px;height:19px;flex:0 0 auto}
+  .nav .rgtbtn{color:var(--ios-blue);font-size:16px;font-weight:600;white-space:nowrap}
   .bigtitle{font-size:30px;font-weight:800;letter-spacing:-.02em;padding:2px 18px 10px}
   .ghead{font-size:12px;font-weight:600;color:var(--ios-sub);text-transform:uppercase;letter-spacing:.03em;margin:16px 0 6px;padding:0 32px;text-align:left}
   .group{margin:0 16px 2px;background:var(--ios-cell);border-radius:12px;overflow:hidden}
@@ -313,7 +317,9 @@
 
   // ===== scene builders =====
   function nav(title,back,right){
-    return '<div class="nav">'+(back?'<span class="back">'+backchev+back+'</span>':'')+title+(right?'<span class="rgtbtn">'+right+'</span>':'')+'</div>';
+    return '<div class="nav"><span class="nav-l">'+(back?'<span class="back">'+backchev+'<span class="bl">Vissza</span></span>':'')+'</span>'+
+      '<span class="nav-t">'+title+'</span>'+
+      '<span class="nav-r">'+(right?'<span class="rgtbtn">'+right+'</span>':'')+'</span></div>';
   }
   function cell(o){ // {glyph,bg,label,blue,val,chev,sw,swon,tap}
     var lead=o.glyph?iconSq(o.glyph,o.bg||'#8A8A8E'):'';
