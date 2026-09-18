@@ -91,7 +91,7 @@
   .island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:84px;height:27px;
     background:#000;border-radius:16px;z-index:9}
   .statusbar{position:absolute;top:0;left:0;right:0;height:52px;display:flex;align-items:center;
-    justify-content:space-between;padding:18px 26px 0;font-size:13px;font-weight:700;z-index:8;color:var(--ios-label)}
+    justify-content:space-between;padding:18px 20px 0;font-size:13px;font-weight:700;z-index:8;color:var(--ios-label)}
   .screen.onDark .statusbar{color:#fff}
   .statusbar .rgt{display:flex;align-items:center;gap:5px}
   .statusbar svg{display:block}
@@ -142,6 +142,13 @@
   .pad{padding:0 16px}
   .btn-primary{display:block;background:var(--ios-blue);color:#fff;border-radius:13px;padding:14px;font-size:16px;font-weight:600;text-align:center;margin:12px 16px 0}
   .btn-text{color:var(--ios-blue);text-align:center;font-size:16px;padding:14px}
+  .del-row{margin:16px 16px 0;background:var(--ios-cell);border-radius:12px}
+  .del-row .cell{justify-content:center;color:#FF3B30}
+  .del-row .lbl{color:#FF3B30;font-weight:500}
+  .netchips{display:flex;gap:8px;margin-top:6px}
+  .netchip{display:inline-flex;align-items:center;gap:6px;background:var(--ios-cell);border:1px solid var(--ios-sep);
+    border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--ios-label)}
+  .netchip svg{width:16px;height:16px;color:var(--ios-blue)}
 
   /* mail scene */
   .mail-head{padding:8px 18px 12px;text-align:left;border-bottom:.5px solid var(--ios-sep)}
@@ -261,7 +268,6 @@
             <span>9:41</span>
             <span class="rgt">
               <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="5.5" width="3" height="6.5" rx="1"/><rect x="9" y="3" width="3" height="9" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
-              <span style="font-size:12px;font-weight:700">5G</span>
               <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor" aria-hidden="true"><path d="M8.5 2.6c2.3 0 4.4.9 6 2.4l-1.3 1.3a6.7 6.7 0 00-9.4 0L2.5 5A8.5 8.5 0 018.5 2.6zM8.5 6a4 4 0 012.8 1.2L8.5 10 5.7 7.2A4 4 0 018.5 6z"/></svg>
               <svg width="26" height="13" viewBox="0 0 26 13" fill="none" aria-hidden="true"><rect x="1" y="1" width="21" height="11" rx="3" stroke="currentColor" stroke-opacity=".4" stroke-width="1"/><rect x="2.5" y="2.5" width="16" height="8" rx="1.6" fill="currentColor"/><rect x="23.5" y="4.5" width="1.8" height="4" rx=".9" fill="currentColor" fill-opacity=".5"/></svg>
             </span>
@@ -405,13 +411,31 @@
       return nav('Telemeteor','Mobilhálózat')+
         '<div class="ghead">Ez a vonal</div>'+
         '<div class="group" style="margin-bottom:2px">'+
-        cell({glyph:ICON.cell,bg:'#34C759',label:'Ez a vonal be van kapcsolva',sw:true,swon:true})+
+        cell({glyph:ICON.cell,bg:'#34C759',label:'Ez a vonal aktív',sw:true,swon:true})+
         '</div>'+
         '<div class="ghead">Mobiladat</div>'+
         '<div class="group">'+
         '<div class="cell" id="taptarget"><span class="lead" style="background:#5AC8FA">'+g(ICON.globe)+'</span><span class="lbl">Adatroaming</span><span class="sw" id="roamsw"></span></div>'+
         '</div>'+
         '<div style="padding:10px 30px;text-align:left;font-size:11.5px;color:var(--ios-sub)">Külföldi adathasználathoz az adatroaming legyen bekapcsolva.</div>';
+    }
+    if(t==='info-net'){
+      return '<div class="center">'+
+        '<div class="hero-sim" style="background:linear-gradient(135deg,#34C759,#2aa84a)">'+g(ICON.wifi,2.2)+'</div>'+
+        '<h3>Legyen stabil internet</h3>'+
+        '<p>A telepítéshez internet kell. Wi‑Fi vagy mobilnet is jó — csak legyen stabil.</p>'+
+        '<div class="netchips"><span class="netchip">'+g(ICON.wifi)+'Wi‑Fi</span><span class="netchip">'+g(ICON.cell)+'Mobilnet</span></div>'+
+      '</div>';
+    }
+    if(t==='delete-old'){
+      return nav('Régi eSIM','Vissza')+
+        '<div class="ghead">Nem használt csomag</div>'+
+        '<div class="group">'+
+        cell({glyph:ICON.sim,bg:'#8A8A8E',label:'Régi eSIM',val:'Inaktív'})+
+        cell({glyph:ICON.globe,bg:'#8A8A8E',label:'Adatroaming',val:'Ki'})+
+        '</div>'+
+        '<div class="del-row"><div class="cell" id="taptarget"><span class="lbl">eSIM törlése</span></div></div>'+
+        '<div style="padding:12px 30px;text-align:left;font-size:11.5px;color:var(--ios-sub)">Csak azt töröld, amelyikre biztosan nincs szükséged.</div>';
     }
     if(t==='done'){
       return '<div class="confetti" id="conf"></div><div class="center"><div class="checkwrap"><svg viewBox="0 0 52 52"><path class="ck" d="M14 27l8 8 16-18" pathLength="1"/></svg></div><h3>Sikeres telepítés</h3><p>Az eSIM aktív — indulhat az utazás.</p></div>';
@@ -420,6 +444,10 @@
   }
 
   // ===== flows =====
+  var pre=[
+    {type:'info-net', cap:'Előbb: legyen stabil internet a telepítéshez — Wi‑Fi vagy mobilnet is jó, csak stabil legyen.'},
+    {type:'delete-old', cap:'Ha van felesleges régi eSIM-ed, nyisd meg, és koppints az „eSIM törlése” gombra — így lesz hely az újnak.'}
+  ];
   var tail=[
     {type:'continue', cap:'Koppints a „Folytatás” gombra'},
     {type:'installing', cap:'Az eSIM aktiválása folyamatban…'},
@@ -427,22 +455,22 @@
     {type:'done', cap:'Kész! Az eSIM használatra kész.'}
   ];
   var FLOWS={
-    link:{ name:'Quick Link', desc:'egy koppintás az e-mailből', icon:ICON.mail, scenes:[
+    link:{ name:'Quick Link', desc:'egy koppintás az e-mailből', icon:ICON.mail, scenes:pre.concat([
       {type:'mail', cap:'Nyisd meg a Telemeteor e-mailt, és koppints az „eSIM telepítése” gombra'},
       {type:'sheet', cap:'Erősítsd meg: koppints az „eSIM hozzáadása” gombra'}
-    ].concat(tail)},
-    qr:{ name:'QR-kód', desc:'beolvasás kamerával', icon:ICON.qr, scenes:[
+    ]).concat(tail)},
+    qr:{ name:'QR-kód', desc:'beolvasás kamerával', icon:ICON.qr, scenes:pre.concat([
       {type:'settings-home', cap:'Nyisd meg a Beállítások → Mobilhálózat menüt'},
       {type:'settings-cellular', cap:'Koppints az „eSIM hozzáadása” sorra'},
       {type:'choice', tap:'qr', cap:'Válaszd a „QR-kód használata” lehetőséget'},
       {type:'qrscan', dark:true, cap:'Tartsd a QR-kódot a keretbe — az iPhone beolvassa'}
-    ].concat(tail)},
-    manual:{ name:'Kézi megadás', desc:'SM‑DP+ cím + kód', icon:ICON.key, scenes:[
+    ]).concat(tail)},
+    manual:{ name:'Kézi megadás', desc:'SM‑DP+ cím + kód', icon:ICON.key, scenes:pre.concat([
       {type:'settings-home', cap:'Nyisd meg a Beállítások → Mobilhálózat menüt'},
       {type:'settings-cellular', cap:'Koppints az „eSIM hozzáadása” sorra'},
       {type:'choice', tap:'manual', cap:'Görgess le, és válaszd az „Adatok kézi megadása” lehetőséget'},
       {type:'manual', cap:'Írd be az e-mailből az SM‑DP+ címet és az aktiválási kódot, majd „Tovább”'}
-    ].concat(tail)}
+    ]).concat(tail)}
   };
   var ORDER=['link','qr','manual'];
 
@@ -492,6 +520,7 @@
     render(sc, prevIdx>idx); markDots(); prevIdx=idx;
 
     var hasTap=/settings|choice|mail|sheet|manual|continue|plan/.test(sc.type);
+    if(sc.type==='info-net'){ if(playing) later(next, reduce?2200:3000); return; }
     if(sc.type==='qrscan'){ if(playing) later(next, reduce?2000:2600); return; }
     if(sc.type==='installing'){ if(playing) later(next, reduce?1500:2000); return; }
     if(sc.type==='done'){ if(!reduce) burst(); if(playing) later(function(){idx=0;prevIdx=-1;play();}, 3200); return; }
