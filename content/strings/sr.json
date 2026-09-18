@@ -19,6 +19,8 @@
     "hero.chip2": "Nije potrebno tehničko znanje",
     "hero.chip3": "Pokazujemo vam tačno gde da dodirnete",
     "nav.next": "Dalje",
+    "mode.steps": "Korak po korak",
+    "mode.anim": "Animacija",
     "nav.prev": "Nazad",
     "nav.step-of": "Korak {current} od {total}",
     "nav.step-short": "{current}/{total}",

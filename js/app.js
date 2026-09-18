@@ -36,6 +36,30 @@
   const guideVerifiedEl = document.getElementById("guide-verified");
   const deliveryBackBtn = document.getElementById("delivery-back");
 
+  // Guide view mode: written steps vs. embedded animation (iPhone only for now).
+  const guideModeEl = document.getElementById("guide-mode");
+  const guideStepsEl = document.getElementById("guide-steps");
+  const guideAnimEl = document.getElementById("guide-anim");
+  const animFrameEl = document.getElementById("anim-frame");
+  const modeStepsEl = document.getElementById("mode-steps");
+  const modeAnimEl = document.getElementById("mode-anim");
+  function setGuideMode(mode) {
+    const anim = mode === "anim";
+    if (anim && animFrameEl) {
+      animFrameEl.src =
+        "esim-anim.html?embed=1&method=" +
+        encodeURIComponent(DeliveryPicker.current || "link");
+    } else if (animFrameEl) {
+      animFrameEl.removeAttribute("src"); // stop the animation when hidden
+    }
+    if (guideStepsEl) guideStepsEl.hidden = anim;
+    if (guideAnimEl) guideAnimEl.hidden = !anim;
+    if (modeStepsEl) modeStepsEl.classList.toggle("is-on", !anim);
+    if (modeAnimEl) modeAnimEl.classList.toggle("is-on", anim);
+  }
+  if (modeStepsEl) modeStepsEl.addEventListener("click", () => setGuideMode("steps"));
+  if (modeAnimEl) modeAnimEl.addEventListener("click", () => setGuideMode("anim"));
+
   const panels = {};
   PANEL_IDS.forEach((id) => {
     panels[id] = document.getElementById(`panel-${id}`);
@@ -71,6 +95,14 @@
       el.classList.toggle("is-done", done);
       el.disabled = !done;
     });
+    // The animation choice only exists on the iPhone guide; reset to steps on
+    // entry, and stop the embedded animation whenever we leave the guide.
+    if (id === "guide") {
+      if (guideModeEl) guideModeEl.hidden = !isIos;
+      setGuideMode("steps");
+    } else if (animFrameEl) {
+      animFrameEl.removeAttribute("src");
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 

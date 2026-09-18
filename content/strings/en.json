@@ -19,6 +19,8 @@
     "hero.chip2": "No technical knowledge needed",
     "hero.chip3": "We show you exactly where to tap",
     "nav.next": "Next",
+    "mode.steps": "Step by step",
+    "mode.anim": "Animation",
     "nav.prev": "Back",
     "nav.step-of": "Step {current} of {total}",
     "nav.step-short": "{current}/{total}",

@@ -234,6 +234,12 @@
   .ctl.primary svg{width:23px;height:23px}
   .note{margin-top:20px;font-size:11px;color:var(--muted);opacity:.85}
 
+  /* Embedded in the guide (?embed=1): drop the page chrome, keep the phone + method tabs + controls.
+     Keep the light background so the (dark) captions stay readable inside the navy guide panel. */
+  body.embed .top, body.embed h1, body.embed .lead, body.embed .note{display:none}
+  body.embed .wrap{padding:6px 12px 20px;max-width:520px}
+  body.embed .methods{margin-bottom:14px}
+
   @media (prefers-reduced-motion:reduce){
     .device{animation:none}
     .ring.show{animation:none}
@@ -298,6 +304,7 @@
 
 <script>
 (function(){
+  var _p=new URLSearchParams(location.search), EMBED=_p.get('embed')==='1', START=_p.get('method');
   var chev='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
   var backchev='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>';
   function g(p,sw){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="'+(sw||2)+'" stroke-linecap="round" stroke-linejoin="round">'+p+'</svg>';}
@@ -580,7 +587,8 @@
     function s(){lab.textContent=c()==='dark'?'Világos':'Sötét';}
     b.onclick=function(){root.setAttribute('data-theme',c()==='dark'?'light':'dark');s();};s();})();
 
-  select('link');syncPlay();
+  if(EMBED)document.body.classList.add('embed');
+  select((START&&FLOWS[START])?START:'link');syncPlay();
 })();
 </script>
 </body>

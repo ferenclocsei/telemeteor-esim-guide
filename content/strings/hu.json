@@ -19,6 +19,8 @@
     "hero.chip2": "Nem kell technikai tudás",
     "hero.chip3": "Minden lépésnél megmutatjuk, hova koppints",
     "nav.next": "Következő",
+    "mode.steps": "Lépésről lépésre",
+    "mode.anim": "Animáció",
     "nav.prev": "Vissza",
     "nav.step-of": "{current}. / {total} lépés",
     "nav.step-short": "{current}/{total}",
