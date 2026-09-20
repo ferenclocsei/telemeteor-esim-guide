@@ -313,6 +313,11 @@
     "ts-delete.name": "Régi adatcsomag",
     "ts-delete.status": "Lejárt · nem használt",
     "ts-delete.delete": "eSIM törlése",
+    "stable-internet.title": "Stabil internet",
+    "stable-internet.hint": "Wi‑Fi vagy mobilnet — csak stabil legyen",
+    "stable-internet.wifi": "Wi‑Fi",
+    "stable-internet.mobile": "Mobilnet",
+    "stable-internet.note": "A telepítéshez internet kell a QR-kód/aktiválás letöltéséhez.",
     "check-esim.title": "AZ ESZKÖZ AZONOSÍTÓI",
     "check-esim.imei-label": "IMEI",
     "check-esim.eid-label": "EID",
@@ -349,6 +354,8 @@
     "x-del.delete": "eSIM törlése"
   },
   "steps": {
+    "ios.stable-internet.title": "Előbb: legyen stabil internet",
+    "ios.stable-internet.body": "A telepítéshez internet kell (a QR-kód/aktiválás letöltéséhez). Wi‑Fi vagy mobilnet is jó — csak legyen stabil a folyamat alatt.",
     "ios.before-you-start.title": "Először: van eSIM a telefonodban?",
     "ios.before-you-start.body": "Tárcsázd a *#06#-ot. Ha megjelenik egy „EID\" feliratú, kb. 32 jegyű szám, a telefonod tud eSIM-et; ha csak IMEI/MEID látszik, akkor nem. Minden márkán működik (Xiaomi, Motorola, OnePlus, Oppo, Vivo, POCO, iPhone…).",
     "ios.before-you-start.tap.carrier-lock": "Szolgáltatói zár sor",

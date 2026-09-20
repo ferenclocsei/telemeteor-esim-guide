@@ -313,6 +313,11 @@
     "ts-delete.name": "Old data plan",
     "ts-delete.status": "Expired · not in use",
     "ts-delete.delete": "Delete eSIM",
+    "stable-internet.title": "Stable internet",
+    "stable-internet.hint": "Wi‑Fi or mobile data — just keep it stable",
+    "stable-internet.wifi": "Wi‑Fi",
+    "stable-internet.mobile": "Mobile data",
+    "stable-internet.note": "Internet is needed to download the QR code/activation.",
     "check-esim.title": "DEVICE IDENTIFIERS",
     "check-esim.imei-label": "IMEI",
     "check-esim.eid-label": "EID",
@@ -349,6 +354,8 @@
     "x-del.delete": "Delete eSIM"
   },
   "steps": {
+    "ios.stable-internet.title": "First: get a stable internet connection",
+    "ios.stable-internet.body": "You need internet to install (to download the QR code/activation). Wi‑Fi or mobile data both work — just keep it stable during the process.",
     "ios.before-you-start.title": "First: does your phone have eSIM?",
     "ios.before-you-start.body": "Dial *#06#. If an “EID” number of about 32 digits appears, your phone supports eSIM; if you only see IMEI/MEID, it does not. Works on every brand (Xiaomi, Motorola, OnePlus, Oppo, Vivo, POCO, iPhone…).",
     "ios.before-you-start.tap.carrier-lock": "Carrier Lock row",

@@ -313,6 +313,11 @@
     "ts-delete.name": "Stari paket podataka",
     "ts-delete.status": "Isteklo · ne koristi se",
     "ts-delete.delete": "Obriši eSIM",
+    "stable-internet.title": "Stabilan internet",
+    "stable-internet.hint": "Wi‑Fi ili mobilni internet — samo stabilno",
+    "stable-internet.wifi": "Wi‑Fi",
+    "stable-internet.mobile": "Mobilni internet",
+    "stable-internet.note": "Internet je potreban za preuzimanje QR koda/aktivacije.",
     "check-esim.title": "IDENTIFIKATORI UREĐAJA",
     "check-esim.imei-label": "IMEI",
     "check-esim.eid-label": "EID",
@@ -349,6 +354,8 @@
     "x-del.delete": "Obriši eSIM"
   },
   "steps": {
+    "ios.stable-internet.title": "Prvo: obezbedi stabilan internet",
+    "ios.stable-internet.body": "Za instalaciju je potreban internet (za preuzimanje QR koda/aktivacije). Wi‑Fi ili mobilni internet — samo neka bude stabilan tokom procesa.",
     "ios.before-you-start.title": "Prvo: ima li vaš telefon eSIM?",
     "ios.before-you-start.body": "Pozovite *#06#. Ako se pojavi broj „EID\" od oko 32 cifre, vaš telefon podržava eSIM; ako vidite samo IMEI/MEID, ne podržava. Radi na svakom brendu (Xiaomi, Motorola, OnePlus, Oppo, Vivo, POCO, iPhone…).",
     "ios.before-you-start.tap.carrier-lock": "Red „Zaključavanje operatera”",
