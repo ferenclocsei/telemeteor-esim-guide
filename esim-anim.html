@@ -304,7 +304,8 @@
 
 <script>
 (function(){
-  var _p=new URLSearchParams(location.search), EMBED=_p.get('embed')==='1', START=_p.get('method');
+  var _p=new URLSearchParams(location.search), EMBED=_p.get('embed')==='1', START=_p.get('method'), START_PHASE=_p.get('phase');
+  var PHASE_OF={'info-net':'internet','delete-old':'delete','settings-home':'install','settings-cellular':'install','choice':'install','qrscan':'install','mail':'install','sheet':'install','manual':'install','continue':'activate','installing':'activate','plan':'activate','data-line':'dataline','done':'done'};
   var chev='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
   var backchev='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>';
   function g(p,sw){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="'+(sw||2)+'" stroke-linecap="round" stroke-linejoin="round">'+p+'</svg>';}
@@ -538,6 +539,7 @@
     steplabel.textContent='Lépés '+(idx+1)+' / '+f.scenes.length+' · '+f.name;
     caption.textContent=sc.cap;
     render(sc, prevIdx>idx); markDots(); prevIdx=idx;
+    if(EMBED && window.parent!==window){ try{ window.parent.postMessage({source:'tm-esim-anim', phase:PHASE_OF[sc.type]||'install', method:cur}, '*'); }catch(e){} }
 
     var hasTap=/settings|choice|mail|sheet|manual|continue|plan/.test(sc.type);
     if(sc.type==='info-net'){ if(playing) later(next, reduce?2200:3000); return; }
@@ -588,7 +590,9 @@
     b.onclick=function(){root.setAttribute('data-theme',c()==='dark'?'light':'dark');s();};s();})();
 
   if(EMBED)document.body.classList.add('embed');
-  select((START&&FLOWS[START])?START:'link');syncPlay();
+  select((START&&FLOWS[START])?START:'link');
+  if(START_PHASE){ var _s=FLOWS[cur].scenes; for(var _i=0;_i<_s.length;_i++){ if((PHASE_OF[_s[_i].type]||'install')===START_PHASE){ idx=_i; play(); break; } } }
+  syncPlay();
 })();
 </script>
 </body>
