@@ -31,7 +31,8 @@
   <rect x="228" y="305" width="44" height="26" rx="13" fill="#e9e9ea"/>
   <circle cx="241" cy="318" r="11" fill="#ffffff"/>
 
-  <text data-key="screen.data-switching.note" data-maxw="256" x="32" y="372" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="12" fill="#8e8e93">Keep this OFF so your other line's data is never used by accident.</text>
+  <text data-key="screen.data-switching.note1" data-maxw="256" x="32" y="372" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="12" fill="#8e8e93">Keep this OFF so your other line's data</text>
+  <text data-key="screen.data-switching.note2" data-maxw="256" x="32" y="390" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="12" fill="#8e8e93">is never used by accident.</text>
 
   <rect x="112" y="606" width="76" height="5" rx="2.5" fill="#000000" opacity="0.3"/>
 </svg>
