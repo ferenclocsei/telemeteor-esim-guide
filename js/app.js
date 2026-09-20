@@ -37,8 +37,8 @@
   const deliveryBackBtn = document.getElementById("delivery-back");
 
   // Guide view mode: written steps vs. embedded animation (iPhone only for now).
+  // (guidePanelEl is already declared above for the confetti layer.)
   const guideModeEl = document.getElementById("guide-mode");
-  const guideStepsEl = document.getElementById("guide-steps");
   const guideAnimEl = document.getElementById("guide-anim");
   const animFrameEl = document.getElementById("anim-frame");
   const modeStepsEl = document.getElementById("mode-steps");
@@ -52,7 +52,7 @@
     } else if (animFrameEl) {
       animFrameEl.removeAttribute("src"); // stop the animation when hidden
     }
-    if (guideStepsEl) guideStepsEl.hidden = anim;
+    if (guidePanelEl) guidePanelEl.hidden = anim;
     if (guideAnimEl) guideAnimEl.hidden = !anim;
     if (modeStepsEl) modeStepsEl.classList.toggle("is-on", !anim);
     if (modeAnimEl) modeAnimEl.classList.toggle("is-on", anim);
