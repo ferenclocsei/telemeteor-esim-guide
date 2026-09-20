@@ -385,6 +385,7 @@
     "ios.open-cellular.body": "In Settings, tap \"Cellular\" (or \"Mobile Data\") — the exact name can vary slightly by model.",
     "ios.open-cellular.tap.row": "Cellular row",
     "ios.add-cellular-plan-manual.title": "Tap \"Add Cellular Plan\"",
+    "ios.add-cellular-plan-manual.warning": "On iOS 26/27, after “Add eSIM” you may see extra options (transfer from another iPhone or Android, iPhone Handoff). Skip those — next, choose “Enter Details Manually”.",
     "ios.add-cellular-plan-manual.body": "Tap \"Add Cellular Plan\".",
     "ios.add-cellular-plan-manual.tap.button": "Add Cellular Plan button",
     "ios.enter-manually.title": "Enter the details manually",

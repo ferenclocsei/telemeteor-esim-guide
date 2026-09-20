@@ -385,6 +385,7 @@
     "ios.open-cellular.body": "A Beállításokban koppints a \"Mobilhálózat\" (vagy \"Mobil adatforgalom\") menüpontra — az elnevezés modellenként kicsit eltérhet.",
     "ios.open-cellular.tap.row": "Mobilhálózat sor",
     "ios.add-cellular-plan-manual.title": "Koppints a \"Mobil-előfizetés hozzáadása\" gombra",
+    "ios.add-cellular-plan-manual.warning": "iOS 26/27-en az „eSIM hozzáadása” után több lehetőség jelenhet meg (átvitel másik iPhone-ról vagy Androidról, iPhone Handoff). Ezeket hagyd ki — a következő lépésben az „Adatok kézi megadása” kell.",
     "ios.add-cellular-plan-manual.body": "Koppints a \"Mobil-előfizetés hozzáadása\" gombra.",
     "ios.add-cellular-plan-manual.tap.button": "Mobil-előfizetés hozzáadása gomb",
     "ios.enter-manually.title": "Add meg az adatokat manuálisan",

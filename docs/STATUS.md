@@ -1,6 +1,6 @@
 # Project status — where we are
 
-_Last updated: 2026-09-11 · current release: `?v=68`_
+_Last updated: 2026-09-21 · current release: `?v=68`_
 
 A quick "pick up here" note so any new session (or teammate) is instantly in the
 picture. Full detail lives in the other `docs/` files and the git history.
@@ -31,7 +31,7 @@ Every guide flow: **before-you-start = the *#06#/EID capability check** →
 
 ## Compatibility DB (content/models/catalog.json)
 246 models, `lastVerifiedDate` shown in the faint page footer (currently
-2026-09-09). Verdicts `yes`/`region`/`no` + per-model `noteKeys`; ambiguous
+2026-09-21). Verdicts `yes`/`region`/`no` + per-model `noteKeys`; ambiguous
 same-name variants carry a `code` + `aliases` (e.g. Redmi Note 13 Pro **5G**
 `2312DRA50G` = supported vs **4G** `23117RA68G` = not). Search is
 typo/spacing-tolerant and matches model codes; no match → a "probably not
@@ -44,6 +44,17 @@ doesn't support eSIM"; EID yes → **delete-old** → still failing → support.
 roaming → apn → network → restart → support.
 
 ## Recent work (newest first)
+- Freshness pass (2026-09-21): re-verified sources (`check-sources.py --accept`);
+  catalog `lastVerifiedDate` → 2026-09-21 (246 models, all current flagships
+  present — iPhone 18 Pro/Max, Galaxy S26 line, Pixel 11 line, Z Fold8/Flip8;
+  nothing major new since the 09-09 refresh). **iOS 27** (released 2026-09-14):
+  core QR/manual install is unchanged; the one change is extra options on the
+  "Add eSIM" screen (transfer from iPhone/Android, new **iPhone Handoff** /
+  companion eSIM — carrier-gated, not relevant to a travel data eSIM). Added a
+  note on the iOS `add-cellular-plan-manual` step (all 4 langs) to skip those and
+  choose "Enter Details Manually"; `content/structure/ios.json` osVersionRange →
+  iOS 12.1–27, lastVerifiedDate → 2026-09-21. (The animation experiment was
+  reverted on 2026-09-20 — see git `ba2d6d0`.)
 - Card refinement (2026-09-11, `?v=68`): adopted the DS radius + elevation scales
   in `css/tokens.css` (radius.css/elevation.css) — full `--radius-xs…3xl` +
   `--shadow-xs…lg`/`--shadow-panel`/`--focus-ring`; cards go 20px→16px (DS content

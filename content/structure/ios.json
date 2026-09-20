@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "osVariant": "ios",
-  "osVersionRange": "iOS 12.1–26",
-  "lastVerifiedDate": "2026-07-16",
+  "osVersionRange": "iOS 12.1–27",
+  "lastVerifiedDate": "2026-09-21",
   "sources": [
     "https://support.apple.com/en-us/118669",
     "https://support.apple.com/hu-hu/118669",
@@ -320,7 +320,7 @@
       ],
       "titleKey": "ios.add-cellular-plan-manual.title",
       "bodyKey": "ios.add-cellular-plan-manual.body",
-      "warningKey": null
+      "warningKey": "ios.add-cellular-plan-manual.warning"
     },
     {
       "id": "enter-manually",

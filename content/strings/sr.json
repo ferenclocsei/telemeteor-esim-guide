@@ -385,6 +385,7 @@
     "ios.open-cellular.body": "U Podešavanjima dodirnite „Mobilni podaci” — tačan naziv se može malo razlikovati po modelu.",
     "ios.open-cellular.tap.row": "Red Mobilni podaci",
     "ios.add-cellular-plan-manual.title": "Dodirnite „Dodaj mobilni paket”",
+    "ios.add-cellular-plan-manual.warning": "Na iOS 26/27, posle „Dodaj eSIM“ mogu se pojaviti dodatne opcije (prenos sa drugog iPhone-a ili Androida, iPhone Handoff). Preskoči ih — u sledećem koraku izaberi „Unesi podatke ručno“.",
     "ios.add-cellular-plan-manual.body": "Dodirnite „Dodaj mobilni paket”.",
     "ios.add-cellular-plan-manual.tap.button": "Dugme Dodaj mobilni paket",
     "ios.enter-manually.title": "Unesite podatke ručno",
