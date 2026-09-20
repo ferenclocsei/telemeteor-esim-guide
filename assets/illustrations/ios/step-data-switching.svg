@@ -1,0 +1,37 @@
+<svg viewBox="0 0 300 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="630" fill="#f2f2f7"/>
+  <rect width="300" height="44" fill="#f2f2f7"/>
+  <text x="24" y="30" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="600" fill="#000000">9:41</text>
+  <g fill="#000000">
+    <rect x="228" y="18" width="16" height="10" rx="2" fill="none" stroke="#000" stroke-width="1.2"/>
+    <rect x="230" y="20" width="10" height="6" fill="#000"/>
+    <rect x="246" y="16" width="3" height="12" rx="1"/>
+  </g>
+  <g>
+    <path d="M22 66 l-8 8 l8 8" stroke="#007aff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text data-key="screen.data-switching.back" data-maxw="76" x="28" y="78" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#007aff">Cellular</text>
+  </g>
+  <text data-key="screen.data-switching.title" data-maxw="176" x="192" y="78" text-anchor="middle" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="17" font-weight="700" fill="#000000">Mobile Data</text>
+
+  <text data-key="screen.data-switching.section" x="32" y="104" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="12" fill="#8e8e93">MOBILE DATA</text>
+
+  <!-- line list group -->
+  <rect x="16" y="112" width="268" height="150" rx="14" fill="#ffffff"/>
+  <text data-key="screen.data-switching.off" x="32" y="142" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Off</text>
+  <line x1="32" y1="162" x2="284" y2="162" stroke="#e6eaf0" stroke-width="1"/>
+  <text data-key="screen.data-switching.telemeteor" x="32" y="192" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" font-weight="700" fill="#000000">Telemeteor</text>
+  <path d="M250 186 l8 8 l16 -18" stroke="#007aff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="32" y1="212" x2="284" y2="212" stroke="#e6eaf0" stroke-width="1"/>
+  <text data-key="screen.data-switching.original" x="32" y="242" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Original SIM</text>
+
+  <!-- Allow Mobile Data Switching — must stay OFF -->
+  <rect x="16" y="288" width="268" height="58" rx="14" fill="#ffffff"/>
+  <text data-key="screen.data-switching.toggle" data-maxw="176" x="32" y="322" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="15" fill="#000000">Allow Mobile Data Switching</text>
+  <!-- toggle in the OFF position (grey, knob left) -->
+  <rect x="228" y="305" width="44" height="26" rx="13" fill="#e9e9ea"/>
+  <circle cx="241" cy="318" r="11" fill="#ffffff"/>
+
+  <text data-key="screen.data-switching.note" data-maxw="256" x="32" y="372" font-family="ui-sans-serif,-apple-system,system-ui,sans-serif" font-size="12" fill="#8e8e93">Keep this OFF so your other line's data is never used by accident.</text>
+
+  <rect x="112" y="606" width="76" height="5" rx="2.5" fill="#000000" opacity="0.3"/>
+</svg>

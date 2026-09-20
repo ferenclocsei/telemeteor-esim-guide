@@ -44,6 +44,13 @@ doesn't support eSIM"; EID yes → **delete-old** → still failing → support.
 roaming → apn → network → restart → support.
 
 ## Recent work (newest first)
+- iOS final step (2026-09-21): added `disable-data-switching` after
+  `select-data-line-on-arrival` — on arrival, turn OFF "Allow Mobile Data
+  Switching" so the phone never uses the other (home) SIM's data by accident
+  (roaming charges). New illustration `ios/step-data-switching.svg` (fictional
+  data) + `ios.disable-data-switching.*` / `screen.data-switching.*` strings, 4
+  langs. Also added **iPhone Duo** to the catalog (Apple's first foldable,
+  eSIM-only everywhere incl. China → esim yes, no china note). 247 models.
 - Freshness pass (2026-09-21): re-verified sources (`check-sources.py --accept`);
   catalog `lastVerifiedDate` → 2026-09-21 (246 models, all current flagships
   present — iPhone 18 Pro/Max, Galaxy S26 line, Pixel 11 line, Z Fold8/Flip8;

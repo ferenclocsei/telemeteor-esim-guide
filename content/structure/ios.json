@@ -467,6 +467,27 @@
       "warningKey": "ios.select-data-line.warning"
     },
     {
+      "id": "disable-data-switching",
+      "appliesTo": [
+        "all"
+      ],
+      "illustration": "ios/step-data-switching.svg",
+      "tapPoints": [
+        {
+          "x": 83.3,
+          "y": 50.5,
+          "shape": "rect",
+          "radius": 8,
+          "labelKey": "ios.disable-data-switching.tap.toggle",
+          "w": 16.0,
+          "h": 5.0
+        }
+      ],
+      "titleKey": "ios.disable-data-switching.title",
+      "bodyKey": "ios.disable-data-switching.body",
+      "warningKey": "ios.disable-data-switching.warning"
+    },
+    {
       "id": "done",
       "appliesTo": [
         "all"
