@@ -15,6 +15,12 @@
   ],
   "models": [
     {
+      "model": "iPhone Duo",
+      "brand": "Apple",
+      "osVariant": "ios",
+      "esim": "yes"
+    },
+    {
       "model": "iPhone 18 Pro Max",
       "brand": "Apple",
       "osVariant": "ios",
