@@ -1,6 +1,6 @@
 # Project status — where we are
 
-_Last updated: 2026-09-18 · current release: `?v=69`_
+_Last updated: 2026-09-11 · current release: `?v=68`_
 
 A quick "pick up here" note so any new session (or teammate) is instantly in the
 picture. Full detail lives in the other `docs/` files and the git history.
@@ -44,21 +44,6 @@ doesn't support eSIM"; EID yes → **delete-old** → still failing → support.
 roaming → apn → network → restart → support.
 
 ## Recent work (newest first)
-- Animation embedded in the guide (`?v=69`): the iPhone guide now shows a
-  **"Lépésről lépésre" / "Animáció"** switch (`#guide-mode`, iOS-only; hidden for
-  other OS). "Animáció" loads `esim-anim.html?embed=1&method=<link|qr|manual>` in
-  an iframe (`#anim-frame`), preselecting the delivery method; switching back
-  clears the iframe (stops it). New i18n keys `ui.mode.steps`/`ui.mode.anim` (all
-  4 langs). esim-anim.html gained an `?embed=1` mode (hides page chrome, keeps
-  the phone + method tabs + controls) and `?method=` preselect. The animation is
-  still Hungarian-only + iOS-only for now.
-- Animated install demo (`esim-anim.html`, standalone page at repo root): iPhone
-  only for now, all three delivery methods (Quick Link / QR / manual) as an
-  auto-playing, method-switchable animation with a realistic iOS mockup (Dynamic
-  Island, iOS status bar, grouped Settings UI, iOS switches, system "Add eSIM?"
-  sheet). Self-hosted Montserrat (no font CDN); orange ring = "tap here". Live at
-  `/esim-anim.html`. Not embedded in the wizard yet; next: extend to the other OS
-  and/or embed. Also mirrored as a Claude Design artifact.
 - Card refinement (2026-09-11, `?v=68`): adopted the DS radius + elevation scales
   in `css/tokens.css` (radius.css/elevation.css) — full `--radius-xs…3xl` +
   `--shadow-xs…lg`/`--shadow-panel`/`--focus-ring`; cards go 20px→16px (DS content

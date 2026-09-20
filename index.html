@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="ui.app.title">eSIM Setup Guide</title>
-  <link rel="preload" href="assets/fonts/montserrat-400.woff2?v=72" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="assets/fonts/montserrat-700.woff2?v=72" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/tokens.css?v=72" />
-  <link rel="stylesheet" href="css/main.css?v=72" />
-  <link rel="stylesheet" href="css/phone-frame.css?v=72" />
+  <link rel="preload" href="assets/fonts/montserrat-400.woff2?v=68" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/montserrat-700.woff2?v=68" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/tokens.css?v=68" />
+  <link rel="stylesheet" href="css/main.css?v=68" />
+  <link rel="stylesheet" href="css/phone-frame.css?v=68" />
   <style>
     /* No flash of untranslated text: the page is held back for the few
        milliseconds it takes to load the visitor's language. Deliberately not
@@ -147,16 +147,9 @@
     </section>
 
     <section class="wizard-panel" id="panel-guide" data-wizard-panel="guide" hidden>
-      <!-- Choice (iPhone only for now): follow the written steps, or watch the animation.
-           Sits above the card so the animation can replace the step card in place. -->
-      <div class="guide-mode" id="guide-mode" hidden role="tablist">
-        <button type="button" class="guide-mode__btn is-on" id="mode-steps" data-i18n="ui.mode.steps">Lépésről lépésre</button>
-        <button type="button" class="guide-mode__btn" id="mode-anim" data-i18n="ui.mode.anim">Animáció</button>
-      </div>
       <section class="guide-panel" id="guide-panel" aria-live="polite">
         <p class="guide-panel__fallback-notice" id="fallback-notice" hidden data-i18n="ui.notice.fallback-en"></p>
 
-        <div id="guide-steps">
         <!-- Instruction first: a big, plain, glanceable line so users don't
              have to read anything else to know what to do this step. -->
         <div class="step-head" id="step-text">
@@ -191,13 +184,7 @@
           <button type="button" class="step-nav__prev" id="step-prev" aria-label="Back">←</button>
           <button type="button" class="step-nav__next" id="step-next" data-i18n="ui.nav.next">Next</button>
         </nav>
-        </div><!-- /#guide-steps -->
       </section>
-
-      <!-- Animation view: replaces the step card in place (same slot). -->
-      <div class="guide-anim" id="guide-anim" hidden>
-        <iframe id="anim-frame" title="eSIM telepítés animáció" allow="fullscreen"></iframe>
-      </div>
       <p class="guide-verified" id="guide-verified" hidden></p>
       <button type="button" class="ts-entry ts-entry--subtle" id="ts-entry-guide" data-i18n="ui.ts.entry-guide">Stuck? Troubleshooter →</button>
     </section>
@@ -220,19 +207,19 @@
     <footer class="db-note" id="db-note" hidden></footer>
   </main>
 
-  <script src="js/icons.js?v=72"></script>
-  <script src="js/i18n.js?v=72"></script>
-  <script src="js/model-catalog.js?v=72"></script>
-  <script src="js/content-loader.js?v=72"></script>
-  <script src="js/phone-renderer.js?v=72"></script>
-  <script src="js/step-controller.js?v=72"></script>
-  <script src="js/delivery-picker.js?v=72"></script>
-  <script src="js/device-picker.js?v=72"></script>
-  <script src="js/ios-version-picker.js?v=72"></script>
-  <script src="js/device-detect.js?v=72"></script>
-  <script src="js/compat.js?v=72"></script>
-  <script src="js/troubleshoot.js?v=72"></script>
-  <script src="js/app.js?v=72"></script>
-  <script src="js/viewport-fix.js?v=72"></script>
+  <script src="js/icons.js?v=68"></script>
+  <script src="js/i18n.js?v=68"></script>
+  <script src="js/model-catalog.js?v=68"></script>
+  <script src="js/content-loader.js?v=68"></script>
+  <script src="js/phone-renderer.js?v=68"></script>
+  <script src="js/step-controller.js?v=68"></script>
+  <script src="js/delivery-picker.js?v=68"></script>
+  <script src="js/device-picker.js?v=68"></script>
+  <script src="js/ios-version-picker.js?v=68"></script>
+  <script src="js/device-detect.js?v=68"></script>
+  <script src="js/compat.js?v=68"></script>
+  <script src="js/troubleshoot.js?v=68"></script>
+  <script src="js/app.js?v=68"></script>
+  <script src="js/viewport-fix.js?v=68"></script>
 </body>
 </html>

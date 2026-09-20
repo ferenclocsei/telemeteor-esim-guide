@@ -17,16 +17,6 @@
   "status": "ready",
   "steps": [
     {
-      "id": "stable-internet",
-      "appliesTo": [
-        "all"
-      ],
-      "illustration": "shared/step-stable-internet.svg",
-      "tapPoints": [],
-      "titleKey": "ios.stable-internet.title",
-      "bodyKey": "ios.stable-internet.body"
-    },
-    {
       "id": "before-you-start",
       "appliesTo": [
         "all"

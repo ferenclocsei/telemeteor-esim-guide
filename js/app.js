@@ -36,71 +36,6 @@
   const guideVerifiedEl = document.getElementById("guide-verified");
   const deliveryBackBtn = document.getElementById("delivery-back");
 
-  // Guide view mode: written steps vs. embedded animation (iPhone only for now).
-  // (guidePanelEl is already declared above for the confetti layer.)
-  const guideModeEl = document.getElementById("guide-mode");
-  const guideAnimEl = document.getElementById("guide-anim");
-  const animFrameEl = document.getElementById("anim-frame");
-  const modeStepsEl = document.getElementById("mode-steps");
-  const modeAnimEl = document.getElementById("mode-anim");
-
-  // Shared "phase" so the two views (written steps <-> animation) resume at the
-  // same place, even though the animation is more condensed than the steps.
-  const GUIDE_PHASE = {
-    "stable-internet": "internet",
-    "before-you-start": "internet",
-    "remove-old-esim": "delete",
-    "confirm-plan": "activate",
-    "label-plan": "activate",
-    "line-preferences": "activate",
-    "enable-data-roaming": "activate",
-    "select-data-line-on-arrival": "dataline",
-    done: "done",
-  };
-  function phaseOfStep(id) {
-    return GUIDE_PHASE[id] || "install"; // all method-specific install steps
-  }
-  // Reuse the page's ?v=NN so the embedded animation is cache-busted per release.
-  const _verLink = document.querySelector('link[rel="stylesheet"][href*="?v="]');
-  const ASSET_VER = _verLink
-    ? (_verLink.getAttribute("href").match(/v=(\w+)/) || [])[1] || ""
-    : "";
-  let currentSteps = [];
-  let currentStepId = null;
-  let lastAnimPhase = null;
-
-  function setGuideMode(mode) {
-    const anim = mode === "anim";
-    if (anim && animFrameEl) {
-      animFrameEl.src =
-        "esim-anim.html?embed=1&method=" +
-        encodeURIComponent(DeliveryPicker.current || "link") +
-        "&phase=" +
-        encodeURIComponent(phaseOfStep(currentStepId)) +
-        (ASSET_VER ? "&v=" + ASSET_VER : "");
-    } else {
-      if (animFrameEl) animFrameEl.removeAttribute("src"); // stop the animation
-      // Resume the written steps at the phase the animation was showing.
-      if (mode === "steps" && lastAnimPhase && currentSteps.length) {
-        const i = currentSteps.findIndex(
-          (s) => phaseOfStep(s.id) === lastAnimPhase
-        );
-        if (i >= 0) StepController.goTo(i);
-      }
-    }
-    if (guidePanelEl) guidePanelEl.hidden = anim;
-    if (guideAnimEl) guideAnimEl.hidden = !anim;
-    if (modeStepsEl) modeStepsEl.classList.toggle("is-on", !anim);
-    if (modeAnimEl) modeAnimEl.classList.toggle("is-on", anim);
-  }
-  if (modeStepsEl) modeStepsEl.addEventListener("click", () => setGuideMode("steps"));
-  if (modeAnimEl) modeAnimEl.addEventListener("click", () => setGuideMode("anim"));
-  // The embedded animation reports which phase it is on, so switching back resumes there.
-  window.addEventListener("message", (e) => {
-    const d = e.data;
-    if (d && d.source === "tm-esim-anim" && d.phase) lastAnimPhase = d.phase;
-  });
-
   const panels = {};
   PANEL_IDS.forEach((id) => {
     panels[id] = document.getElementById(`panel-${id}`);
@@ -136,15 +71,6 @@
       el.classList.toggle("is-done", done);
       el.disabled = !done;
     });
-    // The animation choice only exists on the iPhone guide; reset to steps on
-    // entry, and stop the embedded animation whenever we leave the guide.
-    if (id === "guide") {
-      if (guideModeEl) guideModeEl.hidden = !isIos;
-      lastAnimPhase = null; // fresh entry: don't resume a stale phase
-      setGuideMode("steps");
-    } else if (animFrameEl) {
-      animFrameEl.removeAttribute("src");
-    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -256,7 +182,6 @@
   }
 
   function onStepChange(step) {
-    currentStepId = step.id || null;
     PhoneRenderer.renderStep(step);
     stepEyebrowEl.textContent = DeliveryPicker.currentName();
     if (stepIconEl) {
@@ -298,7 +223,6 @@
     DeliveryPicker.setLinkAvailable(!isIos || iosVersionTier === "modern");
 
     const content = await ContentLoader.load(osVariant, deliveryMethod, iosVersionTier);
-    currentSteps = content.steps || [];
     fallbackNoticeEl.hidden = !content.usedFallback;
     if (content.lastVerifiedDate) {
       guideVerifiedEl.hidden = false;
