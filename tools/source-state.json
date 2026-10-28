@@ -1,13 +1,13 @@
 {
   "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W": {
-    "hash": "478fd460a2b325b42373223d9fcf193c650b78c597e3cbc90bdce4e02a3f0603",
+    "hash": "ab997cd0ac770dbeee01030f62861358193a141aa0f97055142a9c2b722a2cef",
     "publishedDate": null,
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://esim.holafly.com/how-to/esim-phones/": {
-    "hash": "f670cc4ffa390bddab0b6079cf1291707721178de2a23a671f9365e70d9792db",
+    "hash": "d6f40d4cabc0f949c5884cc760782769f24a59573eef1ea3f26f0f3f9969e33b",
     "publishedDate": null,
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://support.apple.com/en-us/109505": {
     "hash": "801f5b928e62833be808441d60ee4f274d561fbda52da06f9b29d2e8a8054f56",
@@ -15,39 +15,39 @@
     "checked": "2026-09-21"
   },
   "https://www.samsung.com/uk/support/mobile-devices/how-to-use-an-esim-with-your-galaxy-phone/": {
-    "hash": "64b717ba17ed65bfe3da840e59f6c92055420e76753d26e2bf383f57ffaf0f4b",
+    "hash": "2ac428aa869d004b4eed3eef0b128995a5106e1f98054815c78b42aaaa8e831d",
     "publishedDate": null,
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://support.google.com/pixelphone/answer/9449293": {
-    "hash": "c565834a5399a16521293f6f56fcaae754e8a4c269c1fa143ee6aad94f41d7e7",
+    "hash": "a8e1f63f9d93331c05610110d265f33b9db509eb45cf448713cc0a05656b6347",
     "publishedDate": null,
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://source.android.com/docs/core/connect/esim-overview": {
-    "hash": "71183a783398e992a96052d6db8c070d8023daba92a9082acb8201616516e4f2",
+    "hash": "c9e5b83c95a153244fbd2ad2d58f6af3615e5b4c32ce4710a50239637cd8eda0",
     "publishedDate": null,
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://support.google.com/pixelphone/answer/16115470": {
-    "hash": "b7c599ef7cbbd330c694bb0a838f423a5c9dfc6eba462c3fe0f05786c1c3b61e",
+    "hash": "52add7f47ce4ebdfa817fd046112fa433f3f7826ccefaf7237069178d4cb63da",
     "publishedDate": null,
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://support.google.com/pixelphone/answer/7086887": {
-    "hash": "c1a4a6cbe560eff381d895bd0cd66534a5bd47e98f9daa8a9fd61560ecb496f0",
+    "hash": "08e1a646124d7402554c934bc4f2a6e7d4d8f4b789a3c530e59212054b8dcfe4",
     "publishedDate": null,
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://www.samsung.com/ca/support/mobile-devices/galaxy-esim-and-supported-network-carriers/": {
-    "hash": "3f0a317a2acec1b23f7c5809c7627d5d70ccbece208980584ae978d8624ec63b",
+    "hash": "3b8c47bf469c3fb58f79c5f596f5b4d310b76d201002fda958069d8b5443782a",
     "publishedDate": null,
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://support.apple.com/en-us/118669": {
-    "hash": "a22259683288fdfd52b5902b0ebbefc4170433adda055ce2e547c4ad1fea6767",
-    "publishedDate": "September 17, 2026",
-    "checked": "2026-09-21"
+    "hash": "d1966e5c19625ff5626459d41e406c09e4b90350bc4447294d01b278498a61e8",
+    "publishedDate": "October 22, 2026",
+    "checked": "2026-10-28"
   },
   "https://support.apple.com/hu-hu/118669": {
     "hash": "96a4451096b4dd10353b64f5fde59084870011ccd29f8e2481dc9e86b76964fe",
@@ -55,9 +55,9 @@
     "checked": "2026-09-21"
   },
   "https://support.apple.com/en-us/HT209044": {
-    "hash": "f860fc98e35d68f3abde7db6d72a4b4a46875814a004c5d59971843b5cad0807",
-    "publishedDate": "September 17, 2026",
-    "checked": "2026-09-21"
+    "hash": "b48dbe0f81ea7bbfda1a9c45e9458bb5623273f2f570121e6d5748684521a958",
+    "publishedDate": "October 22, 2026",
+    "checked": "2026-10-28"
   },
   "https://support.apple.com/hu-hu/HT209044": {
     "hash": "d89906c5dc8062d06f032b7bfe099c472fade0427b9b78548f9b8012fdcceab7",
@@ -70,33 +70,33 @@
     "checked": "2026-09-21"
   },
   "https://support.apple.com/en-us/123879": {
-    "hash": "c5d962075dade456253cc84e0e93bb9fae463a4054f40d22923af3e6a2a0ab25",
+    "hash": "7ed5cfdfcfe87098d301c754cfc9a3f4dc7018134eb072a88bc5d93fc5b1a4e2",
     "publishedDate": "September 09, 2026",
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://support.apple.com/en-us/109316": {
-    "hash": "11d75542f2a3f42c1595808754829eecf608b7cd6d1222e2ea1afe113b3a4c51",
+    "hash": "2edfd7ed7ab4f8d964ae8d960393cf33df4b084d809c87a9a7055a630272adb5",
     "publishedDate": "January 22, 2026",
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://support.apple.com/hu-hu/109316": {
-    "hash": "4ceecb841608b44a905ce330628089f7ec3c63fb24cef2265081bd475761cd05",
+    "hash": "9958ea365f69a03d2ef15c46f3f54ea93e0a4898bb7dd9b29abbc9ce0b3ae806",
     "publishedDate": null,
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://support.apple.com/hu-hu/guide/iphone/iph3dd5f213/ios": {
-    "hash": "a020e1cb5b71e5ce70dd15717884a95d13b43e3302123da743bc551be903118f",
+    "hash": "96c5b49e02f6897f5425e65b71f881aa08e96c07b45beb877bf2c063c0c307fa",
     "publishedDate": null,
-    "checked": "2026-09-21"
+    "checked": "2026-10-28"
   },
   "https://support.apple.com/en-us/108044": {
-    "hash": "b314c4d49884cfb91bdd38fa0560b16be43412b917efd94be2445f8eda8d4555",
-    "publishedDate": "September 17, 2026",
-    "checked": "2026-09-21"
+    "hash": "a3983478e159df88901e6b4f4df7fd7db6afefcc838e7b1cde3d33a710e41caf",
+    "publishedDate": "October 22, 2026",
+    "checked": "2026-10-28"
   },
   "https://support.apple.com/en-us/100100": {
-    "hash": "3ee264eb13158e49cbe2a3038c65c1bf9de21b649df2c1d8c5cf660c8aa476b6",
-    "publishedDate": "September 14, 2026",
-    "checked": "2026-09-21"
+    "hash": "99e12f8970bdec5225655bd6200f73c253e572375ffcc8a7bcb3d7eee6e454cf",
+    "publishedDate": "October 26, 2026",
+    "checked": "2026-10-28"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "lastVerifiedDate": "2026-09-21",
+  "lastVerifiedDate": "2026-10-28",
   "sources": [
     "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W",
     "https://esim.holafly.com/how-to/esim-phones/",
@@ -1612,6 +1612,27 @@
       "osVariant": "android-generic",
       "esim": "region",
       "noteKey": "huawei"
+    },
+    {
+      "model": "Magic8 Pro",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Magic8 Pro Air",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
+    },
+    {
+      "model": "Magic8 Lite",
+      "brand": "Honor",
+      "osVariant": "android-generic",
+      "esim": "region",
+      "noteKey": "region-android"
     },
     {
       "model": "Magic7 Pro",

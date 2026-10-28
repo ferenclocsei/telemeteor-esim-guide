@@ -1,6 +1,6 @@
 # Project status — where we are
 
-_Last updated: 2026-09-21 · current release: `?v=68`_
+_Last updated: 2026-10-28 · current release: `?v=68`_
 
 A quick "pick up here" note so any new session (or teammate) is instantly in the
 picture. Full detail lives in the other `docs/` files and the git history.
@@ -44,6 +44,16 @@ doesn't support eSIM"; EID yes → **delete-old** → still failing → support.
 roaming → apn → network → restart → support.
 
 ## Recent work (newest first)
+- Freshness + copy fix (2026-10-28): re-verified for **iOS 27.2** (no eSIM-install
+  changes — Siri/Messages/FaceTime only; iPhone Handoff note from iOS 27 still
+  stands); catalog `lastVerifiedDate` → 2026-10-28, added **Honor Magic8 Pro /
+  Magic8 Pro Air / Magic8 Lite** (region) → 250 models (most Oct flagships were
+  already present: OnePlus 15, Oppo Find X9/Pro, Galaxy S26 FE, Nothing Phone 3).
+  Fixed the misleading first-step title across all 5 OS variants + 4 langs: it
+  checks eSIM *capability* (*#06#/EID), so "…van eSIM a telefonodban?" →
+  "Először: eSIM-képes a telefonod?" (Xiaomi keeps the ROM nuance). Repo also
+  relocated to `~/Downloads/Claude projektek/eSIM telepítési és beállítási kalauz`.
+
 - iOS final step (2026-09-21): added `disable-data-switching` after
   `select-data-line-on-arrival` — on arrival, turn OFF "Allow Mobile Data
   Switching" so the phone never uses the other (home) SIM's data by accident
